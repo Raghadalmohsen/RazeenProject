@@ -32,10 +32,12 @@ class Frame105Screen extends StatelessWidget {
               key: _formKey,
               child: SizedBox(
                 height: SizeUtils.height,
-                width: double.maxFinite,
+                width: SizeUtils.width,
+                
                 child: Stack(
                   alignment: Alignment.topRight,
                   children: [
+                    
                     Align(
                       alignment: Alignment.center,
                       child: Container(
@@ -47,7 +49,7 @@ class Frame105Screen extends StatelessWidget {
                           borderRadius: BorderRadiusStyle.roundedBorder33,
                           image: DecorationImage(
                             image: AssetImage(
-                              ImageConstant.imgGroup171,
+                              ImageConstant.imgGroup225,//
                             ),
                             fit: BoxFit.cover,
                           ),
@@ -142,7 +144,7 @@ class Frame105Screen extends StatelessWidget {
                       ),
                     ),
                     CustomImageView(
-                      imagePath: ImageConstant.imgImage23152x119,
+                      imagePath: ImageConstant.imgImage23152x119,//النجمة
                       height: 152.v,
                       width: 119.h,
                       alignment: Alignment.topRight,
@@ -166,7 +168,7 @@ class Frame105Screen extends StatelessWidget {
                       ),
                     ),
                     CustomImageView(
-                      imagePath: ImageConstant.imgScreenshot2023206x150,
+                      imagePath: ImageConstant.imgScreenshot2023173x129,//الجد
                       height: 206.v,
                       width: 150.h,
                       alignment: Alignment.bottomLeft,
@@ -186,7 +188,7 @@ class Frame105Screen extends StatelessWidget {
   Widget _buildNameSection(BuildContext context) {
     return CustomTextFormField(
       controller: nameSectionController,
-      hintText: "الإسم",
+      hintText: "                                الإسم",
       hintStyle: theme.textTheme.titleLarge!,
       contentPadding: EdgeInsets.symmetric(
         horizontal: 30.h,
@@ -200,7 +202,7 @@ class Frame105Screen extends StatelessWidget {
   Widget _buildEmailSection(BuildContext context) {
     return CustomTextFormField(
       controller: emailSectionController,
-      hintText: "البريد الإلكتروني",
+      hintText: "                       البريد الإلكتروني",
       hintStyle: theme.textTheme.titleLarge!,
       contentPadding: EdgeInsets.symmetric(
         horizontal: 8.h,
@@ -214,7 +216,7 @@ class Frame105Screen extends StatelessWidget {
   Widget _buildPasswordSection(BuildContext context) {
     return CustomTextFormField(
       controller: passwordSectionController,
-      hintText: "كلمة المرور",
+      hintText: "                               كلمة المرور",
       hintStyle: theme.textTheme.titleLarge!,
       textInputAction: TextInputAction.done,
       textInputType: TextInputType.visiblePassword,

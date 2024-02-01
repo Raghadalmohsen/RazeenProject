@@ -29,12 +29,10 @@ class Frame104Screen extends StatelessWidget {
               alignment: Alignment.bottomCenter,
               children: [
                 CustomImageView(
-                  imagePath: ImageConstant.imgGroup225,
+                  imagePath: ImageConstant.imgGroup225,// خلفية صورة
                   height: 858.v,
                   width: 393.h,
-                  radius: BorderRadius.circular(
-                    33.h,
-                  ),
+                border: Border.all(),
                   alignment: Alignment.center,
                 ),
                 Align(
@@ -59,7 +57,7 @@ class Frame104Screen extends StatelessWidget {
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   CustomImageView(
-                                    imagePath: ImageConstant.imageNotFound,
+                                    imagePath: ImageConstant.imageNotFound,//?
                                     height: 3.v,
                                     width: 47.h,
                                   ),
@@ -83,13 +81,15 @@ class Frame104Screen extends StatelessWidget {
                                         SizedBox(height: 26.v),
                                         CustomTextFormField(
                                           controller: emailController,
-                                          hintText: "البريد الإلكتروني",
+                                          hintText: "                     البريد الإلكتروني",
                                           hintStyle:
+                                          
                                               theme.textTheme.titleLarge!,
                                           contentPadding: EdgeInsets.symmetric(
-                                            horizontal: 16.h,
+                                            horizontal: 10.h,
                                             vertical: 19.v,
                                           ),
+                                          
                                           borderDecoration:
                                               TextFormFieldStyleHelper
                                                   .outlinePrimary,
@@ -97,7 +97,7 @@ class Frame104Screen extends StatelessWidget {
                                         SizedBox(height: 38.v),
                                         CustomTextFormField(
                                           controller: passwordController,
-                                          hintText: "كلمة المرور",
+                                          hintText: "                              كلمة المرور",
                                           hintStyle:
                                               theme.textTheme.titleLarge!,
                                           textInputAction: TextInputAction.done,
@@ -144,6 +144,7 @@ class Frame104Screen extends StatelessWidget {
                                           children: [
                                             Column(
                                               children: [
+                                                
                                                 Container(
                                                   decoration: AppDecoration
                                                       .outlinePrimary3,
@@ -182,7 +183,7 @@ class Frame104Screen extends StatelessWidget {
                             ),
                           ),
                           CustomImageView(
-                            imagePath: ImageConstant.imgImage23152x119,
+                            imagePath: ImageConstant.imgImage23152x119,//النجمة
                             height: 152.v,
                             width: 119.h,
                             alignment: Alignment.topRight,
@@ -205,7 +206,7 @@ class Frame104Screen extends StatelessWidget {
                             ),
                           ),
                           CustomImageView(
-                            imagePath: ImageConstant.imgScreenshot2023206x150,
+                            imagePath: ImageConstant.imgScreenshot2023173x129,//الجد
                             height: 206.v,
                             width: 150.h,
                             alignment: Alignment.bottomLeft,
