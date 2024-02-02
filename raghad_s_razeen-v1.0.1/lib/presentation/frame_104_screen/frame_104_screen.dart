@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:raghad_s_razeen/core/app_export.dart';
+import 'package:raghad_s_razeen/presentation/frame_105_screen/frame_105_screen.dart';
 import 'package:raghad_s_razeen/widgets/custom_elevated_button.dart';
 import 'package:raghad_s_razeen/widgets/custom_text_form_field.dart';
 
 class Frame104Screen extends StatelessWidget {
+  //تسجيل دخول
   Frame104Screen({Key? key})
       : super(
           key: key,
@@ -19,6 +21,16 @@ class Frame104Screen extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        extendBodyBehindAppBar: true,//زر الرجوع
+        appBar: AppBar(// 1. Back Arrow Icon
+          leading: IconButton(
+           icon: Icon(Icons.arrow_back),
+          onPressed: () => Navigator.pop(context),
+       ),
+       backgroundColor: Color.fromARGB(0, 17, 7, 51),
+        elevation: 0,
+     ),
+
         resizeToAvoidBottomInset: false,
         body: Form(
           key: _formKey,
@@ -29,10 +41,10 @@ class Frame104Screen extends StatelessWidget {
               alignment: Alignment.bottomCenter,
               children: [
                 CustomImageView(
-                  imagePath: ImageConstant.imgGroup225,// خلفية صورة
+                  imagePath: ImageConstant.imgGroup225, // خلفية صورة
                   height: 858.v,
                   width: 393.h,
-                border: Border.all(),
+                  border: Border.all(),
                   alignment: Alignment.center,
                 ),
                 Align(
@@ -45,6 +57,7 @@ class Frame104Screen extends StatelessWidget {
                       child: Stack(
                         alignment: Alignment.topRight,
                         children: [
+                          //
                           Align(
                             alignment: Alignment.topCenter,
                             child: Padding(
@@ -56,11 +69,11 @@ class Frame104Screen extends StatelessWidget {
                                 mainAxisSize: MainAxisSize.min,
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  CustomImageView(
-                                    imagePath: ImageConstant.imageNotFound,//?
-                                    height: 3.v,
-                                    width: 47.h,
-                                  ),
+                                  // CustomImageView(
+                                  //   imagePath: ImageConstant.imageNotFound,//?بينحذف من كل الصفحات
+                                  //   height: 3.v,
+                                  //   width: 47.h,
+                                  // ),
                                   SizedBox(height: 75.v),
                                   Container(
                                     margin: EdgeInsets.only(left: 6.h),
@@ -81,15 +94,14 @@ class Frame104Screen extends StatelessWidget {
                                         SizedBox(height: 26.v),
                                         CustomTextFormField(
                                           controller: emailController,
-                                          hintText: "                     البريد الإلكتروني",
+                                          hintText:
+                                              "                     البريد الإلكتروني",
                                           hintStyle:
-                                          
                                               theme.textTheme.titleLarge!,
                                           contentPadding: EdgeInsets.symmetric(
                                             horizontal: 10.h,
                                             vertical: 19.v,
                                           ),
-                                          
                                           borderDecoration:
                                               TextFormFieldStyleHelper
                                                   .outlinePrimary,
@@ -97,7 +109,8 @@ class Frame104Screen extends StatelessWidget {
                                         SizedBox(height: 38.v),
                                         CustomTextFormField(
                                           controller: passwordController,
-                                          hintText: "                              كلمة المرور",
+                                          hintText:
+                                              "                              كلمة المرور",
                                           hintStyle:
                                               theme.textTheme.titleLarge!,
                                           textInputAction: TextInputAction.done,
@@ -144,7 +157,13 @@ class Frame104Screen extends StatelessWidget {
                                           children: [
                                             Column(
                                               children: [
-                                                
+          //                                        GestureDetector(
+          // onTap: () {
+          //   Navigator.push(
+          //     context,
+          //     MaterialPageRoute(builder: (context) => Frame105Screen()), // TO NEXT PAGE
+          //   );
+          // },),
                                                 Container(
                                                   decoration: AppDecoration
                                                       .outlinePrimary3,
@@ -168,7 +187,7 @@ class Frame104Screen extends StatelessWidget {
                                               padding:
                                                   EdgeInsets.only(left: 13.h),
                                               child: Text(
-                                                "ليس لديك حساب؟",
+                                                "ليس لديك حساب؟", //تسجيل جديد
                                                 style: CustomTextStyles
                                                     .bodySmall12,
                                               ),
@@ -183,7 +202,7 @@ class Frame104Screen extends StatelessWidget {
                             ),
                           ),
                           CustomImageView(
-                            imagePath: ImageConstant.imgImage23152x119,//النجمة
+                            imagePath: ImageConstant.imgImage23152x119, //النجمة
                             height: 152.v,
                             width: 119.h,
                             alignment: Alignment.topRight,
@@ -206,7 +225,8 @@ class Frame104Screen extends StatelessWidget {
                             ),
                           ),
                           CustomImageView(
-                            imagePath: ImageConstant.imgScreenshot2023173x129,//الجد
+                            imagePath:
+                                ImageConstant.imgScreenshot2023173x129, //الجد
                             height: 206.v,
                             width: 150.h,
                             alignment: Alignment.bottomLeft,

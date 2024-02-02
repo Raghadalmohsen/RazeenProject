@@ -4,7 +4,7 @@ import 'package:raghad_s_razeen/presentation/frame_104_screen/frame_104_screen.d
 import 'package:raghad_s_razeen/presentation/frame_105_screen/frame_105_screen.dart';
 import 'package:raghad_s_razeen/widgets/custom_elevated_button.dart';
 
-class Frame103Screen extends StatelessWidget {
+class Frame103Screen extends StatelessWidget {//الصفحه الرئيسيه
   const Frame103Screen({Key? key})
       : super(
           key: key,
