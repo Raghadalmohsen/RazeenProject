@@ -3,7 +3,8 @@ import 'package:raghad_s_razeen/core/app_export.dart';
 import 'package:raghad_s_razeen/widgets/custom_elevated_button.dart';
 import 'package:raghad_s_razeen/widgets/custom_text_form_field.dart';
 
-class Frame106Screen extends StatelessWidget {//نسيت كلمه المرور
+class Frame106Screen extends StatelessWidget {
+  //نسيت كلمه المرور
   Frame106Screen({Key? key})
       : super(
           key: key,
@@ -15,8 +16,20 @@ class Frame106Screen extends StatelessWidget {//نسيت كلمه المرور
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+          extendBodyBehindAppBar: true, //زر الرجوع
+        appBar: AppBar(
+          // 1. Back Arrow Icon
+          leading: IconButton(
+            icon: Icon(Icons.arrow_back),
+            onPressed: () => Navigator.pop(context),
+          ),
+          backgroundColor: Color.fromARGB(0, 17, 7, 51),
+          elevation: 0,
+          
+        ),
+        
         extendBody: true,
-        extendBodyBehindAppBar: true,
+       
         resizeToAvoidBottomInset: false,
         body: Container(
           width: SizeUtils.width,
@@ -29,7 +42,7 @@ class Frame106Screen extends StatelessWidget {//نسيت كلمه المرور
             ),
             image: DecorationImage(
               image: AssetImage(
-                ImageConstant.imgGroup171,
+                ImageConstant.imgGroup225,//خلفيه
               ),
               fit: BoxFit.cover,
             ),
@@ -47,13 +60,13 @@ class Frame106Screen extends StatelessWidget {//نسيت كلمه المرور
                   child: Stack(
                     alignment: Alignment.center,
                     children: [
-                      CustomImageView(
-                        imagePath: ImageConstant.imageNotFound,
-                        height: 3.v,
-                        width: 47.h,
-                        alignment: Alignment.topLeft,
-                        margin: EdgeInsets.only(left: 20.h),
-                      ),
+                      // CustomImageView(
+                      //   imagePath: ImageConstant.imageNotFound,
+                      //   height: 3.v,
+                      //   width: 47.h,
+                      //   alignment: Alignment.topLeft,
+                      //   margin: EdgeInsets.only(left: 20.h),
+                      // ),
                       Align(
                         alignment: Alignment.center,
                         child: SizedBox(
@@ -62,24 +75,38 @@ class Frame106Screen extends StatelessWidget {//نسيت كلمه المرور
                           child: Stack(
                             alignment: Alignment.bottomLeft,
                             children: [
-                              CustomImageView(
-                                imagePath: ImageConstant.imgImage23152x119,
+                              // CustomImageView(
+                              //   imagePath: ImageConstant.imgImage23152x119,//نجمه
+                              //   height: 152.v,
+                              //   width: 119.h,
+                              //   alignment: Alignment.topRight,
+                              // ),
+                              // CustomImageView(
+                              //   imagePath:
+                              //       ImageConstant.imgScreenshot2023173x129,//الجد
+                              //   height: 206.v,
+                              //   width: 150.h,
+                              //   alignment: Alignment.bottomLeft,
+                              // ),
+                              _buildEmailSection(context),
+                            ],
+                          ),
+                        ),
+                      ),
+                       CustomImageView(
+                                imagePath: ImageConstant.imgImage23152x119,//نجمه
                                 height: 152.v,
                                 width: 119.h,
                                 alignment: Alignment.topRight,
                               ),
                               CustomImageView(
                                 imagePath:
-                                    ImageConstant.imgScreenshot2023206x150,
+                                    ImageConstant.imgScreenshot2023173x129,//الجد
                                 height: 206.v,
                                 width: 150.h,
                                 alignment: Alignment.bottomLeft,
+                                  margin: EdgeInsets.only(bottom: 45.v),
                               ),
-                              _buildEmailSection(context),
-                            ],
-                          ),
-                        ),
-                      ),
                     ],
                   ),
                 ),
@@ -116,15 +143,16 @@ class Frame106Screen extends StatelessWidget {//نسيت كلمه المرور
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
                   mainAxisAlignment: MainAxisAlignment.center,
+                  
                   children: [
                     SizedBox(height: 40.v),
                     CustomTextFormField(
                       controller: emailController,
-                      hintText: "البريد الإلكتروني",
+                      hintText: "               البريد الإلكتروني",
                       hintStyle: theme.textTheme.titleLarge!,
                       textInputAction: TextInputAction.done,
                       suffix: Container(
-                        margin: EdgeInsets.fromLTRB(-12.h, 21.v, 20.h, 16.v),
+                        margin: EdgeInsets.fromLTRB(12.h, 21.v, 20.h, 16.v),
                         child: CustomImageView(
                           imagePath: ImageConstant.imgImage28,
                           height: 23.adaptSize,
@@ -153,6 +181,7 @@ class Frame106Screen extends StatelessWidget {//نسيت كلمه المرور
                 ),
               ),
             ),
+            
             Align(
               alignment: Alignment.topRight,
               child: Container(
@@ -160,16 +189,22 @@ class Frame106Screen extends StatelessWidget {//نسيت كلمه المرور
                 margin: EdgeInsets.only(top: 44.v),
                 decoration: AppDecoration.outlinePrimary3,
                 child: Text(
-                  "نسيت كلمة المرور",
+                  "       نسيت كلمة المرور",
                   maxLines: null,
                   overflow: TextOverflow.ellipsis,
                   style: CustomTextStyles.headlineLarge32,
                 ),
               ),
+              
             ),
+            
+             
           ],
+  
         ),
       ),
+      
     );
+   
   }
 }

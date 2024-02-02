@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:raghad_s_razeen/core/app_export.dart';
+import 'package:raghad_s_razeen/presentation/frame_104_screen/frame_104_screen.dart';
+import 'package:raghad_s_razeen/presentation/frame_107_screen/frame_107_screen.dart';
 import 'package:raghad_s_razeen/widgets/custom_elevated_button.dart';
 import 'package:raghad_s_razeen/widgets/custom_text_form_field.dart';
 
@@ -21,6 +23,16 @@ class Frame105Screen extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+          extendBodyBehindAppBar: true, //زر الرجوع
+        appBar: AppBar(
+          // 1. Back Arrow Icon
+          leading: IconButton(
+            icon: Icon(Icons.arrow_back),
+            onPressed: () => Navigator.pop(context),
+          ),
+          backgroundColor: Color.fromARGB(0, 17, 7, 51),
+          elevation: 0,
+        ),
         resizeToAvoidBottomInset: false,
         body: SizedBox(
           width: SizeUtils.width,
@@ -32,7 +44,7 @@ class Frame105Screen extends StatelessWidget {
               key: _formKey,
               child: SizedBox(
                 height: SizeUtils.height,
-                width: SizeUtils.width,
+              width: double.maxFinite,
                 
                 child: Stack(
                   alignment: Alignment.topRight,
@@ -46,10 +58,11 @@ class Frame105Screen extends StatelessWidget {
                           vertical: 45.v,
                         ),
                         decoration: BoxDecoration(
-                          borderRadius: BorderRadiusStyle.roundedBorder33,
+                          border: Border.all(),
                           image: DecorationImage(
                             image: AssetImage(
-                              ImageConstant.imgGroup225,//
+                              ImageConstant.imgGroup225,
+                             //الخلفيه
                             ),
                             fit: BoxFit.cover,
                           ),
@@ -58,11 +71,11 @@ class Frame105Screen extends StatelessWidget {
                           mainAxisSize: MainAxisSize.min,
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            CustomImageView(
-                              imagePath: ImageConstant.imageNotFound,
-                              height: 3.v,
-                              width: 47.h,
-                            ),
+                            // CustomImageView( //بيحذف
+                            //   imagePath: ImageConstant.imageNotFound,
+                            //   height: 3.v,
+                            //   width: 47.h,
+                            // ),
                             SizedBox(height: 75.v),
                             Container(
                               margin: EdgeInsets.only(
@@ -71,7 +84,7 @@ class Frame105Screen extends StatelessWidget {
                               ),
                               padding: EdgeInsets.symmetric(
                                 horizontal: 22.h,
-                                vertical: 96.v,
+                                vertical: 120.v,
                               ),
                               decoration:
                                   AppDecoration.outlinePrimary7.copyWith(
@@ -90,50 +103,48 @@ class Frame105Screen extends StatelessWidget {
                                   SizedBox(height: 37.v),
                                   _buildRegisterButtonSection(context),
                                   SizedBox(height: 8.v),
-                                  Align(
-                                    alignment: Alignment.centerLeft,
-                                    child: Padding(
-                                      padding: EdgeInsets.only(left: 61.h),
-                                      child: Row(
-                                        children: [
-                                          Column(
-                                            crossAxisAlignment:
-                                                CrossAxisAlignment.start,
-                                            children: [
-                                              Align(
-                                                alignment: Alignment.center,
-                                                child: Container(
-                                                  decoration: AppDecoration
-                                                      .outlinePrimary3,
-                                                  child: Text(
-                                                    "تسجيل الدخول",
-                                                    style: CustomTextStyles
-                                                        .bodySmall12,
-                                                  ),
-                                                ),
-                                              ),
-                                              SizedBox(height: 1.v),
-                                              SizedBox(
-                                                width: 69.h,
-                                                child: Divider(
-                                                  color: appTheme.blueGray700
-                                                      .withOpacity(0.84),
-                                                ),
-                                              ),
-                                            ],
-                                          ),
-                                          Padding(
-                                            padding:
-                                                EdgeInsets.only(left: 16.h),
-                                            child: Text(
-                                              " لديك حساب؟",
-                                              style:
-                                                  CustomTextStyles.bodySmall12,
-                                            ),
-                                          ),
-                                        ],
-                                      ),
-                                    ),
+                                 Align(
+  alignment: Alignment.centerLeft,
+  child: Padding(
+    padding: EdgeInsets.only(left: 60.h),
+    child: Row(
+      children: [
+        InkWell(
+          onTap: () {
+            // Replace 'LoginScreen()' with your actual login screen widget
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => Frame107Screen()),//مفروض صفحه 104
+            );
+          },
+          child: Padding(
+            padding: EdgeInsets.all(8.0), // For easier tapping
+            child: Text(
+              "تسجيل الدخول",
+              style: CustomTextStyles.bodySmall12.copyWith(
+                color: Colors.blue, // Change the color to indicate it's tappable
+              ),
+            ),
+          ),
+        ),
+        SizedBox(height: 1.v),
+        SizedBox(
+          width: 0.1.h,
+          // child: Divider(
+          //   color: appTheme.blueGray700.withOpacity(0.84),
+          // ),
+        ),
+        Padding(
+          padding: EdgeInsets.only(left: 16.h),
+          child: Text(
+            "لديك حساب؟",
+            style: CustomTextStyles.bodySmall12,
+          ),
+        ),
+      ],
+    ),
+  ),
+
                                   ),
                                 ],
                               ),

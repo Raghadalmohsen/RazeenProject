@@ -1,6 +1,8 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:raghad_s_razeen/core/app_export.dart';
 import 'package:raghad_s_razeen/presentation/frame_105_screen/frame_105_screen.dart';
+import 'package:raghad_s_razeen/presentation/frame_106_screen/frame_106_screen.dart';
 import 'package:raghad_s_razeen/widgets/custom_elevated_button.dart';
 import 'package:raghad_s_razeen/widgets/custom_text_form_field.dart';
 
@@ -21,15 +23,16 @@ class Frame104Screen extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        extendBodyBehindAppBar: true,//زر الرجوع
-        appBar: AppBar(// 1. Back Arrow Icon
+        extendBodyBehindAppBar: true, //زر الرجوع
+        appBar: AppBar(
+          // 1. Back Arrow Icon
           leading: IconButton(
-           icon: Icon(Icons.arrow_back),
-          onPressed: () => Navigator.pop(context),
-       ),
-       backgroundColor: Color.fromARGB(0, 17, 7, 51),
-        elevation: 0,
-     ),
+            icon: Icon(Icons.arrow_back),
+            onPressed: () => Navigator.pop(context),
+          ),
+          backgroundColor: Color.fromARGB(0, 17, 7, 51),
+          elevation: 0,
+        ),
 
         resizeToAvoidBottomInset: false,
         body: Form(
@@ -37,6 +40,7 @@ class Frame104Screen extends StatelessWidget {
           child: SizedBox(
             height: SizeUtils.height,
             width: double.maxFinite,
+            
             child: Stack(
               alignment: Alignment.bottomCenter,
               children: [
@@ -74,6 +78,13 @@ class Frame104Screen extends StatelessWidget {
                                   //   height: 3.v,
                                   //   width: 47.h,
                                   // ),
+                                  //                          GestureDetector(
+                                  // onTap: () {
+                                  //   Navigator.push(
+                                  //     context,
+                                  //     MaterialPageRoute(builder: (context) => Frame105Screen()), // TO NEXT PAGE
+                                  //   );
+                                  // },),
                                   SizedBox(height: 75.v),
                                   Container(
                                     margin: EdgeInsets.only(left: 6.h),
@@ -133,11 +144,22 @@ class Frame104Screen extends StatelessWidget {
                                             margin: EdgeInsets.only(left: 7.h),
                                             decoration:
                                                 AppDecoration.outlinePrimary3,
+                                          child: CupertinoButton(
                                             child: Text(
                                               "نسيت كلمة المرور؟",
                                               style:
                                                   CustomTextStyles.bodySmall12,
                                             ),
+                                             onPressed: () {
+                                                      //بداية كود تنقل الزر
+                                                      Navigator.push(
+                                                        context,
+                                                        CupertinoPageRoute(
+                                                            builder: (context) =>
+                                                                Frame106Screen()), 
+                                                      );
+                                                    }, //نهاية ا
+                                                  ),
                                           ),
                                         ),
                                         SizedBox(height: 49.v),
@@ -157,29 +179,36 @@ class Frame104Screen extends StatelessWidget {
                                           children: [
                                             Column(
                                               children: [
-          //                                        GestureDetector(
-          // onTap: () {
-          //   Navigator.push(
-          //     context,
-          //     MaterialPageRoute(builder: (context) => Frame105Screen()), // TO NEXT PAGE
-          //   );
-          // },),
                                                 Container(
                                                   decoration: AppDecoration
                                                       .outlinePrimary3,
-                                                  child: Text(
-                                                    "تسجيل جديد",
-                                                    style: CustomTextStyles
-                                                        .bodySmall12,
+                                                  child: CupertinoButton(
+                                                    //اضافي مع زر التنقل
+                                                    child: Text(
+                                                      "تسجيل جديد",
+                                                     style: CustomTextStyles.bodySmall12.copyWith(
+                color: Colors.blue, // Change the color to indicate it's tappable
+                                                     ),
+                                                    ),
+                                                    onPressed: () {
+                                                      //بداية كود تنقل الزر
+                                                      Navigator.push(
+                                                        context,
+                                                        CupertinoPageRoute(
+                                                            builder: (context) =>
+                                                                Frame105Screen()), //next page
+                                                      );
+                                                    }, //نهاية ا
                                                   ),
                                                 ),
                                                 SizedBox(height: 1.v),
                                                 SizedBox(
                                                   width: 65.h,
-                                                  child: Divider(
-                                                    color: appTheme.blueGray700
-                                                        .withOpacity(0.84),
-                                                  ),
+                                                  // child: Divider(
+                                                  //   //نعدل مكان الخط
+                                                  //   color: appTheme.blueGray700
+                                                  //       .withOpacity(0.84),
+                                                  // ),
                                                 ),
                                               ],
                                             ),
