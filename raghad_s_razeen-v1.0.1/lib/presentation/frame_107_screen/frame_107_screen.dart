@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:raghad_s_razeen/core/app_export.dart';
+import 'package:raghad_s_razeen/presentation/frame_103_screen/frame_103_screen.dart';
 import 'package:raghad_s_razeen/widgets/custom_bottom_bar.dart';
 import 'package:raghad_s_razeen/widgets/custom_floating_button.dart';
 
 class Frame107Screen extends StatelessWidget {
+  //الاعدادات
   Frame107Screen({Key? key})
       : super(
           key: key,
@@ -15,6 +17,16 @@ class Frame107Screen extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        extendBodyBehindAppBar: true, //زر الرجوع
+        appBar: AppBar(
+          // 1. Back Arrow Icon
+          leading: IconButton(
+            icon: Icon(Icons.arrow_back),
+            onPressed: () => Navigator.pop(context),
+          ),
+          backgroundColor: Color.fromARGB(0, 17, 7, 51),
+          elevation: 0,
+        ),
         body: SizedBox(
           height: 764.v,
           width: double.maxFinite,
@@ -29,10 +41,10 @@ class Frame107Screen extends StatelessWidget {
                     vertical: 45.v,
                   ),
                   decoration: BoxDecoration(
-                    borderRadius: BorderRadiusStyle.roundedBorder33,
+                    border: Border.all(),
                     image: DecorationImage(
                       image: AssetImage(
-                        ImageConstant.imgGroup171,
+                        ImageConstant.imgGroup225, //خلفيه
                       ),
                       fit: BoxFit.cover,
                     ),
@@ -41,11 +53,11 @@ class Frame107Screen extends StatelessWidget {
                     mainAxisSize: MainAxisSize.min,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      CustomImageView(
-                        imagePath: ImageConstant.imageNotFound,
-                        height: 3.v,
-                        width: 47.h,
-                      ),
+                      // CustomImageView(
+                      //   imagePath: ImageConstant.imageNotFound,
+                      //   height: 3.v,
+                      //   width: 47.h,
+                      // ),
                       SizedBox(height: 75.v),
                       Container(
                         margin: EdgeInsets.only(
@@ -75,20 +87,32 @@ class Frame107Screen extends StatelessWidget {
                               child: Row(
                                 mainAxisAlignment: MainAxisAlignment.end,
                                 crossAxisAlignment: CrossAxisAlignment.start,
+
                                 children: [
+          //                                GestureDetector(
+          // onTap: () {
+          //   Navigator.push(
+          //     context,
+          //     MaterialPageRoute(builder: (context) => Frame103Screen()), // TO NEXT PAGE
+          //   );
+          // },),
                                   Container(
+                                     
                                     margin: EdgeInsets.only(
                                       top: 5.v,
                                       bottom: 7.v,
                                     ),
+                                     
                                     decoration: AppDecoration.outlinePrimary3,
                                     child: Text(
                                       "الملف الشخصي",
                                       style: theme.textTheme.titleLarge,
                                     ),
                                   ),
+                                  
                                   CustomImageView(
-                                    imagePath: ImageConstant.imgImage31,
+                                    imagePath: ImageConstant
+                                        .imgImage31, //صوره فوق ملف شخصي
                                     height: 22.v,
                                     width: 19.h,
                                     margin: EdgeInsets.only(
@@ -126,7 +150,7 @@ class Frame107Screen extends StatelessWidget {
                                     ),
                                   ),
                                   CustomImageView(
-                                    imagePath: ImageConstant.imgImage32,
+                                    imagePath: ImageConstant.imgImage32, //ميداليات
                                     height: 31.v,
                                     width: 25.h,
                                     margin: EdgeInsets.only(left: 15.h),
@@ -161,7 +185,7 @@ class Frame107Screen extends StatelessWidget {
                                     ),
                                   ),
                                   CustomImageView(
-                                    imagePath: ImageConstant.imgImage30,
+                                    imagePath: ImageConstant.imgImage30,//تسجيل خروج
                                     height: 32.v,
                                     width: 26.h,
                                     margin: EdgeInsets.only(
@@ -182,7 +206,7 @@ class Frame107Screen extends StatelessWidget {
                 ),
               ),
               CustomImageView(
-                imagePath: ImageConstant.imgImage23152x119,
+                imagePath: ImageConstant.imgImage23152x119, //نجمه
                 height: 152.v,
                 width: 119.h,
                 alignment: Alignment.topRight,
@@ -206,7 +230,7 @@ class Frame107Screen extends StatelessWidget {
                 ),
               ),
               CustomImageView(
-                imagePath: ImageConstant.imgScreenshot2023206x150,
+                imagePath: ImageConstant.imgScreenshot2023173x129, //الجد
                 height: 206.v,
                 width: 150.h,
                 alignment: Alignment.bottomLeft,
@@ -215,13 +239,13 @@ class Frame107Screen extends StatelessWidget {
           ),
         ),
         bottomNavigationBar: _buildDoctorReviews(context),
-        floatingActionButton: CustomFloatingButton(
-          height: 50,
-          width: 50,
-          child: Icon(
-            Icons.add,
-          ),
-        ),
+        // floatingActionButton: CustomFloatingButton(
+        //   height: 50,
+        //   width: 50,
+        //   child: Icon(
+        //     Icons.add,
+        //   ),
+        // ),
         floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       ),
     );
