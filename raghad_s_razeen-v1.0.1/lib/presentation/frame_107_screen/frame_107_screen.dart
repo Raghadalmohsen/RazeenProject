@@ -6,6 +6,7 @@ import 'package:raghad_s_razeen/widgets/custom_floating_button.dart';
 
 class Frame107Screen extends StatelessWidget {
   //الاعدادات
+  //باقي الازرار اللي بالبدايه
   Frame107Screen({Key? key})
       : super(
           key: key,
@@ -104,12 +105,24 @@ class Frame107Screen extends StatelessWidget {
                                     ),
                                      
                                     decoration: AppDecoration.outlinePrimary3,
-                                    child: Text(
-                                      "الملف الشخصي",
-                                      style: theme.textTheme.titleLarge,
-                                    ),
-                                  ),
-                                  
+                                 
+        child: ElevatedButton(// الضغط
+         style: CustomButtonStyles.outlinePrimary,
+          
+                        // buttonTextStyle:
+                        //     CustomTextStyles.titleMediumBlack,
+          child: const Text('الملف الشخصي'),
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => const Frame103Screen()),
+            );
+         
+          },
+         
+        ),
+                                   ),
+                                 
                                   CustomImageView(
                                     imagePath: ImageConstant
                                         .imgImage31, //صوره فوق ملف شخصي

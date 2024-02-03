@@ -5,7 +5,7 @@ import 'package:raghad_s_razeen/widgets/custom_elevated_button.dart';
 import 'package:raghad_s_razeen/widgets/custom_floating_button.dart';
 import 'package:raghad_s_razeen/widgets/custom_text_form_field.dart';
 
-class Frame108Screen extends StatelessWidget {
+class Frame108Screen extends StatelessWidget {//الملف الشخصي
   Frame108Screen({Key? key})
       : super(
           key: key,
@@ -27,6 +27,16 @@ class Frame108Screen extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+         extendBodyBehindAppBar: true, //زر الرجوع
+        appBar: AppBar(
+          // 1. Back Arrow Icon
+          leading: IconButton(
+            icon: Icon(Icons.arrow_back),
+            onPressed: () => Navigator.pop(context),
+          ),
+          backgroundColor: Color.fromARGB(0, 17, 7, 51),
+          elevation: 0,
+        ),
         resizeToAvoidBottomInset: false,
         body: SizedBox(
           width: SizeUtils.width,
@@ -50,7 +60,7 @@ class Frame108Screen extends StatelessWidget {
                           vertical: 45.v,
                         ),
                         decoration: BoxDecoration(
-                          borderRadius: BorderRadiusStyle.roundedBorder33,
+                          border: Border.all(),
                           image: DecorationImage(
                             image: AssetImage(
                               ImageConstant.imgGroup171,
@@ -62,11 +72,11 @@ class Frame108Screen extends StatelessWidget {
                           mainAxisSize: MainAxisSize.min,
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            CustomImageView(
-                              imagePath: ImageConstant.imageNotFound,
-                              height: 3.v,
-                              width: 47.h,
-                            ),
+                            // CustomImageView(
+                            //   imagePath: ImageConstant.imageNotFound,
+                            //   height: 3.v,
+                            //   width: 47.h,
+                            // ),
                             SizedBox(height: 75.v),
                             Container(
                               width: 338.h,
@@ -104,7 +114,7 @@ class Frame108Screen extends StatelessWidget {
                                               decoration:
                                                   AppDecoration.outlinePrimary3,
                                               child: Text(
-                                                "الإسم",
+                                                "الإسم       ",
                                                 style:
                                                     theme.textTheme.titleLarge,
                                               ),
@@ -122,7 +132,7 @@ class Frame108Screen extends StatelessWidget {
                                     child: Container(
                                       decoration: AppDecoration.outlinePrimary3,
                                       child: Text(
-                                        "تغيير كلمة المرور",
+                                        "تغيير كلمة المرور    ",
                                         style: CustomTextStyles
                                             .titleMediumBluegray700,
                                       ),
@@ -143,7 +153,7 @@ class Frame108Screen extends StatelessWidget {
                       ),
                     ),
                     CustomImageView(
-                      imagePath: ImageConstant.imgImage23152x119,
+                      imagePath: ImageConstant.imgImage23152x119,//نجمه
                       height: 152.v,
                       width: 119.h,
                       alignment: Alignment.topRight,
@@ -159,7 +169,7 @@ class Frame108Screen extends StatelessWidget {
                         ),
                         decoration: AppDecoration.outlinePrimary3,
                         child: Text(
-                          "الملف الشخصي",
+                          "  الملف الشخصي",
                           maxLines: null,
                           overflow: TextOverflow.ellipsis,
                           style: CustomTextStyles.headlineLarge32,
@@ -167,7 +177,7 @@ class Frame108Screen extends StatelessWidget {
                       ),
                     ),
                     CustomImageView(
-                      imagePath: ImageConstant.imgScreenshot2023206x150,
+                      imagePath: ImageConstant.imgScreenshot2023173x129,//الجد
                       height: 206.v,
                       width: 150.h,
                       alignment: Alignment.bottomLeft,
@@ -179,13 +189,13 @@ class Frame108Screen extends StatelessWidget {
           ),
         ),
         bottomNavigationBar: _buildIMG(context),
-        floatingActionButton: CustomFloatingButton(
-          height: 50,
-          width: 50,
-          child: Icon(
-            Icons.add,
-          ),
-        ),
+        // floatingActionButton: CustomFloatingButton(
+        //   height: 50,
+        //   width: 50,
+        //   child: Icon(
+        //     Icons.add,
+        //   ),
+        // ),
         floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       ),
     );
@@ -210,7 +220,7 @@ class Frame108Screen extends StatelessWidget {
       ),
       child: CustomTextFormField(
         controller: emailController,
-        hintText: "البريد الإلكتروني",
+        hintText: "                        البريد الإلكتروني",
         hintStyle: theme.textTheme.titleLarge!,
         contentPadding: EdgeInsets.symmetric(
           horizontal: 9.h,
@@ -230,7 +240,7 @@ class Frame108Screen extends StatelessWidget {
       ),
       child: CustomTextFormField(
         controller: currentPasswordController,
-        hintText: "كلمة المرور الحالية",
+        hintText: "                       كلمة المرور الحالية",
         hintStyle: theme.textTheme.titleLarge!,
         textInputType: TextInputType.visiblePassword,
         obscureText: true,
@@ -253,7 +263,7 @@ class Frame108Screen extends StatelessWidget {
       ),
       child: CustomTextFormField(
         controller: newPasswordController,
-        hintText: "كلمة المرور الجديدة",
+        hintText: "                      كلمة المرور الجديدة",
         hintStyle: theme.textTheme.titleLarge!,
         textInputAction: TextInputAction.done,
         textInputType: TextInputType.visiblePassword,
