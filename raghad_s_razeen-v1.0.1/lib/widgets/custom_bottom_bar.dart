@@ -40,13 +40,14 @@ class CustomBottomBarState extends State<CustomBottomBar> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 88.v,
+      height: 76.v,
       decoration: BoxDecoration(
         border: Border.all(
-          color: theme.colorScheme.primary.withOpacity(1),
+          color: theme.colorScheme.primary.withOpacity(0.7),
           width: 1.h,
         ),
       ),
+   
       child: BottomNavigationBar(
         backgroundColor: Colors.transparent,
         showSelectedLabels: false,
@@ -59,7 +60,7 @@ class CustomBottomBarState extends State<CustomBottomBar> {
           if (bottomMenuList[index].isCircle) {
             return BottomNavigationBarItem(
               icon: Opacity(
-                opacity: 0.7,
+                opacity: 1,
                 child: CustomImageView(
                   imagePath: bottomMenuList[index].icon,
                   height: 44.adaptSize,
@@ -71,7 +72,7 @@ class CustomBottomBarState extends State<CustomBottomBar> {
           }
           return BottomNavigationBarItem(
             icon: Opacity(
-              opacity: 0.7,
+              opacity: 1,
               child: CustomImageView(
                 imagePath: bottomMenuList[index].icon,
                 height: 44.adaptSize,
@@ -79,7 +80,7 @@ class CustomBottomBarState extends State<CustomBottomBar> {
               ),
             ),
             activeIcon: Opacity(
-              opacity: 0.7,
+              opacity: 1,
               child: CustomImageView(
                 imagePath: bottomMenuList[index].activeIcon,
                 height: 40.adaptSize,
@@ -140,7 +141,7 @@ class DefaultWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Colors.white,
+     
       padding: EdgeInsets.all(10),
       child: Center(
         child: Column(

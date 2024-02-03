@@ -6,7 +6,7 @@ import 'package:raghad_s_razeen/widgets/app_bar/custom_app_bar.dart';
 import 'package:raghad_s_razeen/widgets/custom_bottom_bar.dart';
 import 'package:raghad_s_razeen/widgets/custom_floating_button.dart';
 
-class Frame164Screen extends StatelessWidget {
+class Frame164Screen extends StatelessWidget {//ميداليات
   Frame164Screen({Key? key})
       : super(
           key: key,
@@ -18,31 +18,46 @@ class Frame164Screen extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        backgroundColor: appTheme.gray50.withOpacity(0.4),
-        appBar: _buildAppBar(context),
+        extendBodyBehindAppBar: true, //زر الرجوع
+        appBar: AppBar(
+          // 1. Back Arrow Icon
+          leading: IconButton(
+            icon: Icon(Icons.arrow_back),
+            onPressed: () => Navigator.pop(context),
+          ),
+          backgroundColor: Color.fromARGB(0, 17, 7, 51),
+          elevation: 0,
+        ),
+       
         body: SizedBox(
-          width: 394.h,
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              SizedBox(height: 20.v),
-              Expanded(
-                child: SingleChildScrollView(
-                  child: Container(
-                    height: 741.v,
-                    width: 380.h,
-                    margin: EdgeInsets.only(right: 14.h),
+         height: 764.v,
+          width: double.maxFinite,
+          // child: Column(
+          //   mainAxisSize: MainAxisSize.min,
+          //   children: [
+          //     SizedBox(height: 20.v),
+          //     Expanded(
+          //       child: SingleChildScrollView(
+          //         child: Container(
+          //            padding: EdgeInsets.symmetric(
+          //           horizontal: 20.h,
+          //           vertical: 45.v,),
+          //           margin: EdgeInsets.only(right: 14.h),
                     child: Stack(
-                      alignment: Alignment.bottomLeft,
+                      alignment: Alignment.topRight,
                       children: [
                         Align(
-                          alignment: Alignment.topRight,
+                          alignment: Alignment.bottomCenter,
                           child: Container(
-                            margin: EdgeInsets.only(left: 23.h),
+                              padding: EdgeInsets.symmetric(
+                    horizontal: 20.h,
+                    vertical: 45.v,
+                  ),
                             decoration: BoxDecoration(
+                               border: Border.all(),
                               image: DecorationImage(
                                 image: AssetImage(
-                                  ImageConstant.imgGroup178,
+                                  ImageConstant.imgGroup225,//خلفيه
                                 ),
                                 fit: BoxFit.cover,
                               ),
@@ -51,6 +66,7 @@ class Frame164Screen extends StatelessWidget {
                               mainAxisSize: MainAxisSize.min,
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
+                                 SizedBox(height: 75.v),
                                 Align(
                                   alignment: Alignment.centerRight,
                                   child: SizedBox(
@@ -65,13 +81,13 @@ class Frame164Screen extends StatelessWidget {
                                             decoration:
                                                 AppDecoration.outlinePrimary3,
                                             child: Text(
-                                              "إنجازاتك",
+                                              "إنجازاتك       "    ,
                                               style:
                                                   theme.textTheme.displayMedium,
                                             ),
                                           ),
                                         ),
-                                        CustomImageView(
+                                        CustomImageView(//صوره جمب الانجازات
                                           imagePath: ImageConstant.imgPodium1,
                                           height: 75.adaptSize,
                                           width: 75.adaptSize,
@@ -83,9 +99,9 @@ class Frame164Screen extends StatelessWidget {
                                 ),
                                 SizedBox(height: 45.v),
                                 Container(
-                                  margin: EdgeInsets.only(right: 11.h),
+                                  margin: EdgeInsets.only(right: 2.h),
                                   padding: EdgeInsets.symmetric(
-                                    horizontal: 16.h,
+                                    horizontal: 23.h,
                                     vertical: 95.v,
                                   ),
                                   decoration:
@@ -97,7 +113,7 @@ class Frame164Screen extends StatelessWidget {
                                     mainAxisSize: MainAxisSize.min,
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     children: [
-                                      SizedBox(height: 20.v),
+                                      SizedBox(height: 0.v),
                                       _buildGrid(context),
                                     ],
                                   ),
@@ -132,19 +148,19 @@ class Frame164Screen extends StatelessWidget {
                       ],
                     ),
                   ),
-                ),
-              ),
-            ],
-          ),
-        ),
+                // ),
+              // ),
+            // ],
+          // ),
+        // ),
         bottomNavigationBar: _buildBottomAppBar(context),
-        floatingActionButton: CustomFloatingButton(
-          height: 44,
-          width: 44,
-          child: Icon(
-            Icons.add,
-          ),
-        ),
+        // floatingActionButton: CustomFloatingButton(
+        //   height: 44,
+        //   width: 44,
+        //   child: Icon(
+        //     Icons.add,
+        //   ),
+        // ),
         floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       ),
     );

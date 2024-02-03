@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:raghad_s_razeen/core/app_export.dart';
 import 'package:raghad_s_razeen/presentation/frame_103_screen/frame_103_screen.dart';
+import 'package:raghad_s_razeen/presentation/frame_108_screen/frame_108_screen.dart';
+import 'package:raghad_s_razeen/presentation/frame_164_screen/frame_164_screen.dart';
 import 'package:raghad_s_razeen/widgets/custom_bottom_bar.dart';
 import 'package:raghad_s_razeen/widgets/custom_floating_button.dart';
 
 class Frame107Screen extends StatelessWidget {
   //الاعدادات
-  //باقي الازرار اللي بالبدايه
   Frame107Screen({Key? key})
       : super(
           key: key,
@@ -28,6 +29,9 @@ class Frame107Screen extends StatelessWidget {
           backgroundColor: Color.fromARGB(0, 17, 7, 51),
           elevation: 0,
         ),
+
+
+        
         body: SizedBox(
           height: 764.v,
           width: double.maxFinite,
@@ -105,22 +109,21 @@ class Frame107Screen extends StatelessWidget {
                                     ),
                                      
                                     decoration: AppDecoration.outlinePrimary3,
-                                 
-        child: ElevatedButton(// الضغط
-         style: CustomButtonStyles.outlinePrimary,
-          
-                        // buttonTextStyle:
-                        //     CustomTextStyles.titleMediumBlack,
-          child: const Text('الملف الشخصي'),
-          onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => const Frame103Screen()),
-            );
-         
-          },
-         
-        ),
+                                 child: ElevatedButton(
+                onPressed: () { Navigator.push(
+               context,
+               MaterialPageRoute(builder: (context) =>  Frame108Screen()),
+            );},
+                style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.transparent,
+                    foregroundColor: Colors.black,
+                    elevation: 0,
+                    side: const BorderSide(
+                      width: 1.0,
+                      color: Color.fromARGB(0, 244, 67, 54),
+                    )),
+                child: const Text(' الملف الشخصي'))
+       
                                    ),
                                  
                                   CustomImageView(
@@ -157,10 +160,21 @@ class Frame107Screen extends StatelessWidget {
                                       bottom: 5.v,
                                     ),
                                     decoration: AppDecoration.outlinePrimary3,
-                                    child: Text(
-                                      "الميداليات",
-                                      style: theme.textTheme.titleLarge,
-                                    ),
+                                    child: ElevatedButton(
+                onPressed: () { Navigator.push(
+               context,
+               MaterialPageRoute(builder: (context) =>  Frame164Screen()),
+            );},
+                style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.transparent,
+                    foregroundColor: Colors.black,
+                    elevation: 0,
+                    side: const BorderSide(
+                      width: 1.0,
+                      color: Color.fromARGB(0, 244, 67, 54),
+                    )),
+                child: const Text('الميداليات' )     )
+       
                                   ),
                                   CustomImageView(
                                     imagePath: ImageConstant.imgImage32, //ميداليات
@@ -192,10 +206,22 @@ class Frame107Screen extends StatelessWidget {
                                       bottom: 10.v,
                                     ),
                                     decoration: AppDecoration.outlinePrimary3,
-                                    child: Text(
-                                      "تسجيل الخروج",
-                                      style: theme.textTheme.titleLarge,
-                                    ),
+                                     child: ElevatedButton(//زر تسجيل خروج
+                onPressed: () { Navigator.push(
+               context,
+               MaterialPageRoute(builder: (context) => const Frame103Screen()),
+            );},
+                style: ElevatedButton.styleFrom(
+                
+                    backgroundColor: Colors.transparent,
+                    foregroundColor: Colors.black,
+                    elevation: 0,
+                    side: const BorderSide(
+                      width: 1.0,
+                      color: Color.fromARGB(0, 244, 67, 54),
+                    )),
+                child: const Text(' تسجيل خروج'))
+        
                                   ),
                                   CustomImageView(
                                     imagePath: ImageConstant.imgImage30,//تسجيل خروج
