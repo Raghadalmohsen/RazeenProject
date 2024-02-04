@@ -50,14 +50,14 @@ class Frame164Screen extends StatelessWidget {//ميداليات
                           alignment: Alignment.bottomCenter,
                           child: Container(
                               padding: EdgeInsets.symmetric(
-                    horizontal: 20.h,
-                    vertical: 45.v,
+                    horizontal: 30.h,//غيرنا 20
+                    vertical: 65.v,//غيرنا 45
                   ),
                             decoration: BoxDecoration(
                                border: Border.all(),
                               image: DecorationImage(
                                 image: AssetImage(
-                                  ImageConstant.imgGroup225,//خلفيه
+                                  ImageConstant.imgImage651,//خلفيه
                                 ),
                                 fit: BoxFit.cover,
                               ),
@@ -66,11 +66,11 @@ class Frame164Screen extends StatelessWidget {//ميداليات
                               mainAxisSize: MainAxisSize.min,
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                 SizedBox(height: 75.v),
+                                 SizedBox(height: 55.v),//غ 75
                                 Align(
                                   alignment: Alignment.centerRight,
                                   child: SizedBox(
-                                    height: 92.v,
+                                    height: 65.v,
                                     width: 219.h,
                                     child: Stack(
                                       alignment: Alignment.topRight,
@@ -89,15 +89,15 @@ class Frame164Screen extends StatelessWidget {//ميداليات
                                         ),
                                         CustomImageView(//صوره جمب الانجازات
                                           imagePath: ImageConstant.imgPodium1,
-                                          height: 75.adaptSize,
-                                          width: 75.adaptSize,
+                                          height: 65.adaptSize,
+                                          width: 65.adaptSize,
                                           alignment: Alignment.topRight,
                                         ),
                                       ],
                                     ),
                                   ),
                                 ),
-                                SizedBox(height: 45.v),
+                                SizedBox(height: 20.v),/////غ
                                 Container(
                                   margin: EdgeInsets.only(right: 2.h),
                                   padding: EdgeInsets.symmetric(
@@ -123,26 +123,26 @@ class Frame164Screen extends StatelessWidget {//ميداليات
                           ),
                         ),
                         CustomImageView(
-                          imagePath: ImageConstant.imgOutput13,
+                          imagePath: ImageConstant.imgOutput13,//صورة رزين
                           height: 134.v,
                           width: 128.h,
                           alignment: Alignment.bottomLeft,
                         ),
                         CustomImageView(
-                          imagePath: ImageConstant.imgFireworks4,
+                          imagePath: ImageConstant.imgFireworks4,//صورة الي ورا النجمة
                           height: 124.v,
                           width: 127.h,
                           alignment: Alignment.topLeft,
-                          margin: EdgeInsets.only(top: 75.v),
+                          margin: EdgeInsets.only(top: 165.v),
                         ),
                         CustomImageView(
-                          imagePath: ImageConstant.imgImage23,
+                          imagePath: ImageConstant.imgImage23,//النجمة
                           height: 124.v,
                           width: 128.h,
                           alignment: Alignment.topLeft,
                           margin: EdgeInsets.only(
                             left: 1.h,
-                            top: 75.v,
+                            top: 165.v,
                           ),
                         ),
                       ],
@@ -167,18 +167,18 @@ class Frame164Screen extends StatelessWidget {//ميداليات
   }
 
   /// Section Widget
-  PreferredSizeWidget _buildAppBar(BuildContext context) {
-    return CustomAppBar(
-      leadingWidth: 394.h,
-      leading: AppbarLeadingImage(
-        imagePath: ImageConstant.imgArrow3,
-        margin: EdgeInsets.fromLTRB(37.h, 26.v, 327.h, 26.v),
-      ),
-    );
-  }
+  // PreferredSizeWidget _buildAppBar(BuildContext context) {
+  //   return CustomAppBar(
+  //     leadingWidth: 394.h,
+  //     leading: AppbarLeadingImage(
+  //       imagePath: ImageConstant.imgArrow3,// القديم صورة السهم
+  //       margin: EdgeInsets.fromLTRB(37.h, 26.v, 327.h, 26.v),
+  //     ),
+  //   );
+  // }
 
   /// Section Widget
-  Widget _buildGrid(BuildContext context) {
+  Widget _buildGrid(BuildContext context) {//الميداليات الخمسة
     return Padding(
       padding: EdgeInsets.only(left: 1.h),
       child: GridView.builder(
@@ -192,7 +192,7 @@ class Frame164Screen extends StatelessWidget {//ميداليات
         physics: NeverScrollableScrollPhysics(),
         itemCount: 5,
         itemBuilder: (context, index) {
-          return Grid1ItemWidget();
+         return Grid1ItemWidget();
         },
       ),
     );

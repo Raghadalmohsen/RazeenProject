@@ -49,7 +49,7 @@ class Grid1ItemWidget extends StatelessWidget {
                 alignment: Alignment.bottomCenter,
                 children: [
                   CustomImageView(
-                    imagePath: ImageConstant.imgImg08033,
+                    imagePath: ImageConstant.imgImg08033,//صور الميداليات الذهبية
                     height: 94.v,
                     width: 52.h,
                     alignment: Alignment.center,
@@ -77,7 +77,7 @@ class Grid1ItemWidget extends StatelessWidget {
                             ),
                           ),
                           CustomImageView(
-                            imagePath: ImageConstant.imgImage174,
+                            imagePath: ImageConstant.imgImage174,//الي داخل الميدالية
                             height: 20.adaptSize,
                             width: 20.adaptSize,
                             alignment: Alignment.topCenter,
