@@ -17,12 +17,40 @@ class Frame131Screen extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        appBar: _buildAppBar(context),
+        extendBodyBehindAppBar: true, //زر الرجوع
+        appBar: AppBar(
+          // 1. Back Arrow Icon
+          leading: IconButton(
+            icon: Icon(Icons.arrow_back),
+            onPressed: () => Navigator.pop(context),
+          ),
+          backgroundColor: Color.fromARGB(0, 17, 7, 51),
+          elevation: 0,
+        ),
+
+
+
+        bottomNavigationBar: _buildBottomAppBar(context),
+        floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
         body: Container(
-          height: 666.v,
-          width: double.maxFinite,
-          padding: EdgeInsets.symmetric(vertical: 3.v),
-          child: Stack(
+            decoration: BoxDecoration(
+            
+                    border: Border.all(),
+                    image: DecorationImage(
+                      image: AssetImage(
+                        ImageConstant.imgGroup225,//خلفيه
+                       
+                      ),
+                      fit: BoxFit.cover,
+                    ),
+                  
+                  ),
+  child: Container(
+                    decoration: AppDecoration.outlinePrimary1.copyWith(
+                      border: Border.all(),
+                    ),
+                    
+          child: Stack(      
             alignment: Alignment.topRight,
             children: [
               Align(
@@ -30,22 +58,10 @@ class Frame131Screen extends StatelessWidget {
                 child: Container(
                   margin: EdgeInsets.only(
                     left: 31.h,
-                    top: 57.v,
+                    top: 125.v,//مكان الاشياء
                     right: 40.h,
                   ),
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadiusStyle.roundedBorder33,
-                    image: DecorationImage(
-                      image: AssetImage(
-                        ImageConstant.imgGroup225,
-                      ),
-                      fit: BoxFit.cover,
-                    ),
-                  ),
-                  child: Container(
-                    decoration: AppDecoration.outlinePrimary1.copyWith(
-                      borderRadius: BorderRadiusStyle.roundedBorder33,
-                    ),
+                 
                     child: Column(
                       mainAxisSize: MainAxisSize.min,
                       children: [
@@ -206,21 +222,24 @@ class Frame131Screen extends StatelessWidget {
                         ),
                       ],
                     ),
-                  ),
+                  // ),
                 ),
               ),
               CustomImageView(
                 imagePath: ImageConstant.imgScreenshot2023,
                 height: 141.v,
                 width: 103.h,
-                alignment: Alignment.topRight,
+                  margin: EdgeInsets.only(
+                    top: 60.v,
+                    right: 5.h,
+                  ),
               ),
               Align(
                 alignment: Alignment.topRight,
                 child: Container(
                   width: 165.h,
                   margin: EdgeInsets.only(
-                    top: 86.v,
+                    top: 155.v,
                     right: 88.h,
                   ),
                   decoration: AppDecoration.outlinePrimary3,
@@ -233,17 +252,11 @@ class Frame131Screen extends StatelessWidget {
                 ),
               ),
             ],
-          ),
+          // ),
         ),
-        bottomNavigationBar: _buildBottomAppBar(context),
-        floatingActionButton: CustomFloatingButton(
-          height: 44,
-          width: 44,
-          child: Icon(
-            Icons.add,
-          ),
         ),
-        floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+       
+      ),
       ),
     );
   }
