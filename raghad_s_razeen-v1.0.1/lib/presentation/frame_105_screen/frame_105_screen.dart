@@ -33,8 +33,11 @@ class Frame105Screen extends StatelessWidget {
           backgroundColor: Color.fromARGB(0, 17, 7, 51),
           elevation: 0,
         ),
+
         resizeToAvoidBottomInset: false,
+       
         body: SizedBox(
+          
           width: SizeUtils.width,
           child: SingleChildScrollView(
             padding: EdgeInsets.only(
@@ -57,16 +60,16 @@ class Frame105Screen extends StatelessWidget {
                           horizontal: 20.h,
                           vertical: 45.v,
                         ),
-                        decoration: BoxDecoration(
-                          border: Border.all(),
-                          image: DecorationImage(
-                            image: AssetImage(
-                              ImageConstant.imgGroup225,
-                             //الخلفيه
-                            ),
-                            fit: BoxFit.cover,
-                          ),
-                        ),
+                        // decoration: BoxDecoration(
+                        //   border: Border.all(),
+                        //   image: DecorationImage(
+                        //     image: AssetImage(
+                        //       ImageConstant.imgGroup225,
+                        //      //الخلفيه
+                        //     ),
+                        //     fit: BoxFit.cover,
+                        //   ),
+                        // ),
                         child: Column(
                           mainAxisSize: MainAxisSize.min,
                           crossAxisAlignment: CrossAxisAlignment.start,

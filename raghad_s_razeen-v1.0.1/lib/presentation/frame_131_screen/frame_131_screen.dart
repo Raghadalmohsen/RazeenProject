@@ -30,6 +30,7 @@ class Frame131Screen extends StatelessWidget {
 
 
 
+        extendBody: true,
         bottomNavigationBar: _buildBottomAppBar(context),
         floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
         body: Container(
@@ -226,7 +227,7 @@ class Frame131Screen extends StatelessWidget {
                 ),
               ),
               CustomImageView(
-                imagePath: ImageConstant.imgScreenshot2023,
+                imagePath: ImageConstant.imgScreenshot2023,//رزين
                 height: 141.v,
                 width: 103.h,
                   margin: EdgeInsets.only(

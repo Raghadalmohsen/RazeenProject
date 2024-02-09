@@ -40,16 +40,15 @@ class CustomBottomBarState extends State<CustomBottomBar> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 76.v,
+      height: 60.v,
       decoration: BoxDecoration(
-        border: Border.all(
-          color: theme.colorScheme.primary.withOpacity(0.7),
-          width: 1.h,
-        ),
+        borderRadius:
+       BorderRadiusStyle.roundedBorder33,
+                                      
       ),
    
       child: BottomNavigationBar(
-        backgroundColor: Colors.transparent,
+        backgroundColor: Color.fromARGB(153, 255, 255, 255),
         showSelectedLabels: false,
         showUnselectedLabels: false,
         selectedFontSize: 0,
@@ -65,6 +64,9 @@ class CustomBottomBarState extends State<CustomBottomBar> {
                   imagePath: bottomMenuList[index].icon,
                   height: 44.adaptSize,
                   width: 44.adaptSize,
+                   margin: EdgeInsets.only(
+                    bottom: 80.v,
+                   ),
                 ),
               ),
               label: '',
@@ -77,6 +79,7 @@ class CustomBottomBarState extends State<CustomBottomBar> {
                 imagePath: bottomMenuList[index].icon,
                 height: 44.adaptSize,
                 width: 44.adaptSize,
+                
               ),
             ),
             activeIcon: Opacity(
