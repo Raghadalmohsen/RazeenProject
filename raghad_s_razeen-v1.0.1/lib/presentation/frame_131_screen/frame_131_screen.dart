@@ -79,12 +79,14 @@ class Frame131Screen extends StatelessWidget {
                                 child: Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
+                                    
                                     Container(
                                       margin: EdgeInsets.only(right: 16.h),
                                       padding: EdgeInsets.symmetric(
                                         horizontal: 1.h,
                                         vertical: 14.v,
                                       ),
+                                    
                                       decoration: AppDecoration.outlinePrimary2
                                           .copyWith(
                                         borderRadius:
