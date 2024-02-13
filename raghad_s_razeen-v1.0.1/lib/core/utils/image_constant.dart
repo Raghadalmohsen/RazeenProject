@@ -230,6 +230,20 @@ class ImageConstant {
 
   // Frame EightySix images
   static String imgImage104359x634 = '$imagePath/img_image_104_359x634.png';
+  static String imgScreenshot20240211815x393= '$imagePath/img_screenshot_2024_02_11_815x393.png';
+  static String imgImage238= '$imagePath/img_image_238.png';
+  static String imgImage250= '$imagePath/img_image_250.png';
+  static String imgImage252= '$imagePath/img_image_252.png';
+  static String imgImage249= '$imagePath/img_image_249.png';
+  static String imgImage251= '$imagePath/img_image_251.png';
+  static String imgImage253= '$imagePath/image 253.png';// البيت الجديد الي ما انضاف 
+ 
+
+
+
+
+
+
 
   // Frame EightyFive images
   static String imgImage59 = '$imagePath/img_image_59.png';

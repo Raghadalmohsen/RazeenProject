@@ -1,83 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:raghad_s_razeen/core/app_export.dart';
+import 'package:raghad_s_razeen/widgets/app_bar/appbar_leading_image.dart';
+import 'package:raghad_s_razeen/widgets/app_bar/custom_app_bar.dart';
+import 'package:raghad_s_razeen/widgets/custom_bottom_bar.dart';
+import 'package:raghad_s_razeen/widgets/custom_floating_button.dart';
 
-// class FrameEightysixScreen extends StatelessWidget {
-//   const FrameEightysixScreen({Key? key})
-//       : super(
-//           key: key,
-//         );
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return SafeArea(
-//       child: Scaffold(
-//         body: SizedBox(
-//           height: 359.v,
-//           width: 634.h,
-//           child: Stack(
-//             alignment: Alignment.center,
-//             children: [
-//               CustomImageView(
-//                 imagePath: ImageConstant.imgImage104359x634,
-//                 height: 359.v,
-//                 width: 634.h,
-//                 alignment: Alignment.center,
-//               ),
-//               Align(
-//                 alignment: Alignment.center,
-//                 child: Container(
-//                   padding: EdgeInsets.symmetric(
-//                     horizontal: 215.h,
-//                     vertical: 4.v,
-//                   ),
-//                   decoration: AppDecoration.outlinePrimary11.copyWith(
-//                     borderRadius: BorderRadiusStyle.roundedBorder33,
-//                   ),
-//                   child: Column(
-//                     mainAxisSize: MainAxisSize.min,
-//                     mainAxisAlignment: MainAxisAlignment.end,
-//                     children: [
-//                       Spacer(),
-//                       Row(
-//                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
-//                         children: [
-//                           CustomImageView(
-//                             imagePath: ImageConstant.imgImg08961,
-//                             height: 40.adaptSize,
-//                             width: 40.adaptSize,
-//                           ),
-//                           CustomImageView(
-//                             imagePath: ImageConstant.imgMedal22,
-//                             height: 40.adaptSize,
-//                             width: 40.adaptSize,
-//                           ),
-//                         ],
-//                       ),
-//                       SizedBox(height: 5.v),
-//                       Divider(
-//                         indent: 29.h,
-//                         endIndent: 30.h,
-//                       ),
-//                     ],
-//                   ),
-//                 ),
-//               ),
-//               CustomImageView(
-//                 imagePath: ImageConstant.imgImg08981,
-//                 height: 44.adaptSize,
-//                 width: 44.adaptSize,
-//                 alignment: Alignment.bottomCenter,
-//                 margin: EdgeInsets.only(bottom: 35.v),
-//               ),
-//             ],
-//           ),
-//         ),
-//       ),
-//     );
-//   }
-// }
-
-class  FrameEightysixScreen extends StatelessWidget {
+class  FrameEightysixScreen extends StatelessWidget { // صفحة الماب 
   FrameEightysixScreen({Key? key})
       : super(
           key: key,
@@ -90,100 +18,132 @@ class  FrameEightysixScreen extends StatelessWidget {
     return SafeArea(
       child: Scaffold(
         body: SizedBox(
+          //horizontalScroll
+
           height: SizeUtils.height,
           width: double.maxFinite,
           child: Stack(
             alignment: Alignment.center,
+            
+            
             children: [
+
+              //rawa idea : Container( decoration: BoxDecoration(image:DecorationImage(image: AssetImage('assets/images/img_screenshot_2024_02_11_815x393.png'),) ), )
+               //image:AssetImage('assets/images/img_screenshot_2024_02_11_815x393.png'),
+              //body:center(child: Image.asset(''))
               CustomImageView(
-                //imagePath: ImageConstant.imgScreenshot20240211815x393,
+                imagePath: ImageConstant.imgScreenshot20240211815x393,//الخلفيه للماب 
+                //imagePath: ImageConstant.imgImage65, تضبط 
+                // image:AssetImage('assets/images/img_screenshot_2024_02_11_815x393.png'),
                 height: 815.v,
                 width: 393.h,
                 alignment: Alignment.topCenter,
-              ),
+             ),
               Align(
                 alignment: Alignment.center,
-                child: Column(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    SizedBox(height: 23.v),
-                    SizedBox(
-                      height: 792.v,
-                      width: double.maxFinite,
-                      child: Stack(
-                        alignment: Alignment.topRight,
-                        children: [
-                          Align(
-                            alignment: Alignment.topLeft,
-                            child: Padding(
-                              padding: EdgeInsets.only(
-                                right: 33.h,
-                                bottom: 74.v,
-                              ),
-                              child: Column(
-                                mainAxisSize: MainAxisSize.min,
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  CustomImageView(
-                                   // imagePath: ImageConstant.imgImage238,
-                                    height: 40.adaptSize,
-                                    width: 40.adaptSize,
-                                    alignment: Alignment.centerRight,
-                                  ),
-                                  Spacer(
-                                    flex: 42,
-                                  ),
-                                  CustomImageView(
-                                    //imagePath: ImageConstant.imgImage250,
-                                    height: 139.v,
-                                    width: 206.h,
-                                  ),
-                                  Spacer(
-                                    flex: 57,
-                                  ),
-                                  CustomImageView(
-                                    //imagePath: ImageConstant.imgImage252,
-                                    height: 148.v,
-                                    width: 216.h,
-                                    radius: BorderRadius.circular(
-                                      12.h,
+                child: SingleChildScrollView(//for overflow
+                  child: Column(
+                    
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      SizedBox(height: 23.v),
+                      SizedBox(
+                        height: 792.v,
+                        width: double.maxFinite,
+                        child: Stack(
+                          alignment: Alignment.topRight,
+                          children: [
+                            Align(
+                              alignment: Alignment.topLeft,
+                              child: Padding(
+                                padding: EdgeInsets.only(
+                                  right: 33.h,
+                                  bottom: 74.v,
+                                ),
+                                child: Column(
+                                  mainAxisSize: MainAxisSize.min,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                  
+                                     CustomImageView(
+                                      imagePath: ImageConstant.imgImage253,//البيت الاحمر 
+                                      height: 129.adaptSize,//v
+                                      width: 175.adaptSize,//v
+                                      alignment: Alignment.topLeft,
+                                      //margin: EdgeInsets.only(top:100),// added
                                     ),
-                                  ),
-                                ],
+                                    Spacer(
+                                      flex: 135,
+                                    ),
+                                    
+                                    // CustomImageView(
+                                    //  imagePath: ImageConstant.imgImage238,     //الاعدادات 
+                            
+                                    //   height: 40.adaptSize,
+                                    //   width: 40.adaptSize,
+                                    //   alignment: Alignment.centerRight,
+                                    // ),
+                                    // Spacer(
+                                    //   flex: 42,
+                                    // ),
+                                    CustomImageView(
+                                      imagePath: ImageConstant.imgImage250,//البيت الوردي الفاتح 
+                                      height: 135.v,
+                                      width: 200.h,
+                                      margin: EdgeInsets.only(bottom: 213 , left: 9),//added227
+                                    ),
+                                    Spacer(
+                                      flex: 57,
+                                    ),
+                                    CustomImageView(
+                                      imagePath: ImageConstant.imgImage252,// البيت الازرق الغامق 
+                                      height: 148.v,
+                                      width: 216.h,
+                                      radius: BorderRadius.circular(
+                                        12.h,
+                                      ),
+                                    ),
+                                  ],
+                                ),
                               ),
                             ),
-                          ),
-                          CustomImageView(
-                           // imagePath: ImageConstant.imgImage249,
-                            height: 129.v,
-                            width: 175.h,
-                            alignment: Alignment.topRight,
-                            margin: EdgeInsets.only(top: 78.v),
-                          ),
-                          CustomImageView(
-                            //imagePath: ImageConstant.imgImage251,
-                            height: 138.v,
-                            width: 211.h,
-                            alignment: Alignment.bottomRight,
-                            margin: EdgeInsets.only(bottom: 27.v),
-                          ),
-                          CustomImageView(
-                            //imagePath: ImageConstant.imgImg089835,
-                            height: 4.v,
-                            width: 44.h,
-                            alignment: Alignment.bottomCenter,
-                          ),
-                        ],
+                            CustomImageView(
+                             imagePath: ImageConstant.imgImage249,// البيت الاصفر 
+                              height: 129.v,
+                              width: 175.h,
+                              alignment: Alignment.topRight,
+                              margin: EdgeInsets.only(top: 78.v),
+                            ),
+                            CustomImageView(
+                              imagePath: ImageConstant.imgImage251,// البيت السماوي 
+                              height: 138.v,
+                              width: 211.h,
+                              alignment: Alignment.bottomRight,
+                              margin: EdgeInsets.only(bottom: 295.v),
+                            ),
+                            CustomImageView(
+                             // imagePath: ImageConstant.imgImg089835, البيت الصغير 
+                              height: 4.v,
+                              width: 44.h,
+                              alignment: Alignment.bottomCenter,
+                            ),
+                          ],
+                        ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
               ),
             ],
+            
           ),
         ),
         // bottomNavigationBar: _buildBottomBar(context),
         // floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+
+        extendBody: true,
+        bottomNavigationBar: _buildBottomAppBar(context),
+        floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       ),
     );
   }
@@ -197,6 +157,22 @@ class  FrameEightysixScreen extends StatelessWidget {
   //     },
   //   );
   // }
+
+  PreferredSizeWidget _buildAppBar(BuildContext context) {
+    return CustomAppBar(
+      leadingWidth: double.maxFinite,
+      leading: AppbarLeadingImage(
+        imagePath: ImageConstant.imageNotFound,
+        margin: EdgeInsets.fromLTRB(24.h, 26.v, 339.h, 26.v),
+      ),
+    );
+  }
+
+  Widget _buildBottomAppBar(BuildContext context) {
+    return CustomBottomBar(
+      onChanged: (BottomBarEnum type) {},
+    );
+  }
 
   ///Handling route based on bottom click actions
   // String getCurrentRoute(BottomBarEnum type) {

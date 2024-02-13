@@ -48,7 +48,8 @@ class CustomBottomBarState extends State<CustomBottomBar> {
       ),
    
       child: BottomNavigationBar(
-        backgroundColor: Color.fromARGB(153, 255, 255, 255),
+        //backgroundColor: Color.fromARGB(153, 255, 255, 255),
+        backgroundColor: Color.fromARGB(255, 255, 255, 255),
         showSelectedLabels: false,
         showUnselectedLabels: false,
         selectedFontSize: 0,
