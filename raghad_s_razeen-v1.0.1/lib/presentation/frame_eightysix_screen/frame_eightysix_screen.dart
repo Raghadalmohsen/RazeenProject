@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:raghad_s_razeen/core/app_export.dart';
+import 'package:raghad_s_razeen/presentation/frame_103_screen/frame_103_screen.dart';
+import 'package:raghad_s_razeen/presentation/frame_107_screen/frame_107_screen.dart';
+import 'package:raghad_s_razeen/presentation/frame_131_screen/frame_131_screen.dart';
 import 'package:raghad_s_razeen/widgets/app_bar/appbar_leading_image.dart';
 import 'package:raghad_s_razeen/widgets/app_bar/custom_app_bar.dart';
 import 'package:raghad_s_razeen/widgets/custom_bottom_bar.dart';
@@ -17,6 +20,22 @@ class  FrameEightysixScreen extends StatelessWidget { // صفحة الماب
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        //  extendBodyBehindAppBar: true, //زر الرجوع
+        // appBar: AppBar(
+        //   // 1. Back Arrow Icon
+        //   leading: IconButton(
+        //    iconSize: 40,
+        //    color: const Color.fromARGB(255, 255, 255, 255),
+        //    padding: EdgeInsets.only(left:360),
+        //     icon: Icon(Icons.settings),
+        //      onPressed: () { Navigator.push(//مايشتغل
+        //        context,
+        //        MaterialPageRoute(builder: (context) =>  Frame103Screen()),
+        //     );},
+        //   ),
+        //   backgroundColor: Color.fromARGB(0, 213, 204, 243),
+        //   elevation: 0,
+        // ),
         body: SizedBox(
           //horizontalScroll
 
@@ -65,16 +84,44 @@ class  FrameEightysixScreen extends StatelessWidget { // صفحة الماب
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                   
-                                     CustomImageView(
-                                      imagePath: ImageConstant.imgImage253,//البيت الاحمر 
-                                      height: 129.adaptSize,//v
-                                      width: 175.adaptSize,//v
-                                      alignment: Alignment.topLeft,
-                                      //margin: EdgeInsets.only(top:100),// added
+               Container(
+                                     
+                                    margin: EdgeInsets.only(
+                                      right: 200.v,
+                                      bottom: 68.v,
                                     ),
-                                    Spacer(
-                                      flex: 135,
-                                    ),
+                                    
+                                       height: 135.v,
+                                     width: 200.h,
+                                    decoration: AppDecoration.outlinePrimary3,
+                                 child: ElevatedButton(
+                onPressed: () { Navigator.push(
+               context,
+               MaterialPageRoute(builder: (context) =>  Frame103Screen()),
+            );},
+                style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.transparent,
+                    foregroundColor: Colors.black,
+                    elevation: 0,
+                    side: const BorderSide(
+                      width: 1.0,
+                      color: Color.fromARGB(0, 244, 67, 54),
+                      
+                    )),
+                
+                 child:Image.asset(ImageConstant.imgImage253)),//بيت احمر
+                 
+                 ),
+                                    //  CustomImageView(
+                                    //   imagePath: ImageConstant.imgImage253,//البيت الاحمر 
+                                    //   height: 129.adaptSize,//v
+                                    //   width: 175.adaptSize,//v
+                                    //   alignment: Alignment.topLeft,
+                                    //   //margin: EdgeInsets.only(top:100),// added
+                                    // ),
+                                    // Spacer(
+                                    //   flex: 135,
+                                    // ),
                                     
                                     // CustomImageView(
                                     //  imagePath: ImageConstant.imgImage238,     //الاعدادات 
@@ -86,47 +133,162 @@ class  FrameEightysixScreen extends StatelessWidget { // صفحة الماب
                                     // Spacer(
                                     //   flex: 42,
                                     // ),
-                                    CustomImageView(
-                                      imagePath: ImageConstant.imgImage250,//البيت الوردي الفاتح 
-                                      height: 135.v,
-                                      width: 200.h,
-                                      margin: EdgeInsets.only(bottom: 213 , left: 9),//added227
+
+               Container(
+                                     
+                                    margin: EdgeInsets.only(
+                                      left: 8.v,
+                                      bottom: 232.v,
                                     ),
-                                    Spacer(
-                                      flex: 57,
-                                    ),
-                                    CustomImageView(
-                                      imagePath: ImageConstant.imgImage252,// البيت الازرق الغامق 
-                                      height: 148.v,
-                                      width: 216.h,
-                                      radius: BorderRadius.circular(
-                                        12.h,
-                                      ),
-                                    ),
+                                       height: 135.v,
+                                     width: 200.h,
+                                    decoration: AppDecoration.outlinePrimary3,
+                                 child: ElevatedButton(
+                onPressed: () { Navigator.push(
+               context,
+               MaterialPageRoute(builder: (context) =>  Frame103Screen()),
+            );},
+                style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.transparent,
+                    foregroundColor: Colors.black,
+                    elevation: 0,
+                    side: const BorderSide(
+                      width: 1.0,
+                      color: Color.fromARGB(0, 244, 67, 54),
+                    )),
+                
+                 child:Image.asset(ImageConstant.imgImage250))//بيت وردي فاتح
+     
+                                   ),
+                                 
+                                
+                       Container(
+                     
+                                       height: 148.v,
+                                     width: 216.h,
+                                    decoration: AppDecoration.outlinePrimary3,
+                                 child: ElevatedButton(
+                onPressed: () { Navigator.push(
+               context,
+               MaterialPageRoute(builder: (context) =>  Frame103Screen()),
+            );},
+                style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.transparent,
+                    foregroundColor: Colors.black,
+                    elevation: 0,
+                    side: const BorderSide(
+                      width: 1.0,
+                      color: Color.fromARGB(0, 244, 67, 54),
+                    )
+                    ),
+                
+                 child:Image.asset(ImageConstant.imgImage252))//بيت ازرق غامق
+     
+                                   ),
+
+                                    // CustomImageView(
+                                    //   imagePath: ImageConstant.imgImage250,//البيت الوردي الفاتح 
+                                    //   height: 135.v,
+                                    //   width: 200.h,
+                                    //   margin: EdgeInsets.only(bottom: 213 , left: 9),//added227
+                                    // ),
+                                    // Spacer(
+                                    //   flex: 57,
+                                    // ),
+                                    
+                                    // CustomImageView(
+                                    //   imagePath: ImageConstant.imgImage252,// البيت الازرق الغامق 
+                                    //   height: 148.v,
+                                    //   width: 216.h,
+                                    //   radius: BorderRadius.circular(
+                                    //     12.h,
+                                    //   ),
+                                    // ),
                                   ],
                                 ),
                               ),
                             ),
-                            CustomImageView(
-                             imagePath: ImageConstant.imgImage249,// البيت الاصفر 
-                              height: 129.v,
-                              width: 175.h,
-                              alignment: Alignment.topRight,
-                              margin: EdgeInsets.only(top: 78.v),
-                            ),
-                            CustomImageView(
-                              imagePath: ImageConstant.imgImage251,// البيت السماوي 
-                              height: 138.v,
-                              width: 211.h,
-                              alignment: Alignment.bottomRight,
-                              margin: EdgeInsets.only(bottom: 295.v),
-                            ),
-                            CustomImageView(
-                             // imagePath: ImageConstant.imgImg089835, البيت الصغير 
-                              height: 4.v,
-                              width: 44.h,
-                              alignment: Alignment.bottomCenter,
-                            ),
+             Container(
+                                     
+                                    margin: EdgeInsets.only(
+                                    left: 159,
+                                      top: 70.v,
+                                    ),
+                                    
+                                       height: 129.v,
+                                     width: 175.h,
+                                    decoration: AppDecoration.outlinePrimary3,
+                                 child: ElevatedButton(
+                onPressed: () { Navigator.push(
+               context,
+               MaterialPageRoute(builder: (context) =>  Frame103Screen()),
+            );},
+                style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.transparent,
+                    foregroundColor: Colors.black,
+                    elevation: 0,
+                    side: const BorderSide(
+                      width: 1.0,
+                      color: Color.fromARGB(0, 244, 67, 54),
+                      
+                    )),
+                
+                 child:Image.asset(ImageConstant.imgImage249)),//بيت اصفر
+                 
+                 ),
+
+
+
+
+                            // CustomImageView(
+                            //  imagePath: ImageConstant.imgImage249,// البيت الاصفر 
+                            //   height: 129.v,
+                            //   width: 175.h,
+                            //   alignment: Alignment.topRight,
+                            //   margin: EdgeInsets.only(top: 78.v),
+                            // ),
+                                           
+             Container(
+                                     
+                                    margin: EdgeInsets.only(
+                                    left: 159,
+                                      top: 360.v,
+                                    ),
+                                    
+                                       height: 140.v,
+                                     width: 210.h,
+                                    decoration: AppDecoration.outlinePrimary3,
+                                 child: ElevatedButton(
+                onPressed: () { Navigator.push(
+               context,
+               MaterialPageRoute(builder: (context) =>  Frame131Screen()),
+            );},
+                style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.transparent,
+                    foregroundColor: Colors.black,
+                    elevation: 0,
+                    side: const BorderSide(
+                      width: 1.0,
+                      color: Color.fromARGB(0, 244, 67, 54),
+                      
+                    )),
+                
+                 child:Image.asset(ImageConstant.imgImage251)),//بيت سماوي
+                 
+                 ),
+                            // CustomImageView(
+                            //   imagePath: ImageConstant.imgImage251,// البيت السماوي 
+                            //   height: 138.v,
+                            //   width: 211.h,
+                            //   alignment: Alignment.bottomRight,
+                            //   margin: EdgeInsets.only(bottom: 295.v),
+                            // ),
+                            // CustomImageView(
+                            //  // imagePath: ImageConstant.imgImg089835, البيت الصغير 
+                            //   height: 4.v,
+                            //   width: 44.h,
+                            //   alignment: Alignment.bottomCenter,
+                            // ),
                           ],
                         ),
                       ),
@@ -158,15 +320,15 @@ class  FrameEightysixScreen extends StatelessWidget { // صفحة الماب
   //   );
   // }
 
-  PreferredSizeWidget _buildAppBar(BuildContext context) {
-    return CustomAppBar(
-      leadingWidth: double.maxFinite,
-      leading: AppbarLeadingImage(
-        imagePath: ImageConstant.imageNotFound,
-        margin: EdgeInsets.fromLTRB(24.h, 26.v, 339.h, 26.v),
-      ),
-    );
-  }
+  // PreferredSizeWidget _buildAppBar(BuildContext context) {
+  //   return CustomAppBar(
+  //     leadingWidth: double.maxFinite,
+  //     leading: AppbarLeadingImage(
+  //       imagePath: ImageConstant.imageNotFound,
+  //       margin: EdgeInsets.fromLTRB(24.h, 26.v, 339.h, 26.v),
+  //     ),
+  //   );
+  // }
 
   Widget _buildBottomAppBar(BuildContext context) {
     return CustomBottomBar(

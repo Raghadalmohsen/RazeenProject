@@ -21,10 +21,13 @@ class Frame131Screen extends StatelessWidget {
         appBar: AppBar(
           // 1. Back Arrow Icon
           leading: IconButton(
-            icon: Icon(Icons.arrow_back),
+           iconSize: 40,
+           color: const Color.fromARGB(255, 255, 255, 255),
+           padding: EdgeInsets.only(left:360),
+            icon: Icon(Icons.arrow_circle_right_outlined),
             onPressed: () => Navigator.pop(context),
           ),
-          backgroundColor: Color.fromARGB(0, 17, 7, 51),
+          backgroundColor: Color.fromARGB(0, 213, 204, 243),
           elevation: 0,
         ),
 

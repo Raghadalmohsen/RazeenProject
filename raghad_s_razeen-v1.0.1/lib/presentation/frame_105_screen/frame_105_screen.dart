@@ -27,12 +27,14 @@ class Frame105Screen extends StatelessWidget {
         appBar: AppBar(
           // 1. Back Arrow Icon
           leading: IconButton(
-            icon: Icon(Icons.arrow_back),
+           iconSize: 40,
+            icon: Icon(Icons.arrow_circle_right),
             onPressed: () => Navigator.pop(context),
           ),
           backgroundColor: Color.fromARGB(0, 17, 7, 51),
           elevation: 0,
         ),
+
 
         resizeToAvoidBottomInset: false,
        
@@ -74,11 +76,6 @@ class Frame105Screen extends StatelessWidget {
                           mainAxisSize: MainAxisSize.min,
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            // CustomImageView( //بيحذف
-                            //   imagePath: ImageConstant.imageNotFound,
-                            //   height: 3.v,
-                            //   width: 47.h,
-                            // ),
                             SizedBox(height: 75.v),
                             Container(
                               margin: EdgeInsets.only(

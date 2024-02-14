@@ -24,7 +24,8 @@ class Frame107Screen extends StatelessWidget {
         appBar: AppBar(
           // 1. Back Arrow Icon
           leading: IconButton(
-            icon: Icon(Icons.arrow_back),
+           iconSize: 40,
+            icon: Icon(Icons.arrow_circle_right),
             onPressed: () => Navigator.pop(context),
           ),
           backgroundColor: Color.fromARGB(0, 17, 7, 51),
