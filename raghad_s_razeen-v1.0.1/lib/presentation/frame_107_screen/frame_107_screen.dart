@@ -18,13 +18,14 @@ class Frame107Screen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
     return SafeArea(
       child: Scaffold(
         extendBodyBehindAppBar: true, //زر الرجوع
         appBar: AppBar(
           // 1. Back Arrow Icon
           leading: IconButton(
-           iconSize: 40,
+            iconSize: 40,
             icon: Icon(Icons.arrow_circle_right),
             onPressed: () => Navigator.pop(context),
           ),
@@ -32,8 +33,6 @@ class Frame107Screen extends StatelessWidget {
           elevation: 0,
         ),
 
-
-        
         body: SizedBox(
           height: 764.v,
           width: double.maxFinite,
@@ -94,40 +93,41 @@ class Frame107Screen extends StatelessWidget {
                               child: Row(
                                 mainAxisAlignment: MainAxisAlignment.end,
                                 crossAxisAlignment: CrossAxisAlignment.start,
-
                                 children: [
-          //                                GestureDetector(
-          // onTap: () {
-          //   Navigator.push(
-          //     context,
-          //     MaterialPageRoute(builder: (context) => Frame103Screen()), // TO NEXT PAGE
-          //   );
-          // },),
+                                  //                                GestureDetector(
+                                  // onTap: () {
+                                  //   Navigator.push(
+                                  //     context,
+                                  //     MaterialPageRoute(builder: (context) => Frame103Screen()), // TO NEXT PAGE
+                                  //   );
+                                  // },),
                                   Container(
-                                     
-                                    margin: EdgeInsets.only(
-                                      top: 5.v,
-                                      bottom: 7.v,
-                                    ),
-                                     
-                                    decoration: AppDecoration.outlinePrimary3,
-                                 child: ElevatedButton(
-                onPressed: () { Navigator.push(
-               context,
-               MaterialPageRoute(builder: (context) =>  Frame108Screen()),
-            );},
-                style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.transparent,
-                    foregroundColor: Colors.black,
-                    elevation: 0,
-                    side: const BorderSide(
-                      width: 1.0,
-                      color: Color.fromARGB(0, 244, 67, 54),
-                    )),
-                child: const Text(' الملف الشخصي'))
-       
-                                   ),
-                                 
+                                      margin: EdgeInsets.only(
+                                        top: 5.v,
+                                        bottom: 7.v,
+                                      ),
+                                      decoration: AppDecoration.outlinePrimary3,
+                                      child: ElevatedButton(
+                                          onPressed: () {
+                                            Navigator.push(
+                                              context,
+                                              MaterialPageRoute(
+                                                  builder: (context) =>
+                                                      Frame108Screen()),
+                                            );
+                                          },
+                                          style: ElevatedButton.styleFrom(
+                                              backgroundColor:
+                                                  Colors.transparent,
+                                              foregroundColor: Colors.black,
+                                              elevation: 0,
+                                              side: const BorderSide(
+                                                width: 1.0,
+                                                color: Color.fromARGB(
+                                                    0, 244, 67, 54),
+                                              )),
+                                          child: const Text(' الملف الشخصي'))),
+
                                   CustomImageView(
                                     imagePath: ImageConstant
                                         .imgImage31, //صوره فوق ملف شخصي
@@ -157,29 +157,34 @@ class Frame107Screen extends StatelessWidget {
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Container(
-                                    margin: EdgeInsets.only(
-                                      top: 7.v,
-                                      bottom: 5.v,
-                                    ),
-                                    decoration: AppDecoration.outlinePrimary3,
-                                    child: ElevatedButton(
-                onPressed: () { Navigator.push(
-               context,
-               MaterialPageRoute(builder: (context) =>  Frame164Screen()),
-            );},
-                style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.transparent,
-                    foregroundColor: Colors.black,
-                    elevation: 0,
-                    side: const BorderSide(
-                      width: 1.0,
-                      color: Color.fromARGB(0, 244, 67, 54),
-                    )),
-                child: const Text('الميداليات' )     )
-       
-                                  ),
+                                      margin: EdgeInsets.only(
+                                        top: 7.v,
+                                        bottom: 5.v,
+                                      ),
+                                      decoration: AppDecoration.outlinePrimary3,
+                                      child: ElevatedButton(
+                                          onPressed: () {
+                                            Navigator.push(
+                                              context,
+                                              MaterialPageRoute(
+                                                  builder: (context) =>
+                                                      Frame164Screen()),
+                                            );
+                                          },
+                                          style: ElevatedButton.styleFrom(
+                                              backgroundColor:
+                                                  Colors.transparent,
+                                              foregroundColor: Colors.black,
+                                              elevation: 0,
+                                              side: const BorderSide(
+                                                width: 1.0,
+                                                color: Color.fromARGB(
+                                                    0, 244, 67, 54),
+                                              )),
+                                          child: const Text('الميداليات'))),
                                   CustomImageView(
-                                    imagePath: ImageConstant.imgImage32, //ميداليات
+                                    imagePath:
+                                        ImageConstant.imgImage32, //ميداليات
                                     height: 31.v,
                                     width: 25.h,
                                     margin: EdgeInsets.only(left: 15.h),
@@ -203,30 +208,35 @@ class Frame107Screen extends StatelessWidget {
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Container(
-                                    margin: EdgeInsets.only(
-                                      top: 6.v,
-                                      bottom: 10.v,
-                                    ),
-                                    decoration: AppDecoration.outlinePrimary3,
-                                     child: ElevatedButton(//زر تسجيل خروج
-                onPressed: () { Navigator.push(
-               context,
-               MaterialPageRoute(builder: (context) => Frame131Screen()),
-            );},
-                style: ElevatedButton.styleFrom(
-                
-                    backgroundColor: Colors.transparent,
-                    foregroundColor: Colors.black,
-                    elevation: 0,
-                    side: const BorderSide(
-                      width: 1.0,
-                      color: Color.fromARGB(0, 244, 67, 54),
-                    )),
-                child: const Text(' تسجيل خروج'))
-        
-                                  ),
+                                      margin: EdgeInsets.only(
+                                        top: 6.v,
+                                        bottom: 10.v,
+                                      ),
+                                      decoration: AppDecoration.outlinePrimary3,
+                                      child: ElevatedButton(
+                                          //زر تسجيل خروج
+                                          onPressed: () {
+                                            Navigator.push(
+                                              context,
+                                              MaterialPageRoute(
+                                                  builder: (context) =>
+                                                      Frame131Screen()),
+                                            );
+                                          },
+                                          style: ElevatedButton.styleFrom(
+                                              backgroundColor:
+                                                  Colors.transparent,
+                                              foregroundColor: Colors.black,
+                                              elevation: 0,
+                                              side: const BorderSide(
+                                                width: 1.0,
+                                                color: Color.fromARGB(
+                                                    0, 244, 67, 54),
+                                              )),
+                                          child: const Text(' تسجيل خروج'))),
                                   CustomImageView(
-                                    imagePath: ImageConstant.imgImage30,//تسجيل خروج
+                                    imagePath:
+                                        ImageConstant.imgImage30, //تسجيل خروج
                                     height: 32.v,
                                     width: 26.h,
                                     margin: EdgeInsets.only(

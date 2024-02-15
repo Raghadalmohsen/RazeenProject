@@ -20,22 +20,22 @@ class  FrameEightysixScreen extends StatelessWidget { // صفحة الماب
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        //  extendBodyBehindAppBar: true, //زر الرجوع
-        // appBar: AppBar(
-        //   // 1. Back Arrow Icon
-        //   leading: IconButton(
-        //    iconSize: 40,
-        //    color: const Color.fromARGB(255, 255, 255, 255),
-        //    padding: EdgeInsets.only(left:360),
-        //     icon: Icon(Icons.settings),
-        //      onPressed: () { Navigator.push(//مايشتغل
-        //        context,
-        //        MaterialPageRoute(builder: (context) =>  Frame103Screen()),
-        //     );},
-        //   ),
-        //   backgroundColor: Color.fromARGB(0, 213, 204, 243),
-        //   elevation: 0,
-        // ),
+         extendBodyBehindAppBar: true, //زر الرجوع
+        appBar: AppBar(
+          // 1. Back Arrow Icon
+          leading: IconButton(
+           iconSize: 40,
+           color: const Color.fromARGB(255, 255, 255, 255),
+          
+            icon: Icon(Icons.settings),
+             onPressed: () { Navigator.push(
+               context,
+               MaterialPageRoute(builder: (context) =>  Frame103Screen()),
+            );},
+          ),
+          backgroundColor: Color.fromARGB(0, 213, 204, 243),
+          elevation: 0,
+        ),
         body: SizedBox(
           //horizontalScroll
 
@@ -90,6 +90,7 @@ class  FrameEightysixScreen extends StatelessWidget { // صفحة الماب
                                       right: 200.v,
                                       bottom: 68.v,
                                     ),
+
                                     
                                        height: 135.v,
                                      width: 200.h,
@@ -283,12 +284,7 @@ class  FrameEightysixScreen extends StatelessWidget { // صفحة الماب
                             //   alignment: Alignment.bottomRight,
                             //   margin: EdgeInsets.only(bottom: 295.v),
                             // ),
-                            // CustomImageView(
-                            //  // imagePath: ImageConstant.imgImg089835, البيت الصغير 
-                            //   height: 4.v,
-                            //   width: 44.h,
-                            //   alignment: Alignment.bottomCenter,
-                            // ),
+                  
                           ],
                         ),
                       ),
@@ -300,8 +296,6 @@ class  FrameEightysixScreen extends StatelessWidget { // صفحة الماب
             
           ),
         ),
-        // bottomNavigationBar: _buildBottomBar(context),
-        // floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
 
         extendBody: true,
         bottomNavigationBar: _buildBottomAppBar(context),

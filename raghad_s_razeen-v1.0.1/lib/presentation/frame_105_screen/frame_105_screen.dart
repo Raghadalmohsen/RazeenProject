@@ -6,7 +6,7 @@ import 'package:raghad_s_razeen/widgets/custom_elevated_button.dart';
 import 'package:raghad_s_razeen/widgets/custom_text_form_field.dart';
 
 class Frame105Screen extends StatelessWidget {
-  Frame105Screen({Key? key})
+  Frame105Screen({Key? key})//تسجيل جديد
       : super(
           key: key,
         );
@@ -21,6 +21,7 @@ class Frame105Screen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
     return SafeArea(
       child: Scaffold(
           extendBodyBehindAppBar: true, //زر الرجوع
