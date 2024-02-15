@@ -21,9 +21,9 @@ class Frame131Screen extends StatelessWidget {
         appBar: AppBar(
           // 1. Back Arrow Icon
           leading: IconButton(
-           iconSize: 40,
-           color: const Color.fromARGB(255, 255, 255, 255),
-           padding: EdgeInsets.only(left:360),
+            iconSize: 40,
+            color: const Color.fromARGB(255, 255, 255, 255),
+            padding: EdgeInsets.only(left: 360),
             icon: Icon(Icons.arrow_circle_right_outlined),
             onPressed: () => Navigator.pop(context),
           ),
@@ -31,41 +31,35 @@ class Frame131Screen extends StatelessWidget {
           elevation: 0,
         ),
 
-
-
         extendBody: true,
         bottomNavigationBar: _buildBottomAppBar(context),
         floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
         body: Container(
-            decoration: BoxDecoration(
-            
-                    border: Border.all(),
-                    image: DecorationImage(
-                      image: AssetImage(
-                        ImageConstant.imgGroup225,//خلفيه
-                       
-                      ),
-                      fit: BoxFit.cover,
+          decoration: BoxDecoration(
+            border: Border.all(),
+            image: DecorationImage(
+              image: AssetImage(
+                ImageConstant.BackgroundHouse2, //خلفيه 
+              ),
+              fit: BoxFit.cover,
+            ),
+          ),
+          child: Container(
+            decoration: AppDecoration.outlinePrimary1.copyWith(
+              border: Border.all(),
+            ),
+            child: Stack(
+              alignment: Alignment.topRight,
+              children: [
+                Align(
+                  alignment: Alignment.topCenter,
+                  child: Container(
+                    margin: EdgeInsets.only(
+                      left: 31.h,
+                      top: 125.v, //مكان الاشياء
+                      right: 40.h,
                     ),
-                  
-                  ),
-  child: Container(
-                    decoration: AppDecoration.outlinePrimary1.copyWith(
-                      border: Border.all(),
-                    ),
-                    
-          child: Stack(      
-            alignment: Alignment.topRight,
-            children: [
-              Align(
-                alignment: Alignment.topCenter,
-                child: Container(
-                  margin: EdgeInsets.only(
-                    left: 31.h,
-                    top: 125.v,//مكان الاشياء
-                    right: 40.h,
-                  ),
-                 
+
                     child: Column(
                       mainAxisSize: MainAxisSize.min,
                       children: [
@@ -82,14 +76,12 @@ class Frame131Screen extends StatelessWidget {
                                 child: Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
-                                    
                                     Container(
                                       margin: EdgeInsets.only(right: 16.h),
                                       padding: EdgeInsets.symmetric(
                                         horizontal: 1.h,
                                         vertical: 14.v,
                                       ),
-                                    
                                       decoration: AppDecoration.outlinePrimary2
                                           .copyWith(
                                         borderRadius:
@@ -101,16 +93,16 @@ class Frame131Screen extends StatelessWidget {
                                           SizedBox(height: 31.v),
                                           CustomImageView(
                                             imagePath:
-                                                ImageConstant.imgImg08123,
-                                            height: 90.v,
-                                            width: 86.h,
+                                                ImageConstant.play,// صورة العب
+                                            height: 77.v,
+                                            width: 79.h,
                                           ),
                                           SizedBox(height: 15.v),
                                           Container(
                                             decoration:
                                                 AppDecoration.outlinePrimary3,
                                             child: Text(
-                                              "قصة",
+                                              "العب", // العب
                                               style:
                                                   theme.textTheme.headlineSmall,
                                             ),
@@ -120,7 +112,7 @@ class Frame131Screen extends StatelessWidget {
                                     ),
                                     SizedBox(height: 15.v),
                                     CustomImageView(
-                                      imagePath: ImageConstant.imgImage44,
+                                      imagePath: ImageConstant.Arrow2, //سهم
                                       height: 93.v,
                                       width: 83.h,
                                       alignment: Alignment.centerRight,
@@ -147,7 +139,7 @@ class Frame131Screen extends StatelessWidget {
                                   children: [
                                     SizedBox(height: 26.v),
                                     CustomImageView(
-                                      imagePath: ImageConstant.imgImg0810267x68,
+                                      imagePath: ImageConstant.imgImg0810267x68, //صورة اختبر
                                       height: 67.v,
                                       width: 68.h,
                                       radius: BorderRadius.circular(
@@ -159,7 +151,7 @@ class Frame131Screen extends StatelessWidget {
                                       width: 77.h,
                                       decoration: AppDecoration.outlinePrimary3,
                                       child: Text(
-                                        "اختبر نفسك",
+                                        "  اختبر",
                                         maxLines: null,
                                         overflow: TextOverflow.ellipsis,
                                         style: theme.textTheme.headlineSmall,
@@ -193,19 +185,19 @@ class Frame131Screen extends StatelessWidget {
                                         child: Column(
                                           mainAxisSize: MainAxisSize.min,
                                           children: [
+                                            
                                             SizedBox(height: 37.v),
                                             CustomImageView(
-                                              imagePath:
-                                                  ImageConstant.imgImg07952,
-                                              height: 77.v,
-                                              width: 79.h,
+                                              imagePath: ImageConstant.imgImg08123, // صورة القصة
+                                              height: 90.v,
+                                              width: 86.h,
                                             ),
                                             SizedBox(height: 22.v),
                                             Container(
                                               decoration:
                                                   AppDecoration.outlinePrimary3,
                                               child: Text(
-                                                "العب",
+                                                "شاهد", //كلمة قصة
                                                 style: theme
                                                     .textTheme.headlineSmall,
                                               ),
@@ -216,7 +208,7 @@ class Frame131Screen extends StatelessWidget {
                                     ),
                                     SizedBox(height: 5.v),
                                     CustomImageView(
-                                      imagePath: ImageConstant.imgImage45,
+                                      imagePath: ImageConstant.Arrow1, //سهم
                                       height: 84.v,
                                       width: 94.h,
                                     ),
@@ -228,41 +220,40 @@ class Frame131Screen extends StatelessWidget {
                         ),
                       ],
                     ),
-                  // ),
+                    // ),
+                  ),
                 ),
-              ),
-              CustomImageView(
-                imagePath: ImageConstant.imgScreenshot2023,//رزين
-                height: 141.v,
-                width: 103.h,
+                CustomImageView(
+                  imagePath: ImageConstant.imgScreenshot2023, //رزين
+                  height: 141.v,
+                  width: 103.h,
                   margin: EdgeInsets.only(
                     top: 60.v,
                     right: 5.h,
                   ),
-              ),
-              Align(
-                alignment: Alignment.topRight,
-                child: Container(
-                  width: 165.h,
-                  margin: EdgeInsets.only(
-                    top: 155.v,
-                    right: 88.h,
-                  ),
-                  decoration: AppDecoration.outlinePrimary3,
-                  child: Text(
-                    "كيف ألبي طلبات جدي؟",
-                    maxLines: 2,
-                    overflow: TextOverflow.ellipsis,
-                    style: theme.textTheme.titleMedium,
+                ),
+                Align(
+                  alignment: Alignment.topRight,
+                  child: Container(
+                    width: 165.h,
+                    margin: EdgeInsets.only(
+                      top: 155.v,
+                      right: 88.h,
+                    ),
+                    decoration: AppDecoration.outlinePrimary3,
+                    child: Text(
+                      "كيف ألبي طلبات جدي؟",
+                      maxLines: 2,
+                      overflow: TextOverflow.ellipsis,
+                      style: theme.textTheme.titleMedium,
+                    ),
                   ),
                 ),
-              ),
-            ],
-          // ),
+              ],
+              // ),
+            ),
+          ),
         ),
-        ),
-       
-      ),
       ),
     );
   }

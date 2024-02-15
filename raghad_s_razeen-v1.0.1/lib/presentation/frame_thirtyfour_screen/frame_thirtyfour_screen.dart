@@ -6,6 +6,7 @@ import 'package:raghad_s_razeen/widgets/custom_bottom_bar.dart';
 import 'package:raghad_s_razeen/widgets/custom_floating_button.dart';
 
 class FrameThirtyfourScreen extends StatelessWidget {
+  //مهارة سلامة المكان 
   FrameThirtyfourScreen({Key? key})
       : super(
           key: key,

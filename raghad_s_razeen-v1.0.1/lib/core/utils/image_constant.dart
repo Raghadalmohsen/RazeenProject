@@ -406,5 +406,24 @@ class ImageConstant {
 
   static String imgImage23186x147 = '$imagePath/img_image_23_186x147.png';
 
+  static String logo = '$imagePath/logo.png';
+
+  static String map = '$imagePath/map.png';
+
+   static String Arrow1 = '$imagePath/Arrow1.png';
+
+   static String Arrow2 = '$imagePath/Arrow2.png'; 
+   
+   static String BackgroundHouse = '$imagePath/BackgroundHouse.png';
+
+   static String BackgroundHouse2 = '$imagePath/BackgroundHouse2.png'; //يبيلها تعديل
+
+   static String Background = '$imagePath/Background.png'; 
+
+   static String MapRoad = '$imagePath/MapRoad.png'; 
+
+   static String play = '$imagePath/play.png'; 
+
+
   static String imageNotFound = 'assets/images/image_not_found.png';
 }
