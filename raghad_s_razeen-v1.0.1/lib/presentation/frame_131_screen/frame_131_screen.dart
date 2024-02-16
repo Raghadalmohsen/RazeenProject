@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:raghad_s_razeen/core/app_export.dart';
+import 'package:raghad_s_razeen/presentation/frame_103_screen/frame_103_screen.dart';
 import 'package:raghad_s_razeen/widgets/app_bar/appbar_leading_image.dart';
 import 'package:raghad_s_razeen/widgets/app_bar/custom_app_bar.dart';
 import 'package:raghad_s_razeen/widgets/custom_bottom_bar.dart';
@@ -82,31 +83,66 @@ class Frame131Screen extends StatelessWidget {
                                         horizontal: 1.h,
                                         vertical: 14.v,
                                       ),
-                                      decoration: AppDecoration.outlinePrimary2
-                                          .copyWith(
-                                        borderRadius:
-                                            BorderRadiusStyle.roundedBorder33,
-                                      ),
+                                      // decoration: AppDecoration.outlinePrimary2
+                                      //     .copyWith(
+                                      //   borderRadius:
+                                      //       BorderRadiusStyle.roundedBorder33,
+                                      // ),
                                       child: Column(
                                         mainAxisSize: MainAxisSize.min,
                                         children: [
-                                          SizedBox(height: 31.v),
-                                          CustomImageView(
-                                            imagePath:
-                                                ImageConstant.play,// صورة العب
-                                            height: 77.v,
-                                            width: 79.h,
-                                          ),
-                                          SizedBox(height: 15.v),
+
                                           Container(
-                                            decoration:
-                                                AppDecoration.outlinePrimary3,
-                                            child: Text(
-                                              "العب", // العب
-                                              style:
-                                                  theme.textTheme.headlineSmall,
+                                          height: 194.v,
+                                          width: 89.h,
+                                          decoration: AppDecoration.outlinePrimary3,
+                                          child: ElevatedButton(
+                                            onPressed: () { Navigator.push(
+                                          context,
+                                          MaterialPageRoute(builder: (context) =>  Frame103Screen()),
+                                        );},
+                                            style: ElevatedButton.styleFrom(
+                                                backgroundColor: Colors.transparent,
+                                                foregroundColor: Colors.black,
+                                                elevation: 0,
+                                                side: const BorderSide(
+                                                  width: 1.0,
+                                                  color: Color.fromARGB(0, 244, 67, 54),
+                                                  
+                                                )),
+                                            
+                                            child:Image.asset(
+                                              ImageConstant.play,
+                                              height: 194,
+                                              width:89 ,
+                                              )),//العب
+                                            
                                             ),
-                                          ),
+
+                                            //ينحذف
+                                          // CustomImageView(
+                                          //   imagePath:
+                                          //       ImageConstant.play,// صورة العب
+                                          //   height: 194.v,
+                                          //   width: 89.h,
+                                          // )
+                                          // SizedBox(height: 31.v),
+                                          // CustomImageView(
+                                          //   imagePath:
+                                          //       ImageConstant.play,// صورة العب
+                                          //   height: 77.v,
+                                          //   width: 79.h,
+                                          // ),
+                                          // SizedBox(height: 15.v),
+                                          // Container(
+                                          //   decoration:
+                                          //       AppDecoration.outlinePrimary3,
+                                          //   child: Text(
+                                          //     "العب", // العب
+                                          //     style:
+                                          //         theme.textTheme.headlineSmall,
+                                          //   ),
+                                          // ),
                                         ],
                                       ),
                                     ),
@@ -129,34 +165,66 @@ class Frame131Screen extends StatelessWidget {
                                   horizontal: 6.h,
                                   vertical: 19.v,
                                 ),
-                                decoration:
-                                    AppDecoration.outlinePrimary2.copyWith(
-                                  borderRadius:
-                                      BorderRadiusStyle.roundedBorder33,
-                                ),
+                                // decoration:
+                                //     AppDecoration.outlinePrimary2.copyWith(
+                                //   borderRadius:
+                                //       BorderRadiusStyle.roundedBorder33,
+                                // ),
                                 child: Column(
                                   mainAxisSize: MainAxisSize.min,
                                   children: [
-                                    SizedBox(height: 26.v),
-                                    CustomImageView(
-                                      imagePath: ImageConstant.imgImg0810267x68, //صورة اختبر
-                                      height: 67.v,
-                                      width: 68.h,
-                                      radius: BorderRadius.circular(
-                                        1.h,
-                                      ),
-                                    ),
-                                    SizedBox(height: 3.v),
+
                                     Container(
-                                      width: 77.h,
-                                      decoration: AppDecoration.outlinePrimary3,
-                                      child: Text(
-                                        "  اختبر",
-                                        maxLines: null,
-                                        overflow: TextOverflow.ellipsis,
-                                        style: theme.textTheme.headlineSmall,
-                                      ),
-                                    ),
+                                          height: 194.v,
+                                          width: 89.h,
+                                          decoration: AppDecoration.outlinePrimary3,
+                                          child: ElevatedButton(
+                                            onPressed: () { Navigator.push(
+                                          context,
+                                          MaterialPageRoute(builder: (context) =>  Frame103Screen()),
+                                        );},
+                                            style: ElevatedButton.styleFrom(
+                                                backgroundColor: Colors.transparent,
+                                                foregroundColor: Colors.black,
+                                                elevation: 0,
+                                                side: const BorderSide(
+                                                  width: 1.0,
+                                                  color: Color.fromARGB(0, 244, 67, 54),
+                                                  
+                                                )),
+                                            
+                                            child:Image.asset(ImageConstant.quiz,
+                                              height: 194,
+                                              width:89 ,)),//الكويز
+                                            
+                                            ),
+
+                                     //ينحذف
+                                    //  CustomImageView(
+                                    //           imagePath: ImageConstant.quiz, // صورة اختبر
+                                    //           height: 194.v,
+                                    //           width: 89.h,
+                                    //         ),
+                                    // SizedBox(height: 26.v),
+                                    // CustomImageView(
+                                    //   imagePath: ImageConstant.imgImg0810267x68, //صورة اختبر
+                                    //   height: 67.v,
+                                    //   width: 68.h,
+                                    //   radius: BorderRadius.circular(
+                                    //     1.h,
+                                    //   ),
+                                    // ),
+                                    // // SizedBox(height: 3.v),
+                                    // Container(
+                                    //   width: 77.h,
+                                    //   decoration: AppDecoration.outlinePrimary3,
+                                    //   child: Text(
+                                    //     "  اختبر",
+                                    //     maxLines: null,
+                                    //     overflow: TextOverflow.ellipsis,
+                                    //     style: theme.textTheme.headlineSmall,
+                                    //   ),
+                                    // ),
                                   ],
                                 ),
                               ),
@@ -176,32 +244,63 @@ class Frame131Screen extends StatelessWidget {
                                           horizontal: 5.h,
                                           vertical: 14.v,
                                         ),
-                                        decoration: AppDecoration
-                                            .outlinePrimary2
-                                            .copyWith(
-                                          borderRadius:
-                                              BorderRadiusStyle.roundedBorder33,
-                                        ),
+                                        // decoration: AppDecoration
+                                        //     .outlinePrimary2
+                                        //     .copyWith(
+                                        //   borderRadius:
+                                        //       BorderRadiusStyle.roundedBorder33,
+                                        // ),
                                         child: Column(
                                           mainAxisSize: MainAxisSize.min,
                                           children: [
-                                            
-                                            SizedBox(height: 37.v),
-                                            CustomImageView(
-                                              imagePath: ImageConstant.imgImg08123, // صورة القصة
-                                              height: 90.v,
-                                              width: 86.h,
-                                            ),
-                                            SizedBox(height: 22.v),
+
                                             Container(
-                                              decoration:
-                                                  AppDecoration.outlinePrimary3,
-                                              child: Text(
-                                                "شاهد", //كلمة قصة
-                                                style: theme
-                                                    .textTheme.headlineSmall,
-                                              ),
+                                          height: 194.v,
+                                          width: 89.h,
+                                          decoration: AppDecoration.outlinePrimary3,
+                                          child: ElevatedButton(
+                                            onPressed: () { Navigator.push(
+                                          context,
+                                          MaterialPageRoute(builder: (context) =>  Frame103Screen()),
+                                        );},
+                                            style: ElevatedButton.styleFrom(
+                                                backgroundColor: Colors.transparent,
+                                                foregroundColor: Colors.black,
+                                                elevation: 0,
+                                                side: const BorderSide(
+                                                  width: 1.0,
+                                                  color: Color.fromARGB(0, 244, 67, 54),
+                                                  
+                                                )),
+                                            
+                                            child:Image.asset(ImageConstant.story ,
+                                              height: 194,
+                                              width:89 ,)),//القصة
+                                            
                                             ),
+                                             //ينحذف
+
+                                            // CustomImageView(
+                                            //   imagePath: ImageConstant.story, // صورة القصة
+                                            //   height: 194.v,
+                                            //   width: 89.h,
+                                            // ),
+                                            // SizedBox(height: 37.v),
+                                            // CustomImageView(
+                                            //   imagePath: ImageConstant.imgImg08123, // صورة القصة
+                                            //   height: 90.v,
+                                            //   width: 86.h,
+                                            // ),
+                                            // SizedBox(height: 22.v),
+                                            // Container(
+                                            //   decoration:
+                                            //       AppDecoration.outlinePrimary3,
+                                            //   child: Text(
+                                            //     "شاهد", 
+                                            //     style: theme
+                                            //         .textTheme.headlineSmall,
+                                            //   ),
+                                            // ),
                                           ],
                                         ),
                                       ),

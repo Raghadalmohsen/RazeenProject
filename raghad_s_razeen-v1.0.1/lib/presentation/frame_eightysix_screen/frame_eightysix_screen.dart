@@ -30,7 +30,7 @@ class  FrameEightysixScreen extends StatelessWidget { // صفحة الماب
             icon: Icon(Icons.settings),
              onPressed: () { Navigator.push(
                context,
-               MaterialPageRoute(builder: (context) =>  Frame103Screen()),
+               MaterialPageRoute(builder: (context) =>  Frame107Screen()), //الاعدادات
             );},
           ),
           backgroundColor: Color.fromARGB(0, 213, 204, 243),

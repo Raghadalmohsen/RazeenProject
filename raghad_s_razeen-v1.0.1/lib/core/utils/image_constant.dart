@@ -416,12 +416,16 @@ class ImageConstant {
    
    static String BackgroundHouse = '$imagePath/BackgroundHouse.png';
 
-   static String BackgroundHouse2 = '$imagePath/BackgroundHouse2.png'; //يبيلها تعديل
+   static String BackgroundHouse2 = '$imagePath/BackgroundHouse2.png'; 
 
    static String Background = '$imagePath/Background.png'; 
 
    static String MapRoad = '$imagePath/MapRoad.png'; 
 
+   static String story = '$imagePath/story.png';
+
+   static String quiz = '$imagePath/quiz.png';  
+   
    static String play = '$imagePath/play.png'; 
 
 
