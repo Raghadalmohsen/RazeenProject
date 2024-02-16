@@ -33,7 +33,7 @@ class Frame106Screen extends StatelessWidget {
        
         resizeToAvoidBottomInset: false,
         body: Container(
-          width: SizeUtils.width,
+            width: double.maxFinite,
           height: SizeUtils.height,
           decoration: BoxDecoration(
             color: appTheme.gray50,
@@ -43,7 +43,7 @@ class Frame106Screen extends StatelessWidget {
             ),
             image: DecorationImage(
               image: AssetImage(
-                ImageConstant.imgGroup225,//خلفيه
+                ImageConstant.BackgroundHouse,//خلفيه
               ),
               fit: BoxFit.cover,
             ),
@@ -55,19 +55,14 @@ class Frame106Screen extends StatelessWidget {
               mainAxisSize: MainAxisSize.min,
               children: [
                 SizedBox(height: 31.v),
+                ///////////
                 SizedBox(
                   height: 794.v,
                   width: double.maxFinite,
                   child: Stack(
                     alignment: Alignment.center,
                     children: [
-                      // CustomImageView(
-                      //   imagePath: ImageConstant.imageNotFound,
-                      //   height: 3.v,
-                      //   width: 47.h,
-                      //   alignment: Alignment.topLeft,
-                      //   margin: EdgeInsets.only(left: 20.h),
-                      // ),
+                    
                       Align(
                         alignment: Alignment.center,
                         child: SizedBox(
@@ -76,19 +71,7 @@ class Frame106Screen extends StatelessWidget {
                           child: Stack(
                             alignment: Alignment.bottomLeft,
                             children: [
-                              // CustomImageView(
-                              //   imagePath: ImageConstant.imgImage23152x119,//نجمه
-                              //   height: 152.v,
-                              //   width: 119.h,
-                              //   alignment: Alignment.topRight,
-                              // ),
-                              // CustomImageView(
-                              //   imagePath:
-                              //       ImageConstant.imgScreenshot2023173x129,//الجد
-                              //   height: 206.v,
-                              //   width: 150.h,
-                              //   alignment: Alignment.bottomLeft,
-                              // ),
+                           
                               _buildEmailSection(context),
                             ],
                           ),
@@ -187,7 +170,7 @@ class Frame106Screen extends StatelessWidget {
               alignment: Alignment.topRight,
               child: Container(
                 width: 299.h,
-                margin: EdgeInsets.only(top: 44.v),
+                margin: EdgeInsets.only(top: 100.v),
                 decoration: AppDecoration.outlinePrimary3,
                 child: Text(
                   "       نسيت كلمة المرور",

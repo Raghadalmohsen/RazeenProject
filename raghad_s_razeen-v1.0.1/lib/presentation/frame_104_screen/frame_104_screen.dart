@@ -43,12 +43,11 @@ class Frame104Screen extends StatelessWidget {
           child: SizedBox(
             height: SizeUtils.height,
             width: double.maxFinite,
-            
             child: Stack(
-              alignment: Alignment.bottomCenter,
+              alignment: Alignment.topRight,
               children: [
                 CustomImageView(
-                  imagePath: ImageConstant.imgGroup225, // خلفية صورة
+                  imagePath: ImageConstant.BackgroundHouse, // خلفية صورة
                   height: 858.v,
                   width: 393.h,
                   border: Border.all(),
@@ -56,17 +55,18 @@ class Frame104Screen extends StatelessWidget {
                 ),
                 Align(
                   alignment: Alignment.bottomCenter,
-                  child: SingleChildScrollView(
+                  // child: SingleChildScrollView(
                     child: Container(
                       height: 794.v,
                       width: double.maxFinite,
                       margin: EdgeInsets.only(bottom: 19.v),
+
                       child: Stack(
                         alignment: Alignment.topRight,
                         children: [
                           //
                           Align(
-                            alignment: Alignment.topCenter,
+                            alignment: Alignment.center,
                             child: Padding(
                               padding: EdgeInsets.only(
                                 left: 20.h,
@@ -76,24 +76,14 @@ class Frame104Screen extends StatelessWidget {
                                 mainAxisSize: MainAxisSize.min,
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  // CustomImageView(
-                                  //   imagePath: ImageConstant.imageNotFound,//?بينحذف من كل الصفحات
-                                  //   height: 3.v,
-                                  //   width: 47.h,
-                                  // ),
-                                  //                          GestureDetector(
-                                  // onTap: () {
-                                  //   Navigator.push(
-                                  //     context,
-                                  //     MaterialPageRoute(builder: (context) => Frame105Screen()), // TO NEXT PAGE
-                                  //   );
-                                  // },),
+                                
+                      
                                   SizedBox(height: 75.v),
                                   Container(
                                     margin: EdgeInsets.only(left: 6.h),
                                     padding: EdgeInsets.symmetric(
                                       horizontal: 22.h,
-                                      vertical: 120.v,
+                                      vertical: 100.v,
                                     ),
                                     decoration:
                                         AppDecoration.outlinePrimary7.copyWith(
@@ -238,6 +228,7 @@ class Frame104Screen extends StatelessWidget {
                             height: 152.v,
                             width: 119.h,
                             alignment: Alignment.topRight,
+                             margin: EdgeInsets.only(top: 44.v),
                           ),
                           Align(
                             alignment: Alignment.topRight,
@@ -262,11 +253,12 @@ class Frame104Screen extends StatelessWidget {
                             height: 206.v,
                             width: 150.h,
                             alignment: Alignment.bottomLeft,
+                             margin: EdgeInsets.only(bottom: 13.v),
                           ),
                         ],
                       ),
                     ),
-                  ),
+                  // ),
                 ),
               ],
             ),

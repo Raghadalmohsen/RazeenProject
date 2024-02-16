@@ -21,7 +21,6 @@ class Frame105Screen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
     return SafeArea(
       child: Scaffold(
           extendBodyBehindAppBar: true, //زر الرجوع
@@ -40,12 +39,13 @@ class Frame105Screen extends StatelessWidget {
         resizeToAvoidBottomInset: false,
        
         body: SizedBox(
-          
-          width: SizeUtils.width,
-          child: SingleChildScrollView(
-            padding: EdgeInsets.only(
-              bottom: MediaQuery.of(context).viewInsets.bottom,
-            ),
+          height: SizeUtils.height,
+          width: double.maxFinite,
+         
+          // child: SingleChildScrollView(
+          //   padding: EdgeInsets.only(
+          //     bottom: MediaQuery.of(context).viewInsets.bottom,
+          //   ),
             child: Form(
               key: _formKey,
               child: SizedBox(
@@ -55,9 +55,12 @@ class Frame105Screen extends StatelessWidget {
                 child: Stack(
                   alignment: Alignment.topRight,
                   children: [
-                    
+                     
                     Align(
+                        
                       alignment: Alignment.center,
+                         child: SingleChildScrollView(//for overflow
+                   physics: NeverScrollableScrollPhysics(),
                       child: Container(
                         padding: EdgeInsets.symmetric(
                           horizontal: 20.h,
@@ -67,7 +70,7 @@ class Frame105Screen extends StatelessWidget {
                           border: Border.all(),
                           image: DecorationImage(
                             image: AssetImage(
-                              ImageConstant.imgGroup225,
+                              ImageConstant.BackgroundHouse,
                              //الخلفيه
                             ),
                             fit: BoxFit.cover,
@@ -76,26 +79,24 @@ class Frame105Screen extends StatelessWidget {
                         child: Column(
                           mainAxisSize: MainAxisSize.min,
                           crossAxisAlignment: CrossAxisAlignment.start,
+                          
                           children: [
                             SizedBox(height: 75.v),
                             Container(
-                              margin: EdgeInsets.only(
-                                left: 6.h,
-                                right: 9.h,
-                              ),
-                              padding: EdgeInsets.symmetric(
-                                horizontal: 22.h,
-                                vertical: 120.v,
-                              ),
+                                margin: EdgeInsets.only(left: 6.h),
+                                    padding: EdgeInsets.symmetric(
+                                      horizontal: 22.h,
+                                      vertical: 90.v,
+                                    ),
                               decoration:
                                   AppDecoration.outlinePrimary7.copyWith(
                                 borderRadius: BorderRadiusStyle.roundedBorder33,
                               ),
                               child: Column(
                                 mainAxisSize: MainAxisSize.min,
-                                mainAxisAlignment: MainAxisAlignment.end,
+                                mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
-                                  SizedBox(height: 50.v),
+                                  SizedBox(height: 15.v),
                                   _buildNameSection(context),
                                   SizedBox(height: 18.v),
                                   _buildEmailSection(context),
@@ -105,7 +106,10 @@ class Frame105Screen extends StatelessWidget {
                                   _buildRegisterButtonSection(context),
                                   SizedBox(height: 8.v),
                                  Align(
-  alignment: Alignment.centerLeft,
+                                  alignment: Alignment.centerLeft,
+                  //                  child: SingleChildScrollView(//for overflow
+                  // physics: NeverScrollableScrollPhysics(),
+  
   child: Padding(
     padding: EdgeInsets.only(left: 60.h),
     child: Row(
@@ -146,7 +150,8 @@ class Frame105Screen extends StatelessWidget {
     ),
   ),
 
-                                  ),
+                                  // ),
+                                 ),
                                 ],
                               ),
                             ),
@@ -154,6 +159,7 @@ class Frame105Screen extends StatelessWidget {
                           ],
                         ),
                       ),
+                    ),
                     ),
                     CustomImageView(
                       imagePath: ImageConstant.imgImage23152x119,//النجمة
@@ -187,10 +193,11 @@ class Frame105Screen extends StatelessWidget {
                       margin: EdgeInsets.only(bottom: 13.v),
                     ),
                   ],
+                
                 ),
               ),
             ),
-          ),
+          // ),
         ),
       ),
     );

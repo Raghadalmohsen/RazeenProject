@@ -39,46 +39,45 @@ class Frame108Screen extends StatelessWidget {//الملف الشخصي
           elevation: 0,
         ),
 
-        resizeToAvoidBottomInset: false,
-        body: SizedBox(
-          width: SizeUtils.width,
-          child: SingleChildScrollView(
-            padding: EdgeInsets.only(
-              bottom: MediaQuery.of(context).viewInsets.bottom,
-            ),
+        extendBody: true,
+        bottomNavigationBar: _buildBottomAppBar(context),
+        floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+        body: Container(
+            height: SizeUtils.height,
+          width: double.maxFinite,
+       
+            
             child: Form(
               key: _formKey,
-              child: SizedBox(
-                height: 764.v,
-                width: double.maxFinite,
+              child: Container(
+              decoration: BoxDecoration(
+                          border: Border.all(),
+                          image: DecorationImage(
+                            image: AssetImage(
+                              ImageConstant.BackgroundHouse,
+                            ),
+                            fit: BoxFit.cover,
+                          ),
+                        ),
                 child: Stack(
                   alignment: Alignment.topRight,
                   children: [
                     Align(
-                      alignment: Alignment.bottomCenter,
+                      alignment: Alignment.center,
+                                               child: SingleChildScrollView(//for overflow
+                   physics: NeverScrollableScrollPhysics(),
+
                       child: Container(
                         padding: EdgeInsets.symmetric(
                           horizontal: 20.h,
                           vertical: 45.v,
                         ),
-                        decoration: BoxDecoration(
-                          border: Border.all(),
-                          image: DecorationImage(
-                            image: AssetImage(
-                              ImageConstant.imgGroup171,
-                            ),
-                            fit: BoxFit.cover,
-                          ),
-                        ),
+                        
                         child: Column(
                           mainAxisSize: MainAxisSize.min,
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            // CustomImageView(
-                            //   imagePath: ImageConstant.imageNotFound,
-                            //   height: 3.v,
-                            //   width: 47.h,
-                            // ),
+                           
                             SizedBox(height: 75.v),
                             Container(
                               width: 338.h,
@@ -154,6 +153,7 @@ class Frame108Screen extends StatelessWidget {//الملف الشخصي
                         ),
                       ),
                     ),
+                    ),
                     CustomImageView(
                       imagePath: ImageConstant.imgImage23152x119,//نجمه
                       height: 152.v,
@@ -182,23 +182,24 @@ class Frame108Screen extends StatelessWidget {//الملف الشخصي
                       imagePath: ImageConstant.imgScreenshot2023173x129,//الجد
                       height: 206.v,
                       width: 150.h,
-                      alignment: Alignment.bottomLeft,
+                   alignment: Alignment.bottomLeft,
+                      margin: EdgeInsets.only(bottom: 13.v),
                     ),
                   ],
                 ),
               ),
             ),
-          ),
+        
         ),
-        bottomNavigationBar: _buildIMG(context),
-        // floatingActionButton: CustomFloatingButton(
-        //   height: 50,
-        //   width: 50,
-        //   child: Icon(
-        //     Icons.add,
-        //   ),
-        // ),
-        floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+        // bottomNavigationBar: _buildIMG(context),
+        // // floatingActionButton: CustomFloatingButton(
+        // //   height: 50,
+        // //   width: 50,
+        // //   child: Icon(
+        // //     Icons.add,
+        // //   ),
+        // // ),
+        // floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       ),
     );
   }
@@ -224,9 +225,10 @@ class Frame108Screen extends StatelessWidget {//الملف الشخصي
         controller: emailController,
         hintText: "                        البريد الإلكتروني",
         hintStyle: theme.textTheme.titleLarge!,
-        contentPadding: EdgeInsets.symmetric(
-          horizontal: 9.h,
-          vertical: 21.v,
+        contentPadding: EdgeInsets.only(
+           top: 9.v,
+        right: 21.h,
+        bottom: 9.v,
         ),
         borderDecoration: TextFormFieldStyleHelper.outlinePrimary,
       ),
@@ -247,9 +249,9 @@ class Frame108Screen extends StatelessWidget {//الملف الشخصي
         textInputType: TextInputType.visiblePassword,
         obscureText: true,
         contentPadding: EdgeInsets.only(
-          top: 21.v,
-          right: 17.h,
-          bottom: 21.v,
+           top: 9.v,
+        right: 21.h,
+        bottom: 9.v,
         ),
         borderDecoration: TextFormFieldStyleHelper.outlinePrimary,
       ),
@@ -271,9 +273,9 @@ class Frame108Screen extends StatelessWidget {//الملف الشخصي
         textInputType: TextInputType.visiblePassword,
         obscureText: true,
         contentPadding: EdgeInsets.only(
-          top: 22.v,
+          top: 9.v,
           right: 18.h,
-          bottom: 22.v,
+          bottom: 9.v,
         ),
         borderDecoration: TextFormFieldStyleHelper.outlinePrimary,
       ),
@@ -292,9 +294,15 @@ class Frame108Screen extends StatelessWidget {//الملف الشخصي
   }
 
   /// Section Widget
-  Widget _buildIMG(BuildContext context) {
+  // Widget _buildIMG(BuildContext context) {
+  //   return CustomBottomBar(
+  //     onChanged: (BottomBarEnum type) {},
+  //   );
+  // }
+  Widget _buildBottomAppBar(BuildContext context) {
     return CustomBottomBar(
       onChanged: (BottomBarEnum type) {},
     );
   }
 }
+

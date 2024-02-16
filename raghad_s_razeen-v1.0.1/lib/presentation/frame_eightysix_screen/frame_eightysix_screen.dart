@@ -20,6 +20,7 @@ class  FrameEightysixScreen extends StatelessWidget { // صفحة الماب
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+          
          extendBodyBehindAppBar: true, //زر الرجوع
         appBar: AppBar(
           // 1. Back Arrow Icon
@@ -36,6 +37,7 @@ class  FrameEightysixScreen extends StatelessWidget { // صفحة الماب
           backgroundColor: Color.fromARGB(0, 213, 204, 243),
           elevation: 0,
         ),
+
         body: SizedBox(
           //horizontalScroll
 
@@ -51,7 +53,7 @@ class  FrameEightysixScreen extends StatelessWidget { // صفحة الماب
                //image:AssetImage('assets/images/img_screenshot_2024_02_11_815x393.png'),
               //body:center(child: Image.asset(''))
               CustomImageView(
-                imagePath: ImageConstant.imgScreenshot20240211815x393,//الخلفيه للماب 
+                imagePath: ImageConstant.MapRoad,//الخلفيه للماب 
                 //imagePath: ImageConstant.imgImage65, تضبط 
                 // image:AssetImage('assets/images/img_screenshot_2024_02_11_815x393.png'),
                 height: 815.v,
@@ -61,6 +63,7 @@ class  FrameEightysixScreen extends StatelessWidget { // صفحة الماب
               Align(
                 alignment: Alignment.center,
                 child: SingleChildScrollView(//for overflow
+                  physics: NeverScrollableScrollPhysics(),
                   child: Column(
                     
                     mainAxisSize: MainAxisSize.min,
@@ -88,7 +91,7 @@ class  FrameEightysixScreen extends StatelessWidget { // صفحة الماب
                                      
                                     margin: EdgeInsets.only(
                                       right: 200.v,
-                                      bottom: 68.v,
+                                      bottom: 60.v,
                                     ),
 
                                     
@@ -113,27 +116,7 @@ class  FrameEightysixScreen extends StatelessWidget { // صفحة الماب
                  child:Image.asset(ImageConstant.imgImage253)),//بيت احمر
                  
                  ),
-                                    //  CustomImageView(
-                                    //   imagePath: ImageConstant.imgImage253,//البيت الاحمر 
-                                    //   height: 129.adaptSize,//v
-                                    //   width: 175.adaptSize,//v
-                                    //   alignment: Alignment.topLeft,
-                                    //   //margin: EdgeInsets.only(top:100),// added
-                                    // ),
-                                    // Spacer(
-                                    //   flex: 135,
-                                    // ),
-                                    
-                                    // CustomImageView(
-                                    //  imagePath: ImageConstant.imgImage238,     //الاعدادات 
-                            
-                                    //   height: 40.adaptSize,
-                                    //   width: 40.adaptSize,
-                                    //   alignment: Alignment.centerRight,
-                                    // ),
-                                    // Spacer(
-                                    //   flex: 42,
-                                    // ),
+                               
 
                Container(
                                      
@@ -187,24 +170,7 @@ class  FrameEightysixScreen extends StatelessWidget { // صفحة الماب
      
                                    ),
 
-                                    // CustomImageView(
-                                    //   imagePath: ImageConstant.imgImage250,//البيت الوردي الفاتح 
-                                    //   height: 135.v,
-                                    //   width: 200.h,
-                                    //   margin: EdgeInsets.only(bottom: 213 , left: 9),//added227
-                                    // ),
-                                    // Spacer(
-                                    //   flex: 57,
-                                    // ),
-                                    
-                                    // CustomImageView(
-                                    //   imagePath: ImageConstant.imgImage252,// البيت الازرق الغامق 
-                                    //   height: 148.v,
-                                    //   width: 216.h,
-                                    //   radius: BorderRadius.circular(
-                                    //     12.h,
-                                    //   ),
-                                    // ),
+                                
                                   ],
                                 ),
                               ),
@@ -253,7 +219,7 @@ class  FrameEightysixScreen extends StatelessWidget { // صفحة الماب
                                      
                                     margin: EdgeInsets.only(
                                     left: 159,
-                                      top: 360.v,
+                                      top: 357.v,
                                     ),
                                     
                                        height: 140.v,
@@ -304,25 +270,7 @@ class  FrameEightysixScreen extends StatelessWidget { // صفحة الماب
     );
   }
 
-  /// Section Widget
-  // Widget _buildBottomBar(BuildContext context) {
-  //   return CustomBottomAppBar(
-  //     onChanged: (BottomBarEnum type) {
-  //       Navigator.pushNamed(
-  //           navigatorKey.currentContext!, getCurrentRoute(type));
-  //     },
-  //   );
-  // }
-
-  // PreferredSizeWidget _buildAppBar(BuildContext context) {
-  //   return CustomAppBar(
-  //     leadingWidth: double.maxFinite,
-  //     leading: AppbarLeadingImage(
-  //       imagePath: ImageConstant.imageNotFound,
-  //       margin: EdgeInsets.fromLTRB(24.h, 26.v, 339.h, 26.v),
-  //     ),
-  //   );
-  // }
+  
 
   Widget _buildBottomAppBar(BuildContext context) {
     return CustomBottomBar(
@@ -330,26 +278,6 @@ class  FrameEightysixScreen extends StatelessWidget { // صفحة الماب
     );
   }
 
-  ///Handling route based on bottom click actions
-  // String getCurrentRoute(BottomBarEnum type) {
-  //   switch (type) {
-  //     case BottomBarEnum.Img089634:
-  //       return AppRoutes.frame170Page;
-  //     case BottomBarEnum.Medal235:
-  //       return "/";
-  //     default:
-  //       return "/";
-  //   }
-  // }
 
-  ///Handling page based on route
-  // Widget getCurrentPage(String currentRoute) {
-  //   switch (currentRoute) {
-  //     case AppRoutes.frame170Page:
-  //       return Frame170Page();
-  //     default:
-  //       return DefaultWidget();
-  //   }
-  // }
 }
 

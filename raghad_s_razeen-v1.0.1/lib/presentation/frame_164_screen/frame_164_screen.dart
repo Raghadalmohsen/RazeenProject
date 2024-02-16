@@ -29,20 +29,17 @@ class Frame164Screen extends StatelessWidget {//ميداليات
           elevation: 0,
         ),
        
-        body: SizedBox(
-         height: 764.v,
-          width: double.maxFinite,
-          // child: Column(
-          //   mainAxisSize: MainAxisSize.min,
-          //   children: [
-          //     SizedBox(height: 20.v),
-          //     Expanded(
-          //       child: SingleChildScrollView(
-          //         child: Container(
-          //            padding: EdgeInsets.symmetric(
-          //           horizontal: 20.h,
-          //           vertical: 45.v,),
-          //           margin: EdgeInsets.only(right: 14.h),
+        body: Container(
+         decoration: BoxDecoration(
+                               border: Border.all(),
+                              image: DecorationImage(
+                                image: AssetImage(
+                                  ImageConstant.imgImage651,//خلفيه
+                                ),
+                                fit: BoxFit.cover,
+                              ),
+                            ),
+        
                     child: Stack(
                       alignment: Alignment.topRight,
                       children: [
@@ -53,15 +50,7 @@ class Frame164Screen extends StatelessWidget {//ميداليات
                     horizontal: 30.h,//غيرنا 20
                     vertical: 65.v,//غيرنا 45
                   ),
-                            decoration: BoxDecoration(
-                               border: Border.all(),
-                              image: DecorationImage(
-                                image: AssetImage(
-                                  ImageConstant.imgImage651,//خلفيه
-                                ),
-                                fit: BoxFit.cover,
-                              ),
-                            ),
+                           
                             child: Column(
                               mainAxisSize: MainAxisSize.min,
                               crossAxisAlignment: CrossAxisAlignment.start,

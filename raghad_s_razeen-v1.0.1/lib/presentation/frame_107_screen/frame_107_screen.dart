@@ -33,14 +33,22 @@ class Frame107Screen extends StatelessWidget {
           elevation: 0,
         ),
 
-        body: SizedBox(
-          height: 764.v,
-          width: double.maxFinite,
+        extendBody: true,
+         bottomNavigationBar: _buildBottomAppBar(context),
+        floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+
+ resizeToAvoidBottomInset: false,
+
+        body: Container(
+         
           child: Stack(
             alignment: Alignment.topRight,
             children: [
               Align(
                 alignment: Alignment.bottomCenter,
+                    child: SingleChildScrollView(//for overflow
+                   physics: NeverScrollableScrollPhysics(),
+                
                 child: Container(
                   padding: EdgeInsets.symmetric(
                     horizontal: 20.h,
@@ -50,7 +58,7 @@ class Frame107Screen extends StatelessWidget {
                     border: Border.all(),
                     image: DecorationImage(
                       image: AssetImage(
-                        ImageConstant.imgGroup225, //خلفيه
+                        ImageConstant.BackgroundHouse, //خلفيه
                       ),
                       fit: BoxFit.cover,
                     ),
@@ -59,11 +67,7 @@ class Frame107Screen extends StatelessWidget {
                     mainAxisSize: MainAxisSize.min,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      // CustomImageView(
-                      //   imagePath: ImageConstant.imageNotFound,
-                      //   height: 3.v,
-                      //   width: 47.h,
-                      // ),
+              
                       SizedBox(height: 75.v),
                       Container(
                         margin: EdgeInsets.only(
@@ -72,7 +76,7 @@ class Frame107Screen extends StatelessWidget {
                         ),
                         padding: EdgeInsets.symmetric(
                           horizontal: 21.h,
-                          vertical: 134.v,
+                          vertical: 130.v,
                         ),
                         decoration: AppDecoration.outlinePrimary7.copyWith(
                           borderRadius: BorderRadiusStyle.roundedBorder33,
@@ -94,17 +98,11 @@ class Frame107Screen extends StatelessWidget {
                                 mainAxisAlignment: MainAxisAlignment.end,
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  //                                GestureDetector(
-                                  // onTap: () {
-                                  //   Navigator.push(
-                                  //     context,
-                                  //     MaterialPageRoute(builder: (context) => Frame103Screen()), // TO NEXT PAGE
-                                  //   );
-                                  // },),
+
                                   Container(
                                       margin: EdgeInsets.only(
                                         top: 5.v,
-                                        bottom: 7.v,
+                                        bottom: 5.v,
                                       ),
                                       decoration: AppDecoration.outlinePrimary3,
                                       child: ElevatedButton(
@@ -158,7 +156,7 @@ class Frame107Screen extends StatelessWidget {
                                 children: [
                                   Container(
                                       margin: EdgeInsets.only(
-                                        top: 7.v,
+                                        top: 5.v,
                                         bottom: 5.v,
                                       ),
                                       decoration: AppDecoration.outlinePrimary3,
@@ -209,8 +207,8 @@ class Frame107Screen extends StatelessWidget {
                                 children: [
                                   Container(
                                       margin: EdgeInsets.only(
-                                        top: 6.v,
-                                        bottom: 10.v,
+                                        top: 5.v,
+                                        bottom: 5.v,
                                       ),
                                       decoration: AppDecoration.outlinePrimary3,
                                       child: ElevatedButton(
@@ -256,6 +254,7 @@ class Frame107Screen extends StatelessWidget {
                   ),
                 ),
               ),
+              ),
               CustomImageView(
                 imagePath: ImageConstant.imgImage23152x119, //نجمه
                 height: 152.v,
@@ -289,21 +288,13 @@ class Frame107Screen extends StatelessWidget {
             ],
           ),
         ),
-        bottomNavigationBar: _buildDoctorReviews(context),
-        // floatingActionButton: CustomFloatingButton(
-        //   height: 50,
-        //   width: 50,
-        //   child: Icon(
-        //     Icons.add,
-        //   ),
-        // ),
-        floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      
       ),
     );
   }
 
   /// Section Widget
-  Widget _buildDoctorReviews(BuildContext context) {
+  Widget _buildBottomAppBar(BuildContext context) {
     return CustomBottomBar(
       onChanged: (BottomBarEnum type) {},
     );

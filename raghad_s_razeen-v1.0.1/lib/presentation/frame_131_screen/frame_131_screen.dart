@@ -54,11 +54,13 @@ class Frame131Screen extends StatelessWidget {
               children: [
                 Align(
                   alignment: Alignment.topCenter,
+                  child: SingleChildScrollView(//for overflow
+                   physics: NeverScrollableScrollPhysics(),
                   child: Container(
                     margin: EdgeInsets.only(
                       left: 31.h,
                       top: 125.v, //مكان الاشياء
-                      right: 40.h,
+                     
                     ),
 
                     child: Column(
@@ -78,7 +80,7 @@ class Frame131Screen extends StatelessWidget {
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Container(
-                                      margin: EdgeInsets.only(right: 16.h),
+                                      margin: EdgeInsets.only(right: 1.h),
                                       padding: EdgeInsets.symmetric(
                                         horizontal: 1.h,
                                         vertical: 14.v,
@@ -88,14 +90,18 @@ class Frame131Screen extends StatelessWidget {
                                       //   borderRadius:
                                       //       BorderRadiusStyle.roundedBorder33,
                                       // ),
-                                      child: Column(
+                                      child: Row(
                                         mainAxisSize: MainAxisSize.min,
                                         children: [
 
                                           Container(
-                                          height: 194.v,
-                                          width: 89.h,
-                                          decoration: AppDecoration.outlinePrimary3,
+                                          height: 200.v,
+                                          width: 100.h,
+                                          decoration: AppDecoration.outlinePrimary2
+                                          .copyWith(
+                                        borderRadius:
+                                            BorderRadiusStyle.roundedBorder33,
+                                            ),
                                           child: ElevatedButton(
                                             onPressed: () { Navigator.push(
                                           context,
@@ -103,46 +109,23 @@ class Frame131Screen extends StatelessWidget {
                                         );},
                                             style: ElevatedButton.styleFrom(
                                                 backgroundColor: Colors.transparent,
-                                                foregroundColor: Colors.black,
+                                                foregroundColor: const Color.fromARGB(0, 0, 0, 0),
                                                 elevation: 0,
                                                 side: const BorderSide(
-                                                  width: 1.0,
+                                                  width: 0,
                                                   color: Color.fromARGB(0, 244, 67, 54),
                                                   
                                                 )),
                                             
                                             child:Image.asset(
                                               ImageConstant.play,
-                                              height: 194,
-                                              width:89 ,
+                                              height: 500,
+                                              width:500 ,
                                               )),//العب
                                             
                                             ),
 
-                                            //ينحذف
-                                          // CustomImageView(
-                                          //   imagePath:
-                                          //       ImageConstant.play,// صورة العب
-                                          //   height: 194.v,
-                                          //   width: 89.h,
-                                          // )
-                                          // SizedBox(height: 31.v),
-                                          // CustomImageView(
-                                          //   imagePath:
-                                          //       ImageConstant.play,// صورة العب
-                                          //   height: 77.v,
-                                          //   width: 79.h,
-                                          // ),
-                                          // SizedBox(height: 15.v),
-                                          // Container(
-                                          //   decoration:
-                                          //       AppDecoration.outlinePrimary3,
-                                          //   child: Text(
-                                          //     "العب", // العب
-                                          //     style:
-                                          //         theme.textTheme.headlineSmall,
-                                          //   ),
-                                          // ),
+                                 
                                         ],
                                       ),
                                     ),
@@ -152,10 +135,14 @@ class Frame131Screen extends StatelessWidget {
                                       height: 93.v,
                                       width: 83.h,
                                       alignment: Alignment.centerRight,
+                                        margin: EdgeInsets.only(
+                                  left: 25.h,
+                                  bottom: 60.v,),
                                     ),
                                   ],
                                 ),
                               ),
+
                               Container(
                                 margin: EdgeInsets.only(
                                   left: 5.h,
@@ -165,19 +152,19 @@ class Frame131Screen extends StatelessWidget {
                                   horizontal: 6.h,
                                   vertical: 19.v,
                                 ),
-                                // decoration:
-                                //     AppDecoration.outlinePrimary2.copyWith(
-                                //   borderRadius:
-                                //       BorderRadiusStyle.roundedBorder33,
-                                // ),
+                           
                                 child: Column(
                                   mainAxisSize: MainAxisSize.min,
                                   children: [
 
                                     Container(
-                                          height: 194.v,
-                                          width: 89.h,
-                                          decoration: AppDecoration.outlinePrimary3,
+                                          height: 200.v,
+                                          width: 100.h,
+                                         decoration: AppDecoration.outlinePrimary2
+                                          .copyWith(
+                                        borderRadius:
+                                            BorderRadiusStyle.roundedBorder33,
+                                            ),
                                           child: ElevatedButton(
                                             onPressed: () { Navigator.push(
                                           context,
@@ -194,37 +181,12 @@ class Frame131Screen extends StatelessWidget {
                                                 )),
                                             
                                             child:Image.asset(ImageConstant.quiz,
-                                              height: 194,
-                                              width:89 ,)),//الكويز
+                                              height: 500,
+                                              width:500 ,)),//الكويز
                                             
                                             ),
 
-                                     //ينحذف
-                                    //  CustomImageView(
-                                    //           imagePath: ImageConstant.quiz, // صورة اختبر
-                                    //           height: 194.v,
-                                    //           width: 89.h,
-                                    //         ),
-                                    // SizedBox(height: 26.v),
-                                    // CustomImageView(
-                                    //   imagePath: ImageConstant.imgImg0810267x68, //صورة اختبر
-                                    //   height: 67.v,
-                                    //   width: 68.h,
-                                    //   radius: BorderRadius.circular(
-                                    //     1.h,
-                                    //   ),
-                                    // ),
-                                    // // SizedBox(height: 3.v),
-                                    // Container(
-                                    //   width: 77.h,
-                                    //   decoration: AppDecoration.outlinePrimary3,
-                                    //   child: Text(
-                                    //     "  اختبر",
-                                    //     maxLines: null,
-                                    //     overflow: TextOverflow.ellipsis,
-                                    //     style: theme.textTheme.headlineSmall,
-                                    //   ),
-                                    // ),
+                       
                                   ],
                                 ),
                               ),
@@ -244,20 +206,20 @@ class Frame131Screen extends StatelessWidget {
                                           horizontal: 5.h,
                                           vertical: 14.v,
                                         ),
-                                        // decoration: AppDecoration
-                                        //     .outlinePrimary2
-                                        //     .copyWith(
-                                        //   borderRadius:
-                                        //       BorderRadiusStyle.roundedBorder33,
-                                        // ),
+                                     
                                         child: Column(
                                           mainAxisSize: MainAxisSize.min,
                                           children: [
 
                                             Container(
-                                          height: 194.v,
-                                          width: 89.h,
-                                          decoration: AppDecoration.outlinePrimary3,
+                                          height: 200.v,
+                                          width: 100.h,
+                                    
+                                           decoration: AppDecoration.outlinePrimary2
+                                          .copyWith(
+                                        borderRadius:
+                                            BorderRadiusStyle.roundedBorder33,
+                                            ),
                                           child: ElevatedButton(
                                             onPressed: () { Navigator.push(
                                           context,
@@ -274,33 +236,11 @@ class Frame131Screen extends StatelessWidget {
                                                 )),
                                             
                                             child:Image.asset(ImageConstant.story ,
-                                              height: 194,
-                                              width:89 ,)),//القصة
+                                              height: 500,
+                                              width:500 ,)),//القصة
                                             
                                             ),
-                                             //ينحذف
-
-                                            // CustomImageView(
-                                            //   imagePath: ImageConstant.story, // صورة القصة
-                                            //   height: 194.v,
-                                            //   width: 89.h,
-                                            // ),
-                                            // SizedBox(height: 37.v),
-                                            // CustomImageView(
-                                            //   imagePath: ImageConstant.imgImg08123, // صورة القصة
-                                            //   height: 90.v,
-                                            //   width: 86.h,
-                                            // ),
-                                            // SizedBox(height: 22.v),
-                                            // Container(
-                                            //   decoration:
-                                            //       AppDecoration.outlinePrimary3,
-                                            //   child: Text(
-                                            //     "شاهد", 
-                                            //     style: theme
-                                            //         .textTheme.headlineSmall,
-                                            //   ),
-                                            // ),
+                         
                                           ],
                                         ),
                                       ),
@@ -310,6 +250,9 @@ class Frame131Screen extends StatelessWidget {
                                       imagePath: ImageConstant.Arrow1, //سهم
                                       height: 84.v,
                                       width: 94.h,
+                                       margin: EdgeInsets.only(
+                                  left: 4.h,
+                                  bottom: 25.v,),
                                     ),
                                   ],
                                 ),
@@ -321,7 +264,7 @@ class Frame131Screen extends StatelessWidget {
                     ),
                     // ),
                   ),
-                ),
+                )),
                 CustomImageView(
                   imagePath: ImageConstant.imgScreenshot2023, //رزين
                   height: 141.v,
@@ -343,7 +286,7 @@ class Frame131Screen extends StatelessWidget {
                     child: Text(
                       "كيف ألبي طلبات جدي؟",
                       maxLines: 2,
-                      overflow: TextOverflow.ellipsis,
+                      // overflow: TextOverflow.ellipsis,
                       style: theme.textTheme.titleMedium,
                     ),
                   ),
