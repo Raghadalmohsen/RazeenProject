@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "465871057810",
+    "project_id": "razeenfirebase",
+    "storage_bucket": "razeenfirebase.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:465871057810:android:086816d9a480248fe1074b",
+        "android_client_info": {
+          "package_name": "com.raghadsrazeen.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAdEzHf1z_2gWQzyS0YwM7L4yVyv4j1BAg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
