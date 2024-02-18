@@ -2,7 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:raghad_s_razeen/core/app_export.dart';
 import 'package:raghad_s_razeen/presentation/frame_103_screen/frame_103_screen.dart';
 import 'package:raghad_s_razeen/presentation/frame_107_screen/frame_107_screen.dart';
+import 'package:raghad_s_razeen/presentation/frame_130_screen/frame_130_screen.dart';
 import 'package:raghad_s_razeen/presentation/frame_131_screen/frame_131_screen.dart';
+import 'package:raghad_s_razeen/presentation/frame_132_screen/frame_132_screen.dart';
+import 'package:raghad_s_razeen/presentation/frame_133_screen/frame_133_screen.dart';
+import 'package:raghad_s_razeen/presentation/frame_134_screen/frame_134_screen.dart';
+import 'package:raghad_s_razeen/presentation/frame_eightyfive_screen/frame_eightyfive_screen.dart';
+import 'package:raghad_s_razeen/presentation/frame_eightyseven_screen/frame_eightyseven_screen.dart';
+import 'package:raghad_s_razeen/presentation/frame_ninetythree_screen/frame_ninetythree_screen.dart';
+import 'package:raghad_s_razeen/presentation/frame_seventysix_screen/frame_seventysix_screen.dart';
 import 'package:raghad_s_razeen/widgets/app_bar/appbar_leading_image.dart';
 import 'package:raghad_s_razeen/widgets/app_bar/custom_app_bar.dart';
 import 'package:raghad_s_razeen/widgets/custom_bottom_bar.dart';
@@ -21,9 +29,9 @@ class  FrameEightysixScreen extends StatelessWidget { // صفحة الماب
     return SafeArea(
       child: Scaffold(
           
-         extendBodyBehindAppBar: true, //زر الرجوع
+         extendBodyBehindAppBar: true, //الاعدادات
         appBar: AppBar(
-          // 1. Back Arrow Icon
+          // 1. 
           leading: IconButton(
            iconSize: 40,
            color: const Color.fromARGB(255, 255, 255, 255),
@@ -101,7 +109,7 @@ class  FrameEightysixScreen extends StatelessWidget { // صفحة الماب
                                  child: ElevatedButton(
                 onPressed: () { Navigator.push(
                context,
-               MaterialPageRoute(builder: (context) =>  Frame103Screen()),
+               MaterialPageRoute(builder: (context) =>  Frame134Screen()), //سلامة المكان
             );},
                 style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.transparent,
@@ -130,7 +138,7 @@ class  FrameEightysixScreen extends StatelessWidget { // صفحة الماب
                                  child: ElevatedButton(
                 onPressed: () { Navigator.push(
                context,
-               MaterialPageRoute(builder: (context) =>  Frame103Screen()),
+               MaterialPageRoute(builder: (context) =>  Frame133Screen()), //المحافظة على الهدوء
             );},
                 style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.transparent,
@@ -154,7 +162,7 @@ class  FrameEightysixScreen extends StatelessWidget { // صفحة الماب
                                  child: ElevatedButton(
                 onPressed: () { Navigator.push(
                context,
-               MaterialPageRoute(builder: (context) =>  Frame103Screen()),
+               MaterialPageRoute(builder: (context) =>  Frame130Screen()),//تقبل الاختلاف
             );},
                 style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.transparent,
@@ -188,7 +196,7 @@ class  FrameEightysixScreen extends StatelessWidget { // صفحة الماب
                                  child: ElevatedButton(
                 onPressed: () { Navigator.push(
                context,
-               MaterialPageRoute(builder: (context) =>  Frame103Screen()),
+               MaterialPageRoute(builder: (context) =>  Frame131Screen()), //كيف البي طلبات جدي
             );},
                 style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.transparent,
@@ -228,7 +236,7 @@ class  FrameEightysixScreen extends StatelessWidget { // صفحة الماب
                                  child: ElevatedButton(
                 onPressed: () { Navigator.push(
                context,
-               MaterialPageRoute(builder: (context) =>  Frame131Screen()),
+               MaterialPageRoute(builder: (context) =>  Frame132Screen()), //التحدث بطريقة مناسبة 
             );},
                 style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.transparent,

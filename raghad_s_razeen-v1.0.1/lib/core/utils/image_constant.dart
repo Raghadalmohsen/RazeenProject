@@ -422,11 +422,24 @@ class ImageConstant {
 
    static String MapRoad = '$imagePath/MapRoad.png'; 
 
-   static String story = '$imagePath/story.png';
+  //  static String story = '$imagePath/story.png';
 
-   static String quiz = '$imagePath/quiz.png';  
+  //  static String quiz = '$imagePath/quiz.png';  
    
-   static String play = '$imagePath/play.png'; 
+  //  static String play = '$imagePath/play.png'; 
+
+   static String story2 = '$imagePath/story2.png';
+
+   static String quiz2 = '$imagePath/quiz2.png';  
+   
+   static String play2 = '$imagePath/play2.png'; 
+
+   static String WelcomeScreen = '$imagePath/WelcomeScreen.png'; 
+
+   static String medalP = '$imagePath/medalP.png'; 
+
+   static String BGMedal = '$imagePath/BGMedal.png'; 
+
 
 
   static String imageNotFound = 'assets/images/image_not_found.png';

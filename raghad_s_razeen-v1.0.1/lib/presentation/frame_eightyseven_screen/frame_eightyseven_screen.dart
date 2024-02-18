@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:raghad_s_razeen/core/app_export.dart';
+import 'package:raghad_s_razeen/presentation/frame_eightysix_screen/frame_eightysix_screen.dart';
 import 'package:raghad_s_razeen/widgets/custom_bottom_bar.dart';
+import 'package:raghad_s_razeen/widgets/custom_elevated_button.dart';
+import 'package:raghad_s_razeen/widgets/custom_floating_button.dart';
 
-class FrameEightysevenScreen extends StatelessWidget {
-  FrameEightysevenScreen({Key? key})
+
+class FrameEightysevenScreen extends StatelessWidget { //welcomescreen
+FrameEightysevenScreen({Key? key})
       : super(
           key: key,
         );
@@ -14,20 +18,58 @@ class FrameEightysevenScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        backgroundColor: appTheme.gray50.withOpacity(0.7),
         body: SizedBox(
-          height: 359.v,
-          width: 634.h,
+          height: SizeUtils.height,
+          width: double.maxFinite,
+          child: Stack(
+            alignment: Alignment.center,
+            children: [
+              CustomImageView(
+                imagePath: ImageConstant.WelcomeScreen, //الخلفية
+                height: 820.v,
+                width: 393.h,
+                alignment: Alignment.topCenter,
+              ),
+              Align(
+                alignment: Alignment.center,
+
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Spacer(
+                      flex: 46,
+                    ),
+                    
+                    CustomElevatedButton(
+                      width: 92.h,
+                      text: "موافق",
+                      onPressed: () {//بداية كود تنقل الزر
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => FrameEightysixScreen()),//map
+                          );},
+                    ),
+                    Spacer(
+                      flex: 49,
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
         ),
-        bottomNavigationBar: _buildBottomBar(context),
+        bottomNavigationBar: _buildBottomAppBar(context),
+        floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       ),
     );
   }
 
-  /// Section Widget
-  Widget _buildBottomBar(BuildContext context) {
+   Widget _buildBottomAppBar(BuildContext context) {
     return CustomBottomBar(
       onChanged: (BottomBarEnum type) {},
     );
   }
+
+
+ 
 }

@@ -6,7 +6,7 @@ import 'package:raghad_s_razeen/widgets/app_bar/custom_app_bar.dart';
 import 'package:raghad_s_razeen/widgets/custom_bottom_bar.dart';
 import 'package:raghad_s_razeen/widgets/custom_floating_button.dart';
 
-class Frame131Screen extends StatelessWidget {
+class Frame131Screen extends StatelessWidget { //مهارة كيف البي طلبات جدي
   Frame131Screen({Key? key})
       : super(
           key: key,
@@ -18,19 +18,19 @@ class Frame131Screen extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        extendBodyBehindAppBar: true, //زر الرجوع
-        appBar: AppBar(
-          // 1. Back Arrow Icon
-          leading: IconButton(
-            iconSize: 40,
-            color: const Color.fromARGB(255, 255, 255, 255),
-            padding: EdgeInsets.only(left: 360),
-            icon: Icon(Icons.arrow_circle_right_outlined),
-            onPressed: () => Navigator.pop(context),
-          ),
-          backgroundColor: Color.fromARGB(0, 213, 204, 243),
-          elevation: 0,
-        ),
+        // extendBodyBehindAppBar: true, // مايشتغل بس نقدر نستغني عنه \ زر الرجوع
+        // appBar: AppBar(
+        //   // 1. Back Arrow Icon
+        //   leading: IconButton(
+        //     iconSize: 40,
+        //     color: const Color.fromARGB(255, 255, 255, 255),
+        //     padding: EdgeInsets.only(left: 360),
+        //     icon: Icon(Icons.arrow_circle_right_outlined),
+        //     onPressed: () => Navigator.pop(context),
+        //   ),
+        //   backgroundColor: Color.fromARGB(0, 213, 204, 243),
+        //   elevation: 0,
+        // ),
 
         extendBody: true,
         bottomNavigationBar: _buildBottomAppBar(context),
@@ -40,7 +40,7 @@ class Frame131Screen extends StatelessWidget {
             border: Border.all(),
             image: DecorationImage(
               image: AssetImage(
-                ImageConstant.BackgroundHouse2, //خلفيه 
+                ImageConstant.BackgroundHouse, //خلفيه 
               ),
               fit: BoxFit.cover,
             ),
@@ -58,7 +58,7 @@ class Frame131Screen extends StatelessWidget {
                    physics: NeverScrollableScrollPhysics(),
                   child: Container(
                     margin: EdgeInsets.only(
-                      left: 31.h,
+                      left: 2.h, //بعد التعديل صارت بالنص
                       top: 125.v, //مكان الاشياء
                      
                     ),
@@ -118,7 +118,7 @@ class Frame131Screen extends StatelessWidget {
                                                 )),
                                             
                                             child:Image.asset(
-                                              ImageConstant.play,
+                                              ImageConstant.play2,
                                               height: 500,
                                               width:500 ,
                                               )),//العب
@@ -180,7 +180,7 @@ class Frame131Screen extends StatelessWidget {
                                                   
                                                 )),
                                             
-                                            child:Image.asset(ImageConstant.quiz,
+                                            child:Image.asset(ImageConstant.quiz2,
                                               height: 500,
                                               width:500 ,)),//الكويز
                                             
@@ -235,7 +235,7 @@ class Frame131Screen extends StatelessWidget {
                                                   
                                                 )),
                                             
-                                            child:Image.asset(ImageConstant.story ,
+                                            child:Image.asset(ImageConstant.story2 ,
                                               height: 500,
                                               width:500 ,)),//القصة
                                             
@@ -279,7 +279,7 @@ class Frame131Screen extends StatelessWidget {
                   child: Container(
                     width: 165.h,
                     margin: EdgeInsets.only(
-                      top: 155.v,
+                      top: 150.v,
                       right: 88.h,
                     ),
                     decoration: AppDecoration.outlinePrimary3,
@@ -287,7 +287,10 @@ class Frame131Screen extends StatelessWidget {
                       "كيف ألبي طلبات جدي؟",
                       maxLines: 2,
                       // overflow: TextOverflow.ellipsis,
-                      style: theme.textTheme.titleMedium,
+                      // style: theme.textTheme.titleMedium,
+                      style:TextStyle(fontSize: 20,color: Colors.black),
+
+                      
                     ),
                   ),
                 ),

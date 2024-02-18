@@ -3,7 +3,7 @@ import 'package:raghad_s_razeen/core/app_export.dart';
 import 'package:raghad_s_razeen/widgets/custom_bottom_bar.dart';
 import 'package:raghad_s_razeen/widgets/custom_floating_button.dart';
 
-class FrameSeventysixScreen extends StatelessWidget {
+class FrameSeventysixScreen extends StatelessWidget { //فيدباك الطويز القديم اعادة
   FrameSeventysixScreen({Key? key})
       : super(
           key: key,

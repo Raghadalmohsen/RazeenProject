@@ -238,7 +238,7 @@ class Frame100Screen extends StatelessWidget {
           child: Container(
             width: 76.h,
             margin: EdgeInsets.only(
-              left: 157.h,
+              left: 155.h,
               top: 163.v,
               bottom: 9.v,
             ),
