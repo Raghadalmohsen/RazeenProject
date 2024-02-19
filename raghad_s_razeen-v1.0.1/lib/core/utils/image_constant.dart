@@ -440,6 +440,10 @@ class ImageConstant {
 
    static String BGMedal = '$imagePath/BGMedal.png'; 
 
+   static String HappyFeedback = '$imagePath/HappyFeedback.png'; 
+
+   static String SadFeedback = '$imagePath/SadFeedback.png'; 
+
 
 
   static String imageNotFound = 'assets/images/image_not_found.png';

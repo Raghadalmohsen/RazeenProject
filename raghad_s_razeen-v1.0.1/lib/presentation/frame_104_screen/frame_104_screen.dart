@@ -24,22 +24,24 @@ class Frame104Screen extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        
-           extendBodyBehindAppBar: true, //زر الرجوع
+        extendBodyBehindAppBar: true, //زر الرجوع
         appBar: AppBar(
           // 1. Back Arrow Icon
           leading: IconButton(
-           iconSize: 40,
-            icon: Icon(Icons.arrow_back), 
-            color: Color.fromARGB(255, 16, 27, 79),// forword لو نبيه يمين 
-            onPressed: () { Navigator.push(
-                          context,
-                          MaterialPageRoute(builder: (context) =>  Frame103Screen()), ////للصفحة الرئيسية
-                        );}          ),
+              iconSize: 40,
+              icon: Icon(Icons.arrow_back),
+              color: Color.fromARGB(255, 16, 27, 79), // forword لو نبيه يمين
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) =>
+                          Frame103Screen()), ////للصفحة الرئيسية
+                );
+              }),
           backgroundColor: Color.fromARGB(0, 255, 255, 255),
           elevation: 0,
         ),
-
 
         resizeToAvoidBottomInset: false,
         body: Form(
@@ -60,208 +62,202 @@ class Frame104Screen extends StatelessWidget {
                 Align(
                   alignment: Alignment.bottomCenter,
                   // child: SingleChildScrollView(
-                    child: Container(
-                      height: 794.v,
-                      width: double.maxFinite,
-                      margin: EdgeInsets.only(bottom: 19.v),
-
-                      child: Stack(
-                        alignment: Alignment.topRight,
-                        children: [
-                          //
-                          Align(
-                            alignment: Alignment.center,
-                            child: Padding(
-                              padding: EdgeInsets.only(
-                                left: 20.h,
-                                right: 29.h,
-                              ),
-                              child: Column(
-                                mainAxisSize: MainAxisSize.min,
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                
-                      
-                                  SizedBox(height: 75.v),
-                                  Container(
-                                    margin: EdgeInsets.only(left: 6.h),
-                                    padding: EdgeInsets.symmetric(
-                                      horizontal: 22.h,
-                                      vertical: 100.v,
-                                    ),
-                                    decoration:
-                                        AppDecoration.outlinePrimary7.copyWith(
-                                      borderRadius:
-                                          BorderRadiusStyle.roundedBorder33,
-                                    ),
-                                    child: Column(
-                                      mainAxisSize: MainAxisSize.min,
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.center,
-                                      children: [
-                                        SizedBox(height: 26.v),
-                                        CustomTextFormField(
-                                          controller: emailController,
-                                          hintText:
-                                              "                     البريد الإلكتروني",
-                                          hintStyle:
-                                              theme.textTheme.titleLarge!,
-                                          contentPadding: EdgeInsets.symmetric(
-                                            horizontal: 10.h,
-                                            vertical: 19.v,
-                                          ),
-                                          borderDecoration:
-                                              TextFormFieldStyleHelper
-                                                  .outlinePrimary,
+                  child: Container(
+                    height: 794.v,
+                    width: double.maxFinite,
+                    margin: EdgeInsets.only(bottom: 5.v),//19 كان 
+                    child: Stack(
+                      alignment: Alignment.topRight,
+                      children: [
+                        //
+                        Align(
+                          alignment: Alignment.center,
+                          child: Padding(
+                            padding: EdgeInsets.only(
+                              left: 20.h,
+                              right: 29.h,
+                            ),
+                            child: Column(
+                              mainAxisSize: MainAxisSize.min,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                SizedBox(height: 75.v),
+                                Container(
+                                  margin: EdgeInsets.only(left: 6.h),
+                                  padding: EdgeInsets.symmetric(
+                                    horizontal: 22.h,
+                                    vertical: 100.v,
+                                  ),
+                                  decoration:
+                                      AppDecoration.outlinePrimary7.copyWith(
+                                    borderRadius:
+                                        BorderRadiusStyle.roundedBorder33,
+                                  ),
+                                  child: Column(
+                                    mainAxisSize: MainAxisSize.min,
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      SizedBox(height: 26.v),
+                                      CustomTextFormField(
+                                        controller: emailController,
+                                        hintText:
+                                            "                     البريد الإلكتروني",
+                                        hintStyle: theme.textTheme.titleLarge!,
+                                        contentPadding: EdgeInsets.symmetric(
+                                          horizontal: 10.h,
+                                          vertical: 19.v,
                                         ),
-                                        SizedBox(height: 38.v),
-                                        CustomTextFormField(
-                                          controller: passwordController,
-                                          hintText:
-                                              "                              كلمة المرور",
-                                          hintStyle:
-                                              theme.textTheme.titleLarge!,
-                                          textInputAction: TextInputAction.done,
-                                          textInputType:
-                                              TextInputType.visiblePassword,
-                                          obscureText: true,
-                                          contentPadding: EdgeInsets.only(
-                                            top: 19.v,
-                                            right: 21.h,
-                                            bottom: 19.v,
-                                          ),
-                                          borderDecoration:
-                                              TextFormFieldStyleHelper
-                                                  .outlinePrimary,
+                                        borderDecoration:
+                                            TextFormFieldStyleHelper
+                                                .outlinePrimary,
+                                      ),
+                                      SizedBox(height: 38.v),
+                                      CustomTextFormField(
+                                        controller: passwordController,
+                                        hintText:
+                                            "                              كلمة المرور",
+                                        hintStyle: theme.textTheme.titleLarge!,
+                                        textInputAction: TextInputAction.done,
+                                        textInputType:
+                                            TextInputType.visiblePassword,
+                                        obscureText: true,
+                                        contentPadding: EdgeInsets.only(
+                                          top: 19.v,
+                                          right: 21.h,
+                                          bottom: 19.v,
                                         ),
-                                        SizedBox(height: 7.v),
-                                        Align(
-                                          alignment: Alignment.centerLeft,
-                                          child: Container(
-                                            margin: EdgeInsets.only(left: 7.h),
-                                            decoration:
-                                                AppDecoration.outlinePrimary3,
+                                        borderDecoration:
+                                            TextFormFieldStyleHelper
+                                                .outlinePrimary,
+                                      ),
+                                      SizedBox(height: 7.v),
+                                      Align(
+                                        alignment: Alignment.centerLeft,
+                                        child: Container(
+                                          margin: EdgeInsets.only(left: 7.h),
+                                          decoration:
+                                              AppDecoration.outlinePrimary3,
                                           child: CupertinoButton(
                                             child: Text(
                                               "نسيت كلمة المرور؟",
                                               style:
                                                   CustomTextStyles.bodySmall12,
                                             ),
-                                             onPressed: () {
-                                                      //بداية كود تنقل الزر
-                                                      Navigator.push(
-                                                        context,
-                                                        CupertinoPageRoute(
-                                                            builder: (context) =>
-                                                                Frame106Screen()), 
-                                                      );
-                                                    }, //نهاية ا
-                                                  ),
+                                            onPressed: () {
+                                              //بداية كود تنقل الزر
+                                              Navigator.push(
+                                                context,
+                                                CupertinoPageRoute(
+                                                    builder: (context) =>
+                                                        Frame106Screen()),
+                                              );
+                                            }, //نهاية ا
                                           ),
                                         ),
-                                        SizedBox(height: 49.v),
-                                        CustomElevatedButton(
-                                          height: 42.v,
-                                          width: 177.h,
-                                          text: "تسجيل الدخول",
-                                          buttonStyle: CustomButtonStyles
-                                              .outlinePrimaryTL21,
-                                          buttonTextStyle:
-                                              theme.textTheme.bodyLarge!,
-                                        ),
-                                        SizedBox(height: 7.v),
-                                        Row(
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.center,
-                                          children: [
-                                            Column(
-                                              children: [
-                                                Container(
-                                                  decoration: AppDecoration
-                                                      .outlinePrimary3,
-                                                  child: CupertinoButton(
-                                                    //اضافي مع زر التنقل
-                                                    child: Text(
-                                                      "تسجيل جديد",
-                                                     style: CustomTextStyles.bodySmall12.copyWith(
-                color: Colors.blue, // Change the color to indicate it's tappable
-                                                     ),
+                                      ),
+                                      SizedBox(height: 49.v),
+                                      CustomElevatedButton(
+                                        height: 42.v,
+                                        width: 177.h,
+                                        text: "تسجيل الدخول",
+                                        buttonStyle: CustomButtonStyles
+                                            .outlinePrimaryTL21,
+                                        buttonTextStyle:
+                                            theme.textTheme.bodyLarge!,
+                                      ),
+                                      SizedBox(height: 7.v),
+                                      Row(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.center,
+                                        children: [
+                                          Column(
+                                            children: [
+                                              Container(
+                                                decoration: AppDecoration
+                                                    .outlinePrimary3,
+                                                child: CupertinoButton(
+                                                  //اضافي مع زر التنقل
+                                                  child: Text(
+                                                    "تسجيل جديد",
+                                                    style: CustomTextStyles.bodySmall12 .copyWith(
+                                                      color: Colors.blue, // Change the color to indicate it's tappable
                                                     ),
-                                                    onPressed: () {
-                                                      //بداية كود تنقل الزر
-                                                      Navigator.push(
-                                                        context,
-                                                        CupertinoPageRoute(
-                                                            builder: (context) =>
-                                                                Frame105Screen()), //next page
-                                                      );
-                                                    }, //نهاية ا
                                                   ),
+                                                  onPressed: () {
+                                                    //بداية كود تنقل الزر
+                                                    Navigator.push(
+                                                      context,
+                                                      CupertinoPageRoute(
+                                                          builder: (context) =>
+                                                              Frame105Screen()), //next page
+                                                    );
+                                                  }, //نهاية ا
                                                 ),
-                                                SizedBox(height: 1.v),
-                                                SizedBox(
-                                                  width: 65.h,
-                                                  // child: Divider(
-                                                  //   //نعدل مكان الخط
-                                                  //   color: appTheme.blueGray700
-                                                  //       .withOpacity(0.84),
-                                                  // ),
-                                                ),
-                                              ],
-                                            ),
-                                            Padding(
-                                              padding:
-                                                  EdgeInsets.only(left: 13.h),
-                                              child: Text(
-                                                "ليس لديك حساب؟", //تسجيل جديد
-                                                style: CustomTextStyles
-                                                    .bodySmall12,
                                               ),
+                                              SizedBox(height: 1.v),
+                                              SizedBox(
+                                                width: 65.h,
+                                                // child: Divider(
+                                                //   //نعدل مكان الخط
+                                                //   color: appTheme.blueGray700
+                                                //       .withOpacity(0.84),
+                                                // ),
+                                              ),
+                                            ],
+                                          ),
+                                          Padding(
+                                            padding:
+                                                EdgeInsets.only(left: 13.h),
+                                            child: Text(
+                                              "ليس لديك حساب؟", //تسجيل جديد
+                                              style:
+                                                  CustomTextStyles.bodySmall12,
                                             ),
-                                          ],
-                                        ),
-                                      ],
-                                    ),
+                                          ),
+                                        ],
+                                      ),
+                                    ],
                                   ),
-                                ],
-                              ),
+                                ),
+                              ],
                             ),
                           ),
-                          CustomImageView(
-                            imagePath: ImageConstant.imgImage23152x119, //النجمة
-                            height: 152.v,
-                            width: 119.h,
-                            alignment: Alignment.topRight,
-                             margin: EdgeInsets.only(top: 44.v),
-                          ),
-                          Align(
-                            alignment: Alignment.topRight,
-                            child: Container(
-                              width: 244.h,
-                              margin: EdgeInsets.only(
-                                top: 129.v,
-                                right: 31.h,
-                              ),
-                              decoration: AppDecoration.outlinePrimary3,
-                              child: Text(
-                                "تسجيل الدخول",
-                                maxLines: null,
-                                overflow: TextOverflow.ellipsis,
-                                style: CustomTextStyles.headlineLarge32,
-                              ),
+                        ),
+                        CustomImageView(
+                          imagePath: ImageConstant.imgImage23152x119, //النجمة
+                          height: 152.v,
+                          width: 119.h,
+                          alignment: Alignment.topRight,
+                          margin: EdgeInsets.only(top: 44.v),
+                        ),
+                        Align(
+                          alignment: Alignment.topRight,
+                          child: Container(
+                            width: 244.h,
+                            margin: EdgeInsets.only(
+                              top: 129.v,
+                              right: 31.h,
+                            ),
+                            decoration: AppDecoration.outlinePrimary3,
+                            child: Text(
+                              "تسجيل الدخول",
+                              maxLines: null,
+                              overflow: TextOverflow.ellipsis,
+                              style: CustomTextStyles.headlineLarge32,
                             ),
                           ),
-                          CustomImageView(
-                            imagePath:
-                                ImageConstant.imgScreenshot2023173x129, //الجد
-                            height: 206.v,
-                            width: 150.h,
-                            alignment: Alignment.bottomLeft,
-                             margin: EdgeInsets.only(bottom: 13.v),
-                          ),
-                        ],
-                      ),
+                        ),
+                        CustomImageView(
+                          imagePath:
+                              ImageConstant.imgScreenshot2023173x129, //الجد
+                          height: 206.v,
+                          width: 150.h,
+                          alignment: Alignment.bottomLeft,
+                          margin: EdgeInsets.only(bottom: 1.v),//13 كان 
+                        ),
+                      ],
                     ),
+                  ),
                   // ),
                 ),
               ],
