@@ -1,6 +1,4 @@
 import 'package:raghad_s_razeen/widgets/custom_icon_button.dart';
-
-import '../frame_164_screen/widgets/grid1_item_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:raghad_s_razeen/core/app_export.dart';
 import 'package:raghad_s_razeen/widgets/app_bar/appbar_leading_image.dart';
@@ -22,7 +20,7 @@ class Frame164Screen extends StatelessWidget {
     return SafeArea(
       child: Scaffold(
         body: Container(
-          width: 394.h,
+          width: 400.h,
           decoration: AppDecoration.outlinePrimary,
           // child: SingleChildScrollView(
           child: SizedBox(
@@ -34,10 +32,13 @@ class Frame164Screen extends StatelessWidget {
               children: [
                 Align(
                   alignment: Alignment.center,
+                   child: SingleChildScrollView(
+                  //for overflow
+                  physics: NeverScrollableScrollPhysics(),
                   child: Container(
                     padding: EdgeInsets.symmetric(
                       horizontal: 14.h,
-                      vertical: 95.v,
+                      vertical: 98.v,
                     ),
                     decoration: BoxDecoration(
                       image: DecorationImage(
@@ -55,6 +56,8 @@ class Frame164Screen extends StatelessWidget {
                           margin: EdgeInsets.only(
                             left: 8.h,
                             right: 11.h,
+                            top: 50,
+                          
                           ),
                           padding: EdgeInsets.symmetric(
                             horizontal: 17.h,
@@ -133,7 +136,7 @@ class Frame164Screen extends StatelessWidget {
                     ),
                   ),
                 ),
-              
+                ),
 
                  CustomImageView(
                   imagePath: ImageConstant.imgScreenshot2023, //رزين
@@ -145,7 +148,7 @@ class Frame164Screen extends StatelessWidget {
                     bottom: 15,
                   ),
                 ),
-               
+                
               ],
             ),
           ),

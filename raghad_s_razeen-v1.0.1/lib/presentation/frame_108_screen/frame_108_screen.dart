@@ -192,15 +192,6 @@ class Frame108Screen extends StatelessWidget {//الملف الشخصي
             ),
         
         ),
-        // bottomNavigationBar: _buildIMG(context),
-        // // floatingActionButton: CustomFloatingButton(
-        // //   height: 50,
-        // //   width: 50,
-        // //   child: Icon(
-        // //     Icons.add,
-        // //   ),
-        // // ),
-        // floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       ),
     );
   }

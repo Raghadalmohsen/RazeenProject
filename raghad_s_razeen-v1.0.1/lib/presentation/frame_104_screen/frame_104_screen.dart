@@ -76,6 +76,7 @@ class Frame104Screen extends StatelessWidget {
                             padding: EdgeInsets.only(
                               left: 20.h,
                               right: 29.h,
+                              bottom: 65
                             ),
                             child: Column(
                               mainAxisSize: MainAxisSize.min,
@@ -86,7 +87,7 @@ class Frame104Screen extends StatelessWidget {
                                   margin: EdgeInsets.only(left: 6.h),
                                   padding: EdgeInsets.symmetric(
                                     horizontal: 22.h,
-                                    vertical: 100.v,
+                                    vertical: 90.v,
                                   ),
                                   decoration:
                                       AppDecoration.outlinePrimary7.copyWith(
@@ -97,7 +98,7 @@ class Frame104Screen extends StatelessWidget {
                                     mainAxisSize: MainAxisSize.min,
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     children: [
-                                      SizedBox(height: 26.v),
+                                      SizedBox(height: 15.v),
                                       CustomTextFormField(
                                         controller: emailController,
                                         hintText:
@@ -111,7 +112,7 @@ class Frame104Screen extends StatelessWidget {
                                             TextFormFieldStyleHelper
                                                 .outlinePrimary,
                                       ),
-                                      SizedBox(height: 38.v),
+                                      SizedBox(height: 18.v),
                                       CustomTextFormField(
                                         controller: passwordController,
                                         hintText:
@@ -235,7 +236,7 @@ class Frame104Screen extends StatelessWidget {
                           child: Container(
                             width: 244.h,
                             margin: EdgeInsets.only(
-                              top: 129.v,
+                              top: 175.v,
                               right: 31.h,
                             ),
                             decoration: AppDecoration.outlinePrimary3,

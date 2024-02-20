@@ -46,7 +46,9 @@ class CustomBottomBarState extends State<CustomBottomBar> {
        BorderRadiusStyle.roundedBorder33,
                                       
       ),
-   
+    child: SingleChildScrollView(
+                  //for overflow
+                  physics: NeverScrollableScrollPhysics(),
       child: BottomNavigationBar(
         //backgroundColor: Color.fromARGB(153, 255, 255, 255),
         backgroundColor: Color.fromARGB(255, 255, 255, 255),
@@ -66,7 +68,7 @@ class CustomBottomBarState extends State<CustomBottomBar> {
                   height: 44.adaptSize,
                   width: 44.adaptSize,
                    margin: EdgeInsets.only(
-                    bottom: 80.v,
+                    bottom: 30.v,
                    ),
                 ),
               ),
@@ -80,15 +82,20 @@ class CustomBottomBarState extends State<CustomBottomBar> {
                 imagePath: bottomMenuList[index].icon,
                 height: 44.adaptSize,
                 width: 44.adaptSize,
-                
+                 margin: EdgeInsets.only(
+                    bottom: 20.v,
+                   ),
               ),
             ),
             activeIcon: Opacity(
               opacity: 1,
               child: CustomImageView(
                 imagePath: bottomMenuList[index].activeIcon,
-                height: 40.adaptSize,
-                width: 40.adaptSize,
+                height: 44.adaptSize,
+                width: 44.adaptSize,
+                 margin: EdgeInsets.only(
+                    bottom: 20.v,
+                   ),
               ),
             ),
             label: '',
@@ -114,6 +121,7 @@ class CustomBottomBarState extends State<CustomBottomBar> {
   }
 },
       ),
+    ),
     );
   }
 }

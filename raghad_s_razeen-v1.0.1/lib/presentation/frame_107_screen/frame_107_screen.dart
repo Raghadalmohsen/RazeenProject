@@ -51,7 +51,7 @@ class Frame107Screen extends StatelessWidget {
                   child: Container(
                     padding: EdgeInsets.symmetric(
                       horizontal: 20.h,
-                      vertical: 45.v,
+                      vertical: 50.v,
                     ),
                     decoration: BoxDecoration(
                       border: Border.all(),
@@ -74,7 +74,7 @@ class Frame107Screen extends StatelessWidget {
                           ),
                           padding: EdgeInsets.symmetric(
                             horizontal: 21.h,
-                            vertical: 130.v,
+                            vertical: 115.v,
                           ),
                           decoration: AppDecoration.outlinePrimary7.copyWith(
                             borderRadius: BorderRadiusStyle.roundedBorder33,
@@ -88,10 +88,6 @@ class Frame107Screen extends StatelessWidget {
                                   horizontal: 23.h,
                                   vertical: 14.v,
                                 ),
-                                // decoration:// الاطراف البيضاء
-                                //     AppDecoration.outlinePrimary9.copyWith(
-                                //   borderRadius: BorderRadiusStyle.circleBorder30,
-                                // ),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.min,
                                   // crossAxisAlignment: CrossAxisAlignment.start,
