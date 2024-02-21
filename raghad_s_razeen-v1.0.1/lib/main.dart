@@ -5,16 +5,18 @@ import 'core/app_export.dart';
 import 'package:firebase_core/firebase_core.dart';/////////////
 
 var globalMessengerKey = GlobalKey<ScaffoldMessengerState>();
-Future<void> main() async {/////////////
+// Future<void> main() async {/////////////
+void main() async {/////////////
+  runApp(MyApp()); //const
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();//////////
-  SystemChrome.setPreferredOrientations([
-    DeviceOrientation.portraitUp,
-  ]);
+  // SystemChrome.setPreferredOrientations([
+  //   DeviceOrientation.portraitUp,
+  // ]);
 
   ///Please update theme as per your need if required.
   ThemeHelper().changeTheme('primary');
-  runApp(MyApp());
+  // runApp(MyApp()); //مفروض اول لاين بعد المين
 }
 
 class MyApp extends StatelessWidget {

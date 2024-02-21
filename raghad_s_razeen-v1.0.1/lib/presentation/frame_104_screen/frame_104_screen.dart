@@ -1,11 +1,17 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:raghad_s_razeen/core/app_export.dart';
 import 'package:raghad_s_razeen/presentation/frame_103_screen/frame_103_screen.dart';
 import 'package:raghad_s_razeen/presentation/frame_105_screen/frame_105_screen.dart';
 import 'package:raghad_s_razeen/presentation/frame_106_screen/frame_106_screen.dart';
+import 'package:raghad_s_razeen/presentation/frame_eightyseven_screen/frame_eightyseven_screen.dart';
 import 'package:raghad_s_razeen/widgets/custom_elevated_button.dart';
 import 'package:raghad_s_razeen/widgets/custom_text_form_field.dart';
+//
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+//
 
 class Frame104Screen extends StatelessWidget {
   //تسجيل دخول
@@ -19,6 +25,35 @@ class Frame104Screen extends StatelessWidget {
   TextEditingController passwordController = TextEditingController();
 
   GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+
+  //
+
+  void _signInUser(BuildContext context) async {
+    if (_formKey.currentState!.validate()) {
+      // Validation successful, perform sign-in logic here
+      String email = emailController.text;
+      String password = passwordController.text;
+
+      try {
+        
+        await FirebaseAuth.instance.signInWithEmailAndPassword(
+          email: email,
+          password: password,
+        );
+
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => FrameEightysevenScreen()),
+        );
+      } catch (e) {
+        // Handle any errors that occur during sign-in
+        print('Sign-in error: $e');
+        // You can show an error message to the user if desired
+      }
+    }
+  }
+
+  //
 
   @override
   Widget build(BuildContext context) {
@@ -65,7 +100,7 @@ class Frame104Screen extends StatelessWidget {
                   child: Container(
                     height: 794.v,
                     width: double.maxFinite,
-                    margin: EdgeInsets.only(bottom: 5.v),//19 كان 
+                    margin: EdgeInsets.only(bottom: 5.v), //19 كان
                     child: Stack(
                       alignment: Alignment.topRight,
                       children: [
@@ -74,10 +109,7 @@ class Frame104Screen extends StatelessWidget {
                           alignment: Alignment.center,
                           child: Padding(
                             padding: EdgeInsets.only(
-                              left: 20.h,
-                              right: 29.h,
-                              bottom: 65
-                            ),
+                                left: 20.h, right: 29.h, bottom: 65),
                             child: Column(
                               mainAxisSize: MainAxisSize.min,
                               crossAxisAlignment: CrossAxisAlignment.start,
@@ -158,6 +190,10 @@ class Frame104Screen extends StatelessWidget {
                                       ),
                                       SizedBox(height: 49.v),
                                       CustomElevatedButton(
+//
+                                          onPressed: () => _signInUser(context),
+                                       
+//
                                         height: 42.v,
                                         width: 177.h,
                                         text: "تسجيل الدخول",
@@ -180,8 +216,11 @@ class Frame104Screen extends StatelessWidget {
                                                   //اضافي مع زر التنقل
                                                   child: Text(
                                                     "تسجيل جديد",
-                                                    style: CustomTextStyles.bodySmall12 .copyWith(
-                                                      color: Colors.blue, // Change the color to indicate it's tappable
+                                                    style: CustomTextStyles
+                                                        .bodySmall12
+                                                        .copyWith(
+                                                      color: Colors
+                                                          .blue, // Change the color to indicate it's tappable
                                                     ),
                                                   ),
                                                   onPressed: () {
@@ -254,7 +293,7 @@ class Frame104Screen extends StatelessWidget {
                           height: 206.v,
                           width: 150.h,
                           alignment: Alignment.bottomLeft,
-                          margin: EdgeInsets.only(bottom: 1.v),//13 كان 
+                          margin: EdgeInsets.only(bottom: 1.v), //13 كان
                         ),
                       ],
                     ),
