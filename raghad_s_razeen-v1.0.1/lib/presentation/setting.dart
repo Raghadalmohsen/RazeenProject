@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:raghad_s_razeen/core/app_export.dart';
+import 'package:raghad_s_razeen/presentation/firstpage.dart';
 import 'package:raghad_s_razeen/presentation/initialscreen.dart';
 import 'package:raghad_s_razeen/presentation/profile.dart';
 import 'package:raghad_s_razeen/presentation/requestskill.dart';
 import 'package:raghad_s_razeen/presentation/medals.dart';
 import 'package:raghad_s_razeen/widgets/custom_bottom_bar.dart';
 import 'package:raghad_s_razeen/widgets/custom_floating_button.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 class Setting extends StatelessWidget {
   //الاعدادات
@@ -243,14 +245,19 @@ class Setting extends StatelessWidget {
                                         //     AppDecoration.outlinePrimary3,
                                         child: ElevatedButton(
                                             //زر تسجيل خروج
-                                            onPressed: () {
-                                              Navigator.push(
-                                                context,
-                                                MaterialPageRoute(
-                                                    builder: (context) =>
-                                                        Requestskill()),
-                                              );
-                                            },
+                                             onPressed: () async {
+  try {
+    await FirebaseAuth.instance.signOut();
+    // Navigate to the sign-in or home screen after sign out
+    Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => Initialscreen()),
+        );;
+  } catch (e) {
+    // Handle sign out errors
+    print('Failed to sign out: $e');
+  }
+},
                                             style: ElevatedButton.styleFrom(
                                                 backgroundColor:
                                                     Colors.transparent,
