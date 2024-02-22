@@ -292,7 +292,7 @@ class Signin extends StatelessWidget {
                               ImageConstant.imgScreenshot2023173x129, //الجد
                           height: 206.v,
                           width: 150.h,
-                          alignment: Alignment.bottomLeft,
+                          alignment: Alignment.bottomLeft,/////////////
                           margin: EdgeInsets.only(bottom: 1.v), //13 كان
                         ),
                       ],
