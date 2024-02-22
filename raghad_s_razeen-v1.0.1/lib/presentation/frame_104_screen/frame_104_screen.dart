@@ -50,6 +50,23 @@ class Frame104Screen extends StatelessWidget {
       } catch (e) {
         // Handle any errors that occur during sign-in
         print('Sign-in error: $e');
+        showDialog(
+            context: context,
+            builder: (BuildContext context) {
+              return AlertDialog(
+                title: Text('خطأ'),
+                content: Text('أوه لا! يبدو أنك لم تقم بإنشاء حساب بعد يرجى إنشاء حساب جديد للاستمتاع بالمرح والتعلم معنا'),
+                actions: <Widget>[
+                  TextButton(
+                    onPressed: () {
+                      Navigator.pop(context);
+                    },
+                    child: Text('حسنا'),
+                  ),
+                ],
+              );
+            },
+          );
         // You can show an error message to the user if desired
       }
     }

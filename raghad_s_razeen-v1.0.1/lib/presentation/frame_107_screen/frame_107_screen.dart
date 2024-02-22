@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:raghad_s_razeen/core/app_export.dart';
+import 'package:raghad_s_razeen/presentation/frame_100_screen/frame_100_screen.dart';
 import 'package:raghad_s_razeen/presentation/frame_103_screen/frame_103_screen.dart';
 import 'package:raghad_s_razeen/presentation/frame_108_screen/frame_108_screen.dart';
 import 'package:raghad_s_razeen/presentation/frame_131_screen/frame_131_screen.dart';
 import 'package:raghad_s_razeen/presentation/frame_164_screen/frame_164_screen.dart';
 import 'package:raghad_s_razeen/widgets/custom_bottom_bar.dart';
 import 'package:raghad_s_razeen/widgets/custom_floating_button.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 class Frame107Screen extends StatelessWidget {
   //الاعدادات
@@ -243,14 +245,19 @@ class Frame107Screen extends StatelessWidget {
                                         //     AppDecoration.outlinePrimary3,
                                         child: ElevatedButton(
                                             //زر تسجيل خروج
-                                            onPressed: () {
-                                              Navigator.push(
-                                                context,
-                                                MaterialPageRoute(
-                                                    builder: (context) =>
-                                                        Frame131Screen()),
-                                              );
-                                            },
+                                            onPressed: () async {
+  try {
+    await FirebaseAuth.instance.signOut();
+    // Navigate to the sign-in or home screen after sign out
+    Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => Frame100Screen()),
+        );;
+  } catch (e) {
+    // Handle sign out errors
+    print('Failed to sign out: $e');
+  }
+},
                                             style: ElevatedButton.styleFrom(
                                                 backgroundColor:
                                                     Colors.transparent,
