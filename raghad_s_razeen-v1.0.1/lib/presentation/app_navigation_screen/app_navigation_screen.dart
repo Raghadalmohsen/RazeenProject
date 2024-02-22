@@ -25,18 +25,107 @@ class AppNavigationScreen extends StatelessWidget {
                     ),
                     child: Column(
                       children: [
+                          _buildScreenTitle(
+                          context,
+                          screenTitle: "Firstpage",
+                          onTapScreenTitle: () => onTapScreenTitle(
+                              context, AppRoutes.firstpage),//
+                        ),
+                           _buildScreenTitle(
+                          context,
+                          screenTitle: "Initialscreen",
+                          onTapScreenTitle: () => onTapScreenTitle(
+                              context, AppRoutes.initialscreen),//
+                        ),
+                           _buildScreenTitle(
+                          context,
+                          screenTitle: "Signin",
+                          onTapScreenTitle: () => onTapScreenTitle(
+                              context, AppRoutes.signin),//
+                        ),
+
+                        //          _buildScreenTitle(
+                        //   context,
+                        //   screenTitle: "Signin",
+                        //   onTapScreenTitle: () => onTapScreenTitle(
+                        //       context, AppRoutes.signin),//
+                        // ),
+
+                                 _buildScreenTitle(
+                          context,
+                          screenTitle: "forgetpass",
+                          onTapScreenTitle: () => onTapScreenTitle(
+                              context, AppRoutes.forgetpass),//
+                        ),
+
+                                 _buildScreenTitle(
+                          context,
+                          screenTitle: "setting",
+                          onTapScreenTitle: () => onTapScreenTitle(
+                              context, AppRoutes.setting),//
+                        ),
+          _buildScreenTitle(
+                          context,
+                          screenTitle: "profile",
+                          onTapScreenTitle: () => onTapScreenTitle(
+                              context, AppRoutes.profile),//
+                        ),
+
+  _buildScreenTitle(
+                          context,
+                          screenTitle: "razeenmap",
+                          onTapScreenTitle: () => onTapScreenTitle(
+                              context, AppRoutes.razeenmap),//
+                        ),
+ _buildScreenTitle(
+                          context,
+                          screenTitle: "requestskill",
+                          onTapScreenTitle: () => onTapScreenTitle(
+                              context, AppRoutes.requestskill),//
+                        ),
+ _buildScreenTitle(
+                          context,
+                          screenTitle: "speakskill",
+                          onTapScreenTitle: () => onTapScreenTitle(
+                              context, AppRoutes.speakskill),//
+                        ),
+                         _buildScreenTitle(
+                          context,
+                          screenTitle: "quietplaceskill",
+                          onTapScreenTitle: () => onTapScreenTitle(
+                              context, AppRoutes.quietplaceskill),//
+                        ),
+     _buildScreenTitle(
+                          context,
+                          screenTitle: "respectdiffskill",
+                          onTapScreenTitle: () => onTapScreenTitle(
+                              context, AppRoutes.respectdiffskill),//
+                        ),
+  _buildScreenTitle(
+                          context,
+                          screenTitle: "safeplaceskill",
+                          onTapScreenTitle: () => onTapScreenTitle(
+                              context, AppRoutes.safeplaceskill),//
+                        ),
+
+
+
+
+
+
+
                         _buildScreenTitle(
                           context,
                           screenTitle: "Frame 135",
                           onTapScreenTitle: () => onTapScreenTitle(
                               context, AppRoutes.frame135Screen),
                         ),
-                        _buildScreenTitle(
-                          context,
-                          screenTitle: "Frame 134",
-                          onTapScreenTitle: () => onTapScreenTitle(
-                              context, AppRoutes.frame134Screen),
-                        ),
+                        // _buildScreenTitle(
+                        //   context,
+                        //   screenTitle: "Frame 134",
+                        //   onTapScreenTitle: () => onTapScreenTitle(
+                        //       context, AppRoutes.frame134Screen),
+                        // ),
                         _buildScreenTitle(
                           context,
                           screenTitle: "Frame ThirtyFour",
@@ -67,54 +156,54 @@ class AppNavigationScreen extends StatelessWidget {
                           onTapScreenTitle: () => onTapScreenTitle(
                               context, AppRoutes.frame136Screen),
                         ),
-                        _buildScreenTitle(
-                          context,
-                          screenTitle: "Frame 133",
-                          onTapScreenTitle: () => onTapScreenTitle(
-                              context, AppRoutes.frame133Screen),
-                        ),
+                        // _buildScreenTitle(
+                        //   context,
+                        //   screenTitle: "Frame 133",
+                        //   onTapScreenTitle: () => onTapScreenTitle(
+                        //       context, AppRoutes.frame133Screen),
+                        // ),
                         _buildScreenTitle(
                           context,
                           screenTitle: "Frame 158 - Container",
                           onTapScreenTitle: () => onTapScreenTitle(
                               context, AppRoutes.frame158ContainerScreen),
                         ),
-                        _buildScreenTitle(
-                          context,
-                          screenTitle: "Frame 164",
-                          onTapScreenTitle: () => onTapScreenTitle(
-                              context, AppRoutes.frame164Screen),
-                        ),
-                        _buildScreenTitle(
-                          context,
-                          screenTitle: "Frame 100",
-                          onTapScreenTitle: () => onTapScreenTitle(
-                              context, AppRoutes.frame100Screen),
-                        ),
-                        _buildScreenTitle(
-                          context,
-                          screenTitle: "Frame 103",
-                          onTapScreenTitle: () => onTapScreenTitle(
-                              context, AppRoutes.frame103Screen),
-                        ),
-                        _buildScreenTitle(
-                          context,
-                          screenTitle: "Frame 104",
-                          onTapScreenTitle: () => onTapScreenTitle(
-                              context, AppRoutes.frame104Screen),
-                        ),
+                        // _buildScreenTitle(
+                        //   context,
+                        //   screenTitle: "Frame 164",
+                        //   onTapScreenTitle: () => onTapScreenTitle(
+                        //       context, AppRoutes.frame164Screen),
+                        // ),
+                        // _buildScreenTitle(
+                        //   context,
+                        //   screenTitle: "Frame 100",
+                        //   onTapScreenTitle: () => onTapScreenTitle(
+                        //       context, AppRoutes.frame100Screen),
+                        // ),
+                        // _buildScreenTitle(
+                        //   context,
+                        //   screenTitle: "Frame 103",
+                        //   onTapScreenTitle: () => onTapScreenTitle(
+                        //       context, AppRoutes.frame103Screen),
+                        // ),
+                        // _buildScreenTitle(
+                        //   context,
+                        //   screenTitle: "Frame 104",
+                        //   onTapScreenTitle: () => onTapScreenTitle(
+                        //       context, AppRoutes.frame104Screen),
+                        // ),
                         _buildScreenTitle(
                           context,
                           screenTitle: "Frame 105",
                           onTapScreenTitle: () => onTapScreenTitle(
                               context, AppRoutes.frame105Screen),
                         ),
-                        _buildScreenTitle(
-                          context,
-                          screenTitle: "Frame 106",
-                          onTapScreenTitle: () => onTapScreenTitle(
-                              context, AppRoutes.frame106Screen),
-                        ),
+                        // _buildScreenTitle(
+                        //   context,
+                        //   screenTitle: "Frame 106",
+                        //   onTapScreenTitle: () => onTapScreenTitle(
+                        //       context, AppRoutes.frame106Screen),
+                        // ),
                         _buildScreenTitle(
                           context,
                           screenTitle: "Frame 112",
@@ -145,18 +234,18 @@ class AppNavigationScreen extends StatelessWidget {
                           onTapScreenTitle: () => onTapScreenTitle(
                               context, AppRoutes.frame121Screen),
                         ),
-                        _buildScreenTitle(
-                          context,
-                          screenTitle: "Frame 107",
-                          onTapScreenTitle: () => onTapScreenTitle(
-                              context, AppRoutes.frame107Screen),
-                        ),
-                        _buildScreenTitle(
-                          context,
-                          screenTitle: "Frame 108",
-                          onTapScreenTitle: () => onTapScreenTitle(
-                              context, AppRoutes.frame108Screen),
-                        ),
+                        // _buildScreenTitle(
+                        //   context,
+                        //   screenTitle: "Frame 107",
+                        //   onTapScreenTitle: () => onTapScreenTitle(
+                        //       context, AppRoutes.frame107Screen),
+                        // ),
+                        // _buildScreenTitle(
+                        //   context,
+                        //   screenTitle: "Frame 108",
+                        //   onTapScreenTitle: () => onTapScreenTitle(
+                        //       context, AppRoutes.frame108Screen),
+                        // ),
                         _buildScreenTitle(
                           context,
                           screenTitle: "Frame 139",
@@ -169,12 +258,12 @@ class AppNavigationScreen extends StatelessWidget {
                           onTapScreenTitle: () => onTapScreenTitle(
                               context, AppRoutes.frame138Screen),
                         ),
-                        _buildScreenTitle(
-                          context,
-                          screenTitle: "Frame 130",
-                          onTapScreenTitle: () => onTapScreenTitle(
-                              context, AppRoutes.frame130Screen),
-                        ),
+                        // _buildScreenTitle(
+                        //   context,
+                        //   screenTitle: "Frame 130",
+                        //   onTapScreenTitle: () => onTapScreenTitle(
+                        //       context, AppRoutes.frame130Screen),
+                        // ),
                         _buildScreenTitle(
                           context,
                           screenTitle: "Frame 146",
@@ -229,12 +318,12 @@ class AppNavigationScreen extends StatelessWidget {
                           onTapScreenTitle: () => onTapScreenTitle(
                               context, AppRoutes.frame140Screen),
                         ),
-                        _buildScreenTitle(
-                          context,
-                          screenTitle: "Frame 131",
-                          onTapScreenTitle: () => onTapScreenTitle(
-                              context, AppRoutes.frame131Screen),
-                        ),
+                        // _buildScreenTitle(
+                        //   context,
+                        //   screenTitle: "Frame 131",
+                        //   onTapScreenTitle: () => onTapScreenTitle(
+                        //       context, AppRoutes.frame131Screen),
+                        // ),
                         _buildScreenTitle(
                           context,
                           screenTitle: "Frame 159",
@@ -337,114 +426,114 @@ class AppNavigationScreen extends StatelessWidget {
                           onTapScreenTitle: () => onTapScreenTitle(
                               context, AppRoutes.frameNinetythreeScreen),
                         ),
-                        _buildScreenTitle(
-                          context,
-                          screenTitle: "Frame Eighteen",
-                          onTapScreenTitle: () => onTapScreenTitle(
-                              context, AppRoutes.frameEighteenScreen),
-                        ),
-                        _buildScreenTitle(
-                          context,
-                          screenTitle: "Frame SixtyNine",
-                          onTapScreenTitle: () => onTapScreenTitle(
-                              context, AppRoutes.frameSixtynineScreen),
-                        ),
-                        _buildScreenTitle(
-                          context,
-                          screenTitle: "Frame EightySix",
-                          onTapScreenTitle: () => onTapScreenTitle(
-                              context, AppRoutes.frameEightysixScreen),
-                        ),
-                        _buildScreenTitle(
-                          context,
-                          screenTitle: "Frame ThirtyNine",
-                          onTapScreenTitle: () => onTapScreenTitle(
-                              context, AppRoutes.frameThirtynineScreen),
-                        ),
-                        _buildScreenTitle(
-                          context,
-                          screenTitle: "Frame ThirtyEight",
-                          onTapScreenTitle: () => onTapScreenTitle(
-                              context, AppRoutes.frameThirtyeightScreen),
-                        ),
-                        _buildScreenTitle(
-                          context,
-                          screenTitle: "Frame ThirtySeven",
-                          onTapScreenTitle: () => onTapScreenTitle(
-                              context, AppRoutes.frameThirtysevenScreen),
-                        ),
-                        _buildScreenTitle(
-                          context,
-                          screenTitle: "Frame EightyFive",
-                          onTapScreenTitle: () => onTapScreenTitle(
-                              context, AppRoutes.frameEightyfiveScreen),
-                        ),
-                        _buildScreenTitle(
-                          context,
-                          screenTitle: "Frame EightyOne",
-                          onTapScreenTitle: () => onTapScreenTitle(
-                              context, AppRoutes.frameEightyoneScreen),
-                        ),
-                        _buildScreenTitle(
-                          context,
-                          screenTitle: "Frame NinetyNine",
-                          onTapScreenTitle: () => onTapScreenTitle(
-                              context, AppRoutes.frameNinetynineScreen),
-                        ),
-                        _buildScreenTitle(
-                          context,
-                          screenTitle: "Frame NinetyEight",
-                          onTapScreenTitle: () => onTapScreenTitle(
-                              context, AppRoutes.frameNinetyeightScreen),
-                        ),
-                        _buildScreenTitle(
-                          context,
-                          screenTitle: "Frame NinetySeven",
-                          onTapScreenTitle: () => onTapScreenTitle(
-                              context, AppRoutes.frameNinetysevenScreen),
-                        ),
-                        _buildScreenTitle(
-                          context,
-                          screenTitle: "Frame Five",
-                          onTapScreenTitle: () => onTapScreenTitle(
-                              context, AppRoutes.frameFiveScreen),
-                        ),
-                        _buildScreenTitle(
-                          context,
-                          screenTitle: "Frame Eight",
-                          onTapScreenTitle: () => onTapScreenTitle(
-                              context, AppRoutes.frameEightScreen),
-                        ),
-                        _buildScreenTitle(
-                          context,
-                          screenTitle: "Frame Nine",
-                          onTapScreenTitle: () => onTapScreenTitle(
-                              context, AppRoutes.frameNineScreen),
-                        ),
-                        _buildScreenTitle(
-                          context,
-                          screenTitle: "Frame Fourteen",
-                          onTapScreenTitle: () => onTapScreenTitle(
-                              context, AppRoutes.frameFourteenScreen),
-                        ),
-                        _buildScreenTitle(
-                          context,
-                          screenTitle: "Frame Fifteen",
-                          onTapScreenTitle: () => onTapScreenTitle(
-                              context, AppRoutes.frameFifteenScreen),
-                        ),
-                        _buildScreenTitle(
-                          context,
-                          screenTitle: "Frame SixtyTwo",
-                          onTapScreenTitle: () => onTapScreenTitle(
-                              context, AppRoutes.frameSixtytwoScreen),
-                        ),
-                        _buildScreenTitle(
-                          context,
-                          screenTitle: "Frame FiftyNine",
-                          onTapScreenTitle: () => onTapScreenTitle(
-                              context, AppRoutes.frameFiftynineScreen),
-                        ),
+                        // _buildScreenTitle(
+                        //   context,
+                        //   screenTitle: "Frame Eighteen",
+                        //   onTapScreenTitle: () => onTapScreenTitle(
+                        //       context, AppRoutes.frameEighteenScreen),
+                        // ),
+                        // _buildScreenTitle(
+                        //   context,
+                        //   screenTitle: "Frame SixtyNine",
+                        //   onTapScreenTitle: () => onTapScreenTitle(
+                        //       context, AppRoutes.frameSixtynineScreen),
+                        // ),
+                        // _buildScreenTitle(
+                        //   context,
+                        //   screenTitle: "Frame EightySix",
+                        //   onTapScreenTitle: () => onTapScreenTitle(
+                        //       context, AppRoutes.frameEightysixScreen),
+                        // ),
+                        // _buildScreenTitle(
+                        //   context,
+                        //   screenTitle: "Frame ThirtyNine",
+                        //   onTapScreenTitle: () => onTapScreenTitle(
+                        //       context, AppRoutes.frameThirtynineScreen),
+                        // ),
+                        // _buildScreenTitle(
+                        //   context,
+                        //   screenTitle: "Frame ThirtyEight",
+                        //   onTapScreenTitle: () => onTapScreenTitle(
+                        //       context, AppRoutes.frameThirtyeightScreen),
+                        // ),
+                        // _buildScreenTitle(
+                        //   context,
+                        //   screenTitle: "Frame ThirtySeven",
+                        //   onTapScreenTitle: () => onTapScreenTitle(
+                        //       context, AppRoutes.frameThirtysevenScreen),
+                        // ),
+                        // _buildScreenTitle(
+                        //   context,
+                        //   screenTitle: "Frame EightyFive",
+                        //   onTapScreenTitle: () => onTapScreenTitle(
+                        //       context, AppRoutes.frameEightyfiveScreen),
+                        // ),
+                        // _buildScreenTitle(
+                        //   context,
+                        //   screenTitle: "Frame EightyOne",
+                        //   onTapScreenTitle: () => onTapScreenTitle(
+                        //       context, AppRoutes.frameEightyoneScreen),
+                        // ),
+                        // _buildScreenTitle(
+                        //   context,
+                        //   screenTitle: "Frame NinetyNine",
+                        //   onTapScreenTitle: () => onTapScreenTitle(
+                        //       context, AppRoutes.frameNinetynineScreen),
+                        // ),
+                        // _buildScreenTitle(
+                        //   context,
+                        //   screenTitle: "Frame NinetyEight",
+                        //   onTapScreenTitle: () => onTapScreenTitle(
+                        //       context, AppRoutes.frameNinetyeightScreen),
+                        // ),
+                        // _buildScreenTitle(
+                        //   context,
+                        //   screenTitle: "Frame NinetySeven",
+                        //   onTapScreenTitle: () => onTapScreenTitle(
+                        //       context, AppRoutes.frameNinetysevenScreen),
+                        // ),
+                        // _buildScreenTitle(
+                        //   context,
+                        //   screenTitle: "Frame Five",
+                        //   onTapScreenTitle: () => onTapScreenTitle(
+                        //       context, AppRoutes.frameFiveScreen),
+                        // ),
+                        // _buildScreenTitle(
+                        //   context,
+                        //   screenTitle: "Frame Eight",
+                        //   onTapScreenTitle: () => onTapScreenTitle(
+                        //       context, AppRoutes.frameEightScreen),
+                        // ),
+                        // _buildScreenTitle(
+                        //   context,
+                        //   screenTitle: "Frame Nine",
+                        //   onTapScreenTitle: () => onTapScreenTitle(
+                        //       context, AppRoutes.frameNineScreen),
+                        // ),
+                        // _buildScreenTitle(
+                        //   context,
+                        //   screenTitle: "Frame Fourteen",
+                        //   onTapScreenTitle: () => onTapScreenTitle(
+                        //       context, AppRoutes.frameFourteenScreen),
+                        // ),
+                        // _buildScreenTitle(
+                        //   context,
+                        //   screenTitle: "Frame Fifteen",
+                        //   onTapScreenTitle: () => onTapScreenTitle(
+                        //       context, AppRoutes.frameFifteenScreen),
+                        // ),
+                        // _buildScreenTitle(
+                        //   context,
+                        //   screenTitle: "Frame SixtyTwo",
+                        //   onTapScreenTitle: () => onTapScreenTitle(
+                        //       context, AppRoutes.frameSixtytwoScreen),
+                        // ),
+                        // _buildScreenTitle(
+                        //   context,
+                        //   screenTitle: "Frame FiftyNine",
+                        //   onTapScreenTitle: () => onTapScreenTitle(
+                        //       context, AppRoutes.frameFiftynineScreen),
+                        // ),
                         _buildScreenTitle(
                           context,
                           screenTitle: "Frame SeventySix",
@@ -457,66 +546,66 @@ class AppNavigationScreen extends StatelessWidget {
                           onTapScreenTitle: () => onTapScreenTitle(
                               context, AppRoutes.frameEightysevenScreen),
                         ),
-                        _buildScreenTitle(
-                          context,
-                          screenTitle: "Frame Ninety",
-                          onTapScreenTitle: () => onTapScreenTitle(
-                              context, AppRoutes.frameNinetyScreen),
-                        ),
-                        _buildScreenTitle(
-                          context,
-                          screenTitle: "Frame EightyNine",
-                          onTapScreenTitle: () => onTapScreenTitle(
-                              context, AppRoutes.frameEightynineScreen),
-                        ),
-                        _buildScreenTitle(
-                          context,
-                          screenTitle: "Frame NinetySix",
-                          onTapScreenTitle: () => onTapScreenTitle(
-                              context, AppRoutes.frameNinetysixScreen),
-                        ),
-                        _buildScreenTitle(
-                          context,
-                          screenTitle: "Frame NinetyFive",
-                          onTapScreenTitle: () => onTapScreenTitle(
-                              context, AppRoutes.frameNinetyfiveScreen),
-                        ),
-                        _buildScreenTitle(
-                          context,
-                          screenTitle: "Frame NinetyFour",
-                          onTapScreenTitle: () => onTapScreenTitle(
-                              context, AppRoutes.frameNinetyfourScreen),
-                        ),
-                        _buildScreenTitle(
-                          context,
-                          screenTitle: "Frame ThirtyThree",
-                          onTapScreenTitle: () => onTapScreenTitle(
-                              context, AppRoutes.frameThirtythreeScreen),
-                        ),
-                        _buildScreenTitle(
-                          context,
-                          screenTitle: "Frame TwentyNine",
-                          onTapScreenTitle: () => onTapScreenTitle(
-                              context, AppRoutes.frameTwentynineScreen),
-                        ),
-                        _buildScreenTitle(
-                          context,
-                          screenTitle: "Frame ThirtyTwo",
-                          onTapScreenTitle: () => onTapScreenTitle(
-                              context, AppRoutes.frameThirtytwoScreen),
-                        ),
-                        _buildScreenTitle(
-                          context,
-                          screenTitle: "Frame ThirtySix",
-                          onTapScreenTitle: () => onTapScreenTitle(
-                              context, AppRoutes.frameThirtysixScreen),
-                        ),
-                        _buildScreenTitle(
-                          context,
-                          screenTitle: "Frame ThirtyFive",
-                          onTapScreenTitle: () => onTapScreenTitle(
-                              context, AppRoutes.frameThirtyfiveScreen),
-                        ),
+                        // _buildScreenTitle(
+                        //   context,
+                        //   screenTitle: "Frame Ninety",
+                        //   onTapScreenTitle: () => onTapScreenTitle(
+                        //       context, AppRoutes.frameNinetyScreen),
+                        // ),
+                        // _buildScreenTitle(
+                        //   context,
+                        //   screenTitle: "Frame EightyNine",
+                        //   onTapScreenTitle: () => onTapScreenTitle(
+                        //       context, AppRoutes.frameEightynineScreen),
+                        // ),
+                        // _buildScreenTitle(
+                        //   context,
+                        //   screenTitle: "Frame NinetySix",
+                        //   onTapScreenTitle: () => onTapScreenTitle(
+                        //       context, AppRoutes.frameNinetysixScreen),
+                        // ),
+                        // _buildScreenTitle(
+                        //   context,
+                        //   screenTitle: "Frame NinetyFive",
+                        //   onTapScreenTitle: () => onTapScreenTitle(
+                        //       context, AppRoutes.frameNinetyfiveScreen),
+                        // ),
+                        // _buildScreenTitle(
+                        //   context,
+                        //   screenTitle: "Frame NinetyFour",
+                        //   onTapScreenTitle: () => onTapScreenTitle(
+                        //       context, AppRoutes.frameNinetyfourScreen),
+                        // ),
+                        // _buildScreenTitle(
+                        //   context,
+                        //   screenTitle: "Frame ThirtyThree",
+                        //   onTapScreenTitle: () => onTapScreenTitle(
+                        //       context, AppRoutes.frameThirtythreeScreen),
+                        // ),
+                        // _buildScreenTitle(
+                        //   context,
+                        //   screenTitle: "Frame TwentyNine",
+                        //   onTapScreenTitle: () => onTapScreenTitle(
+                        //       context, AppRoutes.frameTwentynineScreen),
+                        // ),
+                        // _buildScreenTitle(
+                        //   context,
+                        //   screenTitle: "Frame ThirtyTwo",
+                        //   onTapScreenTitle: () => onTapScreenTitle(
+                        //       context, AppRoutes.frameThirtytwoScreen),
+                        // ),
+                        // _buildScreenTitle(
+                        //   context,
+                        //   screenTitle: "Frame ThirtySix",
+                        //   onTapScreenTitle: () => onTapScreenTitle(
+                        //       context, AppRoutes.frameThirtysixScreen),
+                        // ),
+                        // _buildScreenTitle(
+                        //   context,
+                        //   screenTitle: "Frame ThirtyFive",
+                        //   onTapScreenTitle: () => onTapScreenTitle(
+                        //       context, AppRoutes.frameThirtyfiveScreen),
+                        // ),
                       ],
                     ),
                   ),

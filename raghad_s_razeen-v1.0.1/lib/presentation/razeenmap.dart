@@ -1,23 +1,24 @@
 import 'package:flutter/material.dart';
 import 'package:raghad_s_razeen/core/app_export.dart';
-import 'package:raghad_s_razeen/presentation/frame_103_screen/frame_103_screen.dart';
-import 'package:raghad_s_razeen/presentation/frame_107_screen/frame_107_screen.dart';
-import 'package:raghad_s_razeen/presentation/frame_130_screen/frame_130_screen.dart';
-import 'package:raghad_s_razeen/presentation/frame_131_screen/frame_131_screen.dart';
-import 'package:raghad_s_razeen/presentation/frame_132_screen/frame_132_screen.dart';
-import 'package:raghad_s_razeen/presentation/frame_133_screen/frame_133_screen.dart';
-import 'package:raghad_s_razeen/presentation/frame_134_screen/frame_134_screen.dart';
+import 'package:raghad_s_razeen/presentation/initialscreen.dart';
+import 'package:raghad_s_razeen/presentation/setting.dart';
+import 'package:raghad_s_razeen/presentation/respectdiffskill.dart';
+import 'package:raghad_s_razeen/presentation/requestskill.dart';
+import 'package:raghad_s_razeen/presentation/speakskill.dart';
+import 'package:raghad_s_razeen/presentation/quietplaceskill.dart';
+import 'package:raghad_s_razeen/presentation/safeplaceskill.dart';
 // import 'package:raghad_s_razeen/presentation/frame_eightyfive_screen/frame_eightyfive_screen.dart';
-import 'package:raghad_s_razeen/presentation/frame_eightyseven_screen/frame_eightyseven_screen.dart';
-import 'package:raghad_s_razeen/presentation/frame_ninetythree_screen/frame_ninetythree_screen.dart';
-import 'package:raghad_s_razeen/presentation/frame_seventysix_screen/frame_seventysix_screen.dart';
+// import 'package:raghad_s_razeen/presentation/frame_eightyseven_screen/frame_eightyseven_screen.dart';
+// import 'package:raghad_s_razeen/presentation/frame_ninetythree_screen/frame_ninetythree_screen.dart';
+// import 'package:raghad_s_razeen/presentation/frame_seventysix_screen/frame_seventysix_screen.dart';
+import 'package:raghad_s_razeen/presentation/setting.dart';
 import 'package:raghad_s_razeen/widgets/app_bar/appbar_leading_image.dart';
 import 'package:raghad_s_razeen/widgets/app_bar/custom_app_bar.dart';
 import 'package:raghad_s_razeen/widgets/custom_bottom_bar.dart';
 import 'package:raghad_s_razeen/widgets/custom_floating_button.dart';
 
-class  FrameEightysixScreen extends StatelessWidget { // صفحة الماب 
-  FrameEightysixScreen({Key? key})
+class  Razeenmap extends StatelessWidget { // صفحة الماب 
+  Razeenmap({Key? key})
       : super(
           key: key,
         );
@@ -39,7 +40,7 @@ class  FrameEightysixScreen extends StatelessWidget { // صفحة الماب
             icon: Icon(Icons.settings),
              onPressed: () { Navigator.push(
                context,
-               MaterialPageRoute(builder: (context) =>  Frame107Screen()), //الاعدادات
+               MaterialPageRoute(builder: (context) =>  Setting()), //الاعدادات
             );},
           ),
           backgroundColor: Color.fromARGB(0, 213, 204, 243),
@@ -109,7 +110,7 @@ class  FrameEightysixScreen extends StatelessWidget { // صفحة الماب
                                  child: ElevatedButton(
                 onPressed: () { Navigator.push(
                context,
-               MaterialPageRoute(builder: (context) =>  Frame134Screen()), //سلامة المكان
+               MaterialPageRoute(builder: (context) =>  Safeplaceskill()), //سلامة المكان
             );},
                 style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.transparent,
@@ -138,7 +139,7 @@ class  FrameEightysixScreen extends StatelessWidget { // صفحة الماب
                                  child: ElevatedButton(
                 onPressed: () { Navigator.push(
                context,
-               MaterialPageRoute(builder: (context) =>  Frame133Screen()), //المحافظة على الهدوء
+               MaterialPageRoute(builder: (context) =>  Quietplaceskill()), //المحافظة على الهدوء
             );},
                 style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.transparent,
@@ -162,7 +163,7 @@ class  FrameEightysixScreen extends StatelessWidget { // صفحة الماب
                                  child: ElevatedButton(
                 onPressed: () { Navigator.push(
                context,
-               MaterialPageRoute(builder: (context) =>  Frame130Screen()),//تقبل الاختلاف
+               MaterialPageRoute(builder: (context) =>  Respectdiffskill()),//تقبل الاختلاف
             );},
                 style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.transparent,
@@ -196,7 +197,7 @@ class  FrameEightysixScreen extends StatelessWidget { // صفحة الماب
                                  child: ElevatedButton(
                 onPressed: () { Navigator.push(
                context,
-               MaterialPageRoute(builder: (context) =>  Frame131Screen()), //كيف البي طلبات جدي
+               MaterialPageRoute(builder: (context) =>  Requestskill()), //كيف البي طلبات جدي
             );},
                 style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.transparent,
@@ -236,7 +237,7 @@ class  FrameEightysixScreen extends StatelessWidget { // صفحة الماب
                                  child: ElevatedButton(
                 onPressed: () { Navigator.push(
                context,
-               MaterialPageRoute(builder: (context) =>  Frame132Screen()), //التحدث بطريقة مناسبة 
+               MaterialPageRoute(builder: (context) =>  Speakskill()), //التحدث بطريقة مناسبة 
             );},
                 style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.transparent,

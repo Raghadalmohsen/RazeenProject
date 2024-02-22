@@ -25,7 +25,7 @@ class MyApp extends StatelessWidget {
           theme: theme,
           title: 'raghad_s_razeen',
           debugShowCheckedModeBanner: false,
-          initialRoute: AppRoutes.frame100Screen,//start
+          initialRoute: AppRoutes.firstpage,//start//
           routes: AppRoutes.routes,
         );
       },

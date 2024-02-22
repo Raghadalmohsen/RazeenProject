@@ -2,12 +2,10 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:raghad_s_razeen/core/app_export.dart';
-import 'package:raghad_s_razeen/presentation/forgetpass.dart';
-import 'package:raghad_s_razeen/presentation/frame_103_screen/frame_103_screen.dart';
-import 'package:raghad_s_razeen/presentation/frame_105_screen/frame_105_screen.dart';
-import 'package:raghad_s_razeen/presentation/frame_106_screen/frame_106_screen.dart';
-import 'package:raghad_s_razeen/presentation/frame_eightyseven_screen/frame_eightyseven_screen.dart';
 import 'package:raghad_s_razeen/presentation/initialscreen.dart';
+import 'package:raghad_s_razeen/presentation/frame_105_screen/frame_105_screen.dart';
+import 'package:raghad_s_razeen/presentation/forgetpass.dart';
+import 'package:raghad_s_razeen/presentation/frame_eightyseven_screen/frame_eightyseven_screen.dart';
 import 'package:raghad_s_razeen/widgets/custom_elevated_button.dart';
 import 'package:raghad_s_razeen/widgets/custom_text_form_field.dart';
 //
@@ -15,9 +13,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 //
 
-class Frame104Screen extends StatelessWidget {
+class Signin extends StatelessWidget {
   //تسجيل دخول
-  Frame104Screen({Key? key})
+  Signin({Key? key})
       : super(
           key: key,
         );

@@ -4,6 +4,8 @@ import 'package:raghad_s_razeen/presentation/frame_103_screen/frame_103_screen.d
 import 'package:raghad_s_razeen/presentation/frame_104_screen/frame_104_screen.dart';
 import 'package:raghad_s_razeen/presentation/frame_107_screen/frame_107_screen.dart';
 import 'package:raghad_s_razeen/presentation/frame_eightyseven_screen/frame_eightyseven_screen.dart';
+import 'package:raghad_s_razeen/presentation/initialscreen.dart';
+import 'package:raghad_s_razeen/presentation/signin.dart';
 import 'package:raghad_s_razeen/widgets/custom_elevated_button.dart';
 import 'package:raghad_s_razeen/widgets/custom_text_form_field.dart';
 //
@@ -132,7 +134,7 @@ class _Frame105ScreenState extends State<Frame105Screen> {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                      builder: (context) => Frame103Screen()), //للصفحة الرئيسية
+                      builder: (context) => Initialscreen()), //للصفحة الرئيسية
                 );
               }),
           backgroundColor: Color.fromARGB(0, 17, 7, 51),
@@ -226,7 +228,7 @@ class _Frame105ScreenState extends State<Frame105Screen> {
                                                 context,
                                                 MaterialPageRoute(
                                                     builder: (context) =>
-                                                        Frame104Screen()), 
+                                                        Signin()), 
                                               );
                                             },
                                             child: Padding(
@@ -246,9 +248,7 @@ class _Frame105ScreenState extends State<Frame105Screen> {
                                           SizedBox(height: 1.v),
                                           SizedBox(
                                             width: 0.1.h,
-                                            // child: Divider(
-                                            //   color: appTheme.blueGray700.withOpacity(0.84),
-                                            // ),
+                                            
                                           ),
                                           Padding(
                                             padding:

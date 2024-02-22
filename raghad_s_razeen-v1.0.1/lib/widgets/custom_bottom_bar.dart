@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:raghad_s_razeen/core/app_export.dart';
-import 'package:raghad_s_razeen/presentation/frame_103_screen/frame_103_screen.dart';
-import 'package:raghad_s_razeen/presentation/frame_108_screen/frame_108_screen.dart';
-import 'package:raghad_s_razeen/presentation/frame_164_screen/frame_164_screen.dart';
-import 'package:raghad_s_razeen/presentation/frame_eightysix_screen/frame_eightysix_screen.dart';
-import 'package:raghad_s_razeen/presentation/frame_ninetysix_screen/frame_ninetysix_screen.dart';
+import 'package:raghad_s_razeen/presentation/initialscreen.dart';
+import 'package:raghad_s_razeen/presentation/profile.dart';
+import 'package:raghad_s_razeen/presentation/medals.dart';
+import 'package:raghad_s_razeen/presentation/razeenmap.dart';
+// import 'package:raghad_s_razeen/presentation/frame_ninetysix_screen/frame_ninetysix_screen.dart';
 
 class CustomBottomBar extends StatefulWidget {//بار صفحه 107
   CustomBottomBar({this.onChanged});
@@ -108,13 +108,13 @@ class CustomBottomBarState extends State<CustomBottomBar> {
   BottomBarEnum selectedType = bottomMenuList[index].type;
   switch (selectedType) {
     case BottomBarEnum.Img08961:
-      Navigator.push(context, MaterialPageRoute(builder: (context) => Frame108Screen()));//ملف شخصي
+      Navigator.push(context, MaterialPageRoute(builder: (context) => Profile()));//ملف شخصي
       break;
     case BottomBarEnum.Img08981:
-      Navigator.push(context, MaterialPageRoute(builder: (context) => FrameEightysixScreen()));//خريطه
+      Navigator.push(context, MaterialPageRoute(builder: (context) => Razeenmap()));//خريطه
       break;
     case BottomBarEnum.Medal22:
-      Navigator.push(context, MaterialPageRoute(builder: (context) => Frame164Screen()));//ميداليات
+      Navigator.push(context, MaterialPageRoute(builder: (context) => Medals()));//ميداليات
       break;
     default:
       break;
