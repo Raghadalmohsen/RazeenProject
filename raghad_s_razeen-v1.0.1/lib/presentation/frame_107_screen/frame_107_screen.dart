@@ -249,10 +249,10 @@ class Frame107Screen extends StatelessWidget {
   try {
     await FirebaseAuth.instance.signOut();
     // Navigate to the sign-in or home screen after sign out
-    Navigator.push(
-          context,
-          MaterialPageRoute(builder: (context) => Frame100Screen()),
-        );;
+    // Navigator.push(
+    //       context,
+    //       MaterialPageRoute(builder: (context) => Frame100Screen()),
+    //     );;
   } catch (e) {
     // Handle sign out errors
     print('Failed to sign out: $e');

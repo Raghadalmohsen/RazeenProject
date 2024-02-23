@@ -3,6 +3,7 @@ import 'package:raghad_s_razeen/core/app_export.dart';
 import 'package:raghad_s_razeen/presentation/initialscreen.dart';
 import 'package:raghad_s_razeen/presentation/frame_120_screen/frame_120_screen.dart';
 import 'package:raghad_s_razeen/presentation/frame_121_screen/frame_121_screen.dart';
+import 'package:raghad_s_razeen/presentation/safePlaceQuiz.dart';
 import 'package:raghad_s_razeen/widgets/app_bar/appbar_leading_image.dart';
 import 'package:raghad_s_razeen/widgets/app_bar/custom_app_bar.dart';
 import 'package:raghad_s_razeen/widgets/custom_bottom_bar.dart';
@@ -170,7 +171,7 @@ class Safeplaceskill extends StatelessWidget { //مهارة سلامة المك�
                                           child: ElevatedButton(
                                             onPressed: () { Navigator.push(
                                           context,
-                                          MaterialPageRoute(builder: (context) =>  Frame121Screen()),//Frame103Screen
+                                          MaterialPageRoute(builder: (context) =>  SafePlaceQuiz()),//Frame103Screen
                                         );},
                                             style: ElevatedButton.styleFrom(
                                                 backgroundColor: Colors.transparent,

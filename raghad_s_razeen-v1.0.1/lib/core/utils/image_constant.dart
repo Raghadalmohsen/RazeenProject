@@ -444,6 +444,14 @@ class ImageConstant {
 
    static String SadFeedback = '$imagePath/SadFeedback.png'; 
 
+   static String room1quiz1 = '$imagePath/room1.quiz1.png'; 
+   static String room2quiz1 = '$imagePath/room2.quiz1.png'; 
+   static String room3quiz1 = '$imagePath/room3.quiz1.png'; 
+
+   static String rightICON = '$imagePath/rightICON.png';
+   static String wrongICON = '$imagePath/wrongICON.png';  
+
+
 
 
   static String imageNotFound = 'assets/images/image_not_found.png';

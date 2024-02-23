@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:raghad_s_razeen/core/app_export.dart';
+import 'package:raghad_s_razeen/presentation/razeenmap.dart';
 import 'package:raghad_s_razeen/widgets/app_bar/appbar_leading_image.dart';
 import 'package:raghad_s_razeen/widgets/app_bar/custom_app_bar.dart';
 import 'package:raghad_s_razeen/widgets/custom_bottom_bar.dart';
@@ -88,6 +89,15 @@ class Sadfeedback extends StatelessWidget {
                                         text: "موافق",
                                         margin: EdgeInsets.only(bottom: 20.v),
                                         alignment: Alignment.bottomCenter,
+                                        onPressed: () {
+                                          //بداية كود تنقل الزر
+                                          Navigator.push(
+                                            context,
+                                            MaterialPageRoute(
+                                                builder: (context) =>
+                                                    Razeenmap()), //next page فيه حركه غبيه هنا هل بنقعد نكرر لكل مهارة الفيدباك ؟؟؟؟
+                                          );
+                                        }, //نهاية التنقل
                                       ),
                                     ],
                                   ),
