@@ -1,39 +1,24 @@
 import 'package:flutter/material.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:raghad_s_razeen/core/app_export.dart';
-import 'package:raghad_s_razeen/presentation/frame_103_screen/frame_103_screen.dart';
-import 'package:raghad_s_razeen/presentation/frame_104_screen/frame_104_screen.dart';
-import 'package:raghad_s_razeen/presentation/frame_107_screen/frame_107_screen.dart';
 import 'package:raghad_s_razeen/presentation/frame_eightyseven_screen/frame_eightyseven_screen.dart';
 import 'package:raghad_s_razeen/presentation/initialscreen.dart';
 import 'package:raghad_s_razeen/presentation/signin.dart';
 import 'package:raghad_s_razeen/widgets/custom_elevated_button.dart';
 import 'package:raghad_s_razeen/widgets/custom_text_form_field.dart';
-//
-import 'package:firebase_auth/firebase_auth.dart';
 
-//
 class Frame105Screen extends StatefulWidget {
   @override
   _Frame105ScreenState createState() => _Frame105ScreenState();
 }
 
- TextEditingController emailSectionController = TextEditingController();
-
-  TextEditingController passwordSectionController = TextEditingController();
-
-  GlobalKey<FormState> _formKey = GlobalKey<FormState>();
-
-  late String email;
-  late String password;
-
-
 class _Frame105ScreenState extends State<Frame105Screen> {
-  final _formKey = GlobalKey<FormState>();
-  final emailSectionController = TextEditingController();
-  final passwordSectionController = TextEditingController();
+  TextEditingController emailSectionController = TextEditingController();
+  TextEditingController passwordSectionController = TextEditingController();
   String email = '';
   String password = '';
 
+  GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
   @override
   void dispose() {
@@ -41,34 +26,18 @@ class _Frame105ScreenState extends State<Frame105Screen> {
     passwordSectionController.dispose();
     super.dispose();
   }
-// class Frame105Screen extends StatelessWidget {
-//   Frame105Screen({Key? key}) //تسجيل جديد
-//       : super(
-//           key: key,
-//         );
-
-  // TextEditingController nameSectionController = TextEditingController(); //no need name
-
-  // TextEditingController emailSectionController = TextEditingController();
-
-  // TextEditingController passwordSectionController = TextEditingController();
-
-  // GlobalKey<FormState> _formKey = GlobalKey<FormState>();
-  // // var showpass = true;
-  // late String email;
-  // late String password;
-//
-
 
   Widget _buildEmailSection(BuildContext context) {
     return TextFormField(
       controller: emailSectionController,
       decoration: InputDecoration(
-        hintText: "                       البريد الإلكتروني",
+        hintText: "البريد الإلكتروني",
       ),
       validator: (value) {
         if (value == null || value.isEmpty) {
-          return 'Please enter your email';
+          return 'يرجى إدخال البريد الإلكتروني';
+        } else if (!isValidEmail(value)) {
+          return 'البريد الإلكتروني غير صحيح';
         }
         return null;
       },
@@ -84,12 +53,14 @@ class _Frame105ScreenState extends State<Frame105Screen> {
     return TextFormField(
       controller: passwordSectionController,
       decoration: InputDecoration(
-        hintText: "                               كلمة المرور",
+        hintText: "كلمة المرور",
       ),
       obscureText: true,
       validator: (value) {
         if (value == null || value.isEmpty) {
-          return 'Please enter your password';
+          return 'يرجى إدخال كلمة المرور';
+        } else if (value.length < 8) {
+          return 'يجب أن تكون كلمة المرور على الأقل 8 أحرف';
         }
         return null;
       },
@@ -109,7 +80,7 @@ class _Frame105ScreenState extends State<Frame105Screen> {
 
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => FrameEightysevenScreen()), //to welcome screen
+          MaterialPageRoute(builder: (context) => FrameEightysevenScreen()),
         );
       } catch (e) {
         print('Registration error: $e');
@@ -117,24 +88,24 @@ class _Frame105ScreenState extends State<Frame105Screen> {
     }
   }
 
-
+  bool isValidEmail(String email) {
+    return RegExp(r"^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$").hasMatch(email);
+  }
 
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        extendBodyBehindAppBar: true, //زر الرجوع
+        extendBodyBehindAppBar: true,
         appBar: AppBar(
-          // 1. Back Arrow Icon
           leading: IconButton(
               iconSize: 40,
-              icon: Icon(Icons.arrow_back), // forword لو نبيه يمين
+              icon: Icon(Icons.arrow_back),
               color: Color.fromARGB(255, 16, 27, 79),
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(
-                      builder: (context) => Initialscreen()), //للصفحة الرئيسية
+                  MaterialPageRoute(builder: (context) => Initialscreen()),
                 );
               }),
           backgroundColor: Color.fromARGB(0, 17, 7, 51),

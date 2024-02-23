@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:raghad_s_razeen/core/app_export.dart';
 import 'package:raghad_s_razeen/presentation/signin.dart';
 import 'package:raghad_s_razeen/widgets/custom_elevated_button.dart';
@@ -17,30 +18,29 @@ class Forgetpass extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-  
-       extendBodyBehindAppBar: true, //زر الرجوع
+        extendBodyBehindAppBar: true, //زر الرجوع
         appBar: AppBar(
           // 1. Back Arrow Icon
           leading: IconButton(
-           iconSize: 40,
-            icon: Icon(Icons.arrow_back), // forword لو نبيه يمين 
-              color: Color.fromARGB(255, 16, 27, 79),
-
-            onPressed: () { Navigator.push(
-                          context,
-                          MaterialPageRoute(builder: (context) =>  Signin()), //للصفحة الرئيسية
-                        );}   
+            iconSize: 40,
+            icon: Icon(Icons.arrow_back), // forword لو نبيه يمين
+            color: Color.fromARGB(255, 16, 27, 79),
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => Signin(),
+                ),
+              );
+            },
           ),
           backgroundColor: Color.fromARGB(0, 17, 7, 51),
           elevation: 0,
         ),
-
-        
         extendBody: true,
-       
         resizeToAvoidBottomInset: false,
         body: Container(
-            width: double.maxFinite,
+          width: double.maxFinite,
           height: SizeUtils.height,
           decoration: BoxDecoration(
             color: appTheme.gray50,
@@ -50,7 +50,7 @@ class Forgetpass extends StatelessWidget {
             ),
             image: DecorationImage(
               image: AssetImage(
-                ImageConstant.BackgroundHouse,//خلفيه
+                ImageConstant.BackgroundHouse, //خلفيه
               ),
               fit: BoxFit.cover,
             ),
@@ -64,12 +64,11 @@ class Forgetpass extends StatelessWidget {
                 SizedBox(height: 31.v),
                 ///////////
                 SizedBox(
-                  height: 743.v,// كان 794 شال الاصفر
+                  height: 743.v, // كان 794 شال الاصفر
                   width: double.maxFinite,
                   child: Stack(
                     alignment: Alignment.center,
                     children: [
-                    
                       Align(
                         alignment: Alignment.center,
                         child: SizedBox(
@@ -78,26 +77,24 @@ class Forgetpass extends StatelessWidget {
                           child: Stack(
                             alignment: Alignment.bottomLeft,
                             children: [
-                           
                               _buildEmailSection(context),
                             ],
                           ),
                         ),
                       ),
-                       CustomImageView(
-                                imagePath: ImageConstant.imgImage23152x119,//نجمه
-                                height: 152.v,
-                                width: 119.h,
-                                alignment: Alignment.topRight,
-                              ),
-                              CustomImageView(
-                                imagePath:
-                                    ImageConstant.imgScreenshot2023173x129,//الجد
-                                height: 206.v,
-                                width: 150.h,
-                                alignment: Alignment.bottomLeft,
-                                  margin: EdgeInsets.only(bottom: 1.v),//كان 45
-                              ),
+                      CustomImageView(
+                        imagePath: ImageConstant.imgImage23152x119, //نجمه
+                        height: 152.v,
+                        width: 119.h,
+                        alignment: Alignment.topRight,
+                      ),
+                      CustomImageView(
+                        imagePath: ImageConstant.imgScreenshot2023173x129, //الجد
+                        height: 206.v,
+                        width: 150.h,
+                        alignment: Alignment.bottomLeft,
+                        margin: EdgeInsets.only(bottom: 1.v), //كان 45
+                      ),
                     ],
                   ),
                 ),
@@ -134,7 +131,6 @@ class Forgetpass extends StatelessWidget {
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
                   mainAxisAlignment: MainAxisAlignment.center,
-                  
                   children: [
                     SizedBox(height: 40.v),
                     CustomTextFormField(
@@ -167,12 +163,55 @@ class Forgetpass extends StatelessWidget {
                       text: "ارسال",
                       buttonStyle: CustomButtonStyles.outlinePrimaryTL21,
                       buttonTextStyle: theme.textTheme.bodyLarge!,
+                      onPressed: () {
+                        String email = emailController.text;
+                        FirebaseAuth.instance
+                            .sendPasswordResetEmail(email: email)
+                            .then((value) {
+                          // Show success message or navigate to a success screen
+                          showDialog(
+                            context: context,
+                            builder: (BuildContext context) {
+                              return AlertDialog(
+                                content: Text('تم ارسال رابط اعادة تعيين كلمة المرور بنجاح'),
+                                actions: <Widget>[
+                                  TextButton(
+                                    onPressed: () {
+                                      Navigator.pop(context);
+                                    },
+                                    child: Text('حسنًا'),
+                                  ),
+                                ],
+                              );
+                            },
+                          );
+                        }).catchError((error) {
+                          // Show error message
+                          showDialog(
+                            context: context,
+                            builder: (BuildContext context) {
+                              return AlertDialog(
+                                title: Text('Error'),
+                                content: Text(
+                                    'Failed to send reset email. Please check your email address.'),
+                                actions: <Widget>[
+                                  TextButton(
+                                    onPressed: () {
+                                      Navigator.pop(context);
+                                    },
+                                    child: Text('OK'),
+                                  ),
+                                ],
+                              );
+                            },
+                          );
+                        });
+                      },
                     ),
                   ],
                 ),
               ),
             ),
-            
             Align(
               alignment: Alignment.topRight,
               child: Container(
@@ -186,16 +225,10 @@ class Forgetpass extends StatelessWidget {
                   style: CustomTextStyles.headlineLarge32,
                 ),
               ),
-              
             ),
-            
-             
           ],
-  
         ),
       ),
-      
     );
-   
   }
 }
