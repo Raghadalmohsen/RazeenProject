@@ -46,9 +46,9 @@ class AppNavigationScreen extends StatelessWidget {
 
                         //          _buildScreenTitle(
                         //   context,
-                        //   screenTitle: "Signin",
+                        //   screenTitle: "Signup",
                         //   onTapScreenTitle: () => onTapScreenTitle(
-                        //       context, AppRoutes.signin),//
+                        //       context, AppRoutes.signup),//
                         // ),
 
                                  _buildScreenTitle(
@@ -64,6 +64,7 @@ class AppNavigationScreen extends StatelessWidget {
                           onTapScreenTitle: () => onTapScreenTitle(
                               context, AppRoutes.setting),//
                         ),
+
           _buildScreenTitle(
                           context,
                           screenTitle: "profile",
@@ -77,30 +78,35 @@ class AppNavigationScreen extends StatelessWidget {
                           onTapScreenTitle: () => onTapScreenTitle(
                               context, AppRoutes.razeenmap),//
                         ),
+
  _buildScreenTitle(
                           context,
                           screenTitle: "requestskill",
                           onTapScreenTitle: () => onTapScreenTitle(
                               context, AppRoutes.requestskill),//
                         ),
+
  _buildScreenTitle(
                           context,
                           screenTitle: "speakskill",
                           onTapScreenTitle: () => onTapScreenTitle(
                               context, AppRoutes.speakskill),//
                         ),
+
                          _buildScreenTitle(
                           context,
                           screenTitle: "quietplaceskill",
                           onTapScreenTitle: () => onTapScreenTitle(
                               context, AppRoutes.quietplaceskill),//
                         ),
+
      _buildScreenTitle(
                           context,
                           screenTitle: "respectdiffskill",
                           onTapScreenTitle: () => onTapScreenTitle(
                               context, AppRoutes.respectdiffskill),//
                         ),
+
   _buildScreenTitle(
                           context,
                           screenTitle: "safeplaceskill",
@@ -108,7 +114,26 @@ class AppNavigationScreen extends StatelessWidget {
                               context, AppRoutes.safeplaceskill),//
                         ),
 
+ _buildScreenTitle(
+                          context,
+                          screenTitle: "explainmap",
+                          onTapScreenTitle: () => onTapScreenTitle(
+                              context, AppRoutes.explainmap),//
+                        ),
 
+ _buildScreenTitle(
+                          context,
+                          screenTitle: "sadfeedback",
+                          onTapScreenTitle: () => onTapScreenTitle(
+                              context, AppRoutes.sadfeedback),//
+                        ),
+
+                        _buildScreenTitle(
+                          context,
+                          screenTitle: "happyfeedback",
+                          onTapScreenTitle: () => onTapScreenTitle(
+                              context, AppRoutes.happyfeedback),//
+                        ),
 
 
 
@@ -222,18 +247,18 @@ class AppNavigationScreen extends StatelessWidget {
                           onTapScreenTitle: () => onTapScreenTitle(
                               context, AppRoutes.frame113Screen),
                         ),
-                        _buildScreenTitle(
-                          context,
-                          screenTitle: "Frame 120",
-                          onTapScreenTitle: () => onTapScreenTitle(
-                              context, AppRoutes.frame120Screen),
-                        ),
-                        _buildScreenTitle(
-                          context,
-                          screenTitle: "Frame 121",
-                          onTapScreenTitle: () => onTapScreenTitle(
-                              context, AppRoutes.frame121Screen),
-                        ),
+                        // _buildScreenTitle(
+                        //   context,
+                        //   screenTitle: "Frame 120",
+                        //   onTapScreenTitle: () => onTapScreenTitle(
+                        //       context, AppRoutes.frame120Screen),
+                        // ),
+                        // _buildScreenTitle(
+                        //   context,
+                        //   screenTitle: "Frame 121",
+                        //   onTapScreenTitle: () => onTapScreenTitle(
+                        //       context, AppRoutes.frame121Screen),
+                        // ),
                         // _buildScreenTitle(
                         //   context,
                         //   screenTitle: "Frame 107",
@@ -540,12 +565,12 @@ class AppNavigationScreen extends StatelessWidget {
                           onTapScreenTitle: () => onTapScreenTitle(
                               context, AppRoutes.frameSeventysixScreen),
                         ),
-                        _buildScreenTitle(
-                          context,
-                          screenTitle: "Frame EightySeven",
-                          onTapScreenTitle: () => onTapScreenTitle(
-                              context, AppRoutes.frameEightysevenScreen),
-                        ),
+                        // _buildScreenTitle(
+                        //   context,
+                        //   screenTitle: "Frame EightySeven",
+                        //   onTapScreenTitle: () => onTapScreenTitle(
+                        //       context, AppRoutes.frameEightysevenScreen),
+                        // ),
                         // _buildScreenTitle(
                         //   context,
                         //   screenTitle: "Frame Ninety",

@@ -17,8 +17,8 @@ import 'package:raghad_s_razeen/presentation/frame_105_screen/frame_105_screen.d
 import 'package:raghad_s_razeen/presentation/frame_112_screen/frame_112_screen.dart';
 import 'package:raghad_s_razeen/presentation/frame_110_screen/frame_110_screen.dart';
 import 'package:raghad_s_razeen/presentation/frame_113_screen/frame_113_screen.dart';
-import 'package:raghad_s_razeen/presentation/frame_120_screen/frame_120_screen.dart';
-import 'package:raghad_s_razeen/presentation/frame_121_screen/frame_121_screen.dart';
+// import 'package:raghad_s_razeen/presentation/frame_120_screen/frame_120_screen.dart';
+// import 'package:raghad_s_razeen/presentation/frame_121_screen/frame_121_screen.dart';
 // import 'package:raghad_s_razeen/presentation/frame_107_screen/frame_107_screen.dart';
 // import 'package:raghad_s_razeen/presentation/frame_108_screen/frame_108_screen.dart';
 import 'package:raghad_s_razeen/presentation/frame_139_screen/frame_139_screen.dart';
@@ -70,7 +70,7 @@ import 'package:raghad_s_razeen/presentation/frame_ninetythree_screen/frame_nine
 // import 'package:raghad_s_razeen/presentation/frame_sixtytwo_screen/frame_sixtytwo_screen.dart';
 // import 'package:raghad_s_razeen/presentation/frame_fiftynine_screen/frame_fiftynine_screen.dart';
 import 'package:raghad_s_razeen/presentation/frame_seventysix_screen/frame_seventysix_screen.dart';
-import 'package:raghad_s_razeen/presentation/frame_eightyseven_screen/frame_eightyseven_screen.dart';
+// import 'package:raghad_s_razeen/presentation/frame_eightyseven_screen/frame_eightyseven_screen.dart';
 // import 'package:raghad_s_razeen/presentation/frame_ninety_screen/frame_ninety_screen.dart';
 // import 'package:raghad_s_razeen/presentation/frame_eightynine_screen/frame_eightynine_screen.dart';
 // import 'package:raghad_s_razeen/presentation/frame_ninetysix_screen/frame_ninetysix_screen.dart';
@@ -84,6 +84,7 @@ import 'package:raghad_s_razeen/presentation/frame_eightyseven_screen/frame_eigh
 import 'package:raghad_s_razeen/presentation/app_navigation_screen/app_navigation_screen.dart';
 import 'package:raghad_s_razeen/presentation/firstpage.dart';//
 import 'package:raghad_s_razeen/presentation/initialscreen.dart';//
+// import 'package:raghad_s_razeen/presentation/sadfeedback.dart';
 import 'package:raghad_s_razeen/presentation/signin.dart';//
 // import 'package:raghad_s_razeen/presentation/signup.dart';//
 import 'package:raghad_s_razeen/presentation/forgetpass.dart';//
@@ -96,24 +97,28 @@ import 'package:raghad_s_razeen/presentation/quietplaceskill.dart';//
 import 'package:raghad_s_razeen/presentation/respectdiffskill.dart';//
 import 'package:raghad_s_razeen/presentation/safeplaceskill.dart';//
 import 'package:raghad_s_razeen/presentation/medals.dart';//
+import 'package:raghad_s_razeen/presentation/explainmap.dart';//
+import 'package:raghad_s_razeen/presentation/sadfeedback.dart';//
+import 'package:raghad_s_razeen/presentation/happyfeedback.dart';//
+
 
 class AppRoutes {
    static const String firstpage = '/firstpage';//
    static const String initialscreen = '/initialscreen';//
-    static const String signin = '/signin';//
-  static const String forgetpass = '/forgetpass';//
-static const String setting = '/setting';//
-static const String profile = '/profile';//
-static const String razeenmap = '/razeenmap';//
-static const String requestskill = '/requestskill';//
-static const String speakskill = '/speakskill';//
-static const String quietplaceskill = '/quietplaceskill';//
-static const String respectdiffskill = '/respectdiffskill';//
-static const String safeplaceskill = '/safeplaceskill';//
-static const String medals = '/medals';//
-
-
-
+   static const String signin = '/signin';//
+   static const String forgetpass = '/forgetpass';//
+   static const String setting = '/setting';//
+   static const String profile = '/profile';//
+   static const String razeenmap = '/razeenmap';//
+   static const String requestskill = '/requestskill';//
+   static const String speakskill = '/speakskill';//
+   static const String quietplaceskill = '/quietplaceskill';//
+   static const String respectdiffskill = '/respectdiffskill';//
+   static const String safeplaceskill = '/safeplaceskill';//
+   static const String medals = '/medals';//
+   static const String explainmap = '/explainmap';//
+   static const String sadfeedback = '/sadfeedback';//
+   static const String happyfeedback = '/happyfeedback';//
 
 
   static const String frame135Screen = '/frame_135_screen';
@@ -154,9 +159,9 @@ static const String medals = '/medals';//
 
   static const String frame113Screen = '/frame_113_screen';
 
-  static const String frame120Screen = '/frame_120_screen';
+  // static const String frame120Screen = '/frame_120_screen';
 
-  static const String frame121Screen = '/frame_121_screen';
+  // static const String frame121Screen = '/frame_121_screen';
 
   // static const String frame107Screen = '/frame_107_screen';
 
@@ -260,7 +265,7 @@ static const String medals = '/medals';//
 
   static const String frameSeventysixScreen = '/frame_seventysix_screen';
 
-  static const String frameEightysevenScreen = '/frame_eightyseven_screen';
+  // static const String frameEightysevenScreen = '/frame_eightyseven_screen';
 
   // static const String frameNinetyScreen = '/frame_ninety_screen';
 
@@ -291,13 +296,16 @@ static const String medals = '/medals';//
     forgetpass:(context) => Forgetpass(),//
     setting:(context) => Setting(),//
     profile:(context) => Profile(),
-razeenmap:(context) => Razeenmap(),
-requestskill:(context) => Requestskill(),
-speakskill:(context) => Speakskill(),
-quietplaceskill:(context) => Quietplaceskill(),
-respectdiffskill:(context) => Respectdiffskill(),
-safeplaceskill:(context) => Safeplaceskill(),
-medals:(context) => Medals(),
+    razeenmap:(context) => Razeenmap(),
+    requestskill:(context) => Requestskill(),
+    speakskill:(context) => Speakskill(),
+    quietplaceskill:(context) => Quietplaceskill(),
+    respectdiffskill:(context) => Respectdiffskill(),
+    safeplaceskill:(context) => Safeplaceskill(),
+    medals:(context) => Medals(),
+    explainmap:(context) => Explainmap(),
+    sadfeedback:(context) => Sadfeedback(),
+    happyfeedback:(context) => Happyfeedback(),
 
 
     frame135Screen: (context) => Frame135Screen(),
@@ -319,8 +327,8 @@ medals:(context) => Medals(),
     frame112Screen: (context) => Frame112Screen(),
     frame110Screen: (context) => Frame110Screen(),
     frame113Screen: (context) => Frame113Screen(),
-    frame120Screen: (context) => Frame120Screen(),
-    frame121Screen: (context) => Frame121Screen(),
+    // frame120Screen: (context) => Frame120Screen(),
+    // frame121Screen: (context) => Frame121Screen(),
     // frame107Screen: (context) => Frame107Screen(),
     // frame108Screen: (context) => Frame108Screen(),
     frame139Screen: (context) => Frame139Screen(),
@@ -372,7 +380,7 @@ medals:(context) => Medals(),
     // frameSixtytwoScreen: (context) => FrameSixtytwoScreen(),
     // frameFiftynineScreen: (context) => FrameFiftynineScreen(),
     frameSeventysixScreen: (context) => FrameSeventysixScreen(),
-    frameEightysevenScreen: (context) => FrameEightysevenScreen(),
+    // frameEightysevenScreen: (context) => FrameEightysevenScreen(),
     // frameNinetyScreen: (context) => FrameNinetyScreen(),
     // frameEightynineScreen: (context) => FrameEightynineScreen(),
     // frameNinetysixScreen: (context) => FrameNinetysixScreen(),
