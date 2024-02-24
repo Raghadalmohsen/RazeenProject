@@ -134,7 +134,19 @@ class AppNavigationScreen extends StatelessWidget {
                           onTapScreenTitle: () => onTapScreenTitle(
                               context, AppRoutes.happyfeedback),//
                         ),
+                          _buildScreenTitle(
+                          context,
+                          screenTitle: "safePlaceQuiz",
+                          onTapScreenTitle: () => onTapScreenTitle(
+                              context, AppRoutes.safePlaceQuiz),//
+                        ),
 
+   _buildScreenTitle(
+                          context,
+                          screenTitle: "quietplacequiz",
+                          onTapScreenTitle: () => onTapScreenTitle(
+                              context, AppRoutes.quietplacequiz),//
+                        ),
 
 
 

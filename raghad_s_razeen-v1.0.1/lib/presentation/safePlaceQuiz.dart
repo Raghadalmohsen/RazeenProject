@@ -4,6 +4,8 @@ import 'package:raghad_s_razeen/presentation/sadfeedback.dart';
 import 'package:raghad_s_razeen/widgets/custom_icon_button.dart';
 import 'package:raghad_s_razeen/core/app_export.dart';
 
+
+
 class SafePlaceQuiz extends StatefulWidget {
   const SafePlaceQuiz({Key? key}) : super(key: key);
 
@@ -89,18 +91,19 @@ class _SafePlaceQuizState extends State<SafePlaceQuiz> {
           height: 245.v,
           width: 317.h,
         ),
-        SizedBox(height: 5),
+        SizedBox(height: 1),
         Padding(
           padding: EdgeInsets.only(// شكل مالها فايده 
             left: 33.h,
             right: 39.h,
-            bottom: 1,
+            top: 1,
           ),
         ),
         // Row(
         
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
+          
           children: [
             InkWell(
               onTap: () => checkAnswer(false),
@@ -108,6 +111,7 @@ class _SafePlaceQuizState extends State<SafePlaceQuiz> {
                 'assets/images/wrongICON.png',
                 width: 108,
                 height: 108,
+                
               ),
             ),
             SizedBox(width: 30),// المسافه بينهم 
@@ -123,8 +127,8 @@ class _SafePlaceQuizState extends State<SafePlaceQuiz> {
             Padding(
               padding: EdgeInsets.only(
                 left: 10.h,
-                top: 50.v,// بين الصوره والسوال
-                bottom: 200.v,// بين الصوره والسوال
+                top: 30.v,// بين الصوره والسوال
+                // bottom: 200.v,// بين الصوره والسوال
               ),
             ),
           ],
@@ -139,7 +143,8 @@ class _SafePlaceQuizState extends State<SafePlaceQuiz> {
         
         body: SizedBox(
           width: 394.h,
-          child: SingleChildScrollView(
+          // child: SingleChildScrollView(
+          // physics: NeverScrollableScrollPhysics(),
             child: SizedBox(
               height: SizeUtils.height,
               width: 394.h,
@@ -148,6 +153,8 @@ class _SafePlaceQuizState extends State<SafePlaceQuiz> {
                 children: [
                   Align(
                     alignment: Alignment.center,
+                      child: SingleChildScrollView(
+                      physics: NeverScrollableScrollPhysics(),
                     child: Container(
                       height: SizeUtils.height, ///////////////////////
                       width: 394.h,
@@ -166,14 +173,16 @@ class _SafePlaceQuizState extends State<SafePlaceQuiz> {
                         ),
                       ),
                       child: Stack(
-                        alignment: Alignment.topCenter,
+                        alignment: Alignment.center,
                         children: [
                           Align(
-                            alignment: Alignment.topCenter,
+                            alignment: Alignment.center,
+                           
                             child: Container(
                               margin: EdgeInsets.only(
-                                top: 18.v,
+                                top: 70.v,
                                 right: 1.h,
+                                bottom: 200.v,
                               ),
                               padding: EdgeInsets.symmetric(
                                 horizontal: 5.h,
@@ -199,13 +208,14 @@ class _SafePlaceQuizState extends State<SafePlaceQuiz> {
 
 
                             ),
+                          
                           ),
                           Align(
                             alignment: Alignment.topCenter,
                             child: Container(
                               height: 58.v,
                               width: 301.h,
-                              margin: EdgeInsets.only(top: 10.v),
+                              margin: EdgeInsets.only(top: 55.v),
                               decoration: BoxDecoration(
                                 color: appTheme.yellow100, ///////////////
                                 borderRadius: BorderRadius.circular(
@@ -218,13 +228,14 @@ class _SafePlaceQuizState extends State<SafePlaceQuiz> {
                             alignment: Alignment.topCenter,
                             child: Container(
                               width: 256.h,
-                              margin: EdgeInsets.only(top: 28.v),
+                              margin: EdgeInsets.only(top: 75.v),
                               // decoration: AppDecoration.outlinePrimary1,////////////////
                               child: Text(
                                 "                 هل المكان مناسب لجدك؟",
                                 maxLines: null,
                                 overflow: TextOverflow.ellipsis,
                                 style: theme.textTheme.titleMedium,
+                                
                               ),
                             ),
                           ),
@@ -233,32 +244,34 @@ class _SafePlaceQuizState extends State<SafePlaceQuiz> {
                             height: 28.v,
                             width: 27.h,
                             alignment: Alignment.topLeft,
-                            margin: EdgeInsets.only(left: 32.h),
+                            margin: EdgeInsets.only(left: 32.h,top: 45),
                           ),
                         ],
                       ),
                     ),
                   ),
+                  ),
+                
                   CustomImageView(
                     imagePath: ImageConstant.imgImage23, //النجمه
                     height: 114.v,
                     width: 94.h,
                     alignment: Alignment.topRight,
-                    margin: EdgeInsets.only(top: 77.v),
+                    margin: EdgeInsets.only(top: 120.v),
                   ),
                   CustomImageView(
                     imagePath: ImageConstant.imgScreenshot2023, //رزين
                     height: 180.v,
                     width: 133.h,
                     alignment: Alignment.bottomLeft,
-                    margin: EdgeInsets.only(bottom: 42.v),
+                    margin: EdgeInsets.only(bottom: 20.v,),
                   ),
                 ],
               ),
             ),
           ),
         ), 
-      ),
+      // ),
     );
   }
 }

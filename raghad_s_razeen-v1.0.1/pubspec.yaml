@@ -6,13 +6,16 @@ environment:
 dependencies: 
   flutter: 
     sdk: flutter
+   
   cached_network_image: ^3.3.0
   flutter_svg: ^2.0.9
   flutter_svg_provider: ^1.0.7
   intl: ^0.18.0
   firebase_core: ^2.25.4
   firebase_auth: ^4.17.4
+  font_awesome_flutter: ^10.7.0
 dev_dependencies: 
+
   flutter_test: 
     sdk: flutter
 flutter: 
@@ -29,6 +32,7 @@ flutter:
         - asset: assets/fonts/InterSemiBold.ttf
           weight: 600
     - family: Baloo Chettan 2
+    
       fonts: 
         - asset: assets/fonts/BalooChettan2SemiBold.ttf
           weight: 600

@@ -95,6 +95,7 @@ class _SpeakQuizState extends State<SpeakQuiz> {
         body: SizedBox(
           width: 394.h,
           child: SingleChildScrollView(
+             physics: NeverScrollableScrollPhysics(),
             child: SizedBox(
               height: SizeUtils.height,
               width: 394.h,
@@ -103,6 +104,7 @@ class _SpeakQuizState extends State<SpeakQuiz> {
                 children: [
                   Align(
                     alignment: Alignment.center,
+                    
                     child: Container(
                       height: SizeUtils.height,
                       width: 394.h,
@@ -120,17 +122,16 @@ class _SpeakQuizState extends State<SpeakQuiz> {
                         ),
                       ),
                       child: Stack(
-                        alignment: Alignment.topLeft,
+                        alignment: Alignment.center,
                         children: [
                           Align(
-                            alignment: Alignment.topCenter,
+                            alignment: Alignment.center,
                             child: Container(
-                              width: 600,
                               margin: EdgeInsets.only(
-                                top: 30.v,
+                                top: 70.v,
                                 right: 1.h,
                                 left: 1,
-                                bottom: 88,
+                                bottom: 135,
                               ),
                               padding: EdgeInsets.symmetric(
                                 horizontal: 1.h,
@@ -246,7 +247,7 @@ class _SpeakQuizState extends State<SpeakQuiz> {
                             child: Container(
                               height: 58.v,
                               width: 301.h,
-                              margin: EdgeInsets.only(top: 10.v),
+                              margin: EdgeInsets.only(top: 63.v),
                               decoration: BoxDecoration( //ورا السؤال
                                 color: appTheme.yellow100,
                                 borderRadius: BorderRadius.circular(
@@ -259,7 +260,7 @@ class _SpeakQuizState extends State<SpeakQuiz> {
                             alignment: Alignment.topCenter,
                             child: Container(
                               width: 256.h,
-                              margin: EdgeInsets.only(top: 26.v),
+                              margin: EdgeInsets.only(top: 79.v),
                               // decoration: AppDecoration.outlinePrimary1, //ينحذف
                               child: Text(
                                 "           ما الكلمة المناسبة لهذا الموقف؟",
@@ -274,7 +275,7 @@ class _SpeakQuizState extends State<SpeakQuiz> {
                             height: 28.v,
                             width: 27.h,
                             alignment: Alignment.topLeft,
-                            margin: EdgeInsets.only(left: 18.h),
+                            margin: EdgeInsets.only(left: 18.h,top: 53),
                           ),
                         ],
                       ),
@@ -285,14 +286,14 @@ class _SpeakQuizState extends State<SpeakQuiz> {
                     height: 114.v,
                     width: 111.h,
                     alignment: Alignment.topRight,
-                    margin: EdgeInsets.only(top: 62.v),
+                    margin: EdgeInsets.only(top: 117.v),
                   ),
                   CustomImageView(
                     imagePath: ImageConstant.imgScreenshot2023,//رزين
                     height: 180.v,
                     width: 133.h,
                     alignment: Alignment.bottomLeft,
-                    margin: EdgeInsets.only(bottom: 42.v,left: 1),
+                    margin: EdgeInsets.only(bottom: 20.v,),
                   ),
                 ],
               ),

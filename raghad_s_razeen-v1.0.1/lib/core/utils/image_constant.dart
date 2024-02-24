@@ -451,6 +451,13 @@ class ImageConstant {
   static String NewspaperQ3 = '$imagePath/NewspaperQ3.png';
   static String WaterQ3 = '$imagePath/WaterQ3.png';
   static String RadioQ3 = '$imagePath/RadioQ3.png';
+   static String tv = '$imagePath/tv.png';  
+   static String draw = '$imagePath/draw.png';  
+   static String reading = '$imagePath/reading.png';  
+   static String sony = '$imagePath/sony.png';  
+   static String notnoise = '$imagePath/notnoise.png';  
+   static String noise = '$imagePath/noise.png';  
+
 
 
   static String Q1quiz4 = '$imagePath/Q1quiz4.png';
