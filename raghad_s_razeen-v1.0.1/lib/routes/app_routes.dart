@@ -101,6 +101,8 @@ import 'package:raghad_s_razeen/presentation/explainmap.dart';//
 import 'package:raghad_s_razeen/presentation/sadfeedback.dart';//
 import 'package:raghad_s_razeen/presentation/happyfeedback.dart';//
 import 'package:raghad_s_razeen/presentation/safePlaceQuiz.dart';//2
+import 'package:raghad_s_razeen/presentation/speakQuiz.dart';//3
+
 
 
 class AppRoutes {
@@ -122,6 +124,8 @@ class AppRoutes {
    static const String happyfeedback = '/happyfeedback';//
 
    static const String safePlaceQuiz = '/safePlaceQuiz';//2
+   static const String speakQuiz = '/speakQuiz';//3
+
 
 
   static const String frame135Screen = '/frame_135_screen';
@@ -310,6 +314,8 @@ class AppRoutes {
     sadfeedback:(context) => Sadfeedback(),
     happyfeedback:(context) => Happyfeedback(),
     safePlaceQuiz:(context) => SafePlaceQuiz(),//2
+    speakQuiz:(context) => SpeakQuiz(),//3
+
 
 
     frame135Screen: (context) => Frame135Screen(),

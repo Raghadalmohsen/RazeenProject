@@ -230,20 +230,15 @@ class ImageConstant {
 
   // Frame EightySix images
   static String imgImage104359x634 = '$imagePath/img_image_104_359x634.png';
-  static String imgScreenshot20240211815x393= '$imagePath/img_screenshot_2024_02_11_815x393.png';
-  static String imgImage238= '$imagePath/img_image_238.png';
-  static String imgImage250= '$imagePath/img_image_250.png';
-  static String imgImage252= '$imagePath/img_image_252.png';
-  static String imgImage249= '$imagePath/img_image_249.png';
-  static String imgImage251= '$imagePath/img_image_251.png';
-  static String imgImage253= '$imagePath/image 253.png';// البيت الجديد الي ما انضاف 
- 
-
-
-
-
-
-
+  static String imgScreenshot20240211815x393 =
+      '$imagePath/img_screenshot_2024_02_11_815x393.png';
+  static String imgImage238 = '$imagePath/img_image_238.png';
+  static String imgImage250 = '$imagePath/img_image_250.png';
+  static String imgImage252 = '$imagePath/img_image_252.png';
+  static String imgImage249 = '$imagePath/img_image_249.png';
+  static String imgImage251 = '$imagePath/img_image_251.png';
+  static String imgImage253 =
+      '$imagePath/image 253.png'; // البيت الجديد الي ما انضاف
 
   // Frame EightyFive images
   static String imgImage59 = '$imagePath/img_image_59.png';
@@ -410,49 +405,57 @@ class ImageConstant {
 
   static String map = '$imagePath/map.png';
 
-   static String Arrow1 = '$imagePath/Arrow1.png';
+  static String Arrow1 = '$imagePath/Arrow1.png';
 
-   static String Arrow2 = '$imagePath/Arrow2.png'; 
-   
-   static String BackgroundHouse = '$imagePath/BackgroundHouse.png';
+  static String Arrow2 = '$imagePath/Arrow2.png';
 
-   static String BackgroundHouse2 = '$imagePath/BackgroundHouse2.png'; 
+  static String BackgroundHouse = '$imagePath/BackgroundHouse.png';
 
-   static String Background = '$imagePath/Background.png'; 
+  static String BackgroundHouse2 = '$imagePath/BackgroundHouse2.png';
 
-   static String MapRoad = '$imagePath/MapRoad.png'; 
+  static String Background = '$imagePath/Background.png';
+
+  static String MapRoad = '$imagePath/MapRoad.png';
 
   //  static String story = '$imagePath/story.png';
 
-  //  static String quiz = '$imagePath/quiz.png';  
-   
-  //  static String play = '$imagePath/play.png'; 
+  //  static String quiz = '$imagePath/quiz.png';
 
-   static String story2 = '$imagePath/story2.png';
+  //  static String play = '$imagePath/play.png';
 
-   static String quiz2 = '$imagePath/quiz2.png';  
-   
-   static String play2 = '$imagePath/play2.png'; 
+  static String story2 = '$imagePath/story2.png';
 
-   static String WelcomeScreen = '$imagePath/WelcomeScreen.png'; 
+  static String quiz2 = '$imagePath/quiz2.png';
 
-   static String medalP = '$imagePath/medalP.png'; 
+  static String play2 = '$imagePath/play2.png';
 
-   static String BGMedal = '$imagePath/BGMedal.png'; 
+  static String WelcomeScreen = '$imagePath/WelcomeScreen.png';
 
-   static String HappyFeedback = '$imagePath/HappyFeedback.png'; 
+  static String medalP = '$imagePath/medalP.png';
 
-   static String SadFeedback = '$imagePath/SadFeedback.png'; 
+  static String BGMedal = '$imagePath/BGMedal.png';
 
-   static String room1quiz1 = '$imagePath/room1.quiz1.png'; 
-   static String room2quiz1 = '$imagePath/room2.quiz1.png'; 
-   static String room3quiz1 = '$imagePath/room3.quiz1.png'; 
+  static String HappyFeedback = '$imagePath/HappyFeedback.png';
 
-   static String rightICON = '$imagePath/rightICON.png';
-   static String wrongICON = '$imagePath/wrongICON.png';  
+  static String SadFeedback = '$imagePath/SadFeedback.png';
+
+  static String room1quiz1 = '$imagePath/room1.quiz1.png';
+  static String room2quiz1 = '$imagePath/room2.quiz1.png';
+  static String room3quiz1 = '$imagePath/room3.quiz1.png';
+
+  static String rightICON = '$imagePath/rightICON.png';
+  static String wrongICON = '$imagePath/wrongICON.png';
+
+  static String grandfather = '$imagePath/grandfather.png'; 
+
+  static String NewspaperQ3 = '$imagePath/NewspaperQ3.png';
+  static String WaterQ3 = '$imagePath/WaterQ3.png';
+  static String RadioQ3 = '$imagePath/RadioQ3.png';
 
 
-
+  static String Q1quiz4 = '$imagePath/Q1quiz4.png';
+  static String Q2quiz4 = '$imagePath/Q2quiz4.png';
+  static String Q3quiz4 = '$imagePath/Q3quiz4.png';
 
   static String imageNotFound = 'assets/images/image_not_found.png';
 }

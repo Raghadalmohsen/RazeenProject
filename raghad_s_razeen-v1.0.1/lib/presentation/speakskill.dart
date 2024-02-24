@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:raghad_s_razeen/core/app_export.dart';
 import 'package:raghad_s_razeen/presentation/initialscreen.dart';
+import 'package:raghad_s_razeen/presentation/speakQuiz.dart';
 import 'package:raghad_s_razeen/widgets/app_bar/appbar_leading_image.dart';
 import 'package:raghad_s_razeen/widgets/app_bar/custom_app_bar.dart';
 import 'package:raghad_s_razeen/widgets/custom_bottom_bar.dart';
@@ -169,7 +170,7 @@ class Speakskill extends StatelessWidget {
                                           child: ElevatedButton(
                                             onPressed: () { Navigator.push(
                                           context,
-                                          MaterialPageRoute(builder: (context) =>  Initialscreen()),
+                                          MaterialPageRoute(builder: (context) =>  SpeakQuiz()),
                                         );},
                                             style: ElevatedButton.styleFrom(
                                                 backgroundColor: Colors.transparent,

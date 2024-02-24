@@ -6,7 +6,7 @@ import 'package:raghad_s_razeen/widgets/app_bar/custom_app_bar.dart';
 import 'package:raghad_s_razeen/widgets/custom_bottom_bar.dart';
 import 'package:raghad_s_razeen/widgets/custom_floating_button.dart';
 
-class Quietplaceskill extends StatelessWidget { //المحافظة ععلى الهدوء
+class Quietplaceskill extends StatelessWidget { //المحافظة على الهدوء
   Quietplaceskill({Key? key})
       : super(
           key: key,
