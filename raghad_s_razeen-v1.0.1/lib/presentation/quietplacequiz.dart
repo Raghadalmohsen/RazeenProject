@@ -2,12 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:raghad_s_razeen/core/app_export.dart';
 
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:raghad_s_razeen/presentation/happyfeedback.dart';
+import 'package:raghad_s_razeen/presentation/sadfeedback.dart';
 
 class Quietplacequiz extends StatefulWidget {
   const Quietplacequiz({Key? key})
       : super(
           key: key,
-        );
+        );     
 
   _QuietplacequizState createState() => _QuietplacequizState();
 }
@@ -23,17 +25,36 @@ class _QuietplacequizState extends State<Quietplacequiz> {
   void initState() {
     super.initState();
     initGame();
+    navigateToFeedbackScreen(); /////////////////////////////
   }
+
+  // @override
+  // void initState() {
+  //   super.initState();
+  //   initGame();
+  // }
+  //   @override
+  // void initState() {
+  //   super.initState();
+  //   // Initialize the game
+  //   initGame();
+  //   // Check if the game is over
+  //   checkGameOver();
+  // }
 
   initGame() {
     gameOver = false;
     score = 0;
     items = [
-      ItemModel(name: 'draw', value: 'draw', img: 'assets/images/draw.png'),
-      ItemModel(name: 'tv', img: 'assets/images/tv.png', value: 'tv'),
+      ItemModel(
+          name: 'draw',
+          value: 'notnoise',
+          img: 'assets/images/draw.png'), //غيرت الفاليو عشان يتحركون كلهم
+      ItemModel(name: 'tv', img: 'assets/images/tv.png', value: 'noise'),
       ItemModel(
           name: 'reading', img: 'assets/images/reading.png', value: 'notnoise'),
-      ItemModel(name: 'notnoise', img: 'assets/images/sony.png', value: 'sony'),
+      ItemModel(
+          name: 'notnoise', img: 'assets/images/sony.png', value: 'noise'),
     ];
     items2 = [
       ItemModel(
@@ -46,6 +67,54 @@ class _QuietplacequizState extends State<Quietplacequiz> {
     items2.shuffle();
   }
 
+////////
+  // void checkGameOver() {
+  //   if (items.length == 0) {
+  //     setState(() {
+  //       // Navigate to the appropriate feedback screen based on the score
+  //       if (score >= 2) {
+  //         Future.delayed(Duration.zero, () {
+  //           Navigator.push(
+  //             context,
+  //             MaterialPageRoute(builder: (context) => Happyfeedback()),
+  //           );
+  //         });
+  //       } else {
+  //         Future.delayed(Duration.zero, () {
+  //           Navigator.push(
+  //             context,
+  //             MaterialPageRoute(builder: (context) => Sadfeedback()),
+  //           );
+  //         });
+  //       }
+  //     });
+  //   }
+    
+  // }
+
+  //////////////////////////////
+  void navigateToFeedbackScreen() {
+     if (items.length == 0) {
+
+  if (score >= 2) {
+    Future.delayed(Duration.zero, () {
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => Happyfeedback()),
+      );
+    });
+  } else {
+    Future.delayed(Duration.zero, () {
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => Sadfeedback()),
+      );
+    });
+  }}
+}
+
+  
+  
   @override
   Widget build(BuildContext context) {
     if (items.length == 0) gameOver = true;
@@ -108,21 +177,14 @@ class _QuietplacequizState extends State<Quietplacequiz> {
                                         child: Draggable<ItemModel>(
                                           data: item,
                                           child: Container(
-                                            height: 100,
-                                            width:100,
-                                            child:(  Image.asset(item.img))
-                                              
-                                          ),
-                                          feedback:Container(
-                                            height: 100,
-                                            width:100,
-                                            child:(  Image.asset(item.img))
-                                              
-                                          ),
-                                          childWhenDragging:Container(
-                                            
-                                              
-                                          ),
+                                              height: 100,
+                                              width: 100,
+                                              child: (Image.asset(item.img))),
+                                          feedback: Container(
+                                              height: 100,
+                                              width: 100,
+                                              child: (Image.asset(item.img))),
+                                          childWhenDragging: Container(),
                                         ),
                                       );
                                     }).toList()),
@@ -137,12 +199,16 @@ class _QuietplacequizState extends State<Quietplacequiz> {
                                               items.remove(receivedItem);
                                               items2.remove(receivedItem);
                                               item.accepting = false;
+                                              score++; // ///////
+
                                             });
                                           } else {
                                             setState(() {
                                               item.accepting = false;
                                             });
                                           }
+                                          navigateToFeedbackScreen(); ////////////
+
                                         },
                                         onLeave: (receivedItem) {
                                           setState(() {
@@ -161,51 +227,109 @@ class _QuietplacequizState extends State<Quietplacequiz> {
                                           color: item.accepting
                                               ? const Color.fromARGB(
                                                   255, 255, 255, 255)
-                                              : Colors.teal,
-                                          height: 50,
-                                          width: 100,
+                                              : Colors.transparent,
+                                          // height: 180,
+                                          // width: 160,
+                                          height: item.value == 'notnoise'
+                                              ? 190
+                                              : 179, //هنا مقاس البوكسات
+                                          width: 160,
                                           alignment: Alignment.center,
                                           margin: const EdgeInsets.all(8.0),
-                                          child: Text(
-                                            item.name,
-                                            style: TextStyle(
-                                                color: Colors.white,
-                                                fontWeight: FontWeight.bold,
-                                                fontSize: 18.0),
+                                          child: Image.asset(
+                                            //غيرته
+                                            item.img,
+                                            height: item.value == 'notnoise'
+                                                ? 190
+                                                : 179, //وهنا برضو
+                                            width: 160,
                                           ),
                                         ),
                                       );
                                     }).toList()),
                                   ],
                                 ),
-                              if (gameOver)
-                                Text(
-                                  "GameOver",
-                                  style: TextStyle(
-                                    color: Colors.red,
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 24.0,
-                                  ),
-                                ),
-                              if (gameOver) Center()
+
+//                               if (gameOver) {  checkGameOver();
+// },
+                              //   if (items.length == 0) {
+                              //     setState(() {
+                              //       if (score >= 2) {
+                              //         Future.delayed(Duration.zero, () {
+                              //           Navigator.push(
+                              //             context,
+                              //             MaterialPageRoute(builder: (context) => Happyfeedback()),
+                              //           );
+                              //         });
+                              //       } else {
+                              //         Future.delayed(Duration.zero, () {
+                              //           Navigator.push(
+                              //             context,
+                              //             MaterialPageRoute(builder: (context) => Sadfeedback()),
+                              //           );
+                              //         });
+                              //       }
+                              //     });
+                              //   }
+                              // }
+                              // if (gameOver) ////////////////////////////////////////
+                              //     setState(() {
+                              //         if (items.length == 0) { //new
+                              //         if (score >= 2) {
+                              //           Future.delayed(Duration.zero, () {
+                              //             Navigator.push(
+                              //               context,
+                              //               MaterialPageRoute(builder: (context) => Happyfeedback()),
+                              //             );
+                              //           });
+                              //         } else {
+                              //           Future.delayed(Duration.zero, () {
+                              //             Navigator.push(
+                              //               context,
+                              //               MaterialPageRoute(builder: (context) => Sadfeedback()),
+                              //             );
+                              //           });
+                              //         }
+                              //       }
+                              //     });                                // ElevatedButton(
+                              //   onPressed: () {
+                              //     if (score >= 2) {
+                              //       Navigator.push(
+                              //         context,
+                              //         MaterialPageRoute(
+                              //             builder: (context) =>
+                              //                 Happyfeedback()),
+                              //       );
+                              //     } else {
+                              //       Navigator.push(
+                              //         context,
+                              //         MaterialPageRoute(
+                              //             builder: (context) =>
+                              //                 Sadfeedback()),
+                              //       );
+                              //     }
+                              //   },
+                              //   child: Text('Submit'),
+                              // ),
+                              // if (gameOver) Center()
                             ],
                           ),
                         ),
                       ),
                       Align(
-                            alignment: Alignment.topCenter,
-                            child: Container(
-                              height: 58.v,
-                              width: 301.h,
-                              margin: EdgeInsets.only(top: 65.v),
-                              decoration: BoxDecoration(
-                                color: appTheme.yellow100, ///////////////
-                                borderRadius: BorderRadius.circular(
-                                  29.h,
-                                ),
-                              ),
+                        alignment: Alignment.topCenter,
+                        child: Container(
+                          height: 58.v,
+                          width: 301.h,
+                          margin: EdgeInsets.only(top: 65.v),
+                          decoration: BoxDecoration(
+                            color: appTheme.yellow100, ///////////////
+                            borderRadius: BorderRadius.circular(
+                              29.h,
                             ),
                           ),
+                        ),
+                      ),
                       Align(
                         alignment: Alignment.topCenter,
                         child: Container(
