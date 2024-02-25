@@ -28,7 +28,7 @@ class _Frame105ScreenState extends State<Frame105Screen> {
   }
 
   Widget _buildEmailSection(BuildContext context) {
-    return TextFormField(
+    return TextFormField(textAlign: TextAlign.right,
       controller: emailSectionController,
       decoration: InputDecoration(
         hintText: "البريد الإلكتروني",
@@ -50,7 +50,7 @@ class _Frame105ScreenState extends State<Frame105Screen> {
   }
 
   Widget _buildPasswordSection(BuildContext context) {
-    return TextFormField(
+    return TextFormField(textAlign: TextAlign.right,
       controller: passwordSectionController,
       decoration: InputDecoration(
         hintText: "كلمة المرور",
@@ -73,20 +73,55 @@ class _Frame105ScreenState extends State<Frame105Screen> {
   }
 
   void _registerUser(BuildContext context) async {
-    if (_formKey.currentState!.validate()) {
-      try {
-        UserCredential userCredential = await FirebaseAuth.instance
-            .createUserWithEmailAndPassword(email: email, password: password);
+  if (_formKey.currentState!.validate()) {
+    try {
+      UserCredential userCredential = await FirebaseAuth.instance
+          .createUserWithEmailAndPassword(email: email, password: password);
 
-        Navigator.push(
-          context,
-          MaterialPageRoute(builder: (context) => FrameEightysevenScreen()),
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => FrameEightysevenScreen()),
+      );
+    } catch (e) {
+      if (e is FirebaseAuthException && e.code == 'email-already-in-use') {
+        // Show a dialog indicating that the email already exists
+        showDialog(
+          context: context,
+          builder: (BuildContext context) {
+            return AlertDialog(
+              title: Text('البريد الإلكتروني مستخدم',textAlign: TextAlign.right,
+        style: TextStyle(
+          fontSize: 22, // Set the desired font size
+        ),),
+              content: Text('البريد الإلكتروني موجود مسبقًا، يرجى استخدام بريد إلكتروني آخر',textAlign: TextAlign.right,
+        style: TextStyle(
+          fontSize: 16, // Set the desired font size
+        ),),
+              actions: <Widget>[
+  Center(
+    child: TextButton(
+      onPressed: () {
+        Navigator.pop(context);
+      },
+      child: Text(
+        'حسنا',
+        style: TextStyle(
+          fontSize: 16, // Set the desired font size
+          color: Colors.blue, // Set the desired text color
+        ),
+      ),
+    ),
+  ),
+],
+            );
+          },
         );
-      } catch (e) {
+      } else {
         print('Registration error: $e');
       }
     }
   }
+}
 
   bool isValidEmail(String email) {
     return RegExp(r"^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$").hasMatch(email);
@@ -250,14 +285,14 @@ class _Frame105ScreenState extends State<Frame105Screen> {
                     height: 152.v,
                     width: 119.h,
                     alignment: Alignment.topRight,
-                    margin: EdgeInsets.only(top: 100.v), //كان 44 نزلناها
+                    margin: EdgeInsets.only(top: 180.v), //كان 44 نزلناها
                   ),
                   Align(
                     alignment: Alignment.topRight,
                     child: Container(
                       width: 244.h,
                       margin: EdgeInsets.only(
-                        top: 174.v,
+                        top: 260.v,
                         right: 11.h,
                       ),
                       decoration: AppDecoration.outlinePrimary3,

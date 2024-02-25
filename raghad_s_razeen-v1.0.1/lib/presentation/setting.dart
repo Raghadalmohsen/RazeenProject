@@ -244,35 +244,67 @@ class Setting extends StatelessWidget {
                                         // decoration:
                                         //     AppDecoration.outlinePrimary3,
                                         child: ElevatedButton(
-                                            //زر تسجيل خروج
-                                             onPressed: () async {
-  try {
-    await FirebaseAuth.instance.signOut();
-    // Navigate to the sign-in or home screen after sign out
-    Navigator.push(
+  onPressed: () async {
+    bool signOutConfirmed = await showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: Text('تأكيد تسجيل الخروج',textAlign: TextAlign.right,
+        style: TextStyle(
+          fontSize: 22, // Set the desired font size
+        ),),
+          content: Text('هل أنت متأكد أنك تريد تسجيل الخروج؟',textAlign: TextAlign.right,
+        style: TextStyle(
+          fontSize: 16, // Set the desired font size
+        ),),
+     actions: <Widget>[
+  TextButton(
+    onPressed: () {
+      Navigator.of(context).pop(false); // Return false to indicate cancel
+    },
+    child: Text('إلغاء', style: TextStyle(color: Colors.blue)),
+  ),
+  TextButton(
+    onPressed: () {
+      Navigator.of(context).pop(true); // Return true to indicate confirmation
+    },
+    child: Text('تأكيد', style: TextStyle(color: Colors.blue)),
+  ),
+],
+        );
+      },
+    );
+
+    if (signOutConfirmed ?? false) {
+      try {
+        await FirebaseAuth.instance.signOut();
+        // Navigate to the sign-in or home screen after sign out
+        Navigator.push(
           context,
           MaterialPageRoute(builder: (context) => Initialscreen()),
-        );;
-  } catch (e) {
-    // Handle sign out errors
-    print('Failed to sign out: $e');
-  }
-},
-                                            style: ElevatedButton.styleFrom(
-                                                backgroundColor:
-                                                    Colors.transparent,
-                                                foregroundColor:
-                                                    Colors.black, //لون الخط
-                                                elevation: 0,
-                                                side: const BorderSide(
-                                                  width: 1.0,
-                                                  color: Color.fromARGB(
-                                                      0, 244, 67, 54),
-                                                )),
-                                            child: const Text(
-                                              ' تسجيل خروج',
-                                              style: TextStyle(fontSize: 20),
-                                            ))),
+        );
+      } catch (e) {
+        // Handle sign out errors
+        print('Failed to sign out: $e');
+      }
+    }
+  },
+  // Button styling
+  style: ElevatedButton.styleFrom(
+    backgroundColor: Colors.transparent,
+    foregroundColor: Colors.black, // Text color
+    elevation: 0,
+    side: const BorderSide(
+      width: 1.0,
+      color: Color.fromARGB(0, 244, 67, 54),
+    ),
+  ),
+  // Button text
+  child: const Text(
+    ' تسجيل خروج',
+    style: TextStyle(fontSize: 20),
+  ),
+)),
                                     CustomImageView(
                                       imagePath:
                                           ImageConstant.imgImage30, //تسجيل خروج

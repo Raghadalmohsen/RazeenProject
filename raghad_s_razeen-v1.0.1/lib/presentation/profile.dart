@@ -33,16 +33,30 @@ class Profile extends StatelessWidget {//الملف الشخصي
             context: context,
             builder: (BuildContext context) {
               return AlertDialog(
-                title: Text('رائع'),
-                content: Text('تم تغيير كلمة المرور بنجاح'),
+                title: Text('رائع',textAlign: TextAlign.right,
+        style: TextStyle(
+          fontSize: 22, // Set the desired font size
+        ),),
+                content: Text('تم تغيير كلمة المرور بنجاح',textAlign: TextAlign.right,
+        style: TextStyle(
+          fontSize: 16, // Set the desired font size
+        ),),
                 actions: <Widget>[
-                  TextButton(
-                    onPressed: () {
-                      Navigator.of(context).pop();
-                    },
-                    child: Text('حسنًا'),
-                  ),
-                ],
+  Center(
+    child: TextButton(
+      onPressed: () {
+        Navigator.pop(context);
+      },
+      child: Text(
+        'حسنا',
+        style: TextStyle(
+          fontSize: 16, // Set the desired font size
+          color: Colors.blue, // Set the desired text color
+        ),
+      ),
+    ),
+  ),
+],
               );
             },
           );
@@ -54,16 +68,30 @@ class Profile extends StatelessWidget {//الملف الشخصي
           context: context,
           builder: (BuildContext context) {
             return AlertDialog(
-              title: Text('خطأ'),
-              content: Text('ادخل كلمة الرور الحالية بشكل صحيح'),
+              title: Text('خطأ',textAlign: TextAlign.right,
+        style: TextStyle(
+          fontSize: 22, // Set the desired font size
+        ),),
+              content: Text('ادخل كلمة المرور الحالية بشكل صحيح',textAlign: TextAlign.right,
+        style: TextStyle(
+          fontSize: 16, // Set the desired font size
+        ),),
               actions: <Widget>[
-                TextButton(
-                  onPressed: () {
-                    Navigator.of(context).pop();
-                  },
-                  child: Text('حسنًا'),
-                ),
-              ],
+  Center(
+    child: TextButton(
+      onPressed: () {
+        Navigator.pop(context);
+      },
+      child: Text(
+        'حسنا',
+        style: TextStyle(
+          fontSize: 16, // Set the desired font size
+          color: Colors.blue, // Set the desired text color
+        ),
+      ),
+    ),
+  ),
+],
             );
           },
         );

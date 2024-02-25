@@ -13,7 +13,8 @@ dependencies:
   intl: ^0.18.0
   firebase_core: ^2.25.4
   firebase_auth: ^4.17.4
-  font_awesome_flutter: ^10.7.0 
+  email_validator: ^2.0.1
+  font_awesome_flutter: ^10.7.0
 dev_dependencies: 
 
   flutter_test: 

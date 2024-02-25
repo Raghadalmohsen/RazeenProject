@@ -175,13 +175,21 @@ class Forgetpass extends StatelessWidget {
                               return AlertDialog(
                                 content: Text('تم ارسال رابط اعادة تعيين كلمة المرور بنجاح'),
                                 actions: <Widget>[
-                                  TextButton(
-                                    onPressed: () {
-                                      Navigator.pop(context);
-                                    },
-                                    child: Text('حسنًا'),
-                                  ),
-                                ],
+  Center(
+    child: TextButton(
+      onPressed: () {
+        Navigator.pop(context);
+      },
+      child: Text(
+        'حسنا',
+        style: TextStyle(
+          fontSize: 16, // Set the desired font size
+          color: Colors.blue, // Set the desired text color
+        ),
+      ),
+    ),
+  ),
+],
                               );
                             },
                           );
