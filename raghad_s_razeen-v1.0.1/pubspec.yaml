@@ -23,7 +23,7 @@ flutter:
   assets: 
     - assets/
     - assets/images/ 
-    - assets/images/img_screenshot_2024_02_11_815x393.png
+   
   fonts: 
     - family: Inter
       fonts: 

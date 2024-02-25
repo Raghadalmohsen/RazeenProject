@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:raghad_s_razeen/core/app_export.dart';
- 
+
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class Quietplacequiz extends StatefulWidget {
@@ -13,165 +13,257 @@ class Quietplacequiz extends StatefulWidget {
 }
 
 class _QuietplacequizState extends State<Quietplacequiz> {
- 
-
   late List<ItemModel> items;
-  late List<ItemModel>items2;
-  
-    late int score;
-    late bool gameOver;
-  
-    @override
-    void initState() { 
-      super.initState();
-      initGame();
-    }
-  
-    initGame(){
-      gameOver = false;
-      score=0;
-     items = [
-      ItemModel(name: 'draw', value: 'draw', img: 'assets/draw.png'),
-      ItemModel(name: 'tv', img: 'tv.png', value: 'tv'),
-      ItemModel(name: 'reading', img: 'reading.png', value: 'reading'),
-      ItemModel(name: 'sony', img: 'sony.png', value: 'sony'),
+  late List<ItemModel> items2;
+
+  late int score;
+  late bool gameOver;
+
+  @override
+  void initState() {
+    super.initState();
+    initGame();
+  }
+
+  initGame() {
+    gameOver = false;
+    score = 0;
+    items = [
+      ItemModel(name: 'draw', value: 'draw', img: 'assets/images/draw.png'),
+      ItemModel(name: 'tv', img: 'assets/images/tv.png', value: 'tv'),
+      ItemModel(
+          name: 'reading', img: 'assets/images/reading.png', value: 'notnoise'),
+      ItemModel(name: 'notnoise', img: 'assets/images/sony.png', value: 'sony'),
     ];
-      items2 = List<ItemModel>.from(items);
-      items.shuffle();
-      items2.shuffle();
-    }
-  
-  
-    @override
-    Widget build(BuildContext context) {
-      if(items.length == 0)
-      gameOver = true;
-      return Scaffold(
-        backgroundColor: Color.fromARGB(255, 245, 147, 147),
-        appBar: AppBar(
-          centerTitle: true,
-          title: Text('Matching Game'),
-        ),
-        body: SingleChildScrollView(
-          padding: const EdgeInsets.all(16.0),
-          child: Column(
-            children: <Widget>[
-              Text.rich(TextSpan(
-                children: [
-                  TextSpan(text: "Score: "),
-                  TextSpan(text: "$score", style: TextStyle(
-                    color: Colors.green,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 30.0,
-                  ))
-                ]
-              )
-              ),
-              if(!gameOver)
-              Row(
-                children: <Widget>[
-                  Column(
-                    children: items.map((item) {
-                      return Container(
-                        margin: const EdgeInsets.all(8.0),
-                        child: Draggable<ItemModel>(
-                         data: item,
-                         childWhenDragging:CircleAvatar(backgroundColor: Colors.white,
-backgroundImage: AssetImage(item.img),
+    items2 = [
+      ItemModel(
+          name: 'notnoise',
+          value: 'notnoise',
+          img: 'assets/images/notnoise.png'),
+      ItemModel(name: 'nosie', img: 'assets/images/noise.png', value: 'noise'),
+    ];
+    items.shuffle();
+    items2.shuffle();
+  }
 
-                           ), 
-                           feedback: CircleAvatar(backgroundColor: Colors.white,backgroundImage: AssetImage(item.img),), 
-                           child: CircleAvatar(backgroundColor: Colors.white,backgroundImage: AssetImage(item.img),),
-                          // Icon(
-                          //   item.img, color: Colors.grey,size: 50.0,),
-                          //   feedback: Image(item.img,color: Colors.teal,size: 50,),
-                          //   child: Icon(item.img, color: Colors.teal, size:50,),
+  @override
+  Widget build(BuildContext context) {
+    if (items.length == 0) gameOver = true;
+    return Scaffold(
+      body: SingleChildScrollView(
+        physics: NeverScrollableScrollPhysics(),
+        child: SizedBox(
+          height: SizeUtils.height,
+          width: 394.h,
+          child: Stack(
+            alignment: Alignment.topRight,
+            children: [
+              Align(
+                alignment: Alignment.center,
+                child: Container(
+                  height: SizeUtils.height,
+                  width: 394.h,
+                  padding: EdgeInsets.only(
+                    left: 32.h,
+                    top: 92.v,
+                    right: 32.h,
+                  ),
+                  decoration: BoxDecoration(
+                    image: DecorationImage(
+                      image: AssetImage(
+                        ImageConstant.Background,
+                      ),
+                      fit: BoxFit.cover,
+                    ),
+                  ),
+                  child: Stack(
+                    alignment: Alignment.topCenter,
+                    children: [
+                      Align(
+                        alignment: Alignment.topCenter,
+                        child: Container(
+                          margin: EdgeInsets.only(
+                            top: 80.v,
+                            right: 1.h,
+                            bottom: 120.v,
                           ),
-                        );
-                    
-                      
-                    }).toList()
-                  ),
-                  Spacer(
-
-                  ),
-                  Column(
-                    children: items2.map((item){
-                      return DragTarget<ItemModel>(
-                        onAccept: (receivedItem){
-                          if(item.value== receivedItem.value){
-                            setState(() {
-                              items.remove(receivedItem);
-                              items2.remove(item);
-                              score+=10;
-                              item.accepting =false;
-                            });
-
-                          }else{
-                            setState(() {
-                              score-=5;
-                              item.accepting =false;
-
-                            });
-                          }
-                        },
-                        onLeave: (receivedItem){
-                          setState(() {
-                            item.accepting=false;
-                          });
-                        },
-                        onWillAccept: (receivedItem){
-                          setState(() {
-                            item.accepting=true;
-                          });
-                          return true;
-                        },
-                        builder: (context, acceptedItems,rejectedItem) => Container(
-                          color: item.accepting? const Color.fromARGB(255, 255, 255, 255):Colors.teal,
-                          height: 50,
-                          width: 100,
-                          alignment: Alignment.center,
-                          margin: const EdgeInsets.all(8.0),
-                          child: Text(item.name, style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold,
-                          fontSize: 18.0),),
+                          padding: EdgeInsets.symmetric(
+                            horizontal: 4.h,
+                            vertical: 30.v,
                           ),
-                          
-                          
-                        );
-                      
-                    }).toList()
-
+                          decoration: AppDecoration.outlinePrimary1.copyWith(
+                            borderRadius: BorderRadiusStyle.roundedBorder33,
+                          ),
+                          child: Column(
+                            children: <Widget>[
+                              if (!gameOver)
+                                Row(
+                                  children: <Widget>[
+                                    Column(
+                                        children: items.map((
+                                      item,
+                                    ) {
+                                      return Container(
+                                        margin: const EdgeInsets.all(8.0),
+                                        child: Draggable<ItemModel>(
+                                          data: item,
+                                          child: Container(
+                                            height: 100,
+                                            width:100,
+                                            child:(  Image.asset(item.img))
+                                              
+                                          ),
+                                          feedback:Container(
+                                            height: 100,
+                                            width:100,
+                                            child:(  Image.asset(item.img))
+                                              
+                                          ),
+                                          childWhenDragging:Container(
+                                            
+                                              
+                                          ),
+                                        ),
+                                      );
+                                    }).toList()),
+                                    Spacer(),
+                                    Column(
+                                        children: items2.map((item) {
+                                      return DragTarget<ItemModel>(
+                                        onAccept: (receivedItem) {
+                                          if (item.value ==
+                                              receivedItem.value) {
+                                            setState(() {
+                                              items.remove(receivedItem);
+                                              items2.remove(receivedItem);
+                                              item.accepting = false;
+                                            });
+                                          } else {
+                                            setState(() {
+                                              item.accepting = false;
+                                            });
+                                          }
+                                        },
+                                        onLeave: (receivedItem) {
+                                          setState(() {
+                                            item.accepting = false;
+                                          });
+                                        },
+                                        onWillAccept: (receivedItem) {
+                                          setState(() {
+                                            item.accepting = true;
+                                          });
+                                          return true;
+                                        },
+                                        builder: (context, acceptedItems,
+                                                rejectedItem) =>
+                                            Container(
+                                          color: item.accepting
+                                              ? const Color.fromARGB(
+                                                  255, 255, 255, 255)
+                                              : Colors.teal,
+                                          height: 50,
+                                          width: 100,
+                                          alignment: Alignment.center,
+                                          margin: const EdgeInsets.all(8.0),
+                                          child: Text(
+                                            item.name,
+                                            style: TextStyle(
+                                                color: Colors.white,
+                                                fontWeight: FontWeight.bold,
+                                                fontSize: 18.0),
+                                          ),
+                                        ),
+                                      );
+                                    }).toList()),
+                                  ],
+                                ),
+                              if (gameOver)
+                                Text(
+                                  "GameOver",
+                                  style: TextStyle(
+                                    color: Colors.red,
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 24.0,
+                                  ),
+                                ),
+                              if (gameOver) Center()
+                            ],
+                          ),
+                        ),
+                      ),
+                      Align(
+                            alignment: Alignment.topCenter,
+                            child: Container(
+                              height: 58.v,
+                              width: 301.h,
+                              margin: EdgeInsets.only(top: 65.v),
+                              decoration: BoxDecoration(
+                                color: appTheme.yellow100, ///////////////
+                                borderRadius: BorderRadius.circular(
+                                  29.h,
+                                ),
+                              ),
+                            ),
+                          ),
+                      Align(
+                        alignment: Alignment.topCenter,
+                        child: Container(
+                          width: 256.h,
+                          margin: EdgeInsets.only(top: 80.v),
+                          // decoration: AppDecoration.outlinePrimary1,////////////////
+                          child: Text(
+                            "             ضع الشكل في المكان المناسب",
+                            maxLines: null,
+                            overflow: TextOverflow.ellipsis,
+                            style: theme.textTheme.titleMedium,
+                          ),
+                        ),
+                      ),
+                      CustomImageView(
+                        imagePath: ImageConstant.imgImage167, ////// الصوت
+                        height: 28.v,
+                        width: 27.h,
+                        alignment: Alignment.topLeft,
+                        margin: EdgeInsets.only(left: 32.h, top: 55),
+                      ),
+                    ],
                   ),
-                ],
+                ),
               ),
-              if(gameOver)
-              Text("GameOver", style: TextStyle(
-                color: Colors.red,
-                fontWeight: FontWeight.bold,
-                fontSize: 24.0,
-              ),),
-              if(gameOver)
-              Center(
-                
-                 
-                
-                
-              )
-  
+              CustomImageView(
+                imagePath: ImageConstant.imgImage23, //النجمه
+                height: 114.v,
+                width: 94.h,
+                alignment: Alignment.topRight,
+                margin: EdgeInsets.only(top: 120.v),
+              ),
+              CustomImageView(
+                imagePath: ImageConstant.imgScreenshot2023, //رزين
+                height: 180.v,
+                width: 133.h,
+                alignment: Alignment.bottomLeft,
+                margin: EdgeInsets.only(
+                  bottom: 20.v,
+                ),
+              ),
             ],
           ),
-  
         ),
-      );
-    }
+      ),
+    );
   }
-  
-  class ItemModel {
-    final String name;
-    final String value;
-    final String img;
-    bool accepting;
+}
 
-  ItemModel({required this.name, required this.value, required this.img, this.accepting= false});
-  
-  }
+class ItemModel {
+  final String name;
+  final String value;
+  final String img;
+  bool accepting;
+
+  ItemModel(
+      {required this.name,
+      required this.value,
+      required this.img,
+      this.accepting = false});
+}
