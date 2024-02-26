@@ -464,5 +464,14 @@ class ImageConstant {
   static String Q2quiz4 = '$imagePath/Q2quiz4.png';
   static String Q3quiz4 = '$imagePath/Q3quiz4.png';
 
+  static String Razaan = '$imagePath/Razaan.png';
+  static String clock = '$imagePath/clock.png';
+  static String phone = '$imagePath/phone.png';
+  static String smartWatch = '$imagePath/smartWatch.png';
+  static String oldtelephone = '$imagePath/oldtelephone.png';
+
+  static String medalsFeedback = '$imagePath/medalsFeedback.png';
+
+
   static String imageNotFound = 'assets/images/image_not_found.png';
 }

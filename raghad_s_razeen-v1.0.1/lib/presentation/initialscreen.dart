@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:raghad_s_razeen/core/app_export.dart';
 import 'package:raghad_s_razeen/presentation/signin.dart';
 import 'package:raghad_s_razeen/presentation/frame_105_screen/frame_105_screen.dart';
+import 'package:raghad_s_razeen/presentation/signup.dart';
 import 'package:raghad_s_razeen/widgets/custom_elevated_button.dart';
 
 class Initialscreen extends StatelessWidget {//الصفحه الرئيسيه
@@ -87,7 +88,7 @@ class Initialscreen extends StatelessWidget {//الصفحه الرئيسيه
                             onPressed: () {
                           Navigator.push(
                             context,
-                            MaterialPageRoute(builder: (context) => Frame105Screen()),//next page
+                            MaterialPageRoute(builder: (context) => Signup()),//next page
                           );},
                       ),
                       SizedBox(height: 13.v),

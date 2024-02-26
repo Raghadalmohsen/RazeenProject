@@ -5,16 +5,16 @@ import 'package:raghad_s_razeen/core/app_export.dart';
 import 'package:raghad_s_razeen/presentation/happyfeedback.dart';
 import 'package:raghad_s_razeen/presentation/sadfeedback.dart';
 
-class Quietplacequiz extends StatefulWidget {
-  const Quietplacequiz({Key? key})
+class RespectDiffQuiz extends StatefulWidget {
+  const RespectDiffQuiz({Key? key})
       : super(
           key: key,
         );     
 
-  _QuietplacequizState createState() => _QuietplacequizState();
+  _RespectDiffQuizState createState() => _RespectDiffQuizState();
 }
 
-class _QuietplacequizState extends State<Quietplacequiz> {
+class _RespectDiffQuizState extends State<RespectDiffQuiz> {
   late List<ItemModel> items;
   late List<ItemModel> items2;
 
@@ -46,14 +46,15 @@ class _QuietplacequizState extends State<Quietplacequiz> {
     gameOver = false;
     score = 0;
     items = [
-      ItemModel(name: 'draw',value: 'notnoise',img: 'assets/images/draw.png'), //غيرت الفاليو عشان يتحركون كلهم
-      ItemModel(name: 'tv', img: 'assets/images/tv.png', value: 'noise'),
-      ItemModel(name: 'reading', img: 'assets/images/reading.png', value: 'notnoise'),
-      ItemModel(name: 'sony', img: 'assets/images/sony.png', value: 'noise'),
+      ItemModel( name: 'clock',value: 'grandfather',img: 'assets/images/clock.png'), //غيرت الفاليو عشان يتحركون كلهم
+      ItemModel(name: 'phone', img: 'assets/images/phone.png', value: 'Razaan'),
+      ItemModel( name: 'oldtelephone', img: 'assets/images/oldtelephone.png', value: 'grandfather'),
+      ItemModel(name: 'smartWatch', img: 'assets/images/smartWatch.png', value: 'Razaan'),
+      
     ];
     items2 = [
-      ItemModel(name: 'notnoise',value: 'notnoise',img: 'assets/images/notnoise.png'),
-      ItemModel(name: 'nosie', img: 'assets/images/noise.png', value: 'noise'),
+      ItemModel(name: 'grandfather',value: 'grandfather', img: 'assets/images/grandfather.png'),
+      ItemModel(name: 'Razaan', img: 'assets/images/Razaan.png', value: 'Razaan'),
     ];
     items.shuffle();
     items2.shuffle();
@@ -216,24 +217,24 @@ class _QuietplacequizState extends State<Quietplacequiz> {
                                         builder: (context, acceptedItems,
                                                 rejectedItem) =>
                                             Container(
-                                           color: item.accepting
+                                          color: item.accepting
                                               ? Color.fromARGB(14, 255, 254, 254)///////////////
                                               : Colors.transparent,
                                           // height: 180,
                                           // width: 160,
-                                          height: item.value == 'notnoise'
-                                              ? 190
-                                              : 179, //هنا مقاس البوكسات
-                                          width: 160,
+                                          height: item.value == 'grandfather'
+                                              ? 216
+                                              : 176, 
+                                          width: item.value == 'grandfather'? 130: 100,
                                           alignment: Alignment.center,
                                           margin: const EdgeInsets.all(8.0),
                                           child: Image.asset(
-                                            //غيرته
+                                           
                                             item.img,
-                                            height: item.value == 'notnoise'
-                                                ? 190
-                                                : 179, //وهنا برضو
-                                            width: 160,
+                                            height: item.value == 'grandfather'? 216: 176, //وهنا برضو
+                                            width: item.value == 'grandfather'
+                                              ? 130
+                                              : 100,
                                           ),
                                         ),
                                       );

@@ -84,9 +84,10 @@ import 'package:raghad_s_razeen/presentation/frame_seventysix_screen/frame_seven
 import 'package:raghad_s_razeen/presentation/app_navigation_screen/app_navigation_screen.dart';
 import 'package:raghad_s_razeen/presentation/firstpage.dart';//
 import 'package:raghad_s_razeen/presentation/initialscreen.dart';//
+import 'package:raghad_s_razeen/presentation/respectDiffQuiz.dart';
 // import 'package:raghad_s_razeen/presentation/sadfeedback.dart';
 import 'package:raghad_s_razeen/presentation/signin.dart';//
-// import 'package:raghad_s_razeen/presentation/signup.dart';//
+import 'package:raghad_s_razeen/presentation/signup.dart';//
 import 'package:raghad_s_razeen/presentation/forgetpass.dart';//
 import 'package:raghad_s_razeen/presentation/setting.dart';//
 import 'package:raghad_s_razeen/presentation/profile.dart';//
@@ -103,11 +104,15 @@ import 'package:raghad_s_razeen/presentation/happyfeedback.dart';//
 import 'package:raghad_s_razeen/presentation/safePlaceQuiz.dart';//2
 import 'package:raghad_s_razeen/presentation/speakQuiz.dart';//3
 import 'package:raghad_s_razeen/presentation/quietplacequiz.dart';//2
+import 'package:raghad_s_razeen/presentation/respectDiffQuiz.dart';//4
+import 'package:raghad_s_razeen/presentation/medalsFeedback.dart';//4
+
 
 class AppRoutes {
    static const String firstpage = '/firstpage';//
    static const String initialscreen = '/initialscreen';//
    static const String signin = '/signin';//
+   static const String signup ='/signup';//4
    static const String forgetpass = '/forgetpass';//
    static const String setting = '/setting';//
    static const String profile = '/profile';//
@@ -125,7 +130,11 @@ class AppRoutes {
    static const String safePlaceQuiz = '/safePlaceQuiz';//2
    static const String speakQuiz = '/speakQuiz';//3
 
-      static const String quietplacequiz = '/quietplacequiz';//2
+   static const String quietplacequiz = '/quietplacequiz';//2
+   static const String respectDiffQuiz= '/respectDiffQuiz';//4
+   static const String medalsFeedback ='/medalsFeedback';//4
+   
+
 
 
   static const String frame135Screen = '/frame_135_screen';
@@ -299,7 +308,8 @@ class AppRoutes {
   static Map<String, WidgetBuilder> routes = {
     firstpage:(context) => Firstpage(),//
     initialscreen:(context) => Initialscreen(),//
-    signin:(context) => Signin(),//
+    signin:(context) => Signin(),
+    signup:(context) => Signup(),//
     forgetpass:(context) => Forgetpass(),//
     setting:(context) => Setting(),//
     profile:(context) => Profile(),
@@ -318,6 +328,8 @@ class AppRoutes {
 
 
     quietplacequiz:(context) => Quietplacequiz(),
+    respectDiffQuiz:(context) => RespectDiffQuiz(),//4
+    medalsFeedback:(context) => MedalsFeedback(),//4
 
     frame135Screen: (context) => Frame135Screen(),
     // frame134Screen: (context) => Frame134Screen(),
@@ -333,7 +345,7 @@ class AppRoutes {
     //frame100Screen: (context) => Frame100Screen(),
     //frame103Screen: (context) => Frame103Screen(),
     // frame104Screen: (context) => Frame104Screen(),
-    frame105Screen: (context) => Frame105Screen(),
+    // frame105Screen: (context) => Frame105Screen(),
     // frame106Screen: (context) => Frame106Screen(),
     frame112Screen: (context) => Frame112Screen(),
     frame110Screen: (context) => Frame110Screen(),

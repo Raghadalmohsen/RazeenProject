@@ -6,9 +6,10 @@ import 'package:raghad_s_razeen/presentation/initialscreen.dart';
 import 'package:raghad_s_razeen/presentation/frame_105_screen/frame_105_screen.dart';
 import 'package:raghad_s_razeen/presentation/forgetpass.dart';
 import 'package:raghad_s_razeen/presentation/explainmap.dart';
+import 'package:raghad_s_razeen/presentation/signup.dart';
 import 'package:raghad_s_razeen/widgets/custom_elevated_button.dart';
 import 'package:raghad_s_razeen/widgets/custom_text_form_field.dart';
-import 'package:email_validator/email_validator.dart';
+import "package:email_validator/email_validator.dart";
 //
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -245,7 +246,7 @@ class Signin extends StatelessWidget {
                                                       context,
                                                       CupertinoPageRoute(
                                                           builder: (context) =>
-                                                              Frame105Screen()),
+                                                              Signup()),
                                                     );
                                                   },
                                                 ),

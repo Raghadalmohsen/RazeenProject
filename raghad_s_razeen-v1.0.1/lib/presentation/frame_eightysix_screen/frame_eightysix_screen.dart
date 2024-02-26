@@ -1,291 +1,291 @@
-import 'package:flutter/material.dart';
-import 'package:raghad_s_razeen/core/app_export.dart';
-import 'package:raghad_s_razeen/presentation/frame_103_screen/frame_103_screen.dart';
-import 'package:raghad_s_razeen/presentation/frame_107_screen/frame_107_screen.dart';
-import 'package:raghad_s_razeen/presentation/frame_130_screen/frame_130_screen.dart';
-import 'package:raghad_s_razeen/presentation/frame_131_screen/frame_131_screen.dart';
-import 'package:raghad_s_razeen/presentation/frame_132_screen/frame_132_screen.dart';
-import 'package:raghad_s_razeen/presentation/frame_133_screen/frame_133_screen.dart';
-import 'package:raghad_s_razeen/presentation/frame_134_screen/frame_134_screen.dart';
-// import 'package:raghad_s_razeen/presentation/frame_eightyfive_screen/frame_eightyfive_screen.dart';
-import 'package:raghad_s_razeen/presentation/frame_eightyseven_screen/frame_eightyseven_screen.dart';
-import 'package:raghad_s_razeen/presentation/frame_ninetythree_screen/frame_ninetythree_screen.dart';
-import 'package:raghad_s_razeen/presentation/frame_seventysix_screen/frame_seventysix_screen.dart';
-import 'package:raghad_s_razeen/widgets/app_bar/appbar_leading_image.dart';
-import 'package:raghad_s_razeen/widgets/app_bar/custom_app_bar.dart';
-import 'package:raghad_s_razeen/widgets/custom_bottom_bar.dart';
-import 'package:raghad_s_razeen/widgets/custom_floating_button.dart';
+// import 'package:flutter/material.dart';
+// import 'package:raghad_s_razeen/core/app_export.dart';
+// import 'package:raghad_s_razeen/presentation/frame_103_screen/frame_103_screen.dart';
+// import 'package:raghad_s_razeen/presentation/frame_107_screen/frame_107_screen.dart';
+// import 'package:raghad_s_razeen/presentation/frame_130_screen/frame_130_screen.dart';
+// import 'package:raghad_s_razeen/presentation/frame_131_screen/frame_131_screen.dart';
+// import 'package:raghad_s_razeen/presentation/frame_132_screen/frame_132_screen.dart';
+// import 'package:raghad_s_razeen/presentation/frame_133_screen/frame_133_screen.dart';
+// import 'package:raghad_s_razeen/presentation/frame_134_screen/frame_134_screen.dart';
+// // import 'package:raghad_s_razeen/presentation/frame_eightyfive_screen/frame_eightyfive_screen.dart';
+// import 'package:raghad_s_razeen/presentation/frame_eightyseven_screen/frame_eightyseven_screen.dart';
+// import 'package:raghad_s_razeen/presentation/frame_ninetythree_screen/frame_ninetythree_screen.dart';
+// import 'package:raghad_s_razeen/presentation/frame_seventysix_screen/frame_seventysix_screen.dart';
+// import 'package:raghad_s_razeen/widgets/app_bar/appbar_leading_image.dart';
+// import 'package:raghad_s_razeen/widgets/app_bar/custom_app_bar.dart';
+// import 'package:raghad_s_razeen/widgets/custom_bottom_bar.dart';
+// import 'package:raghad_s_razeen/widgets/custom_floating_button.dart';
 
-class  FrameEightysixScreen extends StatelessWidget { // صفحة الماب 
-  FrameEightysixScreen({Key? key})
-      : super(
-          key: key,
-        );
+// class  FrameEightysixScreen extends StatelessWidget { // صفحة الماب 
+//   FrameEightysixScreen({Key? key})
+//       : super(
+//           key: key,
+//         );
 
-  GlobalKey<NavigatorState> navigatorKey = GlobalKey();
+//   GlobalKey<NavigatorState> navigatorKey = GlobalKey();
 
-  @override
-  Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
+//   @override
+//   Widget build(BuildContext context) {
+//     return SafeArea(
+//       child: Scaffold(
           
-         extendBodyBehindAppBar: true, //الاعدادات
-        appBar: AppBar(
-          // 1. 
-          leading: IconButton(
-           iconSize: 40,
-           color: const Color.fromARGB(255, 255, 255, 255),
+//          extendBodyBehindAppBar: true, //الاعدادات
+//         appBar: AppBar(
+//           // 1. 
+//           leading: IconButton(
+//            iconSize: 40,
+//            color: const Color.fromARGB(255, 255, 255, 255),
           
-            icon: Icon(Icons.settings),
-             onPressed: () { Navigator.push(
-               context,
-               MaterialPageRoute(builder: (context) =>  Frame107Screen()), //الاعدادات
-            );},
-          ),
-          backgroundColor: Color.fromARGB(0, 213, 204, 243),
-          elevation: 0,
-        ),
+//             icon: Icon(Icons.settings),
+//              onPressed: () { Navigator.push(
+//                context,
+//                MaterialPageRoute(builder: (context) =>  Frame107Screen()), //الاعدادات
+//             );},
+//           ),
+//           backgroundColor: Color.fromARGB(0, 213, 204, 243),
+//           elevation: 0,
+//         ),
 
-        body: SizedBox(
-          //horizontalScroll
+//         body: SizedBox(
+//           //horizontalScroll
 
-          height: SizeUtils.height,
-          width: double.maxFinite,
-          child: Stack(
-            alignment: Alignment.center,
+//           height: SizeUtils.height,
+//           width: double.maxFinite,
+//           child: Stack(
+//             alignment: Alignment.center,
             
             
-            children: [
+//             children: [
 
-              //rawa idea : Container( decoration: BoxDecoration(image:DecorationImage(image: AssetImage('assets/images/img_screenshot_2024_02_11_815x393.png'),) ), )
-               //image:AssetImage('assets/images/img_screenshot_2024_02_11_815x393.png'),
-              //body:center(child: Image.asset(''))
-              CustomImageView(
-                imagePath: ImageConstant.MapRoad,//الخلفيه للماب 
-                //imagePath: ImageConstant.imgImage65, تضبط 
-                // image:AssetImage('assets/images/img_screenshot_2024_02_11_815x393.png'),
-                height: 815.v,
-                width: 393.h,
-                alignment: Alignment.topCenter,
-             ),
-              Align(
-                alignment: Alignment.center,
-                child: SingleChildScrollView(//for overflow
-                  physics: NeverScrollableScrollPhysics(),
-                  child: Column(
+//               //rawa idea : Container( decoration: BoxDecoration(image:DecorationImage(image: AssetImage('assets/images/img_screenshot_2024_02_11_815x393.png'),) ), )
+//                //image:AssetImage('assets/images/img_screenshot_2024_02_11_815x393.png'),
+//               //body:center(child: Image.asset(''))
+//               CustomImageView(
+//                 imagePath: ImageConstant.MapRoad,//الخلفيه للماب 
+//                 //imagePath: ImageConstant.imgImage65, تضبط 
+//                 // image:AssetImage('assets/images/img_screenshot_2024_02_11_815x393.png'),
+//                 height: 815.v,
+//                 width: 393.h,
+//                 alignment: Alignment.topCenter,
+//              ),
+//               Align(
+//                 alignment: Alignment.center,
+//                 child: SingleChildScrollView(//for overflow
+//                   physics: NeverScrollableScrollPhysics(),
+//                   child: Column(
                     
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      SizedBox(height: 23.v),
-                      SizedBox(
-                        height: 792.v,
-                        width: double.maxFinite,
-                        child: Stack(
-                          alignment: Alignment.topRight,
-                          children: [
-                            Align(
-                              alignment: Alignment.topLeft,
-                              child: Padding(
-                                padding: EdgeInsets.only(
-                                  right: 33.h,
-                                  bottom: 74.v,
-                                ),
-                                child: Column(
-                                  mainAxisSize: MainAxisSize.min,
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
+//                     mainAxisSize: MainAxisSize.min,
+//                     children: [
+//                       SizedBox(height: 23.v),
+//                       SizedBox(
+//                         height: 792.v,
+//                         width: double.maxFinite,
+//                         child: Stack(
+//                           alignment: Alignment.topRight,
+//                           children: [
+//                             Align(
+//                               alignment: Alignment.topLeft,
+//                               child: Padding(
+//                                 padding: EdgeInsets.only(
+//                                   right: 33.h,
+//                                   bottom: 74.v,
+//                                 ),
+//                                 child: Column(
+//                                   mainAxisSize: MainAxisSize.min,
+//                                   crossAxisAlignment: CrossAxisAlignment.start,
+//                                   children: [
                   
-               Container(
+//                Container(
                                      
-                                    margin: EdgeInsets.only(
-                                      right: 200.v,
-                                      bottom: 60.v,
-                                    ),
+//                                     margin: EdgeInsets.only(
+//                                       right: 200.v,
+//                                       bottom: 60.v,
+//                                     ),
 
                                     
-                                       height: 135.v,
-                                     width: 200.h,
-                                    decoration: AppDecoration.outlinePrimary3,
-                                 child: ElevatedButton(
-                onPressed: () { Navigator.push(
-               context,
-               MaterialPageRoute(builder: (context) =>  Frame134Screen()), //سلامة المكان
-            );},
-                style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.transparent,
-                    foregroundColor: Colors.black,
-                    elevation: 0,
-                    side: const BorderSide(
-                      width: 1.0,
-                      color: Color.fromARGB(0, 244, 67, 54),
+//                                        height: 135.v,
+//                                      width: 200.h,
+//                                     decoration: AppDecoration.outlinePrimary3,
+//                                  child: ElevatedButton(
+//                 onPressed: () { Navigator.push(
+//                context,
+//                MaterialPageRoute(builder: (context) =>  Frame134Screen()), //سلامة المكان
+//             );},
+//                 style: ElevatedButton.styleFrom(
+//                     backgroundColor: Colors.transparent,
+//                     foregroundColor: Colors.black,
+//                     elevation: 0,
+//                     side: const BorderSide(
+//                       width: 1.0,
+//                       color: Color.fromARGB(0, 244, 67, 54),
                       
-                    )),
+//                     )),
                 
-                 child:Image.asset(ImageConstant.imgImage253)),//بيت احمر
+//                  child:Image.asset(ImageConstant.imgImage253)),//بيت احمر
                  
-                 ),
+//                  ),
                                
 
-               Container(
+//                Container(
                                      
-                                    margin: EdgeInsets.only(
-                                      left: 8.v,
-                                      bottom: 232.v,
-                                    ),
-                                       height: 135.v,
-                                     width: 200.h,
-                                    decoration: AppDecoration.outlinePrimary3,
-                                 child: ElevatedButton(
-                onPressed: () { Navigator.push(
-               context,
-               MaterialPageRoute(builder: (context) =>  Frame133Screen()), //المحافظة على الهدوء
-            );},
-                style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.transparent,
-                    foregroundColor: Colors.black,
-                    elevation: 0,
-                    side: const BorderSide(
-                      width: 1.0,
-                      color: Color.fromARGB(0, 244, 67, 54),
-                    )),
+//                                     margin: EdgeInsets.only(
+//                                       left: 8.v,
+//                                       bottom: 232.v,
+//                                     ),
+//                                        height: 135.v,
+//                                      width: 200.h,
+//                                     decoration: AppDecoration.outlinePrimary3,
+//                                  child: ElevatedButton(
+//                 onPressed: () { Navigator.push(
+//                context,
+//                MaterialPageRoute(builder: (context) =>  Frame133Screen()), //المحافظة على الهدوء
+//             );},
+//                 style: ElevatedButton.styleFrom(
+//                     backgroundColor: Colors.transparent,
+//                     foregroundColor: Colors.black,
+//                     elevation: 0,
+//                     side: const BorderSide(
+//                       width: 1.0,
+//                       color: Color.fromARGB(0, 244, 67, 54),
+//                     )),
                 
-                 child:Image.asset(ImageConstant.imgImage250))//بيت وردي فاتح
+//                  child:Image.asset(ImageConstant.imgImage250))//بيت وردي فاتح
      
-                                   ),
+//                                    ),
                                  
                                 
-                       Container(
+//                        Container(
                      
-                                       height: 148.v,
-                                     width: 216.h,
-                                    decoration: AppDecoration.outlinePrimary3,
-                                 child: ElevatedButton(
-                onPressed: () { Navigator.push(
-               context,
-               MaterialPageRoute(builder: (context) =>  Frame130Screen()),//تقبل الاختلاف
-            );},
-                style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.transparent,
-                    foregroundColor: Colors.black,
-                    elevation: 0,
-                    side: const BorderSide(
-                      width: 1.0,
-                      color: Color.fromARGB(0, 244, 67, 54),
-                    )
-                    ),
+//                                        height: 148.v,
+//                                      width: 216.h,
+//                                     decoration: AppDecoration.outlinePrimary3,
+//                                  child: ElevatedButton(
+//                 onPressed: () { Navigator.push(
+//                context,
+//                MaterialPageRoute(builder: (context) =>  Frame130Screen()),//تقبل الاختلاف
+//             );},
+//                 style: ElevatedButton.styleFrom(
+//                     backgroundColor: Colors.transparent,
+//                     foregroundColor: Colors.black,
+//                     elevation: 0,
+//                     side: const BorderSide(
+//                       width: 1.0,
+//                       color: Color.fromARGB(0, 244, 67, 54),
+//                     )
+//                     ),
                 
-                 child:Image.asset(ImageConstant.imgImage252))//بيت ازرق غامق
+//                  child:Image.asset(ImageConstant.imgImage252))//بيت ازرق غامق
      
-                                   ),
+//                                    ),
 
                                 
-                                  ],
-                                ),
-                              ),
-                            ),
-             Container(
+//                                   ],
+//                                 ),
+//                               ),
+//                             ),
+//              Container(
                                      
-                                    margin: EdgeInsets.only(
-                                    left: 159,
-                                      top: 70.v,
-                                    ),
+//                                     margin: EdgeInsets.only(
+//                                     left: 159,
+//                                       top: 70.v,
+//                                     ),
                                     
-                                       height: 129.v,
-                                     width: 175.h,
-                                    decoration: AppDecoration.outlinePrimary3,
-                                 child: ElevatedButton(
-                onPressed: () { Navigator.push(
-               context,
-               MaterialPageRoute(builder: (context) =>  Frame131Screen()), //كيف البي طلبات جدي
-            );},
-                style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.transparent,
-                    foregroundColor: Colors.black,
-                    elevation: 0,
-                    side: const BorderSide(
-                      width: 1.0,
-                      color: Color.fromARGB(0, 244, 67, 54),
+//                                        height: 129.v,
+//                                      width: 175.h,
+//                                     decoration: AppDecoration.outlinePrimary3,
+//                                  child: ElevatedButton(
+//                 onPressed: () { Navigator.push(
+//                context,
+//                MaterialPageRoute(builder: (context) =>  Frame131Screen()), //كيف البي طلبات جدي
+//             );},
+//                 style: ElevatedButton.styleFrom(
+//                     backgroundColor: Colors.transparent,
+//                     foregroundColor: Colors.black,
+//                     elevation: 0,
+//                     side: const BorderSide(
+//                       width: 1.0,
+//                       color: Color.fromARGB(0, 244, 67, 54),
                       
-                    )),
+//                     )),
                 
-                 child:Image.asset(ImageConstant.imgImage249)),//بيت اصفر
+//                  child:Image.asset(ImageConstant.imgImage249)),//بيت اصفر
                  
-                 ),
+//                  ),
 
 
 
 
-                            // CustomImageView(
-                            //  imagePath: ImageConstant.imgImage249,// البيت الاصفر 
-                            //   height: 129.v,
-                            //   width: 175.h,
-                            //   alignment: Alignment.topRight,
-                            //   margin: EdgeInsets.only(top: 78.v),
-                            // ),
+//                             // CustomImageView(
+//                             //  imagePath: ImageConstant.imgImage249,// البيت الاصفر 
+//                             //   height: 129.v,
+//                             //   width: 175.h,
+//                             //   alignment: Alignment.topRight,
+//                             //   margin: EdgeInsets.only(top: 78.v),
+//                             // ),
                                            
-             Container(
+//              Container(
                                      
-                                    margin: EdgeInsets.only(
-                                    left: 159,
-                                      top: 357.v,
-                                    ),
+//                                     margin: EdgeInsets.only(
+//                                     left: 159,
+//                                       top: 357.v,
+//                                     ),
                                     
-                                       height: 140.v,
-                                     width: 210.h,
-                                    decoration: AppDecoration.outlinePrimary3,
-                                 child: ElevatedButton(
-                onPressed: () { Navigator.push(
-               context,
-               MaterialPageRoute(builder: (context) =>  Frame132Screen()), //التحدث بطريقة مناسبة 
-            );},
-                style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.transparent,
-                    foregroundColor: Colors.black,
-                    elevation: 0,
-                    side: const BorderSide(
-                      width: 1.0,
-                      color: Color.fromARGB(0, 244, 67, 54),
+//                                        height: 140.v,
+//                                      width: 210.h,
+//                                     decoration: AppDecoration.outlinePrimary3,
+//                                  child: ElevatedButton(
+//                 onPressed: () { Navigator.push(
+//                context,
+//                MaterialPageRoute(builder: (context) =>  Frame132Screen()), //التحدث بطريقة مناسبة 
+//             );},
+//                 style: ElevatedButton.styleFrom(
+//                     backgroundColor: Colors.transparent,
+//                     foregroundColor: Colors.black,
+//                     elevation: 0,
+//                     side: const BorderSide(
+//                       width: 1.0,
+//                       color: Color.fromARGB(0, 244, 67, 54),
                       
-                    )),
+//                     )),
                 
-                 child:Image.asset(ImageConstant.imgImage251)),//بيت سماوي
+//                  child:Image.asset(ImageConstant.imgImage251)),//بيت سماوي
                  
-                 ),
-                            // CustomImageView(
-                            //   imagePath: ImageConstant.imgImage251,// البيت السماوي 
-                            //   height: 138.v,
-                            //   width: 211.h,
-                            //   alignment: Alignment.bottomRight,
-                            //   margin: EdgeInsets.only(bottom: 295.v),
-                            // ),
+//                  ),
+//                             // CustomImageView(
+//                             //   imagePath: ImageConstant.imgImage251,// البيت السماوي 
+//                             //   height: 138.v,
+//                             //   width: 211.h,
+//                             //   alignment: Alignment.bottomRight,
+//                             //   margin: EdgeInsets.only(bottom: 295.v),
+//                             // ),
                   
-                          ],
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-            ],
+//                           ],
+//                         ),
+//                       ),
+//                     ],
+//                   ),
+//                 ),
+//               ),
+//             ],
             
-          ),
-        ),
+//           ),
+//         ),
 
-        extendBody: true,
-        bottomNavigationBar: _buildBottomAppBar(context),
-        floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-      ),
-    );
-  }
+//         extendBody: true,
+//         bottomNavigationBar: _buildBottomAppBar(context),
+//         floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+//       ),
+//     );
+//   }
 
   
 
-  Widget _buildBottomAppBar(BuildContext context) {
-    return CustomBottomBar(
-      onChanged: (BottomBarEnum type) {},
-    );
-  }
+//   Widget _buildBottomAppBar(BuildContext context) {
+//     return CustomBottomBar(
+//       onChanged: (BottomBarEnum type) {},
+//     );
+//   }
 
 
-}
+// }
 
