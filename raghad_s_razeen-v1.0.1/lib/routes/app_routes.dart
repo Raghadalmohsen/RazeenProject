@@ -12,7 +12,7 @@ import 'package:raghad_s_razeen/presentation/frame_158_container_screen/frame_15
 //import 'package:raghad_s_razeen/presentation/frame_100_screen/frame_100_screen.dart';
 //import 'package:raghad_s_razeen/presentation/frame_103_screen/frame_103_screen.dart';
 // import 'package:raghad_s_razeen/presentation/frame_104_screen/frame_104_screen.dart';
-import 'package:raghad_s_razeen/presentation/frame_105_screen/frame_105_screen.dart';
+// import 'package:raghad_s_razeen/presentation/frame_105_screen/frame_105_screen.dart';
 // import 'package:raghad_s_razeen/presentation/frame_106_screen/frame_106_screen.dart';
 import 'package:raghad_s_razeen/presentation/frame_112_screen/frame_112_screen.dart';
 import 'package:raghad_s_razeen/presentation/frame_110_screen/frame_110_screen.dart';
@@ -84,8 +84,6 @@ import 'package:raghad_s_razeen/presentation/frame_seventysix_screen/frame_seven
 import 'package:raghad_s_razeen/presentation/app_navigation_screen/app_navigation_screen.dart';
 import 'package:raghad_s_razeen/presentation/firstpage.dart';//
 import 'package:raghad_s_razeen/presentation/initialscreen.dart';//
-import 'package:raghad_s_razeen/presentation/respectDiffQuiz.dart';
-// import 'package:raghad_s_razeen/presentation/sadfeedback.dart';
 import 'package:raghad_s_razeen/presentation/signin.dart';//
 import 'package:raghad_s_razeen/presentation/signup.dart';//
 import 'package:raghad_s_razeen/presentation/forgetpass.dart';//
@@ -105,6 +103,9 @@ import 'package:raghad_s_razeen/presentation/safePlaceQuiz.dart';//2
 import 'package:raghad_s_razeen/presentation/speakQuiz.dart';//3
 import 'package:raghad_s_razeen/presentation/quietplacequiz.dart';//2
 import 'package:raghad_s_razeen/presentation/respectDiffQuiz.dart';//4
+import 'package:raghad_s_razeen/presentation/requestQuiz.dart';//4
+import 'package:raghad_s_razeen/presentation/requestQuiz2.dart';//4
+import 'package:raghad_s_razeen/presentation/requestQuiz3.dart';//4
 import 'package:raghad_s_razeen/presentation/medalsFeedback.dart';//4
 
 
@@ -132,6 +133,9 @@ class AppRoutes {
 
    static const String quietplacequiz = '/quietplacequiz';//2
    static const String respectDiffQuiz= '/respectDiffQuiz';//4
+   static const String requestQuiz ='/requestQuiz';//4
+      static const String requestQuiz2 ='/requestQuiz2';//4
+         static const String requestQuiz3 ='/requestQuiz3';//4
    static const String medalsFeedback ='/medalsFeedback';//4
    
 
@@ -165,7 +169,7 @@ class AppRoutes {
 
   // static const String frame104Screen = '/frame_104_screen';
 
-  static const String frame105Screen = '/frame_105_screen';
+  // static const String frame105Screen = '/frame_105_screen';
 
   // static const String frame106Screen = '/frame_106_screen';
 
@@ -330,6 +334,15 @@ class AppRoutes {
     quietplacequiz:(context) => Quietplacequiz(),
     respectDiffQuiz:(context) => RespectDiffQuiz(),//4
     medalsFeedback:(context) => MedalsFeedback(),//4
+    requestQuiz:(context) => RequestQuiz(),
+    requestQuiz2:(context) => RequestQuiz2(),
+     requestQuiz3:(context) => RequestQuiz3(),
+
+
+
+
+
+
 
     frame135Screen: (context) => Frame135Screen(),
     // frame134Screen: (context) => Frame134Screen(),
@@ -341,7 +354,6 @@ class AppRoutes {
     // frame133Screen: (context) => Frame133Screen(),
     frame158ContainerScreen: (context) => Frame158ContainerScreen(),
     // frame164Screen: (context) => Frame164Screen(),
-
     //frame100Screen: (context) => Frame100Screen(),
     //frame103Screen: (context) => Frame103Screen(),
     // frame104Screen: (context) => Frame104Screen(),

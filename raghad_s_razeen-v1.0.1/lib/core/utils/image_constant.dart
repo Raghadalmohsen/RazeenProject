@@ -448,9 +448,9 @@ class ImageConstant {
 
   static String grandfather = '$imagePath/grandfather.png'; 
 
-  static String NewspaperQ3 = '$imagePath/NewspaperQ3.png';
-  static String WaterQ3 = '$imagePath/WaterQ3.png';
-  static String RadioQ3 = '$imagePath/RadioQ3.png';
+  // static String NewspaperQ3 = '$imagePath/NewspaperQ3.png';
+  // static String WaterQ3 = '$imagePath/WaterQ3.png';
+  // static String RadioQ3 = '$imagePath/RadioQ3.png';
    static String tv = '$imagePath/tv.png';  
    static String draw = '$imagePath/draw.png';  
    static String reading = '$imagePath/reading.png';  
@@ -469,6 +469,18 @@ class ImageConstant {
   static String phone = '$imagePath/phone.png';
   static String smartWatch = '$imagePath/smartWatch.png';
   static String oldtelephone = '$imagePath/oldtelephone.png';
+
+  static String fruitq3 = '$imagePath/fruitq3.png';
+  static String medicineq3 = '$imagePath/medicineq3.png';
+  static String phoneq3 = '$imagePath/phoneq3.png';
+  static String mesbahaq3 = '$imagePath/mesbahaq3.png';
+  static String napkinq3 = '$imagePath/napkinq3.png';
+ static String newspaperq3 = '$imagePath/newspaperq3.png';
+  static String remoteq3 = '$imagePath/remoteq3.png';
+  static String waterq3 = '$imagePath/waterq3.png';
+  static String radioq3 = '$imagePath/radioq3.png';
+
+
 
   static String medalsFeedback = '$imagePath/medalsFeedback.png';
 
