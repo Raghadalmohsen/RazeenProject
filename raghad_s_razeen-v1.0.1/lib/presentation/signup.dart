@@ -14,8 +14,10 @@ class Signup extends StatefulWidget {
 }
 
 class _SignupState extends State<Signup> {
+  TextEditingController nameSectionController = TextEditingController();
   TextEditingController emailSectionController = TextEditingController();
   TextEditingController passwordSectionController = TextEditingController();
+  String name = '';
   String email = '';
   String password = '';
 
@@ -23,13 +25,36 @@ class _SignupState extends State<Signup> {
 
   @override
   void dispose() {
+    nameSectionController.dispose();
     emailSectionController.dispose();
     passwordSectionController.dispose();
     super.dispose();
   }
 
+  Widget _buildNameSection(BuildContext context) {
+    return TextFormField(
+       textAlign: TextAlign.right,
+      controller: nameSectionController,
+      decoration: InputDecoration(
+        hintText: "الإسم",
+      ),
+      validator: (value) {
+        if (value == null || value.isEmpty) {
+          return 'يرجى إدخال الإسم';
+        }
+        return null;
+      },
+      onChanged: (value) {
+        setState(() {
+          name = value;
+        });
+      },
+    );
+  }
+
   Widget _buildEmailSection(BuildContext context) {
-    return TextFormField(textAlign: TextAlign.right,
+    return TextFormField(
+      textAlign: TextAlign.right,
       controller: emailSectionController,
       decoration: InputDecoration(
         hintText: "البريد الإلكتروني",
@@ -51,7 +76,8 @@ class _SignupState extends State<Signup> {
   }
 
   Widget _buildPasswordSection(BuildContext context) {
-    return TextFormField(textAlign: TextAlign.right,
+    return TextFormField(
+      textAlign: TextAlign.right,
       controller: passwordSectionController,
       decoration: InputDecoration(
         hintText: "كلمة المرور",
@@ -79,41 +105,30 @@ class _SignupState extends State<Signup> {
       UserCredential userCredential = await FirebaseAuth.instance
           .createUserWithEmailAndPassword(email: email, password: password);
 
+      // Update the user's display name
+      await userCredential.user!.updateDisplayName(name);
+
+      // Navigate to the next screen or perform any other actions
       Navigator.push(
         context,
         MaterialPageRoute(builder: (context) => Explainmap()),
       );
     } catch (e) {
       if (e is FirebaseAuthException && e.code == 'email-already-in-use') {
-        // Show a dialog indicating that the email already exists
         showDialog(
           context: context,
           builder: (BuildContext context) {
             return AlertDialog(
-              title: Text('البريد الإلكتروني مستخدم',textAlign: TextAlign.right,
-        style: TextStyle(
-          fontSize: 22, // Set the desired font size
-        ),),
-              content: Text('البريد الإلكتروني موجود مسبقًا، يرجى استخدام بريد إلكتروني آخر',textAlign: TextAlign.right,
-        style: TextStyle(
-          fontSize: 16, // Set the desired font size
-        ),),
+              title: Text('البريد الإلكتروني مستخدم'),
+              content: Text('البريد الإلكتروني موجود مسبقًا، يرجى استخدام بريد إلكتروني آخر'),
               actions: <Widget>[
-  Center(
-    child: TextButton(
-      onPressed: () {
-        Navigator.pop(context);
-      },
-      child: Text(
-        'حسنا',
-        style: TextStyle(
-          fontSize: 16, // Set the desired font size
-          color: Colors.blue, // Set the desired text color
-        ),
-      ),
-    ),
-  ),
-],
+                TextButton(
+                  onPressed: () {
+                    Navigator.pop(context);
+                  },
+                  child: Text('حسنا'),
+                ),
+              ],
             );
           },
         );
@@ -123,6 +138,7 @@ class _SignupState extends State<Signup> {
     }
   }
 }
+
 
   bool isValidEmail(String email) {
     return RegExp(r"^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$").hasMatch(email);
@@ -135,29 +151,23 @@ class _SignupState extends State<Signup> {
         extendBodyBehindAppBar: true,
         appBar: AppBar(
           leading: IconButton(
-              iconSize: 40,
-              icon: Icon(Icons.arrow_back),
-              color: Color.fromARGB(255, 16, 27, 79),
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => Initialscreen()),
-                );
-              }),
+            iconSize: 40,
+            icon: Icon(Icons.arrow_back),
+            color: Color.fromARGB(255, 16, 27, 79),
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => Initialscreen()),
+              );
+            },
+          ),
           backgroundColor: Color.fromARGB(0, 17, 7, 51),
           elevation: 0,
         ),
-
         resizeToAvoidBottomInset: false,
-
         body: SizedBox(
           height: SizeUtils.height,
           width: double.maxFinite,
-
-          // child: SingleChildScrollView(
-          //   padding: EdgeInsets.only(
-          //     bottom: MediaQuery.of(context).viewInsets.bottom,
-          //   ),
           child: Form(
             key: _formKey,
             child: SizedBox(
@@ -169,7 +179,6 @@ class _SignupState extends State<Signup> {
                   Align(
                     alignment: Alignment.center,
                     child: SingleChildScrollView(
-                      //for overflow
                       physics: NeverScrollableScrollPhysics(),
                       child: Container(
                         padding: EdgeInsets.symmetric(
@@ -181,7 +190,6 @@ class _SignupState extends State<Signup> {
                           image: DecorationImage(
                             image: AssetImage(
                               ImageConstant.BackgroundHouse,
-                              //الخلفيه
                             ),
                             fit: BoxFit.cover,
                           ),
@@ -190,7 +198,7 @@ class _SignupState extends State<Signup> {
                           mainAxisSize: MainAxisSize.min,
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            SizedBox(height: 200.v), //كان 75 غيرناه عشان تضبظ الخلفية
+                            SizedBox(height: 200.v),
                             Container(
                               margin: EdgeInsets.only(left: 6.h),
                               padding: EdgeInsets.symmetric(
@@ -205,8 +213,8 @@ class _SignupState extends State<Signup> {
                                 mainAxisSize: MainAxisSize.min,
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
-                                  // SizedBox(height: 15.v),
-                                  // _buildNameSection(context), // no need name*****************
+                                  SizedBox(height: 18.v),
+                                  _buildNameSection(context),
                                   SizedBox(height: 18.v),
                                   _buildEmailSection(context),
                                   SizedBox(height: 19.v),
@@ -214,17 +222,8 @@ class _SignupState extends State<Signup> {
                                   SizedBox(height: 37.v),
                                   _buildRegisterButtonSection(context),
                                   SizedBox(height: 8.v),
-                                  //new
-                                  // ElevatedButton(
-                                  //   onPressed: () => _registerUser(context),
-                                  //   child: Text('Register'),
-                                  // ),
-                                  //
                                   Align(
                                     alignment: Alignment.centerLeft,
-                                    //                  child: SingleChildScrollView(//for overflow
-                                    // physics: NeverScrollableScrollPhysics(),
-
                                     child: Padding(
                                       padding: EdgeInsets.only(left: 60.h),
                                       child: Row(
@@ -234,20 +233,16 @@ class _SignupState extends State<Signup> {
                                               Navigator.push(
                                                 context,
                                                 MaterialPageRoute(
-                                                    builder: (context) =>
-                                                        Signin()), 
+                                                  builder: (context) => Signin(),
+                                                ),
                                               );
                                             },
                                             child: Padding(
-                                              padding: EdgeInsets.all(
-                                                  8.0), 
+                                              padding: EdgeInsets.all(8.0),
                                               child: Text(
                                                 "تسجيل الدخول",
-                                                style: CustomTextStyles
-                                                    .bodySmall12
-                                                    .copyWith(
-                                                  color: Colors
-                                                      .blue, 
+                                                style: CustomTextStyles.bodySmall12.copyWith(
+                                                  color: Colors.blue,
                                                 ),
                                               ),
                                             ),
@@ -255,22 +250,17 @@ class _SignupState extends State<Signup> {
                                           SizedBox(height: 1.v),
                                           SizedBox(
                                             width: 0.1.h,
-                                            
                                           ),
                                           Padding(
-                                            padding:
-                                                EdgeInsets.only(left: 16.h),
+                                            padding: EdgeInsets.only(left: 16.h),
                                             child: Text(
                                               "لديك حساب؟",
-                                              style:
-                                                  CustomTextStyles.bodySmall12,
+                                              style: CustomTextStyles.bodySmall12,
                                             ),
                                           ),
                                         ],
                                       ),
                                     ),
-
-                                    // ),
                                   ),
                                 ],
                               ),
@@ -282,11 +272,11 @@ class _SignupState extends State<Signup> {
                     ),
                   ),
                   CustomImageView(
-                    imagePath: ImageConstant.imgImage23152x119, //النجمة
+                    imagePath: ImageConstant.imgImage23152x119,
                     height: 152.v,
                     width: 119.h,
                     alignment: Alignment.topRight,
-                    margin: EdgeInsets.only(top: 180.v), //كان 44 نزلناها
+                    margin: EdgeInsets.only(top: 180.v),
                   ),
                   Align(
                     alignment: Alignment.topRight,
@@ -306,7 +296,7 @@ class _SignupState extends State<Signup> {
                     ),
                   ),
                   CustomImageView(
-                    imagePath: ImageConstant.imgScreenshot2023173x129, //الجد
+                    imagePath: ImageConstant.imgScreenshot2023173x129,
                     height: 206.v,
                     width: 150.h,
                     alignment: Alignment.bottomLeft,
@@ -316,140 +306,23 @@ class _SignupState extends State<Signup> {
               ),
             ),
           ),
-          // ),
         ),
       ),
     );
   }
 
-  /// Section Widget //no need name
-  // Widget _buildNameSection(BuildContext context) {
-  //   return CustomTextFormField(
-  //     controller: nameSectionController,
-  //     hintText: "                                الإسم",
-  //     hintStyle: theme.textTheme.titleLarge!,
-  //     contentPadding: EdgeInsets.symmetric(
-  //       horizontal: 30.h,
-  //       vertical: 19.v,
-  //     ),
-  //     borderDecoration: TextFormFieldStyleHelper.outlinePrimary,
-  //   );
-  // }
-
-  /// Section Widget
-  // Widget _buildEmailSection(BuildContext context) {
-  //   return CustomTextFormField(
-  //     controller: emailSectionController,
-  //     hintText: "                       البريد الإلكتروني",
-  //     hintStyle: theme.textTheme.titleLarge!,
-  //     contentPadding: EdgeInsets.symmetric(
-  //       horizontal: 8.h,
-  //       vertical: 17.v,
-  //     ),
-  //     borderDecoration: TextFormFieldStyleHelper.outlinePrimary,
-  //   );
-  // }
-
-  //new
-//   Widget _buildEmailSection(BuildContext context) {
-//     return CustomTextFormField(
-//       controller: emailSectionController,
-//       hintText: "                       البريد الإلكتروني",
-//       hintStyle: theme.textTheme.titleLarge!,
-//       contentPadding: EdgeInsets.symmetric(
-//         horizontal: 8.h,
-//         vertical: 17.v,
-//       ),
-//       borderDecoration: TextFormFieldStyleHelper.outlinePrimary,
-//       onChanged: (value) {
-//         email = value; // Update the email variable when the text changes
-//       },
-//     );
-//   }
-
-//   /// Section Widget
-//   // Widget _buildPasswordSection(BuildContext context) {
-//   //   return CustomTextFormField(
-//   //     controller: passwordSectionController,
-//   //     hintText: "                               كلمة المرور",
-//   //     hintStyle: theme.textTheme.titleLarge!,
-//   //     textInputAction: TextInputAction.done,
-//   //     textInputType: TextInputType.visiblePassword,
-//   //     obscureText: true,
-//   //     contentPadding: EdgeInsets.only(
-//   //       top: 19.v,
-//   //       right: 21.h,
-//   //       bottom: 19.v,
-//   //     ),
-//   //     borderDecoration: TextFormFieldStyleHelper.outlinePrimary,
-//   //   );
-//   // }
-//   //new
-
-//    Widget _buildPasswordSection(BuildContext context) {
-//     return CustomTextFormField(
-//       controller: passwordSectionController,
-//       hintText: "                               كلمة المرور",
-//       hintStyle: theme.textTheme.titleLarge!,
-//       textInputAction: TextInputAction.done,
-//       textInputType: TextInputType.visiblePassword,
-//       obscureText: true,
-//       contentPadding: EdgeInsets.only(
-//         top: 19.v,
-//         right: 21.h,
-//         bottom: 19.v,
-//       ),
-//       borderDecoration: TextFormFieldStyleHelper.outlinePrimary,
-//       onChanged: (value) {
-//         password = value; // Update the password variable when the text changes
-//       },
-//     );
-//   }
-
-//   /// Section Widget
-//   // Widget _buildRegisterButtonSection(BuildContext context) {
-//   //   return CustomElevatedButton(
-//   //     height: 42.v,
-//   //     width: 177.h,
-//   //     text: "تسجيل جديد",
-//   //     buttonStyle: CustomButtonStyles.outlinePrimaryTL21,
-//   //     buttonTextStyle: theme.textTheme.bodyLarge!,
-//   //   );
-//   // }
-
-// //new
-Widget _buildRegisterButtonSection(BuildContext context) {
-  return CustomElevatedButton(
-    height: 42.v,
-    width: 177.h,
-    text: "تسجيل جديد",
-    buttonStyle: CustomButtonStyles.outlinePrimaryTL21,
-    buttonTextStyle: theme.textTheme.bodyLarge!,
-    onPressed: () {
-      _registerUser(context); // Pass the context object to the function
-    },
-  );
+  Widget _buildRegisterButtonSection(BuildContext context) {
+    return CustomElevatedButton(
+      height: 42.v,
+      width: 177.h,
+      text: "تسجيل جديد",
+      buttonStyle: CustomButtonStyles.outlinePrimaryTL21,
+      buttonTextStyle: theme.textTheme.bodyLarge!,
+      onPressed: () {
+        _registerUser(context);
+      },
+    );
+  }
 }
 
-//  void _registerUser(BuildContext context) async {
-//     if (_formKey.currentState!.validate()) {
-//       _formKey.currentState!.save();
-
-//       try {
-//         UserCredential userCredential = await FirebaseAuth.instance
-//             .createUserWithEmailAndPassword(email: email, password: password);
-
-//         // Registration successful, navigate to the desired screen
-//         Navigator.push(
-//           context,
-//           MaterialPageRoute(builder: (context) => Frame104Screen()),
-//         );
-//       } catch (e) {
-//         // Handle any errors that occur during registration
-//         print('Registration error: $e');
-//         // You can show an error message to the user if desired
-//       }
-//     }
-//   }
-}
 
