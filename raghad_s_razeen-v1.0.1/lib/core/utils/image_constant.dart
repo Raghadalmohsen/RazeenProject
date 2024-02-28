@@ -447,6 +447,7 @@ class ImageConstant {
   static String wrongICON = '$imagePath/wrongICON.png';
 
   static String grandfather = '$imagePath/grandfather.png'; 
+  static String water = '$imagePath/water.png';
 
   // static String NewspaperQ3 = '$imagePath/NewspaperQ3.png';
   // static String WaterQ3 = '$imagePath/WaterQ3.png';

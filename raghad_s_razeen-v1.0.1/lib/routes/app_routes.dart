@@ -107,6 +107,7 @@ import 'package:raghad_s_razeen/presentation/requestQuiz.dart';//4
 import 'package:raghad_s_razeen/presentation/requestQuiz2.dart';//4
 import 'package:raghad_s_razeen/presentation/requestQuiz3.dart';//4
 import 'package:raghad_s_razeen/presentation/medalsFeedback.dart';//4
+import 'package:raghad_s_razeen/presentation/mazeGame.dart';//4
 
 
 class AppRoutes {
@@ -137,6 +138,8 @@ class AppRoutes {
       static const String requestQuiz2 ='/requestQuiz2';//4
          static const String requestQuiz3 ='/requestQuiz3';//4
    static const String medalsFeedback ='/medalsFeedback';//4
+
+   static const String mazeGame ='/mazeGame';//4
    
 
 
@@ -337,6 +340,8 @@ class AppRoutes {
     requestQuiz:(context) => RequestQuiz(),
     requestQuiz2:(context) => RequestQuiz2(),
      requestQuiz3:(context) => RequestQuiz3(),
+
+    mazeGame:(context) => MazeGame(),
 
 
 
