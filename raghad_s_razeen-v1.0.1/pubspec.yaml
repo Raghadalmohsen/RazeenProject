@@ -9,13 +9,12 @@ dependencies:
    
   cached_network_image: ^3.3.0
   flutter_svg: ^2.0.9
-  flutter_svg_provider: ^1.0.7
+  flutter_svg_provider: ^1.0.4
   intl: ^0.18.0
   firebase_core: ^2.25.4
   firebase_auth: ^4.17.4
   email_validator: ^2.0.1
-  audioplayers: ^5.2.1
-
+  font_awesome_flutter: ^10.7.0
 dev_dependencies: 
 
   flutter_test: 
@@ -25,9 +24,7 @@ flutter:
   assets: 
     - assets/
     - assets/images/ 
-    # - assets/audio/
-    # - assets/true.wav
-    # - assets/sound_alarm.mp3
+   
   fonts: 
     - family: Inter
       fonts: 

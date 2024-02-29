@@ -6,6 +6,7 @@ import 'package:raghad_s_razeen/widgets/app_bar/appbar_leading_image.dart';
 import 'package:raghad_s_razeen/widgets/app_bar/custom_app_bar.dart';
 import 'package:raghad_s_razeen/widgets/custom_bottom_bar.dart';
 import 'package:raghad_s_razeen/widgets/custom_floating_button.dart';
+import 'package:raghad_s_razeen/presentation/mazeGame.dart';
 
 class Requestskill extends StatelessWidget { //مهارة كيف البي طلبات جدي
   Requestskill({Key? key})
@@ -106,7 +107,7 @@ class Requestskill extends StatelessWidget { //مهارة كيف البي طلب
                                           child: ElevatedButton(
                                             onPressed: () { Navigator.push(
                                           context,
-                                          MaterialPageRoute(builder: (context) =>  Initialscreen()),
+                                          MaterialPageRoute(builder: (context) =>  MazeGame()),
                                         );},
                                             style: ElevatedButton.styleFrom(
                                                 backgroundColor: Colors.transparent,

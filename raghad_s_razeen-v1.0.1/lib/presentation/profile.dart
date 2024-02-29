@@ -11,11 +11,44 @@ class Profile extends StatelessWidget {//الملف الشخصي
           key: key,
         );
 
+  TextEditingController nameController = TextEditingController();
   TextEditingController emailController = TextEditingController();
   TextEditingController currentPasswordController = TextEditingController();
   TextEditingController newPasswordController = TextEditingController();
 
   GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+void _changeName(BuildContext context) {
+    // Implement your logic to update the name
+    String newName = nameController.text.trim();
+        showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          content: Text('  تم تغيير الاسم بنجاح لاسم $newName',textAlign: TextAlign.right,
+                style: TextStyle(
+                  fontSize: 16,
+                ),),
+         actions: <Widget>[
+  Center(
+    child: TextButton(
+      onPressed: () {
+        Navigator.pop(context);
+      },
+      child: Text(
+        'حسنا',
+        style: TextStyle(
+          fontSize: 16, // Set the desired font size
+          color: Colors.blue, // Set the desired text color
+        ),
+      ),
+    ),
+  ),
+],
+        );
+      },
+    );
+  }
+
 
   void _changePassword(BuildContext context) async {
     if (_formKey.currentState!.validate()) {
@@ -168,9 +201,38 @@ class Profile extends StatelessWidget {//الملف الشخصي
                                 mainAxisSize: MainAxisSize.min,
                                 mainAxisAlignment: MainAxisAlignment.end,
                                 children: [
-                                  SizedBox(height: 49.v),
-                                  SizedBox(height: 7.v),
-                                  _buildEmail(context),
+                                 Align(
+                                  alignment: Alignment.centerRight,
+                                  child: Container(
+                                    decoration: AppDecoration.outlinePrimary3,
+                                    child: Text(
+                                      "البريد الإلكتروني   ",
+                                      style: CustomTextStyles
+                                          .titleMediumBluegray700,
+                                    ),
+                                  ),
+                                ),
+                                SizedBox(height: 5.v),
+                              
+                                _buildEmail(context),
+                                SizedBox(height: 11.v),
+                                 Align(
+                                  alignment: Alignment.centerRight,
+                                  child: Container(
+                                    decoration: AppDecoration.outlinePrimary3,
+                                    child: Text(
+                                      "تغيير الإسم    ",
+                                      style: CustomTextStyles
+                                          .titleMediumBluegray700,
+                                    ),
+                                  ),
+                                ),
+                               
+                                _buildName(context),
+                                SizedBox(height: 11.v),
+                                _buildNameSaveButton(context),
+                                SizedBox(height: 14.v),
+
                                   SizedBox(height: 11.v),
                                   Align(
                                     alignment: Alignment.centerRight,
@@ -183,11 +245,11 @@ class Profile extends StatelessWidget {//الملف الشخصي
                                       ),
                                     ),
                                   ),
-                                  SizedBox(height: 11.v),
+                                  SizedBox(height: 5.v),
                                   _buildCurrentPassword(context),
                                   SizedBox(height: 11.v),
                                   _buildNewPassword(context),
-                                  SizedBox(height: 14.v),
+                                  SizedBox(height: 11.v),
                                   _buildTf(context),
                                 ],
                               ),
@@ -203,14 +265,14 @@ class Profile extends StatelessWidget {//الملف الشخصي
                     height: 152.v,
                     width: 119.h,
                     alignment: Alignment.topRight,
-                    margin: EdgeInsets.only(top: 90.v),
+                    margin: EdgeInsets.only(top: 60.v),
                   ),
                   Align(
                     alignment: Alignment.topRight,
                     child: Container(
                       width: 227.h,
                       margin: EdgeInsets.only(
-                        top: 200.v,
+                        top: 150.v,
                         right: 69.h,
                       ),
                       decoration: AppDecoration.outlinePrimary3,
@@ -239,24 +301,51 @@ class Profile extends StatelessWidget {//الملف الشخصي
       ),
     );
   }
+  
 
-  Widget _buildEmail(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.only(
-        left: 19.h,
-        right: 13.h,
+Widget _buildEmail(BuildContext context) {
+  User? user = FirebaseAuth.instance.currentUser;
+  String? userEmail = user?.email;
+
+  return Padding(
+    padding: EdgeInsets.only(
+      left: 40.h,
+      right: 0.h,
+    ),
+    child: Text(
+      userEmail ?? '', // Display the email if available, otherwise an empty string
+      style: theme.textTheme.titleLarge!.copyWith(
+        color: Colors.blue, // Set the text color to blue
       ),
+    ),
+  );
+}
+
+
+
+
+
+Widget _buildName(BuildContext context) {
+    return Padding(
+      padding: EdgeInsets.symmetric(horizontal: 19),
       child: CustomTextFormField(
-        controller: emailController,
-        hintText: "                        البريد الإلكتروني",
+        controller: nameController,
+        hintText: "                                   الاسم",
         hintStyle: theme.textTheme.titleLarge!,
-        contentPadding: EdgeInsets.only(
-          top: 9.v,
-          right: 21.h,
-          bottom: 9.v,
-        ),
+        contentPadding: EdgeInsets.symmetric(vertical: 9, horizontal: 21),
         borderDecoration: TextFormFieldStyleHelper.outlinePrimary,
       ),
+    );
+  }
+
+  Widget _buildNameSaveButton(BuildContext context) {
+    return CustomElevatedButton(
+      height: 33,
+      width: 172,
+      text: "حفظ الاسم",
+      buttonStyle: CustomButtonStyles.outlinePrimaryTL16,
+      buttonTextStyle: theme.textTheme.bodyLarge!,
+      onPressed: () => _changeName(context),
     );
   }
 
@@ -309,7 +398,7 @@ class Profile extends StatelessWidget {//الملف الشخصي
     return CustomElevatedButton(
       height: 33.v,
       width: 172.h,
-      text: "حفظ",
+      text: " حفظ كلمة المرور",
       buttonStyle: CustomButtonStyles.outlinePrimaryTL16,
       buttonTextStyle: theme.textTheme.bodyLarge!,
       onPressed: () => _changePassword(context),
@@ -321,6 +410,7 @@ class Profile extends StatelessWidget {//الملف الشخصي
       onChanged: (BottomBarEnum type) {},
     );
   }
+  
 }
 
 
