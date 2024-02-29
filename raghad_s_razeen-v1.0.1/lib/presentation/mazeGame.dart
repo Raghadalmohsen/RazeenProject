@@ -60,41 +60,53 @@ class _MazePageState extends State<MazeGame> {
           children: [
             Column(
               children: [
-               Align(
-                        alignment: Alignment.topCenter,
-                        child: Container(
-                          height: 58.v,
-                          width: 301.h,
-                          margin: EdgeInsets.only(top: 30.v),
-                          decoration: BoxDecoration(
-                            color: appTheme.yellow100, ///////////////
-                            borderRadius: BorderRadius.circular(
-                              29.h,
-                            ),
-                          ),
-                        ),
-                      ),
-                                   Align(
-                        alignment: Alignment.topCenter,
-                        child: Container(
-                          width: 256.h,
-                          margin: EdgeInsets.only(top: 1.v),
-                          // decoration: AppDecoration.outlinePrimary1,////////////////
-                          child: Text(
-                            "               احضر الماء لجدك ",
-                            maxLines: null,
-                            overflow: TextOverflow.ellipsis,
-                            style: theme.textTheme.titleMedium,
-                          ),
-                        ),
-                      ),
-               CustomImageView(
-                        imagePath: ImageConstant.imgImage167, ////// الصوت
-                        height: 28.v,
-                        width: 27.h,
-                        alignment: Alignment.topLeft,
-                        margin: EdgeInsets.only(left: 32.h, top: 1),
-                      ),
+    Align(
+  alignment: Alignment.topCenter,
+  child: Container(
+    height: 58.v,
+    width: 301.h,
+    margin: EdgeInsets.only(top: 30.v),
+    decoration: BoxDecoration(
+      color: appTheme.yellow100,
+      borderRadius: BorderRadius.circular(29.h),
+    ),
+    child: Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Row(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            CustomImageView(
+              imagePath: ImageConstant.imgImage167,
+              height: 28.v,
+              width: 27.h,
+              alignment: Alignment.topLeft,
+              margin: EdgeInsets.only(left: 0.h), // Adjust as needed
+            ),
+            Expanded(
+              child: Text(
+                "احضر الماء لجدك",
+                textAlign: TextAlign.center,
+                style: theme.textTheme.titleMedium?.copyWith(fontSize: 22),
+              ),
+            ),
+          ],
+        ),
+      ],
+    ),
+  ),
+),
+
+
+
+
+              //  CustomImageView(
+              //           imagePath: ImageConstant.imgImage167, ////// الصوت
+              //           height: 28.v,
+              //           width: 27.h,
+              //           alignment: Alignment.topLeft,
+              //           margin: EdgeInsets.only(left: 32.h, top: 0),
+              //         ),
                 
               ],
             ),
