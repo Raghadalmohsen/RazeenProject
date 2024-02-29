@@ -326,13 +326,13 @@ class _RespectDiffQuizState extends State<RespectDiffQuiz> {
                         alignment: Alignment.topCenter,
                         child: Container(
                           width: 256.h,
-                          margin: EdgeInsets.only(top: 80.v),
+                          margin: EdgeInsets.only(top: 75.v,right: 20),
                           // decoration: AppDecoration.outlinePrimary1,////////////////
                           child: Text(
-                            "             ضع الشكل في المكان المناسب",
-                            maxLines: null,
+                            " صنف الاشياء التي كان يستعملها جدك قديمًا والأشياء الخاصه برزان",
+                            maxLines: 2,
                             overflow: TextOverflow.ellipsis,
-                            style: theme.textTheme.titleMedium,
+                            style: theme.textTheme.titleMedium,textAlign: TextAlign.center,
                           ),
                         ),
                       ),

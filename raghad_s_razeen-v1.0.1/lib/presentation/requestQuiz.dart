@@ -1,3 +1,5 @@
+import 'package:audioplayers/audioplayers.dart';
+// import "package:audioplayers/audio_cache.dart";
 import 'package:flutter/material.dart';
 import 'package:raghad_s_razeen/core/app_export.dart';
 import 'package:raghad_s_razeen/presentation/happyfeedback.dart';
@@ -14,6 +16,9 @@ class RequestQuiz extends StatefulWidget {
 }
 
 class _RequestQuizState extends State<RequestQuiz> {
+  // var player = AudioPlayer();
+ 
+
   late List<ItemModel> items;
   late List<ItemModel> items2;
 
@@ -31,9 +36,16 @@ class _RequestQuizState extends State<RequestQuiz> {
     gameOver = false;
     score = 0;
     items = [
-      ItemModel(name: 'newspaperq3',value: 'grandfather',img: 'assets/images/newspaperq3.png'), //غيرت الفاليو عشان يتحركون كلهم
-      ItemModel(name: 'medicineq3', img: 'assets/images/medicineq3.png', value: 'null'),
-      ItemModel(name: 'remoteq3', img: 'assets/images/remoteq3.png', value: 'null'),
+      ItemModel(
+          name: 'newspaper',
+          value: 'grandfather',
+          img: 'assets/images/newspaper.png'), //غيرت الفاليو عشان يتحركون كلهم
+      ItemModel(
+          name: 'medicineq3',
+          img: 'assets/images/medicineq3.png',
+          value: 'null'),
+      ItemModel(
+          name: 'remoteq3', img: 'assets/images/remoteq3.png', value: 'null'),
     ];
     items2 = [
       ItemModel(
@@ -82,8 +94,7 @@ class _RequestQuizState extends State<RequestQuiz> {
 
   @override
   Widget build(BuildContext context) {
-    if (items.length == 2) 
-    ;
+    if (items.length == 2) ;
     return Scaffold(
       body: SingleChildScrollView(
         physics: NeverScrollableScrollPhysics(),
@@ -164,8 +175,10 @@ class _RequestQuizState extends State<RequestQuiz> {
                                             setState(() {
                                               items.remove(receivedItem);
                                               items2.remove(receivedItem);
+
                                               item.accepting = false;
-                                              score + 1; // ///////
+                                              
+                                              // player.play(AssetSource('true.wav'));
                                             });
                                           } else {
                                             setState(() {
@@ -205,8 +218,8 @@ class _RequestQuizState extends State<RequestQuiz> {
                                               const EdgeInsets.only(top: 70),
                                           child: Image.asset(
                                             item.img,
-                                             height: 233,
-                                          width: 140,
+                                            height: 233,
+                                            width: 140,
                                             // height: item.value == 'grandfather'
                                             //     ? 216
                                             //     : 176, //وهنا برضو
@@ -223,13 +236,12 @@ class _RequestQuizState extends State<RequestQuiz> {
                           ),
                         ),
                       ),
-                            CustomImageView(
+                      CustomImageView(
                         imagePath: ImageConstant.imgImage167, ////// الصوت
                         height: 28.v,
                         width: 27.h,
                         alignment: Alignment.topRight,
-                        margin: EdgeInsets.only(top: 250,right: 15),
-                       
+                        margin: EdgeInsets.only(top: 250, right: 15),
                       ),
                       Align(
                         alignment: Alignment.topCenter,

@@ -29,9 +29,9 @@ class _RequestQuiz3State extends State<RequestQuiz3> {
   initGame() {
     gameOver = false;
     items = [
-      ItemModel(name: 'waterq3', img: 'assets/images/waterq3.png',value: 'grandfather'), //غيرت الفاليو عشان يتحركون كلهم
+      ItemModel(name: 'water', img: 'assets/images/water.png',value: 'grandfather'), //غيرت الفاليو عشان يتحركون كلهم
       ItemModel(name: 'mesbahaq3', img: 'assets/images/mesbahaq3.png', value: 'null'),
-      ItemModel(name: 'radioq3', img: 'assets/images/radioq3.png', value: 'null'),
+      ItemModel(name: 'radio', img: 'assets/images/radio.png', value: 'null'),
     ];
     items2 = [
       ItemModel(name: 'grandfather',img: 'assets/images/grandfather.png',value: 'grandfather' ),
