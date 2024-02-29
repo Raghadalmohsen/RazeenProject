@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:audioplayers/audioplayers.dart';
 import 'package:raghad_s_razeen/core/app_export.dart';
 import 'package:raghad_s_razeen/presentation/razeenmap.dart';
 import 'package:raghad_s_razeen/widgets/app_bar/appbar_leading_image.dart';
@@ -56,6 +57,7 @@ class Happyfeedback extends StatelessWidget {
                               //   width: 382.h,
                               //   alignment: Alignment.topLeft,
                               // ),
+  
                               Align(
                                 alignment: Alignment.bottomCenter,
                                 child: SizedBox(
@@ -63,7 +65,7 @@ class Happyfeedback extends StatelessWidget {
                                   width: 329.h,
                                   child: Stack(
                                     alignment: Alignment.bottomCenter,
-                                    children: [
+                                    children: <Widget>[
                                       Align(
                                         alignment: Alignment.center,
                                         child: Container(
@@ -74,23 +76,23 @@ class Happyfeedback extends StatelessWidget {
                                             borderRadius: BorderRadius.circular(
                                               35.h,
                                             ),
-                                            
                                           ),
                                         ),
                                       ),
                                       CustomImageView(
-                                        imagePath: ImageConstant.HappyFeedback, // فيدباك
-                                        height: 508.v,
-                                        width: 382.h,
-                                        alignment: Alignment.topLeft,
-                                        margin: EdgeInsets.only(bottom: 42.v)
-                                      ),
+                                          imagePath: ImageConstant
+                                              .HappyFeedback, // فيدباك
+                                          height: 508.v,
+                                          width: 382.h,
+                                          alignment: Alignment.topLeft,
+                                          margin:
+                                              EdgeInsets.only(bottom: 42.v)),
                                       CustomElevatedButton(
                                         width: 92.h,
                                         text: "التالي",
                                         margin: EdgeInsets.only(bottom: 20.v),
                                         alignment: Alignment.bottomCenter,
-                                         onPressed: () {
+                                        onPressed: () {
                                           //بداية كود تنقل الزر
                                           Navigator.push(
                                             context,
@@ -100,6 +102,7 @@ class Happyfeedback extends StatelessWidget {
                                           );
                                         }, //نهاية التنقل
                                       ),
+                                  
                                     ],
                                   ),
                                 ),
@@ -115,7 +118,6 @@ class Happyfeedback extends StatelessWidget {
             ],
           ),
         ),
-        
       ),
     );
   }
@@ -126,7 +128,4 @@ class Happyfeedback extends StatelessWidget {
       onChanged: (BottomBarEnum type) {},
     );
   }
-
-  
 }
-

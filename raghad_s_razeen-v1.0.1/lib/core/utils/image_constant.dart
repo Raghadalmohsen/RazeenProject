@@ -476,7 +476,7 @@ class ImageConstant {
   static String napkinq3 = '$imagePath/napkinq3.png';
  static String newspaper = '$imagePath/newspaper.png';
   static String remoteq3 = '$imagePath/remoteq3.png';
-  static String water = '$imagePath/water.png';
+  static String water3 = '$imagePath/water3.png';
   static String radio = '$imagePath/radio.png';
 
 

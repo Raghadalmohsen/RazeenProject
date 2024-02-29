@@ -15,6 +15,9 @@ dependencies:
   firebase_auth: ^4.17.4
   email_validator: ^2.0.1
   font_awesome_flutter: ^10.7.0
+  maze: ^3.0.0
+  audioplayers: ^5.2.1
+ 
 dev_dependencies: 
 
   flutter_test: 
@@ -24,6 +27,7 @@ flutter:
   assets: 
     - assets/
     - assets/images/ 
+    - assets/sound_alarm.mp3
    
   fonts: 
     - family: Inter

@@ -27,11 +27,15 @@ class _MazePageState extends State<MazeGame> {
           ),
           content: Text(
             'لقد فزت باللعبة ولبيت طلب جدك',
-            textAlign: TextAlign.right,
+            textAlign: TextAlign.left,
             style: TextStyle(
               fontSize: 18,
+              
+              
             ),
+            
           ),
+        
           actions: [
             Center(
               child: TextButton(
@@ -56,33 +60,42 @@ class _MazePageState extends State<MazeGame> {
           children: [
             Column(
               children: [
-                SizedBox(height: 25.v),
-                Container(
-                  height: 58.v,
-                  width: 301.h,
-                  decoration: BoxDecoration(
-                    color: appTheme.yellow100,
-                    borderRadius: BorderRadius.circular(29.h),
-                  ),
-                ),
-                SizedBox(height: 0),
-                Container(
-                  width: 256.h,
-                  child: Text(
-                    "احضر الماء لجدك ",
-                    maxLines: null,
-                    overflow: TextOverflow.ellipsis,
-                    style: theme.textTheme.titleMedium,
-                  ),
-                ),
-                SizedBox(height: 0.v),
-                CustomImageView(
-                  imagePath: ImageConstant.imgImage167,
-                  height: 28.v,
-                  width: 27.h,
-                  alignment: Alignment.topLeft,
-                  margin: EdgeInsets.only(left: 32.h),
-                ),
+               Align(
+                        alignment: Alignment.topCenter,
+                        child: Container(
+                          height: 58.v,
+                          width: 301.h,
+                          margin: EdgeInsets.only(top: 30.v),
+                          decoration: BoxDecoration(
+                            color: appTheme.yellow100, ///////////////
+                            borderRadius: BorderRadius.circular(
+                              29.h,
+                            ),
+                          ),
+                        ),
+                      ),
+                                   Align(
+                        alignment: Alignment.topCenter,
+                        child: Container(
+                          width: 256.h,
+                          margin: EdgeInsets.only(top: 1.v),
+                          // decoration: AppDecoration.outlinePrimary1,////////////////
+                          child: Text(
+                            "               احضر الماء لجدك ",
+                            maxLines: null,
+                            overflow: TextOverflow.ellipsis,
+                            style: theme.textTheme.titleMedium,
+                          ),
+                        ),
+                      ),
+               CustomImageView(
+                        imagePath: ImageConstant.imgImage167, ////// الصوت
+                        height: 28.v,
+                        width: 27.h,
+                        alignment: Alignment.topLeft,
+                        margin: EdgeInsets.only(left: 32.h, top: 1),
+                      ),
+                
               ],
             ),
             Positioned(
@@ -99,7 +112,7 @@ class _MazePageState extends State<MazeGame> {
               bottom: 0,
               child: Container(
                 width: MediaQuery.of(context).size.width,
-                color: Colors.black,
+                color: Color.fromARGB(255, 0, 0, 0),
                 height: 2.0,
               ),
             ),
@@ -109,17 +122,18 @@ class _MazePageState extends State<MazeGame> {
               top: 0,
               child: Maze(
                 player: MazeItem(
-                  'assets/images/water.png',
+                  'assets/images/water3.png',
                   maze_item.ImageType.asset,
                 ),
                 columns: 4,
                 rows: 8,
-                wallThickness: 4.0,
-                wallColor: Theme.of(context).primaryColor,
+                wallThickness: 5.0,
+                wallColor: Theme.of(context).primaryColorDark,
                 finish: MazeItem(
                   'assets/images/grandfather.png',
                   maze_item.ImageType.asset,
                 ),
+                
                 onFinish: () {
                   if (!gameFinished) {
                     _showSuccessDialog(context); // Pass the context to _showSuccessDialog
