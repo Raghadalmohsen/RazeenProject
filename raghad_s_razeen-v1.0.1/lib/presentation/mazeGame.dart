@@ -27,7 +27,7 @@ class _MazePageState extends State<MazeGame> {
           ),
           content: Text(
             'أحسنت لقد فزت باللعبة ولبيت طلب الجد',
-            textAlign: TextAlign.left,
+            textAlign: TextAlign.right,
             style: TextStyle(
               fontSize: 18,
               
