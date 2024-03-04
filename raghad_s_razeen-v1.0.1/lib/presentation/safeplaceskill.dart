@@ -1,14 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:raghad_s_razeen/core/app_export.dart';
 import 'package:raghad_s_razeen/presentation/initialscreen.dart';
-import 'package:raghad_s_razeen/presentation/frame_120_screen/frame_120_screen.dart';
-import 'package:raghad_s_razeen/presentation/frame_121_screen/frame_121_screen.dart';
 import 'package:raghad_s_razeen/presentation/safePlaceQuiz.dart';
 import 'package:raghad_s_razeen/widgets/app_bar/appbar_leading_image.dart';
 import 'package:raghad_s_razeen/widgets/app_bar/custom_app_bar.dart';
 import 'package:raghad_s_razeen/widgets/custom_bottom_bar.dart';
-import 'package:raghad_s_razeen/widgets/custom_floating_button.dart';
 
+
+// ignore: must_be_immutable
 class Safeplaceskill extends StatelessWidget { //مهارة سلامة المكان
   Safeplaceskill({Key? key})
       : super(

@@ -203,6 +203,7 @@ class _RespectDiffQuizState extends State<RespectDiffQuiz> {
 
                                             });
 
+
                                             item.accepting = false;
                                             score++;
                                             final player = AudioPlayer();/// new 4

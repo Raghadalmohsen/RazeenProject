@@ -479,6 +479,17 @@ class ImageConstant {
   static String water3 = '$imagePath/water3.png';
   static String radio = '$imagePath/radio.png';
 
+  static String puzzlegame = '$imagePath/puzzlegame.png';
+
+
+static String puzzle1 = '$imagePath/puzzle1.png';
+static String puzzle11 = '$imagePath/puzzle11.png';
+static String puzzle2 = '$imagePath/puzzle2.png';
+static String puzzle22 = '$imagePath/puzzle22.png';
+static String puzzle3 = '$imagePath/puzzle3.png';
+static String puzzle33 = '$imagePath/puzzle33.png';
+static String puzzle4 = '$imagePath/puzzle4.png';
+static String puzzle44 = '$imagePath/puzzle44.png';
 
 
   static String medalsFeedback = '$imagePath/medalsFeedback.png';

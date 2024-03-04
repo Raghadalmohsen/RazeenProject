@@ -1,357 +1,423 @@
 import 'package:flutter/material.dart';
-import 'dart:async';
-import 'dart:math';
-import 'package:collection/collection.dart';
 import 'package:raghad_s_razeen/core/utils/image_constant.dart';
 import 'package:raghad_s_razeen/core/utils/size_utils.dart';
+import 'package:raghad_s_razeen/presentation/razeenmap.dart';
 import 'package:raghad_s_razeen/theme/app_decoration.dart';
+import 'package:raghad_s_razeen/theme/custom_text_style.dart';
 import 'package:raghad_s_razeen/theme/theme_helper.dart';
 import 'package:raghad_s_razeen/widgets/custom_image_view.dart';
+import 'package:flutter/material.dart';
 
 class Speakgame extends StatefulWidget {
+  const Speakgame({Key? key}) : super(key: key);
+
   @override
   _SpeakgameState createState() => _SpeakgameState();
 }
 
-class _SpeakgameState extends State<Speakgame> {
-  late List<int> puzzleNumbers;
-  int gridSize = 3;
-  bool isGameCompleted = false;
-  late int emptyTileIndex;
+GlobalKey<ScaffoldState> scaffoldKey = new GlobalKey();
 
+class _SpeakgameState extends State<Speakgame> {
+  bool _isBlueDropped = false;
+  bool _isRedDropped = false;
+  bool _isYelloDropped = false;
+  bool _isGreenDropped = false;
+  String _blue = 'blue';
+  String _red = 'red';
+  String _yellow = 'yellow';
+  String _green = 'green';
+  
+// late int score=0;
+
+//  void initState() {
+//     super.initState();
+//     navigateToFeedbackScreen(); /////////////////////////////
+//   }
+  
+
+//   void navigateToFeedbackScreen() {
+//   if (score == 4) {// delete 
+//     Future.delayed(Duration(seconds: 0), () {// 3
+//       Navigator.push(
+//         context,
+//         MaterialPageRoute(builder: (context) => Razeenmap()),// new class 
+//       );
+//     });
+//   } 
+  
+// }
 
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        body: SizedBox(
-          width: 394.h,
-          child: SingleChildScrollView(
-            physics: NeverScrollableScrollPhysics(),
-            child: SizedBox(
-              height: SizeUtils.height,
-              width: 394.h,
-              child: Stack(
-                alignment: Alignment.topRight,
-                children: [
-                  Align(
-                    alignment: Alignment.center,
-                    child: Container(
-                      height: SizeUtils.height,
-                      width: 394.h,
-                      padding: EdgeInsets.only(
-                        left: 32.h,
-                        top: 92.v,
-                        right: 32.h,
-                      ),
-                      decoration: BoxDecoration(
-                        image: DecorationImage(
-                          image: AssetImage(
-                            ImageConstant.Background,
-                          ),
-                          fit: BoxFit.cover,
-                        ),
-                      ),
-                      child: Stack(
-                        alignment: Alignment.center,
-                        children: [
-                          Align(
-                            alignment: Alignment.center,
-                            child: Container(
-                              margin: EdgeInsets.only(
-                                top: 70.v,
-                                right: 1.h,
-                                left: 1,
-                                bottom: 135,
-                              ),
-                              padding: EdgeInsets.symmetric(
-                                horizontal: 1.h,
-                                vertical: 62.v,
-                              ),
-                              decoration: AppDecoration.outlinePrimary1.copyWith(
-                                borderRadius: BorderRadiusStyle.roundedBorder33,
-                              ),
-                              child: MemoryGame(), // Replace GridView with MemoryGame
-                            ),
-                          ),
-                          Align(
-                            alignment: Alignment.topLeft,
-                            child: Container(
-                              height: 58.v,
-                              width: 301.h,
-                              margin: EdgeInsets.only(top: 63.v),
-                              decoration: BoxDecoration(
-                                color: appTheme.yellow100,
-                                borderRadius: BorderRadius.circular(
-                                  29.h,
+        body: Container(
+          child: SizedBox(
+            height: SizeUtils.height,
+            width: double.maxFinite,
+            child: Stack(
+              alignment: Alignment.topRight,
+              children: [
+                CustomImageView(
+                  imagePath: ImageConstant.BackgroundHouse,
+                  height: 858.v,
+                  width: 393.h,
+                  border: Border.all(),
+                  alignment: Alignment.center,
+                ),
+                Align(
+                  alignment: Alignment.bottomCenter,
+                  child: Container(
+                    height: 794.v,
+                    width: double.maxFinite,
+                    margin: EdgeInsets.only(bottom: 5.v),
+                    child: Stack(
+                      alignment: Alignment.topRight,
+                      children: [
+                        Align(
+                          alignment: Alignment.center,
+                          child: Padding(
+                            padding: EdgeInsets.only(
+                                left: 20.h, right: 29.h, bottom: 65),
+                            child: Column(
+                              mainAxisSize: MainAxisSize.min,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                SizedBox(height: 75.v),
+                                Container(
+                                  margin: EdgeInsets.only(left: 6.h, top: 50),
+                                  padding: EdgeInsets.symmetric(
+                                    horizontal: 22.h,
+                                    vertical: 90.v,
+                                  ),
+                                  decoration:
+                                      AppDecoration.outlinePrimary7.copyWith(
+                                    borderRadius:
+                                        BorderRadiusStyle.roundedBorder33,
+                                  ),
+                                  child: Center(
+                                    child: Container(
+                                      height: 314,
+                                      width: 315,
+                                      child: Stack(
+                                        children: [
+                                          Positioned(
+                                            top: 0,
+                                            left: 0,
+                                            child: DragTarget<String>(
+                                              builder: (
+                                                BuildContext context,
+                                                List<dynamic> accepted,
+                                                List<dynamic> rejected,
+                                              ) {
+                                                return Container(
+                                                  height: 165,
+                                                  width: 165,
+                                                  child: Image.asset(_isBlueDropped
+                                                      ? 'assets/images/puzzle11.png'
+                                                      : 'assets/images/puzzle1.png'),
+                                                );
+                                              },
+                                              onWillAccept: (data) {
+                                                return data == _blue;
+                                              },
+                                              onAccept: (data) {
+                                                setState(() {
+                                                  _isBlueDropped = true;
+                                                  // score++;
+                                                });
+                                              },
+                                            ),
+                                          ),
+                                          Positioned(
+                                            top: 0,
+                                            right: 0,
+                                            child: DragTarget<String>(
+                                              builder: (
+                                                BuildContext context,
+                                                List<dynamic> accepted,
+                                                List<dynamic> rejected,
+                                              ) {
+                                                return Container(
+                                                  height: 165,
+                                                  width: 165,
+                                                  child: Image.asset(_isRedDropped
+                                                      ? 'assets/images/puzzle33.png'
+                                                      : 'assets/images/puzzle3.png'),
+                                                );
+                                              },
+                                              onWillAccept: (data) {
+                                                return data == _red;
+                                              },
+                                              onAccept: (data) {
+                                                setState(() {
+                                                  _isRedDropped = true;
+                                                  //  score++;
+                                                });
+                                              },
+                                            ),
+                                          ),
+                                          Positioned(
+                                            bottom: 0,
+                                            left: 0,
+                                            child: DragTarget<String>(
+                                              builder: (
+                                                BuildContext context,
+                                                List<dynamic> accepted,
+                                                List<dynamic> rejected,
+                                              ) {
+                                                return Container(
+                                                  height: 165,
+                                                  width: 165,
+                                                  child: Image.asset(_isYelloDropped
+                                                      ? 'assets/images/puzzle22.png'
+                                                      : 'assets/images/puzzle2.png'),
+                                                );
+                                              },
+                                              onWillAccept: (data) {
+                                                return data == _yellow;
+                                              },
+                                              onAccept: (data) {
+                                                setState(() {
+                                                  _isYelloDropped = true;
+                                                  //  score++;
+                                                });
+                                              },
+                                            ),
+                                          ),
+                                          Positioned(
+                                            bottom: 0,
+                                            right: 0,
+                                            child: DragTarget<String>(
+                                              builder: (
+                                                BuildContext context,
+                                                List<dynamic> accepted,
+                                                List<dynamic> rejected,
+                                              ) {
+                                                return Container(
+                                                  height: 165,
+                                                  width: 165,
+                                                  child: Image.asset(_isGreenDropped
+                                                      ? 'assets/images/puzzle44.png'
+                                                      : 'assets/images/puzzle4.png'),
+                                                );
+                                              },
+                                              onWillAccept: (data) {
+                                                return data == _green;
+                                              },
+                                              onAccept: (data) {
+                                                setState(() {
+                                                  _isGreenDropped = true;
+                                                  //  score++;
+                                                     
+                                                });
+                                                  //  navigateToFeedbackScreen();//
+                                              },
+                                              
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                  ),
                                 ),
+                                Container(
+                                  //  margin: EdgeInsets.only(
+                                  //                           top: 80.v,
+                                  //                           right: 1.h,
+                                  //                           bottom: 120.v,
+                                  //                         ),
+                                  // padding: EdgeInsets.symmetric(
+                                  //   horizontal: 4.h,
+                                  //   vertical: 30.v,
+                                  // ),
+                                  // decoration: AppDecoration.outlinePrimary1.copyWith(
+                                  //   borderRadius: BorderRadiusStyle.roundedBorder33,
+                                  // ),
+                                  width:
+                                      MediaQuery.of(context).size.width * 0.15,
+                                ),
+                                // Divider(
+                                //   thickness: 100,
+                                //   color: Colors.white,
+                                // ),
+                                Expanded(
+                                  child: SingleChildScrollView(
+                                    child: Column(
+                                      children: [
+                                        Visibility(
+                                          visible: !_isRedDropped,
+                                          child: Draggable<String>(
+                                            // Data is the value this Draggable stores.
+                                            data: _red,
+                                            child: Container(
+                                              height: 130.0,
+                                              width: 130.0,
+                                              child: Center(
+                                                child: Image.asset(
+                                                    'assets/images/puzzle33.png'),
+                                              ),
+                                            ),
+                                            feedback: Container(
+                                              height: 130.0,
+                                              width: 130.0,
+                                              child: Center(
+                                                child: Image.asset(
+                                                    'assets/images/puzzle33.png'),
+                                              ),
+                                            ),
+                                            childWhenDragging: Container(),
+                                          ),
+                                        ),
+                                        Visibility(
+                                          visible: !_isGreenDropped,
+                                          child: Draggable<String>(
+                                            // Data is the value this Draggable stores.
+                                            data: _green,
+                                            child: Container(
+                                              height: 130.0,
+                                              width: 130.0,
+                                              child: Center(
+                                                child: Image.asset(
+                                                    'assets/images/puzzle44.png'),
+                                              ),
+                                            ),
+                                            feedback: Container(
+                                              height: 130.0,
+                                              width: 130.0,
+                                              child: Center(
+                                                child: Image.asset(
+                                                    'assets/images/puzzle44.png'),
+                                              ),
+                                            ),
+                                            childWhenDragging: Container(),
+                                          ),
+                                        ),
+                                        Visibility(
+                                          visible: !_isBlueDropped,
+                                          child: Draggable<String>(
+                                            // Data is the value this Draggable stores.
+                                            data: _blue,
+                                            child: Container(
+                                              height: 130.0,
+                                              width: 130.0,
+                                              child: Center(
+                                                child: Image.asset(
+                                                    'assets/images/puzzle11.png'),
+                                              ),
+                                            ),
+                                            feedback: Container(
+                                              height: 130.0,
+                                              width: 130.0,
+                                              child: Center(
+                                                child: Image.asset(
+                                                    'assets/images/puzzle11.png'),
+                                              ),
+                                            ),
+                                            childWhenDragging: Container(),
+                                          ),
+                                        ),
+                                        Visibility(
+                                          visible: !_isYelloDropped,
+                                          child: Draggable<String>(
+                                            // Data is the value this Draggable stores.
+                                            data: _yellow,
+                                            child: Container(
+                                              height: 130.0,
+                                              width: 130.0,
+                                              child: Center(
+                                                child: Image.asset(
+                                                    'assets/images/puzzle22.png'),
+                                              ),
+                                            ),
+                                            feedback: Container(
+                                              height: 130.0,
+                                              width: 130.0,
+                                              child: Center(
+                                                child: Image.asset(
+                                                    'assets/images/puzzle22.png'),
+                                              ),
+                                            ),
+                                            childWhenDragging: Container(),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                        Align(
+                          alignment: Alignment.topCenter,
+                          child: Container(
+                            height: 58.v,
+                            width: 340.h,
+                            margin: EdgeInsets.only(top: 120.v),
+                            decoration: BoxDecoration(
+                              color: appTheme.yellow100, ///////////////
+                              borderRadius: BorderRadius.circular(
+                                29.h,
                               ),
                             ),
                           ),
-                          Align(
-                            alignment: Alignment.topRight,
-                            child: Container(
-                              width: 256.h,
-                              margin: EdgeInsets.only(
-                                top: 79.v,
-                              ),
-                              child: Text(
-                                "               قم بمطابقة الصور",
-                                maxLines: null,
-                                overflow: TextOverflow.ellipsis,
-                                style: theme.textTheme.titleMedium,
-                              ),
+                        ),
+                        Align(
+                          alignment: Alignment.topCenter,
+                          child: Container(
+                            width: 256.h,
+                            margin: EdgeInsets.only(top: 140.v),
+                            // decoration: AppDecoration.outlinePrimary1,////////////////
+                            child: Text(
+                              "                       قم بترتيب الصوره",
+                              maxLines: null,
+                              overflow: TextOverflow.ellipsis,
+                              style: theme.textTheme.titleMedium,
                             ),
                           ),
-                          CustomImageView(
-                            imagePath: ImageConstant.imgImage167,
-                            height: 28.v,
-                            width: 27.h,
-                            alignment: Alignment.topLeft,
-                            margin: EdgeInsets.only(left: 18.h, top: 53),
-                          ),
-                        ],
-                      ),
+                        ),
+                        CustomImageView(
+                          imagePath: ImageConstant.imgImage167, ////// الصوت
+                          height: 28.v,
+                          width: 27.h,
+                          alignment: Alignment.topLeft,
+                          margin: EdgeInsets.only(left: 30.h, top: 120),
+                        ),
+                      ],
                     ),
                   ),
-                  CustomImageView(
-                    imagePath: ImageConstant.imgImage23114x111,
-                    height: 114.v,
-                    width: 111.h,
-                    alignment: Alignment.topRight,
-                    margin: EdgeInsets.only(top: 117.v),
-                  ),
-                  CustomImageView(
-                    imagePath: ImageConstant.imgScreenshot2023,
-                    height: 180.v,
-                    width: 133.h,
-                    alignment: Alignment.bottomLeft,
-                    margin: EdgeInsets.only(
-                      bottom: 65.v,
-                    ),
-                  ),
-                ],
-              ),
+                ),
+                CustomImageView(
+                  imagePath: ImageConstant.imgImage23, //النجمه
+                  height: 114.v,
+                  width: 94.h,
+                  alignment: Alignment.topRight,
+                  margin: EdgeInsets.only(top: 90.v),
+                ),
+                // CustomImageView(
+                //   imagePath: ImageConstant.imgScreenshot2023, //رزين
+                //   height: 180.v,
+                //   width: 133.h,
+                //   alignment: Alignment.bottomLeft,
+                //   margin: EdgeInsets.only(
+                //     bottom: 20.v,
+                //   ),
+                // ),
+              ],
             ),
           ),
         ),
       ),
     );
-  
-}
-}
-
-class MemoryGame extends StatefulWidget {
-  @override
-  _MemoryGameState createState() => _MemoryGameState();
-}
-
-class _MemoryGameState extends State<MemoryGame> {
-  List<String> _imagePaths = [
-    'assets/images/water3.png',  // Replace with your image paths or URLs
-    'assets/images/grandfather.png',
-    'assets/images/sony.png',
-    'assets/images/phone.png',
-    'assets/images/water3.png',
-    'assets/images/grandfather.png',
-    'assets/images/sony.png',
-    'assets/images/phone.png',
-  ];
-
-  List<bool> _revealed = [];
-  int? _firstIndex;
-  int? _secondIndex;
-  int _moves = 0;
-  bool _isLocked = false;
-
-  @override
-  void initState() {
-    super.initState();
-    _startGame();
   }
 
-  void _startGame() {
-    setState(() {
-      _revealed = List.filled(_imagePaths.length, false);
-      _firstIndex = null;
-      _secondIndex = null;
-      _moves = 0;
-      _isLocked = false;
-    });
-  }
-
-  void _onTap(int index) {
-    if (_isLocked || _revealed[index]) return;
-
-    setState(() {
-      if (_firstIndex == null) {
-        _firstIndex = index;
-        _revealed[index] = true;
-      } else {
-        _secondIndex = index;
-        _revealed[index] = true;
-        _isLocked = true;
-
-        if (_imagePaths[_firstIndex!] != _imagePaths[_secondIndex!]) {
-          Timer(Duration(seconds: 1), () {
-            setState(() {
-              _revealed[_firstIndex!] = false;
-              _revealed[_secondIndex!] = false;
-              _firstIndex = null;
-              _secondIndex = null;
-              _isLocked = false;
-            });
-          });
-        } else {
-          _firstIndex = null;
-          _secondIndex = null;
-          _isLocked = false;
-        }
-
-        _moves++;
-      }
-
-      if (!_revealed.contains(false)) {
-        _showDialog();
-      }
-    });
-  }
-
-  void _showDialog() {
-    showDialog(
-      context: context,
-      builder: (BuildContext context) {
-        return AlertDialog(
-          title: Text('أحسنت',textAlign: TextAlign.right,
-            style: TextStyle(
-              fontSize: 22,
-            ),),
-          content: Text('رائع لقد فزت ب $_moves تحركات فقط',   textAlign: TextAlign.right,
-            style: TextStyle(
-              fontSize: 18,
-              
-              
-            ),),
-          actions: [
-            Center(
-              child: TextButton(
-                onPressed: () {
-                  Navigator.pop(context); // Close the dialog
-                  Navigator.pop(context); // Navigate back to the previous screen
-                },
-                child: Text('موافق', style: TextStyle(fontSize: 18, color: Colors.blue)),
-              ),
-            ),
-          ],
-        );
-      },
-    );
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return GridView.builder(
-      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-        crossAxisCount: 3,
-        crossAxisSpacing: 8.0,
-        mainAxisSpacing: 8.0,
-      ),
-      itemCount: _imagePaths.length,
-      itemBuilder: (context, index) {
-        return GestureDetector(
-          onTap: () => _onTap(index),
-          child: Container(
-            margin: EdgeInsets.all(8),
-            color: _revealed[index] ? Colors.blue : Colors.grey,
-            child: Center(
-              child: _revealed[index]
-                  ? Image.asset(
-                      _imagePaths[index],
-                      fit: BoxFit.cover,
-                      height: 80.0, // Adjust the height as needed
-                      width: 80.0, // Adjust the width as needed
-                    )
-                  : null,
-            ),
-          ),
-        );
-      },
-    );
+  void showSnackBarGlobal(BuildContext context, String message) {
+    ScaffoldMessenger.of(context).removeCurrentSnackBar();
+    ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+        content: Text(
+      message,
+      textScaleFactor: 2,
+    )));
   }
 }
-
-// @override
-  // void initState() {
-  //   super.initState();
-  //   startNewGame();
-  //    checkGameCompletion();
-  // }
-
-  // void startNewGame() {
-  //   puzzleNumbers = List.generate(gridSize * gridSize, (index) => index);
-  //   puzzleNumbers.shuffle();
-  //   emptyTileIndex = puzzleNumbers.indexOf(0);
-  //   isGameCompleted = false;
-  //   setState(() {});
-  // }
-
-  // void onTileClicked(int index) {
-  //   if (!isGameCompleted) {
-  //     if (isValidMove(index)) {
-  //       moveTile(index);
-  //     }
-  //   }
-  // }
-
-  // bool isValidMove(int index) {
-  //   int row = index ~/ gridSize;
-  //   int col = index % gridSize;
-  //   int emptyTileRow = emptyTileIndex ~/ gridSize;
-  //   int emptyTileCol = emptyTileIndex % gridSize;
-
-  //   return (row == emptyTileRow && (col - emptyTileCol).abs() == 1) ||
-  //       (col == emptyTileCol && (row - emptyTileRow).abs() == 1);
-  // }
-
-  // void moveTile(int index) {
-  //   setState(() {
-  //     int temp = puzzleNumbers[index];
-  //     puzzleNumbers[index] = puzzleNumbers[emptyTileIndex];
-  //     puzzleNumbers[emptyTileIndex] = temp;
-  //     emptyTileIndex = index;
-  //   });
-
-  //   WidgetsBinding.instance!.addPostFrameCallback((_) {
-     
-  //   });
-  // }
-
-  // void checkGameCompletion() {
-  //   List<int> sortedPuzzleNumbers = List.from(puzzleNumbers);
-  //   sortedPuzzleNumbers.sort();
-  //   if (ListEquality().equals(puzzleNumbers, sortedPuzzleNumbers)) {
-  //     isGameCompleted = true;
-  //     showDialog(
-  //       context: context,
-  //       builder: (BuildContext context) {
-  //         return AlertDialog(
-  //           title: Text('Congratulations!'),
-  //           content: Text('You solved the puzzle!'),
-  //           actions: <Widget>[
-  //             ElevatedButton(
-  //               child: Text('Play Again'),
-  //               onPressed: () {
-  //                 Navigator.of(context).pop();
-  //                 startNewGame();
-  //               },
-  //             ),
-  //           ],
-  //         );
-  //       },
-  //     );
-  //   }
-  // }
-
-
-
-

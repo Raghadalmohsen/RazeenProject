@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:raghad_s_razeen/core/app_export.dart';
 import 'package:raghad_s_razeen/presentation/explainmap.dart';
-import 'package:raghad_s_razeen/presentation/frame_eightyseven_screen/frame_eightyseven_screen.dart';
 import 'package:raghad_s_razeen/presentation/initialscreen.dart';
 import 'package:raghad_s_razeen/presentation/signin.dart';
 import 'package:raghad_s_razeen/widgets/custom_elevated_button.dart';

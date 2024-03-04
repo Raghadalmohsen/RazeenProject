@@ -1,14 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:raghad_s_razeen/core/app_export.dart';
-import 'package:raghad_s_razeen/presentation/firstpage.dart';
 import 'package:raghad_s_razeen/presentation/initialscreen.dart';
 import 'package:raghad_s_razeen/presentation/profile.dart';
-import 'package:raghad_s_razeen/presentation/requestskill.dart';
 import 'package:raghad_s_razeen/presentation/medals.dart';
 import 'package:raghad_s_razeen/widgets/custom_bottom_bar.dart';
-import 'package:raghad_s_razeen/widgets/custom_floating_button.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
+// ignore: must_be_immutable
 class Setting extends StatelessWidget {
   //الاعدادات
   Setting({Key? key})
