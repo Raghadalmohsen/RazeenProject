@@ -7,7 +7,7 @@ import 'package:raghad_s_razeen/widgets/custom_bottom_bar.dart';
 import 'package:raghad_s_razeen/widgets/custom_elevated_button.dart';
 import 'package:raghad_s_razeen/widgets/custom_floating_button.dart';
 
-class Sadfeedback extends StatelessWidget {
+class Sadfeedback extends StatelessWidget {// بتنحذف 
   Sadfeedback({Key? key})
       : super(
           key: key,
@@ -97,6 +97,7 @@ class Sadfeedback extends StatelessWidget {
                                                 builder: (context) =>
                                                     Razeenmap()), //next page فيه حركه غبيه هنا هل بنقعد نكرر لكل مهارة الفيدباك ؟؟؟؟
                                           );
+                                          // Navigator.pop(context); // Navigate back to the previous screen
                                         }, //نهاية التنقل
                                       ),
                                     ],

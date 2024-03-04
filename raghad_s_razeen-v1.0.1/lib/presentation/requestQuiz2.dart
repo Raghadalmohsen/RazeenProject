@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:audioplayers/audioplayers.dart';
 import 'package:raghad_s_razeen/core/app_export.dart';
 import 'package:raghad_s_razeen/presentation/happyfeedback.dart';
 import 'package:raghad_s_razeen/presentation/requestQuiz3.dart';
@@ -16,6 +17,8 @@ class RequestQuiz2 extends StatefulWidget {
 class _RequestQuiz2State extends State<RequestQuiz2> {
   late List<ItemModel> items;
   late List<ItemModel> items2;
+
+  var player = AudioCache(); 
 
   late int score;
   late bool gameOver;
@@ -163,12 +166,21 @@ class _RequestQuiz2State extends State<RequestQuiz2> {
                                             setState(() {
                                               items.remove(receivedItem);
                                               items2.remove(receivedItem);
-                                              item.accepting = false;
-                                              score + 1; // ///////
+                                              // item.accepting = false;
+                                              // score + 1; // ///////
                                             });
+
+                                            item.accepting = false;
+                                            // score++;
+                                            final player = AudioPlayer();/// new
+                                            player.play(AssetSource('true.wav'));/// new
+
+
                                           } else {
                                             setState(() {
                                               item.accepting = false;
+                                              final player = AudioPlayer();// new 1
+                                              player.play(AssetSource('false.wav'));// new 2
                                             });
                                           }
                                           navigateToFeedbackScreen(); ////////////
@@ -296,8 +308,5 @@ class ItemModel {
   bool accepting;
 
   ItemModel(
-      {required this.name,
-      required this.value,
-      required this.img,
-      this.accepting = false});
+      {required this.name, required this.value,required this.img,this.accepting = false});
 }

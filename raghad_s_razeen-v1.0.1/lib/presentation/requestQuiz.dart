@@ -16,10 +16,10 @@ class RequestQuiz extends StatefulWidget {
 
 class _RequestQuizState extends State<RequestQuiz> {
   // var player = AudioPlayer();
- 
-
   late List<ItemModel> items;
   late List<ItemModel> items2;
+
+  var player = AudioCache();//1
 
   late int score;
   late bool gameOver;
@@ -175,13 +175,22 @@ class _RequestQuizState extends State<RequestQuiz> {
                                               items.remove(receivedItem);
                                               items2.remove(receivedItem);
 
-                                              item.accepting = false;
-                                              
+                                              // item.accepting = false;
                                               // player.play(AssetSource('true.wav'));
                                             });
+
+                                            item.accepting = false;
+                                            // score++;
+                                            final player = AudioPlayer();/// new
+                                            player.play(AssetSource('true.wav'));/// new
+
+
                                           } else {
                                             setState(() {
                                               item.accepting = false;
+                                              final player = AudioPlayer();// new 1
+                                              player.play(AssetSource('false.wav'));// new 2
+
                                             });
                                           }
                                           navigateToFeedbackScreen(); ////////////
@@ -312,8 +321,5 @@ class ItemModel {
   bool accepting;
 
   ItemModel(
-      {required this.name,
-      required this.value,
-      required this.img,
-      this.accepting = false});
+      {required this.name, required this.value,required this.img, this.accepting = false});
 }

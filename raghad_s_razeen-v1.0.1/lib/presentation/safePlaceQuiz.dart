@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:raghad_s_razeen/presentation/happyfeedback.dart';
 import 'package:raghad_s_razeen/presentation/sadfeedback.dart';
+import 'package:raghad_s_razeen/presentation/safeplaceskill.dart';
+import 'package:raghad_s_razeen/widgets/custom_bottom_bar.dart';
+import 'package:raghad_s_razeen/widgets/custom_elevated_button.dart';
 import 'package:raghad_s_razeen/widgets/custom_icon_button.dart';
 import 'package:raghad_s_razeen/core/app_export.dart';
 
@@ -59,13 +62,13 @@ class _SafePlaceQuizState extends State<SafePlaceQuiz> {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => Happyfeedback()),
+                                builder: (context) => Happy()),
                           );
                         } else {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => Sadfeedback()),
+                                builder: (context) => Sad()),
                           );
                         }
                       }
@@ -272,6 +275,251 @@ class _SafePlaceQuizState extends State<SafePlaceQuiz> {
           ),
         ), 
       // ),
+    );
+  }
+}
+
+class Happy extends StatelessWidget {
+  // الفيدباك happy
+  Happy({Key? key})
+      : super(
+          key: key,
+        );
+
+  GlobalKey<NavigatorState> navigatorKey = GlobalKey();
+
+  @override
+  Widget build(BuildContext context) {
+    return SafeArea(
+      child: Scaffold(
+        extendBody: true,
+        bottomNavigationBar: _buildBottomAppBar(context),
+        floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+        body: SizedBox(
+          height: SizeUtils.height,
+          width: 394.h,
+          child: Stack(
+            alignment: Alignment.center,
+            children: [
+              CustomImageView(
+                imagePath: ImageConstant.Background, //الخلفيه
+                height: 852.v,
+                width: 394.h,
+                alignment: Alignment.center,
+              ),
+              Align(
+                alignment: Alignment.center,
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    SizedBox(height: 73.v),
+                    Expanded(
+                      child: SingleChildScrollView(
+                        child: Container(
+                          height: 554.v,
+                          width: 394.h,
+                          margin: EdgeInsets.only(bottom: 126.v),
+                          child: Stack(
+                            alignment: Alignment.bottomCenter,
+                            children: [
+                              // CustomImageView(
+                              //   imagePath: ImageConstant.HappyFeedback,// فيدباك
+                              //   height: 508.v,
+                              //   width: 382.h,
+                              //   alignment: Alignment.topLeft,
+                              // ),
+  
+                              Align(
+                                alignment: Alignment.bottomCenter,
+                                child: SizedBox(
+                                  height: 447.v,
+                                  width: 329.h,
+                                  child: Stack(
+                                    alignment: Alignment.bottomCenter,
+                                    children: <Widget>[
+                                      Align(
+                                        alignment: Alignment.center,
+                                        child: Container(
+                                          height: 447.v,
+                                          width: 329.h,
+                                          decoration: BoxDecoration(
+                                            color: appTheme.blue5066,
+                                            borderRadius: BorderRadius.circular(
+                                              35.h,
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                      CustomImageView(
+                                          imagePath: ImageConstant
+                                              .HappyFeedback, // فيدباك
+                                          height: 508.v,
+                                          width: 382.h,
+                                          alignment: Alignment.topLeft,
+                                          margin:
+                                              EdgeInsets.only(bottom: 42.v)),
+                                      CustomElevatedButton(
+                                        width: 92.h,
+                                        text: "التالي",
+                                        margin: EdgeInsets.only(bottom: 20.v),
+                                        alignment: Alignment.bottomCenter,
+                                        onPressed: () {
+                                          //بداية كود تنقل الزر
+                                          Navigator.push(
+                                            context,
+                                            MaterialPageRoute(
+                                                builder: (context) =>
+                                                    Safeplaceskill()), //next page فيه حركه غبيه هنا هل بنقعد نكرر لكل مهارة الفيدباك ؟؟؟؟
+                                          );
+
+                                          // Navigator.pop(context); // Navigate back to the previous screen
+                                        }, //نهاية التنقل
+                                      ),
+                                  
+                                    ],
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+
+  /// Section Widget
+  Widget _buildBottomAppBar(BuildContext context) {
+    return CustomBottomBar(
+      onChanged: (BottomBarEnum type) {},
+    );
+  }
+}
+
+class Sad extends StatelessWidget {
+  Sad({Key? key})
+      : super(
+          key: key,
+        );
+
+  GlobalKey<NavigatorState> navigatorKey = GlobalKey();
+
+  @override
+  Widget build(BuildContext context) {
+    return SafeArea(
+      child: Scaffold(
+        extendBody: true,
+        bottomNavigationBar: _buildBottomAppBar(context),
+        floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+        body: SizedBox(
+          height: SizeUtils.height,
+          width: 394.h,
+          child: Stack(
+            alignment: Alignment.center,
+            children: [
+              CustomImageView(
+                imagePath: ImageConstant.Background, //الخلفيه
+                height: 852.v,
+                width: 394.h,
+                alignment: Alignment.center,
+              ),
+              Align(
+                alignment: Alignment.center,
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    SizedBox(height: 73.v),
+                    Expanded(
+                      child: SingleChildScrollView(
+                        child: Container(
+                          height: 554.v,
+                          width: 394.h,
+                          margin: EdgeInsets.only(bottom: 126.v),
+                          child: Stack(
+                            alignment: Alignment.bottomCenter,
+                            children: [
+                              // CustomImageView(
+                              //   imagePath: ImageConstant.HappyFeedback,// فيدباك
+                              //   height: 508.v,
+                              //   width: 382.h,
+                              //   alignment: Alignment.topLeft,
+                              // ),
+                              Align(
+                                alignment: Alignment.bottomCenter,
+                                child: SizedBox(
+                                  height: 447.v,
+                                  width: 329.h,
+                                  child: Stack(
+                                    alignment: Alignment.bottomCenter,
+                                    children: [
+                                      Align(
+                                        alignment: Alignment.center,
+                                        child: Container(
+                                          height: 447.v,
+                                          width: 329.h,
+                                          decoration: BoxDecoration(
+                                            color: appTheme.blue5066,
+                                            borderRadius: BorderRadius.circular(
+                                              35.h,
+                                            ),
+                                            
+                                          ),
+                                        ),
+                                      ),
+                                      CustomImageView(
+                                        imagePath: ImageConstant.SadFeedback, // فيدباك
+                                        height: 356.v,
+                                        width: 380.h,
+                                        alignment: Alignment.center,
+                                        margin: EdgeInsets.only(bottom: 42.v)
+                                      ),
+                                      CustomElevatedButton(
+                                        width: 92.h,
+                                        text: "موافق",
+                                        margin: EdgeInsets.only(bottom: 20.v),
+                                        alignment: Alignment.bottomCenter,
+                                        onPressed: () {
+                                          //بداية كود تنقل الزر
+                                          Navigator.push(
+                                            context,
+                                            MaterialPageRoute(
+                                                builder: (context) =>
+                                                    Safeplaceskill()), //next page فيه حركه غبيه هنا هل بنقعد نكرر لكل مهارة الفيدباك ؟؟؟؟
+                                          );
+                                          // Navigator.pop(context); // Navigate back to the previous screen
+                                        }, //نهاية التنقل
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
+        ),
+        
+      ),
+    );
+  }
+
+  /// Section Widget
+  Widget _buildBottomAppBar(BuildContext context) {
+    return CustomBottomBar(
+      onChanged: (BottomBarEnum type) {},
     );
   }
 }
