@@ -491,6 +491,14 @@ static String puzzle33 = '$imagePath/puzzle33.png';
 static String puzzle4 = '$imagePath/puzzle4.png';
 static String puzzle44 = '$imagePath/puzzle44.png';
 
+//ar images
+static String toysbox = '$imagePath/toysbox.png';
+static String backpack = '$imagePath/backpack.png';
+static String clothesbasket = '$imagePath/clothesbasket.png';
+static String socks = '$imagePath/socks.png';
+static String rocket = '$imagePath/rocket.png';
+static String pencil = '$imagePath/pencil.png';
+
 
   static String medalsFeedback = '$imagePath/medalsFeedback.png';
 
