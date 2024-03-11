@@ -85,9 +85,10 @@ class _MazePageState extends State<MazeGame> {
             ),
             Expanded(
               child: Text(
-                "احضر الماء لجدك",
-                textAlign: TextAlign.center,
-                style: theme.textTheme.titleMedium?.copyWith(fontSize: 22),
+                "                         احضر الماء لجدك",
+                  overflow: TextOverflow.ellipsis,
+                      // style: theme.textTheme.titleMedium,
+                      style:TextStyle(fontSize: 18,color: Colors.black),
               ),
             ),
           ],
@@ -111,11 +112,11 @@ class _MazePageState extends State<MazeGame> {
               ],
             ),
             Positioned(
-              top: 0.v,
+              top: 3.v,
               right: 0,
               child: CustomImageView(
                 imagePath: ImageConstant.imgImage23,
-                height: 114.v,
+                height: 100.v,
                 width: 94.h,
                 alignment: Alignment.topRight,
               ),

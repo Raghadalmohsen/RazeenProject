@@ -499,6 +499,9 @@ static String socks = '$imagePath/socks.png';
 static String rocket = '$imagePath/rocket.png';
 static String pencil = '$imagePath/pencil.png';
 
+static String redhome = '$imagePath/redhome.png';
+static String bluehome = '$imagePath/bluehome.png';
+static String pinkhome = '$imagePath/pinkhome.png';
 
   static String medalsFeedback = '$imagePath/medalsFeedback.png';
 

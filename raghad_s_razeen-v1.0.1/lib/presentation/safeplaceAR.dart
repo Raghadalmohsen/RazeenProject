@@ -209,7 +209,7 @@ void initState() {
       ARLocationManager locationManager) {
     // Load all target images onto the AR scene
     for (String image in targetImages) {
-      ARCoreController.loadImage(image);
+      // ARCoreController.loadImage(image);
     }
     // Optionally, you can also load the classifications onto the AR scene
     // For simplicity, let's just print them

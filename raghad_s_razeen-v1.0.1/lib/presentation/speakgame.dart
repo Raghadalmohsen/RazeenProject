@@ -367,13 +367,14 @@ class _SpeakgameState extends State<Speakgame> {
                           alignment: Alignment.topCenter,
                           child: Container(
                             width: 256.h,
-                            margin: EdgeInsets.only(top: 140.v),
+                            margin: EdgeInsets.only(top: 133.v),
                             // decoration: AppDecoration.outlinePrimary1,////////////////
                             child: Text(
-                              "                       قم بترتيب الصوره",
+                              "                  قم بترتيب الصوره",
                               maxLines: null,
                               overflow: TextOverflow.ellipsis,
-                              style: theme.textTheme.titleMedium,
+                      // style: theme.textTheme.titleMedium,
+                      style:TextStyle(fontSize: 20,color: Colors.black),
                             ),
                           ),
                         ),
@@ -382,7 +383,7 @@ class _SpeakgameState extends State<Speakgame> {
                           height: 28.v,
                           width: 27.h,
                           alignment: Alignment.topLeft,
-                          margin: EdgeInsets.only(left: 30.h, top: 120),
+                          margin: EdgeInsets.only(left: 30.h, top: 110),
                         ),
                       ],
                     ),
@@ -393,7 +394,7 @@ class _SpeakgameState extends State<Speakgame> {
                   height: 114.v,
                   width: 94.h,
                   alignment: Alignment.topRight,
-                  margin: EdgeInsets.only(top: 90.v),
+                  margin: EdgeInsets.only(top: 115.v),
                 ),
                 // CustomImageView(
                 //   imagePath: ImageConstant.imgScreenshot2023, //رزين

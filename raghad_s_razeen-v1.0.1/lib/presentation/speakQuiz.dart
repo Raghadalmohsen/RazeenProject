@@ -35,7 +35,7 @@ class _SpeakQuizState extends State<SpeakQuiz> {
     },
     {
       'questionImage': 'assets/images/Q3quiz4.png',
-      'choices': ['                          ليس خطئي', '                         أنا اسف يا جدي'],
+      'choices': ['                        ليس خطئي', '                       أنا اسف يا جدي'],
       'correctAnswerIndex': 1,
     },
   ];
@@ -134,7 +134,7 @@ class _SpeakQuizState extends State<SpeakQuiz> {
                                 top: 70.v,
                                 right: 1.h,
                                 left: 1,
-                                bottom: 135,
+                                bottom: 85,
                               ),
                               padding: EdgeInsets.symmetric(
                                 horizontal: 1.h,
@@ -148,8 +148,8 @@ class _SpeakQuizState extends State<SpeakQuiz> {
                                 children: [
                                   Image.asset(
                                     quizData[currentIndex]['questionImage'],
-                                    width: 394.h,
-                                    height: 300.h,
+                                    width: 400.h,
+                                    height: 301.h,
                                     fit: BoxFit.cover,
                                   ),
                                   SizedBox(height: 16.h),
@@ -184,10 +184,10 @@ class _SpeakQuizState extends State<SpeakQuiz> {
                                               CustomImageView(
                                                 imagePath:
                                                     ImageConstant.imgImage167,
-                                                height: 28.v,
+                                                height: 30.v,
                                                 width: 27.h,
                                                 alignment: Alignment.topLeft, 
-                                                margin: EdgeInsets.only(left: 0),
+                                                // margin: EdgeInsets.only(left: 0),
                                               ),
                                               SizedBox(  width: 1   .h), //بين الكلام والصورة
                                               Text(
@@ -250,7 +250,7 @@ class _SpeakQuizState extends State<SpeakQuiz> {
                             child: Container(
                               height: 58.v,
                               width: 301.h,
-                              margin: EdgeInsets.only(top: 63.v),
+                              margin: EdgeInsets.only(top: 63.v,left: 15),
                               decoration: BoxDecoration( //ورا السؤال
                                 color: appTheme.yellow100,
                                 borderRadius: BorderRadius.circular(
@@ -263,7 +263,7 @@ class _SpeakQuizState extends State<SpeakQuiz> {
                             alignment: Alignment.topCenter,
                             child: Container(
                               width: 256.h,
-                              margin: EdgeInsets.only(top: 79.v),
+                              margin: EdgeInsets.only(top: 79.v,left: 29),
                               // decoration: AppDecoration.outlinePrimary1, //ينحذف
                               child: Text(
                                 "           ما الكلمة المناسبة لهذا الموقف؟",
@@ -291,13 +291,13 @@ class _SpeakQuizState extends State<SpeakQuiz> {
                     alignment: Alignment.topRight,
                     margin: EdgeInsets.only(top: 117.v),
                   ),
-                  CustomImageView(
-                    imagePath: ImageConstant.imgScreenshot2023,//رزين
-                    height: 180.v,
-                    width: 133.h,
-                    alignment: Alignment.bottomLeft,
-                    margin: EdgeInsets.only(bottom: 20.v,),
-                  ),
+                  // CustomImageView(
+                  //   imagePath: ImageConstant.imgScreenshot2023,//رزين
+                  //   height: 180.v,
+                  //   width: 133.h,
+                  //   alignment: Alignment.bottomLeft,
+                  //   margin: EdgeInsets.only(bottom: 20.v,),
+                  // ),
                 ],
               ),
             ),
@@ -383,9 +383,9 @@ class Happy extends StatelessWidget {
                                       CustomImageView(
                                           imagePath: ImageConstant
                                               .HappyFeedback, // فيدباك
-                                          height: 508.v,
-                                          width: 382.h,
-                                          alignment: Alignment.topLeft,
+                                          height: 410.v,
+                                          width: 300.h,
+                                          alignment: Alignment.center,
                                           margin:
                                               EdgeInsets.only(bottom: 42.v)),
                                       CustomElevatedButton(

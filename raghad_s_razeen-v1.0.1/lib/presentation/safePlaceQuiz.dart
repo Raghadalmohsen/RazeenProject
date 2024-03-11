@@ -231,7 +231,7 @@ class _SafePlaceQuizState extends State<SafePlaceQuiz> {
                             alignment: Alignment.topCenter,
                             child: Container(
                               width: 256.h,
-                              margin: EdgeInsets.only(top: 75.v),
+                              margin: EdgeInsets.only(top: 72.v,left: 43),
                               // decoration: AppDecoration.outlinePrimary1,////////////////
                               child: Text(
                                 "                 هل المكان مناسب لجدك؟",
@@ -265,7 +265,7 @@ class _SafePlaceQuizState extends State<SafePlaceQuiz> {
                   CustomImageView(
                     imagePath: ImageConstant.imgScreenshot2023, //رزين
                     height: 180.v,
-                    width: 133.h,
+                    width: 130.h,
                     alignment: Alignment.bottomLeft,
                     margin: EdgeInsets.only(bottom: 20.v,),
                   ),
@@ -353,8 +353,8 @@ class Happy extends StatelessWidget {
                                       CustomImageView(
                                           imagePath: ImageConstant
                                               .HappyFeedback, // فيدباك
-                                          height: 508.v,
-                                          width: 382.h,
+                                          height: 410.v,
+                                          width: 300.h,
                                           alignment: Alignment.topLeft,
                                           margin:
                                               EdgeInsets.only(bottom: 42.v)),

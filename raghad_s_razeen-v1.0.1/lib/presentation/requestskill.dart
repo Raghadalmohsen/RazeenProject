@@ -281,16 +281,15 @@ class Requestskill extends StatelessWidget { //مهارة كيف البي طلب
                   child: Container(
                     width: 165.h,
                     margin: EdgeInsets.only(
-                      top: 150.v,
-                      right: 88.h,
+                      top: 154.v,
+                      right: 77.h,
                     ),
                     decoration: AppDecoration.outlinePrimary3,
                     child: Text(
                       "كيف ألبي طلبات جدي؟",
                       maxLines: 2,
-                      // overflow: TextOverflow.ellipsis,
-                      // style: theme.textTheme.titleMedium,
-                      style:TextStyle(fontSize: 20,color: Colors.black),
+                      overflow: TextOverflow.ellipsis,
+                      style:TextStyle(fontSize: 18,color: Colors.black),
 
                       
                     ),

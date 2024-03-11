@@ -290,8 +290,7 @@ class Safeplaceskill extends StatelessWidget { //مهارة سلامة المك�
                       "كيف أحافظ على سلامة المكان لأجل جدي؟",
                       maxLines: 1,
                        overflow: TextOverflow.ellipsis,
-                      // style: theme.textTheme.titleMedium,
-                      style:TextStyle(fontSize: 16,color: Colors.black),
+                      style:TextStyle(fontSize: 16,color: Colors.black,fontFamily: 'Raleway' ),
                       
 
                       

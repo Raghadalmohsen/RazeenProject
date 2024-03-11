@@ -95,12 +95,12 @@ class  Razeenmap extends StatelessWidget { // صفحة الماب
                Container(
                                      
                                     margin: EdgeInsets.only(
-                                      right: 200.v,
-                                      bottom: 60.v,
+                                      // right: 200.v,
+                                      bottom: 40.v,
                                     ),
 
                                     
-                                       height: 135.v,
+                                       height: 110.v,
                                      width: 200.h,
                                     decoration: AppDecoration.outlinePrimary3,
                                  child: ElevatedButton(
@@ -118,7 +118,7 @@ class  Razeenmap extends StatelessWidget { // صفحة الماب
                       
                     )),
                 
-                 child:Image.asset(ImageConstant.imgImage253)),//بيت احمر
+                 child:Image.asset(ImageConstant.redhome)),//بيت احمر
                  
                  ),
                                
@@ -126,11 +126,11 @@ class  Razeenmap extends StatelessWidget { // صفحة الماب
                Container(
                                      
                                     margin: EdgeInsets.only(
-                                      left: 8.v,
-                                      bottom: 232.v,
+                                    left: 20,
+                                      top: 30.v,
                                     ),
-                                       height: 135.v,
-                                     width: 200.h,
+                                      height: 160.v,
+                                     width: 220.h,
                                     decoration: AppDecoration.outlinePrimary3,
                                  child: ElevatedButton(
                 onPressed: () { Navigator.push(
@@ -146,15 +146,16 @@ class  Razeenmap extends StatelessWidget { // صفحة الماب
                       color: Color.fromARGB(0, 244, 67, 54),
                     )),
                 
-                 child:Image.asset(ImageConstant.imgImage250))//بيت وردي فاتح
+                 child:Image.asset(ImageConstant.pinkhome))//بيت وردي فاتح
      
-                                   ),
+                                   ),Spacer(flex: 30,),
                                  
                                 
                        Container(
+                         
                      
-                                       height: 148.v,
-                                     width: 216.h,
+                                       height: 138.v,
+                                     width: 230.h,
                                     decoration: AppDecoration.outlinePrimary3,
                                  child: ElevatedButton(
                 onPressed: () { Navigator.push(
@@ -184,7 +185,7 @@ class  Razeenmap extends StatelessWidget { // صفحة الماب
                                      
                                     margin: EdgeInsets.only(
                                     left: 159,
-                                      top: 70.v,
+                                      top: 50.v,
                                     ),
                                     
                                        height: 129.v,
@@ -212,23 +213,16 @@ class  Razeenmap extends StatelessWidget { // صفحة الماب
 
 
 
-                            // CustomImageView(
-                            //  imagePath: ImageConstant.imgImage249,// البيت الاصفر 
-                            //   height: 129.v,
-                            //   width: 175.h,
-                            //   alignment: Alignment.topRight,
-                            //   margin: EdgeInsets.only(top: 78.v),
-                            // ),
                                            
              Container(
                                      
                                     margin: EdgeInsets.only(
-                                    left: 159,
-                                      top: 357.v,
+                                    left: 200,
+                                      top: 358.v,
                                     ),
                                     
-                                       height: 140.v,
-                                     width: 210.h,
+                                       height: 138.v,
+                                     width: 260.h,
                                     decoration: AppDecoration.outlinePrimary3,
                                  child: ElevatedButton(
                 onPressed: () { Navigator.push(
@@ -245,7 +239,7 @@ class  Razeenmap extends StatelessWidget { // صفحة الماب
                       
                     )),
                 
-                 child:Image.asset(ImageConstant.imgImage251)),//بيت سماوي
+                 child:Image.asset(ImageConstant.bluehome)),//بيت سماوي
                  
                  ),
                             // CustomImageView(

@@ -344,7 +344,7 @@ class _RespectDiffQuizState extends State<RespectDiffQuiz> {
                         alignment: Alignment.topCenter,
                         child: Container(
                           width: 256.h,
-                          margin: EdgeInsets.only(top: 75.v,right: 20),
+                          margin: EdgeInsets.only(top: 72.v,right: 30),
                           // decoration: AppDecoration.outlinePrimary1,////////////////
                           child: Text(
                             " صنف الاشياء التي كان يستعملها جدك قديمًا والأشياء الخاصه برزان",
@@ -359,7 +359,7 @@ class _RespectDiffQuizState extends State<RespectDiffQuiz> {
                         height: 28.v,
                         width: 27.h,
                         alignment: Alignment.topLeft,
-                        margin: EdgeInsets.only(left: 32.h, top: 55),
+                        margin: EdgeInsets.only(left: 30.h, top: 48),
                       ),
                     ],
                   ),
@@ -375,10 +375,10 @@ class _RespectDiffQuizState extends State<RespectDiffQuiz> {
               CustomImageView(
                 imagePath: ImageConstant.imgScreenshot2023, //رزين
                 height: 180.v,
-                width: 133.h,
+                width: 129.h,
                 alignment: Alignment.bottomLeft,
                 margin: EdgeInsets.only(
-                  bottom: 20.v,
+                  bottom: 10.v,
                 ),
               ),
             ],

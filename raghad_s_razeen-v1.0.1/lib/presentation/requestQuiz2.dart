@@ -287,7 +287,7 @@ class _RequestQuiz2State extends State<RequestQuiz2> {
               CustomImageView(
                 imagePath: ImageConstant.imgScreenshot2023, //رزين
                 height: 180.v,
-                width: 133.h,
+                width: 130.h,
                 alignment: Alignment.bottomLeft,
                 margin: EdgeInsets.only(
                   bottom: 20.v,

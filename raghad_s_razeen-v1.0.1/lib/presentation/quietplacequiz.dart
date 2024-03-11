@@ -349,10 +349,10 @@ class _QuietplacequizState extends State<Quietplacequiz> {
                         alignment: Alignment.topCenter,
                         child: Container(
                           width: 256.h,
-                          margin: EdgeInsets.only(top: 80.v),
+                          margin: EdgeInsets.only(top: 80.v,left: 30),
                           // decoration: AppDecoration.outlinePrimary1,////////////////
                           child: Text(
-                            "             ضع الشكل في المكان المناسب",
+                            "             ضع  في المكان المناسب",////
                             maxLines: null,
                             overflow: TextOverflow.ellipsis,
                             style: theme.textTheme.titleMedium,
@@ -380,10 +380,10 @@ class _QuietplacequizState extends State<Quietplacequiz> {
               CustomImageView(
                 imagePath: ImageConstant.imgScreenshot2023, //رزين
                 height: 180.v,
-                width: 133.h,
+                 width: 125.h,
                 alignment: Alignment.bottomLeft,
                 margin: EdgeInsets.only(
-                  bottom: 20.v,
+                  bottom: 10.v,
                 ),
               ),
             ],
