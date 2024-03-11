@@ -169,9 +169,18 @@ class _SignupState extends State<Signup> {
           width: double.maxFinite,
           child: Form(
             key: _formKey,
-            child: SizedBox(
-              height: SizeUtils.height,
-              width: double.maxFinite,
+            child: Container(
+               decoration: BoxDecoration(
+                border: Border.all(),
+                image: DecorationImage(
+                  image: AssetImage(
+                    ImageConstant.BackgroundHouse,
+                  ),
+                  fit: BoxFit.cover,
+                ),
+                
+              ),
+
               child: Stack(
                 alignment: Alignment.topRight,
                 children: [
@@ -182,7 +191,7 @@ class _SignupState extends State<Signup> {
                       child: Container(
                         padding: EdgeInsets.symmetric(
                           horizontal: 20.h,
-                          vertical: 45.v,
+                          vertical: 90.v,
                         ),
                         decoration: BoxDecoration(
                           border: Border.all(),
@@ -193,24 +202,28 @@ class _SignupState extends State<Signup> {
                             fit: BoxFit.cover,
                           ),
                         ),
-                        child: Column(
+                           child: Column(
                           mainAxisSize: MainAxisSize.min,
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            SizedBox(height: 200.v),
+                            SizedBox(height: 75.v),
                             Container(
-                              margin: EdgeInsets.only(left: 6.h),
+                              width: 338.h,
+                              margin: EdgeInsets.only(
+                                left: 6.h,
+                                right: 9.h,
+                              ),
                               padding: EdgeInsets.symmetric(
-                                horizontal: 22.h,
-                                vertical: 90.v,
+                                horizontal: 6.h,
+                                vertical: 85.v,
                               ),
                               decoration:
-                                  AppDecoration.outlinePrimary7.copyWith(
+                              AppDecoration.outlinePrimary7.copyWith(
                                 borderRadius: BorderRadiusStyle.roundedBorder33,
                               ),
                               child: Column(
                                 mainAxisSize: MainAxisSize.min,
-                                mainAxisAlignment: MainAxisAlignment.center,
+                                mainAxisAlignment: MainAxisAlignment.end,
                                 children: [
                                   SizedBox(height: 18.v),
                                   _buildNameSection(context),
@@ -275,15 +288,15 @@ class _SignupState extends State<Signup> {
                     height: 152.v,
                     width: 119.h,
                     alignment: Alignment.topRight,
-                    margin: EdgeInsets.only(top: 180.v),
+                    margin: EdgeInsets.only(top: 110.v),
                   ),
                   Align(
                     alignment: Alignment.topRight,
                     child: Container(
                       width: 244.h,
                       margin: EdgeInsets.only(
-                        top: 260.v,
-                        right: 11.h,
+                        top: 180.v,
+                        right: 1.h,
                       ),
                       decoration: AppDecoration.outlinePrimary3,
                       child: Text(

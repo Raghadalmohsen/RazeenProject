@@ -33,6 +33,7 @@ flutter:
     - assets/true.wav
     - assets/false.wav
     - assets/firstaudio1.mp3
+    - assets/packbag.gltf
 
    
   fonts: 

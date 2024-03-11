@@ -141,7 +141,7 @@ class Medals extends StatelessWidget {
                  CustomImageView(
                   imagePath: ImageConstant.imgScreenshot2023, //رزين
                   height: 180.v,
-                  width: 133.h,
+                  width: 129.h,
                   margin: EdgeInsets.only(
                     top: 300.v,
                     right: 5.h, 

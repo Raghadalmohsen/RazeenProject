@@ -139,10 +139,10 @@ class  Razeenmap extends StatelessWidget { // صفحة الماب
             );},
                 style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.transparent,
-                    foregroundColor: Colors.black,
+                    foregroundColor: Color.fromARGB(0, 255, 255, 255),
                     elevation: 0,
                     side: const BorderSide(
-                      width: 1.0,
+                      width:0,
                       color: Color.fromARGB(0, 244, 67, 54),
                     )),
                 

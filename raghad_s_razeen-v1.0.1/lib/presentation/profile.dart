@@ -151,6 +151,7 @@ void _changeName(BuildContext context) {
         extendBody: true,
         bottomNavigationBar: _buildBottomAppBar(context),
         floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+          resizeToAvoidBottomInset: false,
         body: Container(
           height: SizeUtils.height,
           width: double.maxFinite,
@@ -165,6 +166,7 @@ void _changeName(BuildContext context) {
                   ),
                   fit: BoxFit.cover,
                 ),
+                
               ),
               child: Stack(
                 alignment: Alignment.topRight,
@@ -212,6 +214,7 @@ void _changeName(BuildContext context) {
                                     ),
                                   ),
                                 ),
+                                
                                 SizedBox(height: 5.v),
                               
                                 _buildEmail(context),
@@ -284,13 +287,14 @@ void _changeName(BuildContext context) {
                       ),
                     ),
                   ),
-                  CustomImageView(
+                   CustomImageView(
                     imagePath: ImageConstant.imgScreenshot2023173x129,//الجد
                     height: 206.v,
                     width: 150.h,
                     alignment: Alignment.bottomLeft,
                     margin: EdgeInsets.only(bottom: 13.v),
                   ),
+                 
                 ],
               ),
             ),
@@ -369,6 +373,7 @@ Widget _buildName(BuildContext context) {
         borderDecoration: TextFormFieldStyleHelper.outlinePrimary,
       ),
     );
+    
   }
 
   Widget _buildNewPassword(BuildContext context) {
