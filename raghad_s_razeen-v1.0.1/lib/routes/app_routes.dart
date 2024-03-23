@@ -101,7 +101,7 @@ import 'package:raghad_s_razeen/presentation/medalsFeedback.dart';//4
 import 'package:raghad_s_razeen/presentation/mazeGame.dart';//4
 import 'package:raghad_s_razeen/presentation/speakgame.dart';//4
 import 'package:raghad_s_razeen/presentation/safeplaceAR.dart';//4
-
+import 'package:raghad_s_razeen/presentation/safeplacestory.dart';//4
 
 class AppRoutes {
    static const String firstpage = '/firstpage';//
@@ -135,7 +135,7 @@ class AppRoutes {
    static const String mazeGame ='/mazeGame';//4
    static const String speakgame ='/speakgame';//4
    static const String safeplaceAR ='/safeplaceAR';//4
-   
+      static const String safeplacestory ='/safeplacestory';//4
 
 
 
@@ -339,6 +339,7 @@ class AppRoutes {
     mazeGame:(context) => MazeGame(),
     speakgame:(context) => Speakgame(),
     safeplaceAR:(context) => SafePlaceAR(),
+    safeplacestory:(context) => Safeplacestory(),
 
 
 

@@ -20,7 +20,9 @@ dependencies:
   image: ^4.1.7
   ar_flutter_plugin: ^0.7.3 
   arcore_flutter_plugin: ^0.1.0
- 
+  video_player: ^2.8.3
+  flick_video_player: ^0.7.0
+
 dev_dependencies: 
 
   flutter_test: 
@@ -33,7 +35,28 @@ flutter:
     - assets/true.wav
     - assets/false.wav
     - assets/firstaudio1.mp3
-    - assets/packbag.gltf
+    - assets/safeplaceStory.mp4
+    - assets/badHelp.mp3
+    - assets/bring_tissue.mp3
+    - assets/bring_water.mp3
+    - assets/Bring.mp3
+    - assets/classify.mp3
+    - assets/How_Changes.mp3
+    - assets/How_Order.mp3
+    - assets/How_Quite.mp3
+    - assets/How_Safe.mp3
+    - assets/How_Talk.mp3
+    - assets/im_Sorry.mp3
+    - assets/mazeQuizQuestion.mp3
+    - assets/Newspaper.mp3
+    - assets/noGift.mp3
+    - assets/notMyfault.mp3
+    - assets/pleaseHelp.mp3
+    - assets/Q_change.mp3
+    - assets/Q_Order.mp3
+    - assets/SafeplaceQuizAudio.mp3
+    - assets/thankyouGift.mp3
+    - assets/whatWord.mp3
 
    
   fonts: 
