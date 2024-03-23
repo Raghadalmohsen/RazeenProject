@@ -230,14 +230,31 @@ class _RequestQuiz2State extends State<RequestQuiz2> {
                           ),
                         ),
                       ),
-                            CustomImageView(
-                        imagePath: ImageConstant.imgImage167, ////// الصوت
-                        height: 28.v,
-                        width: 27.h,
-                        alignment: Alignment.topRight,
-                        margin: EdgeInsets.only(top: 250,right: 15),
+                      //       CustomImageView(
+                      //   imagePath: ImageConstant.imgImage167, ////// الصوت
+                      //   height: 28.v,
+                      //   width: 27.h,
+                      //   alignment: Alignment.topRight,
+                      //   margin: EdgeInsets.only(top: 250,right: 15),
                        
-                      ),
+                      // ),
+                      Container(///new
+                                      height: 28.v,
+                                      width: 27.h,
+                                      alignment: Alignment.topLeft,
+                                      margin: EdgeInsets.only(right:30, bottom:55, top: 150),
+                                      child: ElevatedButton(
+                                onPressed: () {
+                                final player = AudioPlayer();/// new
+                                player.play(AssetSource('Newspaper.mp3'));/// new
+                                },
+                                style: ElevatedButton.styleFrom(
+                              backgroundColor: Colors.transparent,
+                              foregroundColor: Colors.black,
+                              elevation: 0,
+                                ),
+                            
+                          child: Image.asset(ImageConstant.imgImage164))),//end new
                       Align(
                         alignment: Alignment.topCenter,
                         child: Container(
@@ -266,13 +283,30 @@ class _RequestQuiz2State extends State<RequestQuiz2> {
                           ),
                         ),
                       ),
-                      CustomImageView(
-                        imagePath: ImageConstant.imgImage167, ////// الصوت
-                        height: 28.v,
-                        width: 27.h,
-                        alignment: Alignment.topLeft,
-                        margin: EdgeInsets.only(left: 32.h, top: 55),
-                      ),
+                      // CustomImageView(
+                      //   imagePath: ImageConstant.imgImage167, ////// الصوت
+                      //   height: 28.v,
+                      //   width: 27.h,
+                      //   alignment: Alignment.topLeft,
+                      //   margin: EdgeInsets.only(left: 32.h, top: 55),
+                      // ),
+                      Container(///new
+                                      height: 28.v,
+                                      width: 27.h,
+                                      alignment: Alignment.topLeft,
+                                      margin: EdgeInsets.only(right:30, bottom:55, top: 150),
+                                      child: ElevatedButton(
+                                onPressed: () {
+                                final player = AudioPlayer();/// new
+                                player.play(AssetSource('Q_Order.mp3'));/// new
+                                },
+                                style: ElevatedButton.styleFrom(
+                              backgroundColor: Colors.transparent,
+                              foregroundColor: Colors.black,
+                              elevation: 0,
+                                ),
+                            
+                          child: Image.asset(ImageConstant.imgImage164))),//end new
                     ],
                   ),
                 ),

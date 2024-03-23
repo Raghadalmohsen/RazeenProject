@@ -7,6 +7,7 @@ import 'package:raghad_s_razeen/widgets/custom_elevated_button.dart';
 //import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:raghad_s_razeen/presentation/happyfeedback.dart';
 import 'package:raghad_s_razeen/presentation/sadfeedback.dart';
+import 'package:audioplayers/audioplayers.dart';
 
 class Quietplacequiz extends StatefulWidget {
   const Quietplacequiz({Key? key})
@@ -265,8 +266,8 @@ class _QuietplacequizState extends State<Quietplacequiz> {
                                   ],
                                 ),
 
-//                               if (gameOver) {  checkGameOver();
-// },
+                              //                               if (gameOver) {  checkGameOver();
+                              // },
                               //   if (items.length == 0) {
                               //     setState(() {
                               //       if (score >= 2) {
@@ -359,13 +360,30 @@ class _QuietplacequizState extends State<Quietplacequiz> {
                           ),
                         ),
                       ),
-                      CustomImageView(
-                        imagePath: ImageConstant.imgImage167, ////// الصوت
-                        height: 28.v,
-                        width: 27.h,
-                        alignment: Alignment.topLeft,
-                        margin: EdgeInsets.only(left: 32.h, top: 55),
-                      ),
+                      // CustomImageView(
+                      //   imagePath: ImageConstant.imgImage167, ////// الصوت
+                      //   height: 28.v,
+                      //   width: 27.h,
+                      //   alignment: Alignment.topLeft,
+                      //   margin: EdgeInsets.only(left: 32.h, top: 55),
+                      // ),
+                      Container(///new
+                            height: 28.v,
+                            width: 27.h,
+                            alignment: Alignment.topLeft,
+                            margin: EdgeInsets.only(right:300.h, bottom:550, top: 150),
+                            child: ElevatedButton(
+                                onPressed: () {
+                                final player = AudioPlayer();/// new
+                                player.play(AssetSource('SafeplaceQuizAudio.mp3'));/// new
+                                },
+                                style: ElevatedButton.styleFrom(
+                              backgroundColor: Colors.transparent,
+                              foregroundColor: Colors.black,
+                              elevation: 0,
+                                ),//end new
+                            
+                          child: Image.asset(ImageConstant.imgImage164))),
                     ],
                   ),
                 ),

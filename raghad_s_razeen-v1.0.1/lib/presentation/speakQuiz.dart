@@ -7,6 +7,7 @@ import 'package:raghad_s_razeen/widgets/custom_bottom_bar.dart';
 import 'package:raghad_s_razeen/widgets/custom_elevated_button.dart';
 import 'package:raghad_s_razeen/presentation/happyfeedback.dart';
 import 'package:raghad_s_razeen/presentation/sadfeedback.dart';
+import 'package:audioplayers/audioplayers.dart';
 
 class SpeakQuiz extends StatefulWidget {
   const SpeakQuiz({Key? key}) : super(key: key);
@@ -181,14 +182,31 @@ class _SpeakQuizState extends State<SpeakQuiz> {
                                           padding: EdgeInsets.all(8.h),
                                           child: Row(
                                             children: [
-                                              CustomImageView(
-                                                imagePath:
-                                                    ImageConstant.imgImage167,
-                                                height: 30.v,
-                                                width: 27.h,
-                                                alignment: Alignment.topLeft, 
-                                                // margin: EdgeInsets.only(left: 0),
-                                              ),
+                                              // CustomImageView(
+                                              //   imagePath:
+                                              //       ImageConstant.imgImage167,
+                                              //   height: 30.v,
+                                              //   width: 27.h,
+                                              //   alignment: Alignment.topLeft, 
+                                              //   // margin: EdgeInsets.only(left: 0),
+                                              // ),
+                                              Container(///new
+                                                        height: 28.v,
+                                                        width: 27.h,
+                                                        alignment: Alignment.topLeft,
+                                                        margin: EdgeInsets.only(right:30, bottom:55, top: 150),
+                                                        child: ElevatedButton(
+                                                  onPressed: () {
+                                                  final player = AudioPlayer();/// new
+                                                  player.play(AssetSource('How_Talk.mp3'));/// new CHANGE AUDIO
+                                                  },
+                                                  style: ElevatedButton.styleFrom(
+                                                backgroundColor: Colors.transparent,
+                                                foregroundColor: Colors.black,
+                                                elevation: 0,
+                                                  ),
+                                              
+                                            child: Image.asset(ImageConstant.imgImage164))),//end new
                                               SizedBox(  width: 1   .h), //بين الكلام والصورة
                                               Text(
                                                 quizData[currentIndex]
@@ -273,13 +291,30 @@ class _SpeakQuizState extends State<SpeakQuiz> {
                               ),
                             ),
                           ),
-                          CustomImageView(
-                            imagePath: ImageConstant.imgImage167, //الصوت عند السؤال
+                          // CustomImageView(
+                          //   imagePath: ImageConstant.imgImage167, //الصوت عند السؤال
+                          //   height: 28.v,
+                          //   width: 27.h,
+                          //   alignment: Alignment.topLeft,
+                          //   margin: EdgeInsets.only(left: 18.h,top: 53),
+                          // ),
+                          Container(///new
                             height: 28.v,
                             width: 27.h,
                             alignment: Alignment.topLeft,
-                            margin: EdgeInsets.only(left: 18.h,top: 53),
-                          ),
+                            margin: EdgeInsets.only(right:300.h, bottom:550, top: 150),
+                            child: ElevatedButton(
+                                onPressed: () {
+                                final player = AudioPlayer();/// new
+                                player.play(AssetSource('whatWord.mp3'));/// new
+                                },
+                                style: ElevatedButton.styleFrom(
+                              backgroundColor: Colors.transparent,
+                              foregroundColor: Colors.black,
+                              elevation: 0,
+                                ),
+                            
+                          child: Image.asset(ImageConstant.imgImage164))),//end new
                         ],
                       ),
                     ),

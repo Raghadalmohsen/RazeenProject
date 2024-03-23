@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:maze/maze.dart';
 import 'package:raghad_s_razeen/core/app_export.dart';
 import 'package:maze/src/models/item.dart' as maze_item;
+import 'package:audioplayers/audioplayers.dart';
 
 class MazeGame extends StatefulWidget {
   MazeGame({Key? key}) : super(key: key);
@@ -94,6 +95,7 @@ class _MazePageState extends State<MazeGame> {
           ],
         ),
       ],
+      
     ),
   ),
 ),
@@ -108,6 +110,23 @@ class _MazePageState extends State<MazeGame> {
               //           alignment: Alignment.topLeft,
               //           margin: EdgeInsets.only(left: 32.h, top: 0),
               //         ),
+              Container(///new
+                            height: 28.v,
+                            width: 27.h,
+                            alignment: Alignment.topLeft,
+                            margin: EdgeInsets.only(right:300.h, bottom:550, top: 150),
+                            child: ElevatedButton(
+                                onPressed: () {
+                                final player = AudioPlayer();/// new
+                                player.play(AssetSource('mazeQuizQuestion.mp3'));/// new
+                                },
+                                style: ElevatedButton.styleFrom(
+                              backgroundColor: Colors.transparent,
+                              foregroundColor: Colors.black,
+                              elevation: 0,
+                                ),
+                            
+                          child: Image.asset(ImageConstant.imgImage164))),//end new
                 
               ],
             ),
@@ -158,6 +177,7 @@ class _MazePageState extends State<MazeGame> {
               ),
             ),
           ],
+          
         ),
       ),
     );

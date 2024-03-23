@@ -7,6 +7,7 @@ import 'package:raghad_s_razeen/widgets/app_bar/appbar_leading_image.dart';
 import 'package:raghad_s_razeen/widgets/app_bar/custom_app_bar.dart';
 import 'package:raghad_s_razeen/widgets/custom_bottom_bar.dart';
 import 'package:raghad_s_razeen/widgets/custom_floating_button.dart';
+import 'package:audioplayers/audioplayers.dart';
 
 class Respectdiffskill extends StatelessWidget {//تقبل الاختلاف
   Respectdiffskill({Key? key})
@@ -254,9 +255,26 @@ class Respectdiffskill extends StatelessWidget {//تقبل الاختلاف
                                       height: 84.v,
                                       width: 94.h,
                                        margin: EdgeInsets.only(
-                                  left: 4.h,
-                                  bottom: 25.v,),
+                                    left: 4.h,
+                                    bottom: 25.v,),
                                     ),
+                          //           Container(///new
+                          //             height: 28.v,
+                          //             width: 27.h,
+                          //             alignment: Alignment.topLeft,
+                          //             margin: EdgeInsets.only(right:30, bottom:55, top: 150),
+                          //             child: ElevatedButton(
+                          //       onPressed: () {
+                          //       final player = AudioPlayer();/// new
+                          //       player.play(AssetSource('How_Changes.mp3'));/// new
+                          //       },
+                          //       style: ElevatedButton.styleFrom(
+                          //     backgroundColor: Colors.transparent,
+                          //     foregroundColor: Colors.black,
+                          //     elevation: 0,
+                          //       ),
+                            
+                          // child: Image.asset(ImageConstant.imgImage164))),//end new
                                   ],
                                 ),
                               ),
@@ -298,6 +316,23 @@ class Respectdiffskill extends StatelessWidget {//تقبل الاختلاف
                     ),
                   ),
                 ),
+                Container(///new
+              height: 28.v,
+              width: 27.h,
+              alignment: Alignment.topLeft,
+              margin: EdgeInsets.only(right:300.h, bottom:550, top: 130),
+              child: ElevatedButton(
+              onPressed: () {
+                 final player = AudioPlayer();/// new
+                  player.play(AssetSource('How_Changes.mp3'));/// new
+               },
+               style: ElevatedButton.styleFrom(
+               backgroundColor: Colors.transparent,
+               foregroundColor: Colors.black,
+               elevation: 0,
+               ),
+                            
+              child: Image.asset(ImageConstant.imgImage164))),//end new
               ],
               // ),
             ),
@@ -353,13 +388,14 @@ class Respectdiffskill extends StatelessWidget {//تقبل الاختلاف
               ),
             ),
           ),
-          CustomImageView(
-            imagePath: ImageConstant.imgImage164,
-            height: 28.v,
-            width: 27.h,
-            alignment: Alignment.topLeft,
-            margin: EdgeInsets.only(left: 12.h),
-          ),
+          // CustomImageView(
+          //   imagePath: ImageConstant.imgImage164,
+          //   height: 28.v,
+          //   width: 27.h,
+          //   alignment: Alignment.topLeft,
+          //   margin: EdgeInsets.only(left: 12.h),
+          // ),
+           
         ],
       ),
     );

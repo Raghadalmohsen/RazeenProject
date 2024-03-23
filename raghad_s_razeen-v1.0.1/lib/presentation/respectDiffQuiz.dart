@@ -7,6 +7,7 @@ import 'package:raghad_s_razeen/widgets/custom_elevated_button.dart';
 //import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:raghad_s_razeen/presentation/happyfeedback.dart';
 import 'package:raghad_s_razeen/presentation/sadfeedback.dart';
+import 'package:audioplayers/audioplayers.dart';
 
 class RespectDiffQuiz extends StatefulWidget {
   const RespectDiffQuiz({Key? key})
@@ -354,13 +355,30 @@ class _RespectDiffQuizState extends State<RespectDiffQuiz> {
                           ),
                         ),
                       ),
-                      CustomImageView(
-                        imagePath: ImageConstant.imgImage167, ////// الصوت
-                        height: 28.v,
-                        width: 27.h,
-                        alignment: Alignment.topLeft,
-                        margin: EdgeInsets.only(left: 30.h, top: 48),
-                      ),
+                      // CustomImageView(
+                      //   imagePath: ImageConstant.imgImage167, ////// الصوت
+                      //   height: 28.v,
+                      //   width: 27.h,
+                      //   alignment: Alignment.topLeft,
+                      //   margin: EdgeInsets.only(left: 30.h, top: 48),
+                      // ),
+                      Container(///new
+                                      height: 28.v,
+                                      width: 27.h,
+                                      alignment: Alignment.topLeft,
+                                      margin: EdgeInsets.only(right:30, bottom:55, top: 150),
+                                      child: ElevatedButton(
+                                onPressed: () {
+                                final player = AudioPlayer();/// new
+                                player.play(AssetSource('classify.mp3'));/// new CHANGE AUDIO
+                                },
+                                style: ElevatedButton.styleFrom(
+                              backgroundColor: Colors.transparent,
+                              foregroundColor: Colors.black,
+                              elevation: 0,
+                                ),
+                            
+                          child: Image.asset(ImageConstant.imgImage164))),//end new
                     ],
                   ),
                 ),

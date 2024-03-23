@@ -7,6 +7,7 @@ import 'package:raghad_s_razeen/widgets/app_bar/custom_app_bar.dart';
 import 'package:raghad_s_razeen/widgets/custom_bottom_bar.dart';
 import 'package:raghad_s_razeen/widgets/custom_floating_button.dart';
 import 'package:raghad_s_razeen/presentation/mazeGame.dart';
+import 'package:audioplayers/audioplayers.dart';
 
 class Requestskill extends StatelessWidget { //مهارة كيف البي طلبات جدي
   Requestskill({Key? key})
@@ -349,13 +350,30 @@ class Requestskill extends StatelessWidget { //مهارة كيف البي طلب
               ),
             ),
           ),
-          CustomImageView(
-            imagePath: ImageConstant.imgImage164,
-            height: 28.v,
-            width: 27.h,
-            alignment: Alignment.topLeft,
-            margin: EdgeInsets.only(left: 12.h),
-          ),
+          // CustomImageView(
+          //   imagePath: ImageConstant.imgImage164,
+          //   height: 28.v,
+          //   width: 27.h,
+          //   alignment: Alignment.topLeft,
+          //   margin: EdgeInsets.only(left: 12.h),
+          // ),
+           Container(///new
+                                      height: 28.v,
+                                      width: 27.h,
+                                      alignment: Alignment.topLeft,
+                                      margin: EdgeInsets.only(right:30, bottom:55, top: 150),
+                                      child: ElevatedButton(
+                                onPressed: () {
+                                final player = AudioPlayer();/// new
+                                player.play(AssetSource('How_Changes.mp3'));/// new
+                                },
+                                style: ElevatedButton.styleFrom(
+                              backgroundColor: Colors.transparent,
+                              foregroundColor: Colors.black,
+                              elevation: 0,
+                                ),
+                            
+                          child: Image.asset(ImageConstant.imgImage164))),//end new
         ],
       ),
     );

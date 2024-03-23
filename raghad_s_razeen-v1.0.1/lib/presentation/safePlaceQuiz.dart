@@ -6,6 +6,7 @@ import 'package:raghad_s_razeen/widgets/custom_bottom_bar.dart';
 import 'package:raghad_s_razeen/widgets/custom_elevated_button.dart';
 import 'package:raghad_s_razeen/widgets/custom_icon_button.dart';
 import 'package:raghad_s_razeen/core/app_export.dart';
+import 'package:audioplayers/audioplayers.dart';
 
 
 
@@ -178,6 +179,7 @@ class _SafePlaceQuizState extends State<SafePlaceQuiz> {
                       child: Stack(
                         alignment: Alignment.center,
                         children: [
+                          
                           Align(
                             alignment: Alignment.center,
                            
@@ -206,13 +208,9 @@ class _SafePlaceQuizState extends State<SafePlaceQuiz> {
                                child: currentIndex < quizData.length
                                   ? buildQuizQuestion(currentIndex)
                                   : Text('Quiz Completed!'),// فيه شي هنا بعد 
-
-
-
-
                             ),
-                          
-                          ),
+                            ),
+
                           Align(
                             alignment: Alignment.topCenter,
                             child: Container(
@@ -231,7 +229,7 @@ class _SafePlaceQuizState extends State<SafePlaceQuiz> {
                             alignment: Alignment.topCenter,
                             child: Container(
                               width: 256.h,
-                              margin: EdgeInsets.only(top: 72.v,left: 43),
+                              margin: EdgeInsets.only(top: 72.v,left: 22),
                               // decoration: AppDecoration.outlinePrimary1,////////////////
                               child: Text(
                                 "                 هل المكان مناسب لجدك؟",
@@ -242,14 +240,14 @@ class _SafePlaceQuizState extends State<SafePlaceQuiz> {
                               ),
                             ),
                           ),
-                          CustomImageView(
-                            imagePath: ImageConstant.imgImage167, ////// الصوت
-                            height: 28.v,
-                            width: 27.h,
-                            alignment: Alignment.topLeft,
-                            margin: EdgeInsets.only(left: 32.h,top: 45),
-                          ),
-                        ],
+                          // CustomImageView(
+                          //   imagePath: ImageConstant.imgImage167, ////// الصوت
+                          //   height: 28.v,
+                          //   width: 27.h,
+                          //   alignment: Alignment.topLeft,
+                          //   margin: EdgeInsets.only(left: 32.h,top: 45),
+                          // ),
+                        ],//
                       ),
                     ),
                   ),
@@ -269,6 +267,23 @@ class _SafePlaceQuizState extends State<SafePlaceQuiz> {
                     alignment: Alignment.bottomLeft,
                     margin: EdgeInsets.only(bottom: 20.v,),
                   ),
+                  Container(///new
+                            height: 28.v,
+                            width: 27.h,
+                            alignment: Alignment.topLeft,
+                            margin: EdgeInsets.only(right:300.h, bottom:550, top: 150),
+                            child: ElevatedButton(
+                                onPressed: () {
+                                final player = AudioPlayer();/// new
+                                player.play(AssetSource('SafeplaceQuizAudio.mp3'));/// new
+                                },
+                                style: ElevatedButton.styleFrom(
+                              backgroundColor: Colors.transparent,
+                              foregroundColor: Colors.black,
+                              elevation: 0,
+                                ),
+                            
+                          child: Image.asset(ImageConstant.imgImage164))),//end new
                 ],
               ),
             ),
