@@ -74,16 +74,17 @@ class _MazePageState extends State<MazeGame> {
     child: Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
+        
         Row(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            CustomImageView(
-              imagePath: ImageConstant.imgImage167,
-              height: 28.v,
-              width: 27.h,
-              alignment: Alignment.topLeft,
-              margin: EdgeInsets.only(left: 0.h), // Adjust as needed
-            ),
+            // CustomImageView(
+            //   imagePath: ImageConstant.imgImage167,
+            //   height: 28.v,
+            //   width: 27.h,
+            //   alignment: Alignment.topLeft,
+            //   margin: EdgeInsets.only(left: 0.h), // Adjust as needed
+            // ),
             Expanded(
               child: Text(
                 "                         احضر الماء لجدك",
@@ -92,9 +93,11 @@ class _MazePageState extends State<MazeGame> {
                       style:TextStyle(fontSize: 18,color: Colors.black),
               ),
             ),
+            
           ],
         ),
       ],
+      
       
     ),
   ),
@@ -110,23 +113,7 @@ class _MazePageState extends State<MazeGame> {
               //           alignment: Alignment.topLeft,
               //           margin: EdgeInsets.only(left: 32.h, top: 0),
               //         ),
-              Container(///new
-                            height: 28.v,
-                            width: 27.h,
-                            alignment: Alignment.topLeft,
-                            margin: EdgeInsets.only(right:300.h, bottom:550, top: 150),
-                            child: ElevatedButton(
-                                onPressed: () {
-                                final player = AudioPlayer();/// new
-                                player.play(AssetSource('mazeQuizQuestion.mp3'));/// new
-                                },
-                                style: ElevatedButton.styleFrom(
-                              backgroundColor: Colors.transparent,
-                              foregroundColor: Colors.black,
-                              elevation: 0,
-                                ),
-                            
-                          child: Image.asset(ImageConstant.imgImage164))),//end new
+              
                 
               ],
             ),
@@ -134,7 +121,7 @@ class _MazePageState extends State<MazeGame> {
               top: 3.v,
               right: 0,
               child: CustomImageView(
-                imagePath: ImageConstant.imgImage23,
+                imagePath: ImageConstant.imgImage23,//star
                 height: 100.v,
                 width: 94.h,
                 alignment: Alignment.topRight,
@@ -176,6 +163,23 @@ class _MazePageState extends State<MazeGame> {
                 },
               ),
             ),
+            Container(///new
+                            height: 28.v,
+                            width: 27.h,
+                            alignment: Alignment.topLeft,
+                            margin: EdgeInsets.only(left:70.h, bottom:350, top: 20),
+                            child: ElevatedButton(
+                                onPressed: () {
+                                final player = AudioPlayer();/// new
+                                player.play(AssetSource('mazeQuizQuestion.mp3'));/// new
+                                },
+                                style: ElevatedButton.styleFrom(
+                              backgroundColor: Colors.transparent,
+                              foregroundColor: Colors.black,
+                              elevation: 0,
+                                ),
+                            
+                          child: Image.asset(ImageConstant.imgImage164))),//end new
           ],
           
         ),

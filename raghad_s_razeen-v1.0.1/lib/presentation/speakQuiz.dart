@@ -178,6 +178,7 @@ class _SpeakQuizState extends State<SpeakQuiz> {
                                         //     style: TextStyle(fontSize: 18,color: Colors.black),
                                         //   ),
                                         // ),
+                                        
                                         child: Padding(
                                           padding: EdgeInsets.all(8.h),
                                           child: Row(
@@ -190,23 +191,8 @@ class _SpeakQuizState extends State<SpeakQuiz> {
                                               //   alignment: Alignment.topLeft, 
                                               //   // margin: EdgeInsets.only(left: 0),
                                               // ),
-                                              Container(///new
-                                                        height: 28.v,
-                                                        width: 27.h,
-                                                        alignment: Alignment.topLeft,
-                                                        margin: EdgeInsets.only(right:30, bottom:55, top: 150),
-                                                        child: ElevatedButton(
-                                                  onPressed: () {
-                                                  final player = AudioPlayer();/// new
-                                                  player.play(AssetSource('How_Talk.mp3'));/// new CHANGE AUDIO
-                                                  },
-                                                  style: ElevatedButton.styleFrom(
-                                                backgroundColor: Colors.transparent,
-                                                foregroundColor: Colors.black,
-                                                elevation: 0,
-                                                  ),
                                               
-                                            child: Image.asset(ImageConstant.imgImage164))),//end new
+                                              
                                               SizedBox(  width: 1   .h), //بين الكلام والصورة
                                               Text(
                                                 quizData[currentIndex]
@@ -277,14 +263,15 @@ class _SpeakQuizState extends State<SpeakQuiz> {
                               ),
                             ),
                           ),
+                        
                           Align(
                             alignment: Alignment.topCenter,
                             child: Container(
                               width: 256.h,
-                              margin: EdgeInsets.only(top: 79.v,left: 29),
+                              margin: EdgeInsets.only(top: 79.v,left: 3),
                               // decoration: AppDecoration.outlinePrimary1, //ينحذف
                               child: Text(
-                                "           ما الكلمة المناسبة لهذا الموقف؟",
+                                "           ما الكلمة المناسبة لهذا الموقف؟  ",
                                 maxLines: null,
                                 overflow: TextOverflow.ellipsis,
                                 style: theme.textTheme.titleMedium,
@@ -302,7 +289,7 @@ class _SpeakQuizState extends State<SpeakQuiz> {
                             height: 28.v,
                             width: 27.h,
                             alignment: Alignment.topLeft,
-                            margin: EdgeInsets.only(right:300.h, bottom:550, top: 150),
+                            margin: EdgeInsets.only(right:240.h, bottom:690, top: 30),
                             child: ElevatedButton(
                                 onPressed: () {
                                 final player = AudioPlayer();/// new

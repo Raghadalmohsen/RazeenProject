@@ -300,23 +300,23 @@ class Safeplaceskill extends StatelessWidget { //مهارة سلامة المك�
                     ),
                   ),
                 ),
-                //  Container(///new
-                //             height: 28.v,
-                //             width: 27.h,
-                //             alignment: Alignment.topLeft,
-                //             margin: EdgeInsets.only(right:300.h, bottom:550, top: 160),
-                //             child: ElevatedButton(
-                //                 onPressed: () {
-                //                 final player = AudioPlayer();/// new
-                //                 player.play(AssetSource('How_safe.mp3'));/// new
-                //                 },
-                //                 style: ElevatedButton.styleFrom(
-                //               backgroundColor: Colors.transparent,
-                //               foregroundColor: Colors.black,
-                //               elevation: 0,
-                //                 ),
+                 Container(///new
+                            height: 28.v,
+                            width: 27.h,
+                            alignment: Alignment.topLeft,
+                            margin: EdgeInsets.only(right:300.h, bottom:590, top: 130),
+                            child: ElevatedButton(
+                                onPressed: () {
+                                final player = AudioPlayer();/// new
+                                player.play(AssetSource('How_Safe.mp3'));/// new
+                                },
+                                style: ElevatedButton.styleFrom(
+                              backgroundColor: Colors.transparent,
+                              foregroundColor: Colors.black,
+                              elevation: 0,
+                                ),
                             
-                //           child: Image.asset(ImageConstant.imgImage164))),//end new
+                          child: Image.asset(ImageConstant.imgImage164))),//end new
               ],
               // ),
             ),

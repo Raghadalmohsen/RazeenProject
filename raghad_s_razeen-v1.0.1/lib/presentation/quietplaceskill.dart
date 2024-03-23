@@ -301,6 +301,23 @@ class Quietplaceskill extends StatelessWidget { //المحافظة على اله
                     ),
                   ),
                 ),
+                Container(///new
+                                      height: 28.v,
+                                      width: 27.h,
+                                      alignment: Alignment.topLeft,
+                                      margin: EdgeInsets.only(right:300.h, bottom:590, top: 130),
+                                      child: ElevatedButton(
+                                onPressed: () {
+                                final player = AudioPlayer();/// new
+                                player.play(AssetSource('How_Quite.mp3'));/// new
+                                },
+                                style: ElevatedButton.styleFrom(
+                              backgroundColor: Colors.transparent,
+                              foregroundColor: Colors.black,
+                              elevation: 0,
+                                ),
+                            
+                          child: Image.asset(ImageConstant.imgImage164))),//end new
               ],
               // ),
             ),
@@ -363,23 +380,7 @@ class Quietplaceskill extends StatelessWidget { //المحافظة على اله
           //   alignment: Alignment.topLeft,
           //   margin: EdgeInsets.only(left: 12.h),
           // ),
-          Container(///new
-                                      height: 28.v,
-                                      width: 27.h,
-                                      alignment: Alignment.topLeft,
-                                      margin: EdgeInsets.only(right:30, bottom:55, top: 150),
-                                      child: ElevatedButton(
-                                onPressed: () {
-                                final player = AudioPlayer();/// new
-                                player.play(AssetSource('How_Quite.mp3'));/// new
-                                },
-                                style: ElevatedButton.styleFrom(
-                              backgroundColor: Colors.transparent,
-                              foregroundColor: Colors.black,
-                              elevation: 0,
-                                ),
-                            
-                          child: Image.asset(ImageConstant.imgImage164))),//end new
+          
         ],
       ),
     );

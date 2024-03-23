@@ -242,11 +242,11 @@ class _RequestQuiz2State extends State<RequestQuiz2> {
                                       height: 28.v,
                                       width: 27.h,
                                       alignment: Alignment.topLeft,
-                                      margin: EdgeInsets.only(right:30, bottom:55, top: 150),
+                                      margin: EdgeInsets.only(left:120.h, bottom:155, top: 250),
                                       child: ElevatedButton(
                                 onPressed: () {
                                 final player = AudioPlayer();/// new
-                                player.play(AssetSource('Newspaper.mp3'));/// new
+                                player.play(AssetSource('bring_tissue.mp3'));/// new
                                 },
                                 style: ElevatedButton.styleFrom(
                               backgroundColor: Colors.transparent,
@@ -276,7 +276,7 @@ class _RequestQuiz2State extends State<RequestQuiz2> {
                           margin: EdgeInsets.only(top: 80.v),
                           // decoration: AppDecoration.outlinePrimary1,////////////////
                           child: Text(
-                            "             ضع الشكل في المكان المناسب",
+                            "             ضع الشكل بالمكان المناسب",
                             maxLines: null,
                             overflow: TextOverflow.ellipsis,
                             style: theme.textTheme.titleMedium,
@@ -294,7 +294,7 @@ class _RequestQuiz2State extends State<RequestQuiz2> {
                                       height: 28.v,
                                       width: 27.h,
                                       alignment: Alignment.topLeft,
-                                      margin: EdgeInsets.only(right:30, bottom:55, top: 150),
+                                      margin: EdgeInsets.only(right:240.h, bottom:590, top: 55),
                                       child: ElevatedButton(
                                 onPressed: () {
                                 final player = AudioPlayer();/// new

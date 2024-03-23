@@ -7,6 +7,7 @@ import 'package:raghad_s_razeen/theme/custom_text_style.dart';
 import 'package:raghad_s_razeen/theme/theme_helper.dart';
 import 'package:raghad_s_razeen/widgets/custom_image_view.dart';
 import 'package:flutter/material.dart';
+import 'package:audioplayers/audioplayers.dart';
 
 class Speakgame extends StatefulWidget {
   const Speakgame({Key? key}) : super(key: key);
@@ -378,13 +379,30 @@ class _SpeakgameState extends State<Speakgame> {
                             ),
                           ),
                         ),
-                        CustomImageView(
-                          imagePath: ImageConstant.imgImage167, ////// الصوت
-                          height: 28.v,
-                          width: 27.h,
-                          alignment: Alignment.topLeft,
-                          margin: EdgeInsets.only(left: 30.h, top: 110),
-                        ),
+                        // CustomImageView(
+                        //   imagePath: ImageConstant.imgImage167, ////// الصوت
+                        //   height: 28.v,
+                        //   width: 27.h,
+                        //   alignment: Alignment.topLeft,
+                        //   margin: EdgeInsets.only(left: 30.h, top: 110),
+                        // ),
+                        Container(///new
+                            height: 28.v,
+                            width: 27.h,
+                            alignment: Alignment.topLeft,
+                            margin: EdgeInsets.only(right:300.h, bottom:580, top: 110),
+                            child: ElevatedButton(
+                                onPressed: () {
+                                final player = AudioPlayer();/// new
+                                player.play(AssetSource('whatWord.mp3'));/// new
+                                },
+                                style: ElevatedButton.styleFrom(
+                              backgroundColor: Colors.transparent,
+                              foregroundColor: Colors.black,
+                              elevation: 0,
+                                ),
+                            
+                          child: Image.asset(ImageConstant.imgImage164))),//end new
                       ],
                     ),
                   ),
@@ -394,7 +412,7 @@ class _SpeakgameState extends State<Speakgame> {
                   height: 114.v,
                   width: 94.h,
                   alignment: Alignment.topRight,
-                  margin: EdgeInsets.only(top: 115.v),
+                  margin: EdgeInsets.only(top: 90.v),
                 ),
                 // CustomImageView(
                 //   imagePath: ImageConstant.imgScreenshot2023, //رزين

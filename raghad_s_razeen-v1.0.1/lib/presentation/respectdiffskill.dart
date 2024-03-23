@@ -320,7 +320,7 @@ class Respectdiffskill extends StatelessWidget {//تقبل الاختلاف
               height: 28.v,
               width: 27.h,
               alignment: Alignment.topLeft,
-              margin: EdgeInsets.only(right:300.h, bottom:550, top: 130),
+              margin: EdgeInsets.only(right:300.h, bottom:590, top: 130),
               child: ElevatedButton(
               onPressed: () {
                  final player = AudioPlayer();/// new

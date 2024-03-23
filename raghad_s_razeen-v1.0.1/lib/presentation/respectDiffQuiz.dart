@@ -366,7 +366,7 @@ class _RespectDiffQuizState extends State<RespectDiffQuiz> {
                                       height: 28.v,
                                       width: 27.h,
                                       alignment: Alignment.topLeft,
-                                      margin: EdgeInsets.only(right:30, bottom:55, top: 150),
+                                      margin: EdgeInsets.only(right:250.h, bottom:180, top: 55),
                                       child: ElevatedButton(
                                 onPressed: () {
                                 final player = AudioPlayer();/// new

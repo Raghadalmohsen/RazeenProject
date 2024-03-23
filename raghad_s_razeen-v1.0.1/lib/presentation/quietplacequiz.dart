@@ -353,7 +353,7 @@ class _QuietplacequizState extends State<Quietplacequiz> {
                           margin: EdgeInsets.only(top: 80.v,left: 30),
                           // decoration: AppDecoration.outlinePrimary1,////////////////
                           child: Text(
-                            "             ضع  في المكان المناسب",////
+                            "             ضع الشكل بالمكان المناسب  ",////
                             maxLines: null,
                             overflow: TextOverflow.ellipsis,
                             style: theme.textTheme.titleMedium,
@@ -371,11 +371,11 @@ class _QuietplacequizState extends State<Quietplacequiz> {
                             height: 28.v,
                             width: 27.h,
                             alignment: Alignment.topLeft,
-                            margin: EdgeInsets.only(right:300.h, bottom:550, top: 150),
+                            margin: EdgeInsets.only(right:230.h, bottom:640, top: 55),
                             child: ElevatedButton(
                                 onPressed: () {
                                 final player = AudioPlayer();/// new
-                                player.play(AssetSource('SafeplaceQuizAudio.mp3'));/// new
+                                player.play(AssetSource('Q_Order.mp3'));/// new
                                 },
                                 style: ElevatedButton.styleFrom(
                               backgroundColor: Colors.transparent,
