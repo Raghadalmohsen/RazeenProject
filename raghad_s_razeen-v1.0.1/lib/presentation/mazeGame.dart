@@ -3,6 +3,8 @@ import 'package:maze/maze.dart';
 import 'package:raghad_s_razeen/core/app_export.dart';
 import 'package:maze/src/models/item.dart' as maze_item;
 import 'package:audioplayers/audioplayers.dart';
+import 'package:raghad_s_razeen/presentation/gameFeedback.dart';
+import 'package:raghad_s_razeen/presentation/medalsFeedback.dart';
 
 class MazeGame extends StatefulWidget {
   MazeGame({Key? key}) : super(key: key);
@@ -42,7 +44,12 @@ class _MazePageState extends State<MazeGame> {
               child: TextButton(
                 onPressed: () {
                   Navigator.pop(context); // Close the dialog
-                  Navigator.pop(context); // Navigate back to the previous screen
+                  Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) =>
+                        GameFeedback()), //next page 
+              );// Navigate back to the previous screen
                 },
                 child: Text('موافق', style: TextStyle(fontSize: 18, color: Colors.blue)),
               ),

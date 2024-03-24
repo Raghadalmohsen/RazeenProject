@@ -509,4 +509,6 @@ static String pinkhome = '$imagePath/pinkhome.png';
   static String mem3 = '$imagePath/mem3.png';
    static String mem4 = '$imagePath/mem4.png';
   static String imageNotFound = 'assets/images/image_not_found.png';
+  static String bg2 = 'assets/images/bg2.png';
+  static String cloudnine = 'assets/images/cloudnine.png';
 }

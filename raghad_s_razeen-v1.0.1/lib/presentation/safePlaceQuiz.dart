@@ -49,6 +49,12 @@ class _SafePlaceQuizState extends State<SafePlaceQuiz> {
       builder: (BuildContext context) {
         return AlertDialog(
           title: Text(userAnswer == correctAnswer ? 'إجابة صحيحة' : 'إجابة خاطئة',textAlign: TextAlign.center,),
+          
+  // title: Image.asset(
+  //   userAnswer == correctAnswer ? 'assets/images/bravo.png' : 'assets/images/wrongICON.png',
+  //   fit: BoxFit.contain,
+  // ),
+
           actions: [
             Center(
             child:TextButton(

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:raghad_s_razeen/core/utils/image_constant.dart';
 import 'package:raghad_s_razeen/core/utils/size_utils.dart';
+import 'package:raghad_s_razeen/presentation/gameFeedback.dart';
 import 'package:raghad_s_razeen/presentation/razeenmap.dart';
 import 'package:raghad_s_razeen/presentation/speakskill.dart';
 import 'package:raghad_s_razeen/theme/app_decoration.dart';
@@ -59,7 +60,7 @@ class _SpeakgameState extends State<Speakgame> {
       Future.delayed(Duration(seconds: 0), () {
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => Speakskill()), //بعدين نغيرها لفيدباك اللعبة*
+          MaterialPageRoute(builder: (context) => GameFeedback()), //بعدين نغيرها لفيدباك اللعبة*
         );
       });
     }
@@ -475,4 +476,6 @@ class _SpeakgameState extends State<Speakgame> {
       textScaleFactor: 2,
     )));
   }
+
+  
 }

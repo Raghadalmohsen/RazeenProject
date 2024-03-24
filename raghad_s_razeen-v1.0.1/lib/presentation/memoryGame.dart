@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:raghad_s_razeen/core/utils/image_constant.dart';
 
 import 'package:raghad_s_razeen/core/utils/size_utils.dart';
+import 'package:raghad_s_razeen/presentation/gameFeedback.dart';
 
 import 'package:raghad_s_razeen/theme/app_decoration.dart';
 
@@ -142,7 +143,12 @@ class _MemoryGameState extends State<MemoryGame> {
 
                   Navigator.pop(context); // Close the dialog
 
-                  Navigator.pop(context); // Navigate back to the previous screen
+                  Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) =>
+                        GameFeedback()), //next page 
+              ); // Navigate back to the previous screen
 
                 },
 

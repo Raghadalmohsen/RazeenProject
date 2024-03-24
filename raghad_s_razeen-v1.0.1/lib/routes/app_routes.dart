@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:raghad_s_razeen/core/app_export.dart';
 import 'package:raghad_s_razeen/presentation/app_navigation_screen/app_navigation_screen.dart';
 import 'package:raghad_s_razeen/presentation/firstpage.dart';//
 import 'package:raghad_s_razeen/presentation/initialscreen.dart';//
@@ -30,6 +31,8 @@ import 'package:raghad_s_razeen/presentation/speakgame.dart';//4
 import 'package:raghad_s_razeen/presentation/safeplaceAR.dart';//4
 import 'package:raghad_s_razeen/presentation/safeplacestory.dart';//4
 import 'package:raghad_s_razeen/presentation/memoryGame.dart';
+import 'package:raghad_s_razeen/presentation/gameFeedback.dart';
+
 
 class AppRoutes {
    static const String firstpage = '/firstpage';//
@@ -63,6 +66,8 @@ class AppRoutes {
    static const String safeplacestory ='/safeplacestory';//4
    static const String memoryGame = '/memoryGame';//4
    static const String appNavigationScreen = '/app_navigation_screen';
+   static const String gameFeedback = '/gameFeedback';
+  
 
   static Map<String, WidgetBuilder> routes = {
     firstpage:(context) => Firstpage(),//
@@ -95,6 +100,8 @@ class AppRoutes {
     safeplaceAR:(context) => SafePlaceAR(),
     safeplacestory:(context) => Safeplacestory(),
     memoryGame:(context) => MemoryGame(),
-    appNavigationScreen: (context) => AppNavigationScreen()
+    appNavigationScreen: (context) => AppNavigationScreen(),
+    gameFeedback: (context) => GameFeedback()
+    
   };
 }
