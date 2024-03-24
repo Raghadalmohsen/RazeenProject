@@ -57,6 +57,8 @@ flutter:
     - assets/SafeplaceQuizAudio.mp3
     - assets/thankyouGift.mp3
     - assets/whatWord.mp3
+    - assets/maze_water.mp3
+    - assets/puzzle.mp3
 
    
   fonts: 

@@ -171,7 +171,7 @@ class _MazePageState extends State<MazeGame> {
                             child: ElevatedButton(
                                 onPressed: () {
                                 final player = AudioPlayer();/// new
-                                player.play(AssetSource('mazeQuizQuestion.mp3'));/// new
+                                player.play(AssetSource('maze_water.mp3'));/// new
                                 },
                                 style: ElevatedButton.styleFrom(
                               backgroundColor: Colors.transparent,
