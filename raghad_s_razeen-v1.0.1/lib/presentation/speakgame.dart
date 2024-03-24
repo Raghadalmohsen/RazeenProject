@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:raghad_s_razeen/core/utils/image_constant.dart';
 import 'package:raghad_s_razeen/core/utils/size_utils.dart';
 import 'package:raghad_s_razeen/presentation/razeenmap.dart';
+import 'package:raghad_s_razeen/presentation/speakskill.dart';
 import 'package:raghad_s_razeen/theme/app_decoration.dart';
 import 'package:raghad_s_razeen/theme/custom_text_style.dart';
 import 'package:raghad_s_razeen/theme/theme_helper.dart';
@@ -27,26 +28,44 @@ class _SpeakgameState extends State<Speakgame> {
   String _red = 'red';
   String _yellow = 'yellow';
   String _green = 'green';
-  
+
 // late int score=0;
 
 //  void initState() {
 //     super.initState();
 //     navigateToFeedbackScreen(); /////////////////////////////
 //   }
-  
 
 //   void navigateToFeedbackScreen() {
-//   if (score == 4) {// delete 
+//   if (score == 4) {// delete
 //     Future.delayed(Duration(seconds: 0), () {// 3
 //       Navigator.push(
 //         context,
-//         MaterialPageRoute(builder: (context) => Razeenmap()),// new class 
+//         MaterialPageRoute(builder: (context) => Razeenmap()),// new class
 //       );
 //     });
-//   } 
-  
-// }
+//   }
+
+//
+//////////////////////////////
+
+  void initState() {
+    super.initState();
+    navigateToFeedbackScreen();
+  }
+
+  void navigateToFeedbackScreen() {
+    if (_isBlueDropped && _isRedDropped && _isYelloDropped && _isGreenDropped) {
+      Future.delayed(Duration(seconds: 0), () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => Speakskill()), //بعدين نغيرها لفيدباك اللعبة*
+        );
+      });
+    }
+  }
+
+////////////
 
   @override
   Widget build(BuildContext context) {
@@ -122,12 +141,15 @@ class _SpeakgameState extends State<Speakgame> {
                                               onWillAccept: (data) {
                                                 return data == _blue;
                                               },
+                                              //////////////////////
                                               onAccept: (data) {
                                                 setState(() {
                                                   _isBlueDropped = true;
                                                   // score++;
                                                 });
+                                                navigateToFeedbackScreen();
                                               },
+                                              ////////////////
                                             ),
                                           ),
                                           Positioned(
@@ -150,12 +172,15 @@ class _SpeakgameState extends State<Speakgame> {
                                               onWillAccept: (data) {
                                                 return data == _red;
                                               },
+                                              ///////////////
                                               onAccept: (data) {
                                                 setState(() {
                                                   _isRedDropped = true;
-                                                  //  score++;
+                                                  // score++;
                                                 });
+                                                navigateToFeedbackScreen();
                                               },
+                                              /////////////
                                             ),
                                           ),
                                           Positioned(
@@ -178,12 +203,15 @@ class _SpeakgameState extends State<Speakgame> {
                                               onWillAccept: (data) {
                                                 return data == _yellow;
                                               },
+                                              //////////////
                                               onAccept: (data) {
                                                 setState(() {
                                                   _isYelloDropped = true;
-                                                  //  score++;
+                                                  // score++;
                                                 });
+                                                navigateToFeedbackScreen();
                                               },
+                                              /////////////
                                             ),
                                           ),
                                           Positioned(
@@ -206,15 +234,15 @@ class _SpeakgameState extends State<Speakgame> {
                                               onWillAccept: (data) {
                                                 return data == _green;
                                               },
+                                              /////////////////
                                               onAccept: (data) {
                                                 setState(() {
                                                   _isGreenDropped = true;
-                                                  //  score++;
-                                                     
+                                                  // score++;
                                                 });
-                                                  //  navigateToFeedbackScreen();//
+                                                navigateToFeedbackScreen();
                                               },
-                                              
+                                              //////////////////////
                                             ),
                                           ),
                                         ],
@@ -374,8 +402,9 @@ class _SpeakgameState extends State<Speakgame> {
                               "                  قم بترتيب الصوره",
                               maxLines: null,
                               overflow: TextOverflow.ellipsis,
-                      // style: theme.textTheme.titleMedium,
-                      style:TextStyle(fontSize: 20,color: Colors.black),
+                              // style: theme.textTheme.titleMedium,
+                              style:
+                                  TextStyle(fontSize: 20, color: Colors.black),
                             ),
                           ),
                         ),
@@ -386,23 +415,30 @@ class _SpeakgameState extends State<Speakgame> {
                         //   alignment: Alignment.topLeft,
                         //   margin: EdgeInsets.only(left: 30.h, top: 110),
                         // ),
-                        Container(///new
+                        Container(
+
+                            ///new
                             height: 28.v,
                             width: 27.h,
                             alignment: Alignment.topLeft,
-                            margin: EdgeInsets.only(right:300.h, bottom:580, top: 110),
+                            margin: EdgeInsets.only(
+                                right: 300.h, bottom: 580, top: 110),
                             child: ElevatedButton(
                                 onPressed: () {
-                                final player = AudioPlayer();/// new
-                                player.play(AssetSource('whatWord.mp3'));/// new
+                                  final player = AudioPlayer();
+
+                                  /// new
+                                  player.play(AssetSource('whatWord.mp3'));
+
+                                  /// new
                                 },
                                 style: ElevatedButton.styleFrom(
-                              backgroundColor: Colors.transparent,
-                              foregroundColor: Colors.black,
-                              elevation: 0,
+                                  backgroundColor: Colors.transparent,
+                                  foregroundColor: Colors.black,
+                                  elevation: 0,
                                 ),
-                            
-                          child: Image.asset(ImageConstant.imgImage164))),//end new
+                                child: Image.asset(
+                                    ImageConstant.imgImage164))), //end new
                       ],
                     ),
                   ),
