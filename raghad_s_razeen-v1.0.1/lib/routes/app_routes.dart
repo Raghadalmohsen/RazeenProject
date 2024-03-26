@@ -82,7 +82,7 @@ class AppRoutes {
     speakskill:(context) => Speakskill(),
     quietplaceskill:(context) => Quietplaceskill(),
     respectdiffskill:(context) => Respectdiffskill(),
-    safeplaceskill:(context) => Safeplaceskill(),
+    safeplaceskill:(context) => Safeplaceskill( safeplace: 'safeplace',), ///////////////////////////////////new
     medals:(context) => Medals(),
     explainmap:(context) => Explainmap(),
     sadfeedback:(context) => Sadfeedback(),

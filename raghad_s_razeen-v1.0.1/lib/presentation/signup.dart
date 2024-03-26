@@ -7,6 +7,9 @@ import 'package:raghad_s_razeen/presentation/signin.dart';
 import 'package:raghad_s_razeen/widgets/custom_elevated_button.dart';
 import 'package:raghad_s_razeen/widgets/custom_text_form_field.dart';
 
+import 'package:cloud_firestore/cloud_firestore.dart'; //
+
+
 class Signup extends StatefulWidget {
   @override
   _SignupState createState() => _SignupState();
@@ -106,6 +109,46 @@ class _SignupState extends State<Signup> {
 
       // Update the user's display name
       await userCredential.user!.updateDisplayName(name);
+
+
+      // Create a Firestore document for the user
+      await FirebaseFirestore.instance
+          .collection('users')
+          .doc(userCredential.user!.uid)
+          .set({
+        'name': name,
+        'email': email,
+        'skills': {
+          'skill1': {
+            'isStoryCompleted': false,
+            'isQuizCompleted': false,
+            'isGameCompleted': false,
+          },
+          'skill2': {
+            'isStoryCompleted': false,
+            'isQuizCompleted': false,
+            'isGameCompleted': false,
+          },
+          'skill3': {
+            'isStoryCompleted': false,
+            'isQuizCompleted': false,
+            'isGameCompleted': false,
+          },
+          'skill4': {
+            'isStoryCompleted': false,
+            'isQuizCompleted': false,
+            'isGameCompleted': false,
+          },
+          'skill5': {
+            'isStoryCompleted': false,
+            'isQuizCompleted': false,
+            'isGameCompleted': false,
+          },
+        },
+      });
+
+      //////////
+
 
       // Navigate to the next screen or perform any other actions
       Navigator.push(

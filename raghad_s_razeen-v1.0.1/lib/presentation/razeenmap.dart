@@ -106,7 +106,7 @@ class  Razeenmap extends StatelessWidget { // صفحة الماب
                                  child: ElevatedButton(
                 onPressed: () { Navigator.push(
                context,
-               MaterialPageRoute(builder: (context) =>  Safeplaceskill()), //سلامة المكان
+               MaterialPageRoute(builder: (context) =>    Safeplaceskill( safeplace: 'safeplace',)), //سلامة المكان////////////////////////////////////////
             );},
                 style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.transparent,
