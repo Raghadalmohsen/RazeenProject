@@ -8,6 +8,8 @@ import 'package:raghad_s_razeen/widgets/custom_icon_button.dart';
 import 'package:raghad_s_razeen/core/app_export.dart';
 import 'package:audioplayers/audioplayers.dart';
 
+import 'package:cloud_firestore/cloud_firestore.dart'; ///////////level
+import 'package:firebase_auth/firebase_auth.dart'; /////////level
 
 
 class SafePlaceQuiz extends StatefulWidget {
@@ -18,6 +20,7 @@ class SafePlaceQuiz extends StatefulWidget {
 }
 
 class _SafePlaceQuizState extends State<SafePlaceQuiz> {
+
   List<Map<String, dynamic>> quizData = [
     {
       'imagePath': 'assets/images/room1.quiz1.png',
@@ -34,63 +37,89 @@ class _SafePlaceQuizState extends State<SafePlaceQuiz> {
   ];
 
   int currentIndex = 0;
-  int correctAnswersCount = 0;///////////////
-  
+  int correctAnswersCount = 0; ///////////////
 
-    void checkAnswer(bool userAnswer) {
+
+////////////////////////////////////////////leval
+  void updateUserQuizCompletionStatus() async {
+  // Get the currently authenticated user
+  User? user = FirebaseAuth.instance.currentUser;
+
+  if (user != null) {
+    String userId = user.uid;
+
+    // Update the Firestore document with the new value
+    try {
+User? user = FirebaseAuth.instance.currentUser;
+
+if (user != null) {
+  String userId = user.uid;
+
+  await FirebaseFirestore.instance
+      .collection('users')
+      .doc(userId)
+      .update({
+    'skills.skill1.isQuizCompleted': true,
+  });
+}
+      print('Quiz completion status updated in Firestore');
+    } catch (e) {
+      print('Failed to update quiz completion status in Firestore: $e');
+    }
+  }
+}
+////////////////////
+  void checkAnswer(bool userAnswer) {
     bool correctAnswer = quizData[currentIndex]['answer'];
 
     if (userAnswer == correctAnswer) {
-    correctAnswersCount++;
-  }
+      correctAnswersCount++;
+    }
 
     showDialog(
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
-          title: Text(userAnswer == correctAnswer ? 'إجابة صحيحة' : 'إجابة خاطئة',textAlign: TextAlign.center,),
-          
-  // title: Image.asset(
-  //   userAnswer == correctAnswer ? 'assets/images/bravo.png' : 'assets/images/wrongICON.png',
-  //   fit: BoxFit.contain,
-  // ),
+          title: Text(
+            userAnswer == correctAnswer ? 'إجابة صحيحة' : 'إجابة خاطئة',
+            textAlign: TextAlign.center,
+          ),
+
+          // title: Image.asset(
+          //   userAnswer == correctAnswer ? 'assets/images/bravo.png' : 'assets/images/wrongICON.png',
+          //   fit: BoxFit.contain,
+          // ),
 
           actions: [
             Center(
-            child:TextButton(
-              child: Text('موافق',style: TextStyle(fontSize: 18)),
-             
-              onPressed: () {
+              child: TextButton(
+                  child: Text('موافق', style: TextStyle(fontSize: 18)),
+                  onPressed: () {
                     Navigator.of(context).pop();
                     setState(() {
                       currentIndex++;
                       if (currentIndex >= quizData.length) {
                         if (correctAnswersCount >= 2) {
+                          updateUserQuizCompletionStatus(); ///////////////////////////level
                           Navigator.push(
                             context,
-                            MaterialPageRoute(
-                                builder: (context) => Happy()),
+                            MaterialPageRoute(builder: (context) => Happy()),
                           );
                         } else {
                           Navigator.push(
                             context,
-                            MaterialPageRoute(
-                                builder: (context) => Sad()),
+                            MaterialPageRoute(builder: (context) => Sad()),
                           );
                         }
                       }
                     });
-                  }
-            ),),
+                  }),
+            ),
           ],
         );
       },
     );
   }
-
-
-
-
 
   Widget buildQuizQuestion(int index) {
     return Column(
@@ -103,17 +132,17 @@ class _SafePlaceQuizState extends State<SafePlaceQuiz> {
         ),
         SizedBox(height: 1),
         Padding(
-          padding: EdgeInsets.only(// شكل مالها فايده 
+          padding: EdgeInsets.only(
+            // شكل مالها فايده
             left: 33.h,
             right: 39.h,
             top: 1,
           ),
         ),
         // Row(
-        
+
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
-          
           children: [
             InkWell(
               onTap: () => checkAnswer(false),
@@ -121,23 +150,21 @@ class _SafePlaceQuizState extends State<SafePlaceQuiz> {
                 'assets/images/wrongICON.png',
                 width: 108,
                 height: 108,
-                
               ),
             ),
-            SizedBox(width: 30),// المسافه بينهم 
+            SizedBox(width: 30), // المسافه بينهم
             InkWell(
               onTap: () => checkAnswer(true),
               child: Image.asset(
                 'assets/images/rightICON.png',
                 width: 98,
                 height: 98,
-                
               ),
             ),
             Padding(
               padding: EdgeInsets.only(
                 left: 10.h,
-                top: 30.v,// بين الصوره والسوال
+                top: 30.v, // بين الصوره والسوال
                 // bottom: 200.v,// بين الصوره والسوال
               ),
             ),
@@ -146,25 +173,25 @@ class _SafePlaceQuizState extends State<SafePlaceQuiz> {
       ],
     );
   }
+
   ///--------------------------------------------------------
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        
         body: SizedBox(
           width: 394.h,
           // child: SingleChildScrollView(
           // physics: NeverScrollableScrollPhysics(),
-            child: SizedBox(
-              height: SizeUtils.height,
-              width: 394.h,
-              child: Stack(
-                alignment: Alignment.topRight,
-                children: [
-                  Align(
-                    alignment: Alignment.center,
-                      child: SingleChildScrollView(
-                      physics: NeverScrollableScrollPhysics(),
+          child: SizedBox(
+            height: SizeUtils.height,
+            width: 394.h,
+            child: Stack(
+              alignment: Alignment.topRight,
+              children: [
+                Align(
+                  alignment: Alignment.center,
+                  child: SingleChildScrollView(
+                    physics: NeverScrollableScrollPhysics(),
                     child: Container(
                       height: SizeUtils.height, ///////////////////////
                       width: 394.h,
@@ -185,10 +212,8 @@ class _SafePlaceQuizState extends State<SafePlaceQuiz> {
                       child: Stack(
                         alignment: Alignment.center,
                         children: [
-                          
                           Align(
                             alignment: Alignment.center,
-                           
                             child: Container(
                               margin: EdgeInsets.only(
                                 top: 70.v,
@@ -208,14 +233,12 @@ class _SafePlaceQuizState extends State<SafePlaceQuiz> {
                               //   mainAxisSize: MainAxisSize.min,
                               //   mainAxisAlignment: MainAxisAlignment.end,
 
-
-
-                                /////الملكههههههه
-                               child: currentIndex < quizData.length
+                              /////الملكههههههه
+                              child: currentIndex < quizData.length
                                   ? buildQuizQuestion(currentIndex)
-                                  : Text('Quiz Completed!'),// فيه شي هنا بعد 
+                                  : Text('Quiz Completed!'),// فيه شي هنا بعد
                             ),
-                            ),
+                          ),
 
                           Align(
                             alignment: Alignment.topCenter,
@@ -235,14 +258,13 @@ class _SafePlaceQuizState extends State<SafePlaceQuiz> {
                             alignment: Alignment.topCenter,
                             child: Container(
                               width: 256.h,
-                              margin: EdgeInsets.only(top: 72.v,left: 22),
+                              margin: EdgeInsets.only(top: 72.v, left: 22),
                               // decoration: AppDecoration.outlinePrimary1,////////////////
                               child: Text(
                                 "                 هل المكان مناسب لجدك؟",
                                 maxLines: null,
                                 overflow: TextOverflow.ellipsis,
                                 style: theme.textTheme.titleMedium,
-                                
                               ),
                             ),
                           ),
@@ -253,48 +275,57 @@ class _SafePlaceQuizState extends State<SafePlaceQuiz> {
                           //   alignment: Alignment.topLeft,
                           //   margin: EdgeInsets.only(left: 32.h,top: 45),
                           // ),
-                        ],//
+                        ], //
                       ),
                     ),
                   ),
+                ),
+
+                CustomImageView(
+                  imagePath: ImageConstant.imgImage23, //النجمه
+                  height: 114.v,
+                  width: 94.h,
+                  alignment: Alignment.topRight,
+                  margin: EdgeInsets.only(top: 120.v),
+                ),
+                CustomImageView(
+                  imagePath: ImageConstant.imgScreenshot2023, //رزين
+                  height: 180.v,
+                  width: 130.h,
+                  alignment: Alignment.bottomLeft,
+                  margin: EdgeInsets.only(
+                    bottom: 20.v,
                   ),
-                
-                  CustomImageView(
-                    imagePath: ImageConstant.imgImage23, //النجمه
-                    height: 114.v,
-                    width: 94.h,
-                    alignment: Alignment.topRight,
-                    margin: EdgeInsets.only(top: 120.v),
-                  ),
-                  CustomImageView(
-                    imagePath: ImageConstant.imgScreenshot2023, //رزين
-                    height: 180.v,
-                    width: 130.h,
-                    alignment: Alignment.bottomLeft,
-                    margin: EdgeInsets.only(bottom: 20.v,),
-                  ),
-                  Container(///new
-                            height: 28.v,
-                            width: 27.h,
-                            alignment: Alignment.topLeft,
-                            margin: EdgeInsets.only(right:300.h, bottom:550, top: 150),
-                            child: ElevatedButton(
-                                onPressed: () {
-                                final player = AudioPlayer();/// new
-                                player.play(AssetSource('SafeplaceQuizAudio.mp3'));/// new
-                                },
-                                style: ElevatedButton.styleFrom(
-                              backgroundColor: Colors.transparent,
-                              foregroundColor: Colors.black,
-                              elevation: 0,
-                                ),
-                            
-                          child: Image.asset(ImageConstant.imgImage164))),//end new
-                ],
-              ),
+                ),
+                Container(
+
+                    ///new
+                    height: 28.v,
+                    width: 27.h,
+                    alignment: Alignment.topLeft,
+                    margin:
+                        EdgeInsets.only(right: 300.h, bottom: 550, top: 150),
+                    child: ElevatedButton(
+                        onPressed: () {
+                          final player = AudioPlayer();
+
+                          /// new
+                          player.play(AssetSource('SafeplaceQuizAudio.mp3'));
+
+                          /// new
+                        },
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: Colors.transparent,
+                          foregroundColor: Colors.black,
+                          elevation: 0,
+                        ),
+                        child:
+                            Image.asset(ImageConstant.imgImage164))), //end new
+              ],
             ),
           ),
-        ), 
+        ),
+      ),
       // ),
     );
   }
@@ -349,7 +380,7 @@ class Happy extends StatelessWidget {
                               //   width: 382.h,
                               //   alignment: Alignment.topLeft,
                               // ),
-  
+
                               Align(
                                 alignment: Alignment.bottomCenter,
                                 child: SizedBox(
@@ -390,13 +421,14 @@ class Happy extends StatelessWidget {
                                             context,
                                             MaterialPageRoute(
                                                 builder: (context) =>
-                                                    Safeplaceskill( safeplace: 'safeplace',)), //next page فيه حركه غبيه هنا هل بنقعد نكرر لكل مهارة الفيدباك ؟؟؟؟
+                                                    Safeplaceskill(
+                                                      safeplace: 'safeplace',
+                                                    )), //next page فيه حركه غبيه هنا هل بنقعد نكرر لكل مهارة الفيدباك ؟؟؟؟
                                           );
 
                                           // Navigator.pop(context); // Navigate back to the previous screen
                                         }, //نهاية التنقل
                                       ),
-                                  
                                     ],
                                   ),
                                 ),
@@ -490,17 +522,17 @@ class Sad extends StatelessWidget {
                                             borderRadius: BorderRadius.circular(
                                               35.h,
                                             ),
-                                            
                                           ),
                                         ),
                                       ),
                                       CustomImageView(
-                                        imagePath: ImageConstant.SadFeedback, // فيدباك
-                                        height: 356.v,
-                                        width: 380.h,
-                                        alignment: Alignment.center,
-                                        margin: EdgeInsets.only(bottom: 42.v)
-                                      ),
+                                          imagePath: ImageConstant
+                                              .SadFeedback, // فيدباك
+                                          height: 356.v,
+                                          width: 380.h,
+                                          alignment: Alignment.center,
+                                          margin:
+                                              EdgeInsets.only(bottom: 42.v)),
                                       CustomElevatedButton(
                                         width: 92.h,
                                         text: "موافق",
@@ -512,7 +544,9 @@ class Sad extends StatelessWidget {
                                             context,
                                             MaterialPageRoute(
                                                 builder: (context) =>
-                                                       Safeplaceskill( safeplace: 'safeplace',)), //next page فيه حركه غبيه هنا هل بنقعد نكرر لكل مهارة الفيدباك ؟؟؟؟
+                                                    Safeplaceskill(
+                                                      safeplace: 'safeplace',
+                                                    )), //next page فيه حركه غبيه هنا هل بنقعد نكرر لكل مهارة الفيدباك ؟؟؟؟
                                           );
                                           // Navigator.pop(context); // Navigate back to the previous screen
                                         }, //نهاية التنقل
@@ -532,7 +566,6 @@ class Sad extends StatelessWidget {
             ],
           ),
         ),
-        
       ),
     );
   }
@@ -544,4 +577,3 @@ class Sad extends StatelessWidget {
     );
   }
 }
-

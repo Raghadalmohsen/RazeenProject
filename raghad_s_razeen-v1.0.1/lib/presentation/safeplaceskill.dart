@@ -285,7 +285,7 @@ void updateProgress() {
                                                             builder: (context) =>
                                                                 SafePlaceQuiz()), //Frame103Screen
                                                       );
-                                                      markQuizCompleted();
+                                                      // markQuizCompleted();
                                                     }
                                                   : null,
                                               style: ElevatedButton.styleFrom(
