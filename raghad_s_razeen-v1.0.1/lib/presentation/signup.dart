@@ -190,22 +190,23 @@ class _SignupState extends State<Signup> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        extendBodyBehindAppBar: true,
+                 extendBodyBehindAppBar: true, // مايشتغل بس نقدر نستغني عنه \ زر الرجوع
         appBar: AppBar(
-          leading: IconButton(
+          // 1. Back Arrow Icon
+          actions:<Widget>[
+        IconButton(
             iconSize: 40,
-            icon: Icon(Icons.arrow_back),
-            color: Color.fromARGB(255, 16, 27, 79),
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => Initialscreen()),
-              );
-            },
+            color: Color.fromARGB(255, 5, 0, 36),
+            icon: Icon(Icons.arrow_forward),
+            onPressed: () => Navigator.pop(context),
           ),
-          backgroundColor: Color.fromARGB(0, 17, 7, 51),
+
+          ],
+           backgroundColor: Color.fromARGB(0, 213, 204, 243),
           elevation: 0,
-        ),
+       
+          leading: IconButton(   color: Color.fromARGB(0, 5, 0, 36),onPressed: (){},            icon: Icon(Icons.arrow_forward),)
+          ),
         resizeToAvoidBottomInset: false,
         body: SizedBox(
           height: SizeUtils.height,
