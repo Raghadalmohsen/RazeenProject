@@ -4,19 +4,102 @@ import 'package:raghad_s_razeen/presentation/initialscreen.dart';
 import 'package:raghad_s_razeen/presentation/medalsFeedback.dart';
 import 'package:raghad_s_razeen/presentation/memoryGame.dart';
 import 'package:raghad_s_razeen/presentation/quietplacequiz.dart';
+import 'package:raghad_s_razeen/presentation/safeplacestory.dart';
 import 'package:raghad_s_razeen/widgets/app_bar/appbar_leading_image.dart';
 import 'package:raghad_s_razeen/widgets/app_bar/custom_app_bar.dart';
 import 'package:raghad_s_razeen/widgets/custom_bottom_bar.dart';
 import 'package:raghad_s_razeen/widgets/custom_floating_button.dart';
 import 'package:audioplayers/audioplayers.dart';
 
-class Quietplaceskill extends StatelessWidget { //المحافظة على الهدوء
-  Quietplaceskill({Key? key})
-      : super(
-          key: key,
-        );
+import 'package:cloud_firestore/cloud_firestore.dart'; //new
+import 'package:firebase_auth/firebase_auth.dart';
 
-  GlobalKey<NavigatorState> navigatorKey = GlobalKey();
+//المحافظة على الهدوء
+
+
+class Quietplaceskill extends StatefulWidget {
+
+  final String quiet; //new
+
+  Quietplaceskill({required this.quiet}); //new
+
+  @override
+  _QuietplaceskillState createState() => _QuietplaceskillState();
+}
+
+class _QuietplaceskillState extends State<Quietplaceskill> {
+  late bool isStoryCompleted = false; //new
+  late bool isQuizCompleted = false;
+  late bool isGameCompleted = false;
+
+  @override //new
+  void initState() {
+    super.initState();
+    fetchUserProgress();
+  }
+
+
+void fetchUserProgress() async {
+  User? user = FirebaseAuth.instance.currentUser;
+
+  if (user != null) {
+    String userId = user.uid;
+    print('Fetching user progress for user ID: $userId');
+
+    DocumentSnapshot userSnapshot = await FirebaseFirestore.instance
+        .collection('users')
+        .doc(userId)
+        .get();
+
+    if (userSnapshot.exists) {
+      print('User progress data: ${userSnapshot.data()}');
+
+      Map<String, dynamic> userData = userSnapshot.data() as Map<String, dynamic>;
+      Map<String, dynamic> skillsData = userData['skills'] as Map<String, dynamic>;
+      Map<String, dynamic> skill3Data = skillsData['skill3'] as Map<String, dynamic>;
+
+      setState(() {
+        isStoryCompleted = skill3Data['isStoryCompleted'] ?? false;
+        isQuizCompleted = skill3Data['isQuizCompleted'] ?? false;
+        isGameCompleted = skill3Data['isGameCompleted'] ?? false;
+      });
+    } else {
+      print('User progress document does not exist');
+    }
+  } else {
+    print('User is not authenticated');
+  }
+}
+
+
+
+void updateProgress() {
+  FirebaseFirestore.instance
+      .collection('users')
+      .doc(FirebaseAuth.instance.currentUser!.uid)
+      .update({
+    'skills.skill3.isStoryCompleted': isStoryCompleted,
+    'skills.skill3.isQuizCompleted': isQuizCompleted,
+    'skills.skill3.isGameCompleted': isGameCompleted,
+  });
+}
+
+//new
+  void markStoryCompleted() {
+    setState(() {
+      isStoryCompleted = true;
+    });
+    updateProgress();
+  }
+
+  void markGameCompleted() {
+    setState(() {
+      isGameCompleted = true;
+    });
+    updateProgress();
+  }
+
+
 
  
    @override
@@ -108,10 +191,14 @@ class Quietplaceskill extends StatelessWidget { //المحافظة على اله
                                             BorderRadiusStyle.roundedBorder33,
                                             ),
                                           child: ElevatedButton(
-                                            onPressed: () { Navigator.push(
+                                           //////////////////////////////////////////game
+                                            onPressed:isQuizCompleted
+                                                        ? () { Navigator.push(
                                           context,
                                           MaterialPageRoute(builder: (context) =>  MemoryGame()),// بتتغير بعدين 
-                                        );},
+                                        );
+                                        markGameCompleted();
+                                        }:null,
                                             style: ElevatedButton.styleFrom(
                                                 backgroundColor: Colors.transparent,
                                                 foregroundColor: const Color.fromARGB(0, 0, 0, 0),
@@ -171,10 +258,13 @@ class Quietplaceskill extends StatelessWidget { //المحافظة على اله
                                             BorderRadiusStyle.roundedBorder33,
                                             ),
                                           child: ElevatedButton(
-                                            onPressed: () { Navigator.push(
+                                           /////////////////////////////////////////////////////////quiz
+                                            onPressed:isStoryCompleted? () { 
+                                              Navigator.push(
                                           context,
                                           MaterialPageRoute(builder: (context) =>  Quietplacequiz()),
-                                        );},
+                                        );
+                                        }:null,
                                             style: ElevatedButton.styleFrom(
                                                 backgroundColor: Colors.transparent,
                                                 foregroundColor: Colors.black,
@@ -226,10 +316,13 @@ class Quietplaceskill extends StatelessWidget { //المحافظة على اله
                                             BorderRadiusStyle.roundedBorder33,
                                             ),
                                           child: ElevatedButton(
+                                          //////////////////////////////////////////////////////story
                                             onPressed: () { Navigator.push(
                                           context,
-                                          MaterialPageRoute(builder: (context) =>  Initialscreen()),
-                                        );},
+                                          MaterialPageRoute(builder: (context) =>  Safeplacestory()),/////////////////////////تتغير للقصة حقتها***
+                                        );
+                                         markStoryCompleted(); ////////
+                                        },
                                             style: ElevatedButton.styleFrom(
                                                 backgroundColor: Colors.transparent,
                                                 foregroundColor: Colors.black,

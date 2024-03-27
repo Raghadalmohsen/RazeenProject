@@ -78,10 +78,10 @@ class AppRoutes {
     setting:(context) => Setting(),//
     profile:(context) => Profile(),
     razeenmap:(context) => Razeenmap(),
-    requestskill:(context) => Requestskill(),
-    speakskill:(context) => Speakskill(),
-    quietplaceskill:(context) => Quietplaceskill(),
-    respectdiffskill:(context) => Respectdiffskill(),
+    requestskill:(context) => Requestskill(request:'request'),///////////////new
+    speakskill:(context) => Speakskill(speak:'speak'),////////////new
+    quietplaceskill:(context) => Quietplaceskill(quiet:'quiet'),/////////////////new
+    respectdiffskill:(context) => Respectdiffskill(respectdiff:'respectdiff'),/////////new
     safeplaceskill:(context) => Safeplaceskill( safeplace: 'safeplace',), ///////////////////////////////////new
     medals:(context) => Medals(),
     explainmap:(context) => Explainmap(),

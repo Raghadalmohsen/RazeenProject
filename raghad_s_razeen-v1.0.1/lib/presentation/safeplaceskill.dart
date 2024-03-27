@@ -15,7 +15,6 @@ import 'package:firebase_auth/firebase_auth.dart';
 //مهارة سلامة المكان
 
 class Safeplaceskill extends StatefulWidget {
-  // const Safeplaceskill({Key? key}) : super(key: key);
 
   final String safeplace; //new
 
@@ -86,13 +85,6 @@ void updateProgress() {
   void markStoryCompleted() {
     setState(() {
       isStoryCompleted = true;
-    });
-    updateProgress();
-  }
-
-  void markQuizCompleted() {
-    setState(() {
-      isQuizCompleted = true;
     });
     updateProgress();
   }
@@ -198,8 +190,7 @@ void updateProgress() {
 
                                                 child: ElevatedButton(
                                                     //////////////////////////////////////////game
-                                                    onPressed: isQuizCompleted
-                                                        ? () {
+                                                    onPressed: isQuizCompleted? () {
                                                             Navigator.push(
                                                               context,
                                                               MaterialPageRoute(
@@ -208,8 +199,7 @@ void updateProgress() {
                                                                           SafePlaceAR()),
                                                             );
                                                             markGameCompleted();
-                                                          }
-                                                        : null,
+                                                          } : null,
                                                     style: ElevatedButton
                                                         .styleFrom(
                                                             backgroundColor:
@@ -285,7 +275,6 @@ void updateProgress() {
                                                             builder: (context) =>
                                                                 SafePlaceQuiz()), //Frame103Screen
                                                       );
-                                                      // markQuizCompleted();
                                                     }
                                                   : null,
                                               style: ElevatedButton.styleFrom(
@@ -348,7 +337,7 @@ void updateProgress() {
                                                               builder: (context) =>
                                                                   Safeplacestory()),
                                                         );
-                                                        markStoryCompleted(); ///////////////????
+                                                        markStoryCompleted(); /////////
                                                       },
                                                       style: ElevatedButton
                                                           .styleFrom(

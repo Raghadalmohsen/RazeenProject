@@ -9,6 +9,10 @@ import 'package:raghad_s_razeen/presentation/happyfeedback.dart';
 import 'package:raghad_s_razeen/presentation/sadfeedback.dart';
 import 'package:audioplayers/audioplayers.dart';
 
+import 'package:cloud_firestore/cloud_firestore.dart'; ///////////level
+import 'package:firebase_auth/firebase_auth.dart'; /////////level
+
+
 class Quietplacequiz extends StatefulWidget {
   const Quietplacequiz({Key? key})
       : super(
@@ -26,6 +30,37 @@ class _QuietplacequizState extends State<Quietplacequiz> {
 
   late int score;
   late bool gameOver;
+
+   
+////////////////////////////////////////////leval
+  void updateUserQuizCompletionStatus() async {
+  // Get the currently authenticated user
+  User? user = FirebaseAuth.instance.currentUser;
+
+  if (user != null) {
+    String userId = user.uid;
+
+    // Update the Firestore document with the new value
+    try {
+User? user = FirebaseAuth.instance.currentUser;
+
+if (user != null) {
+  String userId = user.uid;
+
+  await FirebaseFirestore.instance
+      .collection('users')
+      .doc(userId)
+      .update({
+    'skills.skill3.isQuizCompleted': true,
+  });
+}
+      print('Quiz completion status updated in Firestore');
+    } catch (e) {
+      print('Failed to update quiz completion status in Firestore: $e');
+    }
+  }
+}
+////////////////////
 
   @override
   void initState() {
@@ -94,20 +129,15 @@ class _QuietplacequizState extends State<Quietplacequiz> {
   void navigateToFeedbackScreen() {
      if (items.length == 0) {
 
-  if (score >= 2) {// delete it 
+  if (score >= 2) {
+    updateUserQuizCompletionStatus(); ///////////////////////////level
     Future.delayed(Duration(seconds: 0), () {////////////////////////// timer 
       Navigator.push(
         context,
         MaterialPageRoute(builder: (context) => Happy()),// new class 
       );
     });
-  // } else {
-  //   Future.delayed(Duration(seconds: 0), () {
-  //     Navigator.push(
-  //       context,
-  //       MaterialPageRoute(builder: (context) => Sadfeedback()),// we will delete it 
-  //     );
-  //   });
+
   }}
 }
 
@@ -514,7 +544,7 @@ class Happy extends StatelessWidget {
                                             context,
                                             MaterialPageRoute(
                                                 builder: (context) =>
-                                                    Quietplaceskill()), //next page فيه حركه غبيه هنا هل بنقعد نكرر لكل مهارة الفيدباك ؟؟؟؟
+                                                    Quietplaceskill(quiet:'quiet')), //next page فيه حركه غبيه هنا هل بنقعد نكرر لكل مهارة الفيدباك ؟؟؟؟
                                           );
 
                                           // Navigator.pop(context); // Navigate back to the previous screen

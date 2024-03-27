@@ -119,27 +119,27 @@ class _SignupState extends State<Signup> {
         'name': name,
         'email': email,
         'skills': {
-          'skill1': {
+          'skill1': { //safeplase 
             'isStoryCompleted': false,
             'isQuizCompleted': false,
             'isGameCompleted': false,
           },
-          'skill2': {
+          'skill2': {   //request 
             'isStoryCompleted': false,
             'isQuizCompleted': false,
             'isGameCompleted': false,
           },
-          'skill3': {
+          'skill3': {   //quiet
             'isStoryCompleted': false,
             'isQuizCompleted': false,
             'isGameCompleted': false,
           },
-          'skill4': {
+          'skill4': {   //speak
             'isStoryCompleted': false,
             'isQuizCompleted': false,
             'isGameCompleted': false,
           },
-          'skill5': {
+          'skill5': { //respectDiff
             'isStoryCompleted': false,
             'isQuizCompleted': false,
             'isGameCompleted': false,

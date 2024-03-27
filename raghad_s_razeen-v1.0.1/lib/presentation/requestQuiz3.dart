@@ -7,6 +7,10 @@ import 'package:raghad_s_razeen/widgets/custom_elevated_button.dart';
 import 'package:raghad_s_razeen/presentation/happyfeedback.dart';
 import 'package:raghad_s_razeen/presentation/sadfeedback.dart';
 
+import 'package:cloud_firestore/cloud_firestore.dart'; ///////////level
+import 'package:firebase_auth/firebase_auth.dart'; /////////level
+
+
 class RequestQuiz3 extends StatefulWidget {
   const RequestQuiz3({Key? key})
       : super(
@@ -24,6 +28,37 @@ class _RequestQuiz3State extends State<RequestQuiz3> {
 
   
   late bool gameOver;
+
+  
+////////////////////////////////////////////leval
+  void updateUserQuizCompletionStatus() async {
+  // Get the currently authenticated user
+  User? user = FirebaseAuth.instance.currentUser;
+
+  if (user != null) {
+    String userId = user.uid;
+
+    // Update the Firestore document with the new value
+    try {
+User? user = FirebaseAuth.instance.currentUser;
+
+if (user != null) {
+  String userId = user.uid;
+
+  await FirebaseFirestore.instance
+      .collection('users')
+      .doc(userId)
+      .update({
+    'skills.skill2.isQuizCompleted': true,
+  });
+}
+      print('Quiz completion status updated in Firestore');
+    } catch (e) {
+      print('Failed to update quiz completion status in Firestore: $e');
+    }
+  }
+}
+////////////////////
 
   @override
   void initState() {
@@ -74,6 +109,7 @@ class _RequestQuiz3State extends State<RequestQuiz3> {
   //////////////////////////////
   void navigateToFeedbackScreen() {
     if (items.length == 2) {
+        updateUserQuizCompletionStatus(); ///////////////////////////level
       Navigator.push(
         context,
         MaterialPageRoute(builder: (context) => Happy()),// new class
@@ -442,7 +478,7 @@ class Happy extends StatelessWidget {
                                             context,
                                             MaterialPageRoute(
                                                 builder: (context) =>
-                                                    Requestskill()), //next page فيه حركه غبيه هنا هل بنقعد نكرر لكل مهارة الفيدباك ؟؟؟؟
+                                                   Requestskill(request:'request')), //next page فيه حركه غبيه هنا هل بنقعد نكرر لكل مهارة الفيدباك ؟؟؟؟
                                           );
 
                                           // Navigator.pop(context); // Navigate back to the previous screen

@@ -9,6 +9,10 @@ import 'package:raghad_s_razeen/presentation/happyfeedback.dart';
 import 'package:raghad_s_razeen/presentation/sadfeedback.dart';
 import 'package:audioplayers/audioplayers.dart';
 
+import 'package:cloud_firestore/cloud_firestore.dart'; ///////////level
+import 'package:firebase_auth/firebase_auth.dart'; /////////level
+
+
 class RespectDiffQuiz extends StatefulWidget {
   const RespectDiffQuiz({Key? key})
       : super(
@@ -27,6 +31,37 @@ class _RespectDiffQuizState extends State<RespectDiffQuiz> {
   late int score;
   late bool gameOver;
 
+  
+////////////////////////////////////////////leval
+  void updateUserQuizCompletionStatus() async {
+  // Get the currently authenticated user
+  User? user = FirebaseAuth.instance.currentUser;
+
+  if (user != null) {
+    String userId = user.uid;
+
+    // Update the Firestore document with the new value
+    try {
+User? user = FirebaseAuth.instance.currentUser;
+
+if (user != null) {
+  String userId = user.uid;
+
+  await FirebaseFirestore.instance
+      .collection('users')
+      .doc(userId)
+      .update({
+    'skills.skill5.isQuizCompleted': true,
+  });
+}
+      print('Quiz completion status updated in Firestore');
+    } catch (e) {
+      print('Failed to update quiz completion status in Firestore: $e');
+    }
+  }
+}
+////////////////////
+
   @override
   void initState() {
     super.initState();
@@ -34,19 +69,6 @@ class _RespectDiffQuizState extends State<RespectDiffQuiz> {
     navigateToFeedbackScreen(); /////////////////////////////
   }
 
-  // @override
-  // void initState() {
-  //   super.initState();
-  //   initGame();
-  // }
-  //   @override
-  // void initState() {
-  //   super.initState();
-  //   // Initialize the game
-  //   initGame();
-  //   // Check if the game is over
-  //   checkGameOver();
-  // }
 
   initGame() {
     gameOver = false;
@@ -95,7 +117,8 @@ class _RespectDiffQuizState extends State<RespectDiffQuiz> {
   void navigateToFeedbackScreen() {
      if (items.length == 0) {
 
-  if (score >= 2) {// delete 
+  if (score >= 2) {
+    updateUserQuizCompletionStatus(); ///////////////////////////level
     Future.delayed(Duration(seconds: 0), () {// 3
       Navigator.push(
         context,
@@ -507,7 +530,7 @@ class Happy extends StatelessWidget {
                                             context,
                                             MaterialPageRoute(
                                                 builder: (context) =>
-                                                    Respectdiffskill()), //next page فيه حركه غبيه هنا هل بنقعد نكرر لكل مهارة الفيدباك ؟؟؟؟
+                                                    Respectdiffskill(respectdiff:'respectdiff')), //next page فيه حركه غبيه هنا هل بنقعد نكرر لكل مهارة الفيدباك ؟؟؟؟
                                           );
 
                                           // Navigator.pop(context); // Navigate back to the previous screen

@@ -9,6 +9,9 @@ import 'package:raghad_s_razeen/presentation/happyfeedback.dart';
 import 'package:raghad_s_razeen/presentation/sadfeedback.dart';
 import 'package:audioplayers/audioplayers.dart';
 
+import 'package:cloud_firestore/cloud_firestore.dart'; ///////////level
+import 'package:firebase_auth/firebase_auth.dart'; /////////level
+
 class SpeakQuiz extends StatefulWidget {
   const SpeakQuiz({Key? key}) : super(key: key);
 
@@ -40,6 +43,38 @@ class _SpeakQuizState extends State<SpeakQuiz> {
       'correctAnswerIndex': 1,
     },
   ];
+
+
+////////////////////////////////////////////leval
+  void updateUserQuizCompletionStatus() async {
+  // Get the currently authenticated user
+  User? user = FirebaseAuth.instance.currentUser;
+
+  if (user != null) {
+    String userId = user.uid;
+
+    // Update the Firestore document with the new value
+    try {
+User? user = FirebaseAuth.instance.currentUser;
+
+if (user != null) {
+  String userId = user.uid;
+
+  await FirebaseFirestore.instance
+      .collection('users')
+      .doc(userId)
+      .update({
+    'skills.skill4.isQuizCompleted': true,
+  });
+}
+      print('Quiz completion status updated in Firestore');
+    } catch (e) {
+      print('Failed to update quiz completion status in Firestore: $e');
+    }
+  }
+}
+////////////////////
+
 
   int currentIndex = 0;
   int correctAnswersCount = 0;
@@ -78,6 +113,7 @@ class _SpeakQuizState extends State<SpeakQuiz> {
         currentIndex++;
       } else {
         if (correctAnswersCount >= 2) {
+              updateUserQuizCompletionStatus(); ///////////////////////////level
           Navigator.push(
             context,
             MaterialPageRoute(builder: (context) => Happy()),// new class 
@@ -421,7 +457,7 @@ class Happy extends StatelessWidget {
                                             context,
                                             MaterialPageRoute(
                                                 builder: (context) =>
-                                                    Speakskill()), //next page فيه حركه غبيه هنا هل بنقعد نكرر لكل مهارة الفيدباك ؟؟؟؟
+                                                    Speakskill(speak:'speak')), //next page فيه حركه غبيه هنا هل بنقعد نكرر لكل مهارة الفيدباك ؟؟؟؟
                                           );
 
                                           // Navigator.pop(context); // Navigate back to the previous screen
@@ -543,7 +579,7 @@ class Sad extends StatelessWidget {
                                             context,
                                             MaterialPageRoute(
                                                 builder: (context) =>
-                                                    Speakskill()), //next page فيه حركه غبيه هنا هل بنقعد نكرر لكل مهارة الفيدباك ؟؟؟؟
+                                                    Speakskill(speak:'speak')), //next page فيه حركه غبيه هنا هل بنقعد نكرر لكل مهارة الفيدباك ؟؟؟؟
                                           );
                                           // Navigator.pop(context); // Navigate back to the previous screen
                                         }, //نهاية التنقل

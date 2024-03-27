@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:raghad_s_razeen/core/app_export.dart';
 import 'package:raghad_s_razeen/presentation/initialscreen.dart';
 import 'package:raghad_s_razeen/presentation/requestQuiz.dart';
+import 'package:raghad_s_razeen/presentation/safeplacestory.dart';
 import 'package:raghad_s_razeen/widgets/app_bar/appbar_leading_image.dart';
 import 'package:raghad_s_razeen/widgets/app_bar/custom_app_bar.dart';
 import 'package:raghad_s_razeen/widgets/custom_bottom_bar.dart';
@@ -9,13 +10,98 @@ import 'package:raghad_s_razeen/widgets/custom_floating_button.dart';
 import 'package:raghad_s_razeen/presentation/mazeGame.dart';
 import 'package:audioplayers/audioplayers.dart';
 
-class Requestskill extends StatelessWidget { //مهارة كيف البي طلبات جدي
-  Requestskill({Key? key})
-      : super(
-          key: key,
-        );
 
-  GlobalKey<NavigatorState> navigatorKey = GlobalKey();
+import 'package:cloud_firestore/cloud_firestore.dart'; //new
+import 'package:firebase_auth/firebase_auth.dart';
+
+//مهارة البي طلبات جدي
+class Requestskill extends StatefulWidget {
+
+  final String request; //new
+
+  Requestskill({required this.request}); //new
+
+  @override
+  _RequestskillState createState() => _RequestskillState();
+}
+
+class _RequestskillState extends State<Requestskill> {
+  late bool isStoryCompleted = false; //new
+  late bool isQuizCompleted = false;
+  late bool isGameCompleted = false;
+
+  @override //new
+  void initState() {
+    super.initState();
+    fetchUserProgress();
+  }
+
+
+
+
+void fetchUserProgress() async {
+  User? user = FirebaseAuth.instance.currentUser;
+
+  if (user != null) {
+    String userId = user.uid;
+    print('Fetching user progress for user ID: $userId');
+
+    DocumentSnapshot userSnapshot = await FirebaseFirestore.instance
+        .collection('users')
+        .doc(userId)
+        .get();
+
+    if (userSnapshot.exists) {
+      print('User progress data: ${userSnapshot.data()}');
+
+      Map<String, dynamic> userData = userSnapshot.data() as Map<String, dynamic>;
+      Map<String, dynamic> skillsData = userData['skills'] as Map<String, dynamic>;
+      Map<String, dynamic> skill2Data = skillsData['skill2'] as Map<String, dynamic>;
+
+      setState(() {
+        isStoryCompleted = skill2Data['isStoryCompleted'] ?? false;
+        isQuizCompleted = skill2Data['isQuizCompleted'] ?? false;
+        isGameCompleted = skill2Data['isGameCompleted'] ?? false;
+      });
+    } else {
+      print('User progress document does not exist');
+    }
+  } else {
+    print('User is not authenticated');
+  }
+}
+
+
+
+void updateProgress() {
+  FirebaseFirestore.instance
+      .collection('users')
+      .doc(FirebaseAuth.instance.currentUser!.uid)
+      .update({
+    'skills.skill2.isStoryCompleted': isStoryCompleted,
+    'skills.skill2.isQuizCompleted': isQuizCompleted,
+    'skills.skill2.isGameCompleted': isGameCompleted,
+  });
+}
+
+//new
+  void markStoryCompleted() {
+    setState(() {
+      isStoryCompleted = true;
+    });
+    updateProgress();
+  }
+
+  void markGameCompleted() {
+    setState(() {
+      isGameCompleted = true;
+    });
+    updateProgress();
+  }
+
+
+
+
 
   @override
   Widget build(BuildContext context) {
@@ -106,10 +192,15 @@ class Requestskill extends StatelessWidget { //مهارة كيف البي طلب
                                             BorderRadiusStyle.roundedBorder33,
                                             ),
                                           child: ElevatedButton(
-                                            onPressed: () { Navigator.push(
+                                            //////////////////////////////////////////game
+                                            onPressed: isQuizCompleted
+                                                        ? () { Navigator.push(
                                           context,
                                           MaterialPageRoute(builder: (context) =>  MazeGame()),
-                                        );},
+                                        );
+                                         markGameCompleted();
+                                         }:null,
+
                                             style: ElevatedButton.styleFrom(
                                                 backgroundColor: Colors.transparent,
                                                 foregroundColor: const Color.fromARGB(0, 0, 0, 0),
@@ -169,10 +260,13 @@ class Requestskill extends StatelessWidget { //مهارة كيف البي طلب
                                             BorderRadiusStyle.roundedBorder33,
                                             ),
                                           child: ElevatedButton(
-                                            onPressed: () { Navigator.push(
+                                            /////////////////////////////////////////////////////////quiz
+                                            onPressed: isStoryCompleted
+                                                  ? () { Navigator.push(
                                           context,
                                           MaterialPageRoute(builder: (context) =>  RequestQuiz()),
-                                        );},
+                                        );
+                                        }:null,
                                             style: ElevatedButton.styleFrom(
                                                 backgroundColor: Colors.transparent,
                                                 foregroundColor: Colors.black,
@@ -224,10 +318,13 @@ class Requestskill extends StatelessWidget { //مهارة كيف البي طلب
                                             BorderRadiusStyle.roundedBorder33,
                                             ),
                                           child: ElevatedButton(
+                                            //////////////////////////////////////////////////////story
                                             onPressed: () { Navigator.push(
                                           context,
-                                          MaterialPageRoute(builder: (context) =>  Initialscreen()),
-                                        );},
+                                          MaterialPageRoute(builder: (context) =>  Safeplacestory()), /////////////////////////تتغير للقصة حقتها****
+                                        );
+                                        markStoryCompleted(); ////////
+                                        },
                                             style: ElevatedButton.styleFrom(
                                                 backgroundColor: Colors.transparent,
                                                 foregroundColor: Colors.black,

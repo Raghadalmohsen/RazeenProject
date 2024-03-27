@@ -135,7 +135,7 @@ class  Razeenmap extends StatelessWidget { // صفحة الماب
                                  child: ElevatedButton(
                 onPressed: () { Navigator.push(
                context,
-               MaterialPageRoute(builder: (context) =>  Quietplaceskill()), //المحافظة على الهدوء
+               MaterialPageRoute(builder: (context) =>  Quietplaceskill(quiet:'quiet')), //المحافظة على الهدوء
             );},
                 style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.transparent,
@@ -160,7 +160,7 @@ class  Razeenmap extends StatelessWidget { // صفحة الماب
                                  child: ElevatedButton(
                 onPressed: () { Navigator.push(
                context,
-               MaterialPageRoute(builder: (context) =>  Respectdiffskill()),//تقبل الاختلاف
+               MaterialPageRoute(builder: (context) =>  Respectdiffskill(respectdiff:'respectdiff')),//تقبل الاختلاف
             );},
                 style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.transparent,
@@ -194,7 +194,7 @@ class  Razeenmap extends StatelessWidget { // صفحة الماب
                                  child: ElevatedButton(
                 onPressed: () { Navigator.push(
                context,
-               MaterialPageRoute(builder: (context) =>  Requestskill()), //كيف البي طلبات جدي
+               MaterialPageRoute(builder: (context) =>  Requestskill(request:'request')), //كيف البي طلبات جدي
             );},
                 style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.transparent,
@@ -227,7 +227,7 @@ class  Razeenmap extends StatelessWidget { // صفحة الماب
                                  child: ElevatedButton(
                 onPressed: () { Navigator.push(
                context,
-               MaterialPageRoute(builder: (context) =>  Speakskill()), //التحدث بطريقة مناسبة 
+               MaterialPageRoute(builder: (context) =>  Speakskill(speak:'speak')), //التحدث بطريقة مناسبة 
             );},
                 style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.transparent,

@@ -3,19 +3,108 @@ import 'package:raghad_s_razeen/core/app_export.dart';
 import 'package:raghad_s_razeen/presentation/firstpage.dart';
 import 'package:raghad_s_razeen/presentation/initialscreen.dart';
 import 'package:raghad_s_razeen/presentation/respectDiffQuiz.dart';
+import 'package:raghad_s_razeen/presentation/safeplacestory.dart';
 import 'package:raghad_s_razeen/widgets/app_bar/appbar_leading_image.dart';
 import 'package:raghad_s_razeen/widgets/app_bar/custom_app_bar.dart';
 import 'package:raghad_s_razeen/widgets/custom_bottom_bar.dart';
 import 'package:raghad_s_razeen/widgets/custom_floating_button.dart';
 import 'package:audioplayers/audioplayers.dart';
 
-class Respectdiffskill extends StatelessWidget {//تقبل الاختلاف
-  Respectdiffskill({Key? key})
-      : super(
-          key: key,
-        );
+import 'package:cloud_firestore/cloud_firestore.dart'; //new
+import 'package:firebase_auth/firebase_auth.dart';
 
-  GlobalKey<NavigatorState> navigatorKey = GlobalKey();
+
+// class Respectdiffskill extends StatelessWidget {//تقبل الاختلاف
+//   Respectdiffskill({Key? key})
+//       : super(
+//           key: key,
+//         );
+
+class Respectdiffskill extends StatefulWidget {
+
+  final String respectdiff; //new
+
+  Respectdiffskill({required this.respectdiff}); //new
+
+  @override
+  _RespectdiffskillState createState() => _RespectdiffskillState();
+}
+
+class _RespectdiffskillState extends State<Respectdiffskill> {
+  late bool isStoryCompleted = false; //new
+  late bool isQuizCompleted = false;
+  late bool isGameCompleted = false;
+
+
+  @override //new
+  void initState() {
+    super.initState();
+    fetchUserProgress();
+  }
+
+
+void fetchUserProgress() async {
+  User? user = FirebaseAuth.instance.currentUser;
+
+  if (user != null) {
+    String userId = user.uid;
+    print('Fetching user progress for user ID: $userId');
+
+    DocumentSnapshot userSnapshot = await FirebaseFirestore.instance
+        .collection('users')
+        .doc(userId)
+        .get();
+
+    if (userSnapshot.exists) {
+      print('User progress data: ${userSnapshot.data()}');
+
+      Map<String, dynamic> userData = userSnapshot.data() as Map<String, dynamic>;
+      Map<String, dynamic> skillsData = userData['skills'] as Map<String, dynamic>;
+      Map<String, dynamic> skill5Data = skillsData['skill5'] as Map<String, dynamic>;
+
+      setState(() {
+        isStoryCompleted = skill5Data['isStoryCompleted'] ?? false;
+        isQuizCompleted = skill5Data['isQuizCompleted'] ?? false;
+        isGameCompleted = skill5Data['isGameCompleted'] ?? false;
+      });
+    } else {
+      print('User progress document does not exist');
+    }
+  } else {
+    print('User is not authenticated');
+  }
+}
+
+
+
+void updateProgress() {
+  FirebaseFirestore.instance
+      .collection('users')
+      .doc(FirebaseAuth.instance.currentUser!.uid)
+      .update({
+    'skills.skill5.isStoryCompleted': isStoryCompleted,
+    'skills.skill5.isQuizCompleted': isQuizCompleted,
+    'skills.skill5.isGameCompleted': isGameCompleted,
+  });
+}
+
+//new
+  void markStoryCompleted() {
+    setState(() {
+      isStoryCompleted = true;
+    });
+    updateProgress();
+  }
+
+  void markGameCompleted() {
+    setState(() {
+      isGameCompleted = true;
+    });
+    updateProgress();
+  }
+//
+
+
 
   
    @override
@@ -107,10 +196,14 @@ class Respectdiffskill extends StatelessWidget {//تقبل الاختلاف
                                             BorderRadiusStyle.roundedBorder33,
                                             ),
                                           child: ElevatedButton(
-                                            onPressed: () { Navigator.push(
+                                             //////////////////////////////////////////game
+                                            onPressed: isQuizCompleted?() {
+                                               Navigator.push(
                                           context,
                                           MaterialPageRoute(builder: (context) =>  Initialscreen()),
-                                        );},
+                                        );
+                                        markGameCompleted();
+                                        }:null,
                                             style: ElevatedButton.styleFrom(
                                                 backgroundColor: Colors.transparent,
                                                 foregroundColor: const Color.fromARGB(0, 0, 0, 0),
@@ -170,10 +263,13 @@ class Respectdiffskill extends StatelessWidget {//تقبل الاختلاف
                                             BorderRadiusStyle.roundedBorder33,
                                             ),
                                           child: ElevatedButton(
-                                            onPressed: () { Navigator.push(
+                                           /////////////////////////////////////////////////////////quiz
+                                            onPressed:isStoryCompleted? () {
+                                               Navigator.push(
                                           context,
                                           MaterialPageRoute(builder: (context) =>  RespectDiffQuiz()),
-                                        );},
+                                        );
+                                        }:null,
                                             style: ElevatedButton.styleFrom(
                                                 backgroundColor: Colors.transparent,
                                                 foregroundColor: Colors.black,
@@ -225,10 +321,13 @@ class Respectdiffskill extends StatelessWidget {//تقبل الاختلاف
                                             BorderRadiusStyle.roundedBorder33,
                                             ),
                                           child: ElevatedButton(
+                                            //////////////////////////////////////////////////////story
                                             onPressed: () { Navigator.push(
                                           context,
-                                          MaterialPageRoute(builder: (context) =>  Respectdiffskill()),
-                                        );},
+                                          MaterialPageRoute(builder: (context) =>  Safeplacestory()), ////////تتغير للقصة حقتها**
+                                        );
+                                         markStoryCompleted(); /////////
+                                        },
                                             style: ElevatedButton.styleFrom(
                                                 backgroundColor: Colors.transparent,
                                                 foregroundColor: Colors.black,
