@@ -3,6 +3,7 @@ import 'package:raghad_s_razeen/core/app_export.dart';
 import 'package:raghad_s_razeen/presentation/initialscreen.dart';
 import 'package:raghad_s_razeen/presentation/safeplacestory.dart';
 import 'package:raghad_s_razeen/presentation/speakQuiz.dart';
+import 'package:raghad_s_razeen/presentation/speakQuizq1.dart';
 import 'package:raghad_s_razeen/presentation/speakgame.dart';
 import 'package:raghad_s_razeen/widgets/app_bar/appbar_leading_image.dart';
 import 'package:raghad_s_razeen/widgets/app_bar/custom_app_bar.dart';
@@ -270,7 +271,7 @@ void updateProgress() {
                                             onPressed:isStoryCompleted? () {
                                                Navigator.push(
                                           context,
-                                          MaterialPageRoute(builder: (context) =>  SpeakQuiz()),
+                                          MaterialPageRoute(builder: (context) =>  SpeakQuizq1()),
                                         );
                                         }:null,
                                             style: ElevatedButton.styleFrom(

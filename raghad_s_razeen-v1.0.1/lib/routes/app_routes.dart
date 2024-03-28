@@ -32,7 +32,8 @@ import 'package:raghad_s_razeen/presentation/safeplaceAR.dart';//4
 import 'package:raghad_s_razeen/presentation/safeplacestory.dart';//4
 import 'package:raghad_s_razeen/presentation/memoryGame.dart';
 import 'package:raghad_s_razeen/presentation/gameFeedback.dart';
-
+import 'package:raghad_s_razeen/presentation/speakQuizq1.dart';
+import 'package:raghad_s_razeen/presentation/speakQuizq2.dart';
 
 class AppRoutes {
    static const String firstpage = '/firstpage';//
@@ -67,6 +68,8 @@ class AppRoutes {
    static const String memoryGame = '/memoryGame';//4
    static const String appNavigationScreen = '/app_navigation_screen';
    static const String gameFeedback = '/gameFeedback';
+   static const String speakQuizq1 = '/speakQuizq1';
+   static const String speakQuizq2 = '/speakQuizq2';
   
 
   static Map<String, WidgetBuilder> routes = {
@@ -88,7 +91,7 @@ class AppRoutes {
     sadfeedback:(context) => Sadfeedback(),
     happyfeedback:(context) => Happyfeedback(),
     safePlaceQuiz:(context) => SafePlaceQuiz(),//2
-    speakQuiz:(context) => SpeakQuiz(),//3
+    speakQuiz:(context) => SpeakQuiz(correctAnswersCount: correctAnswersCount,),//3
     quietplacequiz:(context) => Quietplacequiz(),
     respectDiffQuiz:(context) => RespectDiffQuiz(),//4
     medalsFeedback:(context) => MedalsFeedback(),//4
@@ -101,7 +104,11 @@ class AppRoutes {
     safeplacestory:(context) => Safeplacestory(),
     memoryGame:(context) => MemoryGame(),
     appNavigationScreen: (context) => AppNavigationScreen(),
-    gameFeedback: (context) => GameFeedback()
+    gameFeedback: (context) => GameFeedback(),
+    speakQuizq1: (context) => SpeakQuizq1(),
+    speakQuizq2: (context) => SpeakQuizq2(correctAnswersCount: correctAnswersCount,),
     
   };
+  
+  static get correctAnswersCount => correctAnswersCount;
 }

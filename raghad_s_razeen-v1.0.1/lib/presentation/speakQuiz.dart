@@ -1,5 +1,3 @@
-// import 'dart:html';
-
 import 'package:flutter/material.dart';
 import 'package:raghad_s_razeen/core/app_export.dart';
 import 'package:raghad_s_razeen/presentation/speakskill.dart';
@@ -13,30 +11,21 @@ import 'package:cloud_firestore/cloud_firestore.dart'; ///////////level
 import 'package:firebase_auth/firebase_auth.dart'; /////////level
 
 class SpeakQuiz extends StatefulWidget {
-  const SpeakQuiz({Key? key}) : super(key: key);
+   final int correctAnswersCount;
+
+ SpeakQuiz({required this.correctAnswersCount});
 
   @override
-  _SpeakQuizState createState() => _SpeakQuizState();
+  _SpeakQuizState createState() => _SpeakQuizState(correctAnswersCount: correctAnswersCount);
+  
 }
 
 class _SpeakQuizState extends State<SpeakQuiz> {
+     int correctAnswersCount;
+
+  _SpeakQuizState ({required this.correctAnswersCount});
   List<Map<String, dynamic>> quizData = [
-    {
-      'questionImage': 'assets/images/Q1quiz4.png',
-      'choices': [
-        '                  شكرًا ياجدي على هذه الهدية الرائعة',
-        '                        لا أريد هذه الهدية لم تعجبني'
-      ],
-      'correctAnswerIndex': 0,
-    },
-    {
-      'questionImage': 'assets/images/Q2quiz4.png',
-      'choices': [
-        ' لو سمحت ياجدي هل يمكنك مساعدتي بحل هذه المسألة؟' ,
-        '            يجب عليك مساعدتي بحل هذه المسألة'
-      ],
-      'correctAnswerIndex': 0,
-    },
+    
     {
       'questionImage': 'assets/images/Q3quiz4.png',
       'choices': ['                        ليس خطئي', '                       أنا اسف يا جدي'],
@@ -76,66 +65,105 @@ if (user != null) {
 ////////////////////
 
 
-  int currentIndex = 0;
-  int correctAnswersCount = 0;
+  // int currentIndex = 0;
+  
+
+  // void checkAnswer(int selectedAnswerIndex) {
+  //   int correctAnswerIndex = quizData[currentIndex]['correctAnswerIndex'];
+  //   bool isCorrect = selectedAnswerIndex == correctAnswerIndex;
+
+  //   showDialog(
+  //     context: context,
+  //     builder: (BuildContext context) {
+  //       return AlertDialog(
+  //         title: Text(isCorrect? 'إجابة صحيحة' : 'إجابة خاطئة',textAlign: TextAlign.center,),
+  //         actions: [
+  //           Center(
+  //             child: TextButton(
+  //               onPressed: () {
+  //                 Navigator.pop(context);
+  //                 handleAnswer(isCorrect);
+  //               },
+  //             child: Text('موافق',style: TextStyle(fontSize: 18)),
+  //           ),),
+  //         ],
+  //       );
+  //     },
+  //   );
+  // }
+
+  // void handleAnswer(bool isCorrect) {
+  //   if (isCorrect) {
+  //     correctAnswersCount++;
+  //   }
+
+  //   setState(() {
+  //     if (currentIndex < quizData.length - 1) {
+  //       currentIndex++;
+  //     } else {
+  //       if (correctAnswersCount >= 2) {
+  //             updateUserQuizCompletionStatus(); ///////////////////////////level
+  //         Navigator.push(
+  //           context,
+  //           MaterialPageRoute(builder: (context) => Happy()),// new class 
+  //         );
+  //       } else {
+  //         Navigator.push(
+  //           context,
+  //           MaterialPageRoute(builder: (context) => Sad()),//new class 
+  //         );
+  //       }
+  //     }
+  //   });
+  // }
 
   void checkAnswer(int selectedAnswerIndex) {
-    int correctAnswerIndex = quizData[currentIndex]['correctAnswerIndex'];
-    bool isCorrect = selectedAnswerIndex == correctAnswerIndex;
+  int correctAnswerIndex = quizData[0]['correctAnswerIndex']; // Replace with your quiz data
+  bool isCorrect = selectedAnswerIndex == correctAnswerIndex;
 
-    showDialog(
-      context: context,
-      builder: (BuildContext context) {
-        return AlertDialog(
-          title: Text(isCorrect? 'إجابة صحيحة' : 'إجابة خاطئة',textAlign: TextAlign.center,),
-          actions: [
-            Center(
-              child: TextButton(
-                onPressed: () {
-                  Navigator.pop(context);
-                  handleAnswer(isCorrect);
-                },
-              child: Text('موافق',style: TextStyle(fontSize: 18)),
-            ),),
-          ],
-        );
-      },
-    );
-  }
+  showDialog(
+    context: context,
+    builder: (BuildContext context) {
+      return AlertDialog(
+        title: Text(isCorrect ? 'إجابة صحيحة' : 'إجابة خاطئة',textAlign:TextAlign.center ,),
+        actions: [Center(child:
+          TextButton(
+            onPressed: () {
+              Navigator.pop(context);
 
-  void handleAnswer(bool isCorrect) {
-    if (isCorrect) {
-      correctAnswersCount++;
-    }
+              if (isCorrect) {
+                correctAnswersCount++;
+              }
 
-    setState(() {
-      if (currentIndex < quizData.length - 1) {
-        currentIndex++;
-      } else {
-        if (correctAnswersCount >= 2) {
-              updateUserQuizCompletionStatus(); ///////////////////////////level
-          Navigator.push(
-            context,
-            MaterialPageRoute(builder: (context) => Happy()),// new class 
-          );
-        } else {
-          Navigator.push(
-            context,
-            MaterialPageRoute(builder: (context) => Sad()),//new class 
-          );
-        }
-      }
-    });
-  }
+              if (correctAnswersCount >= 2) {
+                updateUserQuizCompletionStatus();///// level
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => Happy()),
+                );
+              } else {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => Sad()),
+                );
+              }
+            },
+            child: Text('موافق',style: TextStyle(fontSize: 18),),
+          ),
+        )
+        ],
+      );
+    },
+  );
+}
 
-  @override
-  Widget build(BuildContext context) {
+Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
         body: SizedBox(
           width: 394.h,
           child: SingleChildScrollView(
-             physics: NeverScrollableScrollPhysics(),
+            physics: NeverScrollableScrollPhysics(),
             child: SizedBox(
               height: SizeUtils.height,
               width: 394.h,
@@ -144,7 +172,6 @@ if (user != null) {
                 children: [
                   Align(
                     alignment: Alignment.center,
-                    
                     child: Container(
                       height: SizeUtils.height,
                       width: 394.h,
@@ -181,80 +208,118 @@ if (user != null) {
                                   AppDecoration.outlinePrimary1.copyWith(
                                 borderRadius: BorderRadiusStyle.roundedBorder33,
                               ),
-                              child: Column( //البداية
+                              // البدايه
+                              child: Column(
                                 children: [
                                   Image.asset(
-                                    quizData[currentIndex]['questionImage'],
-                                    width: 400.h,
-                                    height: 301.h,
+                                    'assets/images/Q3quiz4.png',
+                                    width: 400,
+                                    height: 301,
                                     fit: BoxFit.cover,
                                   ),
-                                  SizedBox(height: 16.h),
-                                  ...List.generate( ///???????????????????????????????
-                                    quizData[currentIndex]['choices'].length,
-                                    (index) => Padding(
-                                      padding:
-                                          EdgeInsets.symmetric(vertical: 8.h),
-                                      child: ElevatedButton(
-                                        onPressed: () {
-                                          checkAnswer(index);
-                                        },
-                                        style: ElevatedButton.styleFrom(
-                                          backgroundColor:Colors.white ,
-                                          padding: EdgeInsets.only(left:1), 
-                                          shape: RoundedRectangleBorder(
-                                            borderRadius: BorderRadius.circular(8.0), 
-                                          ),
+                                  SizedBox(height: 16),
+                                  Padding(
+                                    padding: EdgeInsets.symmetric(vertical: 8),
+                                    child: ElevatedButton(
+                                      onPressed: () {
+                                        checkAnswer(0); // Index of the first choice
+                                      },
+                                      style: ElevatedButton.styleFrom(
+                                        backgroundColor: Colors.white,
+                                        padding: EdgeInsets.only(left: 1),
+                                        shape: RoundedRectangleBorder(
+                                          borderRadius:
+                                              BorderRadius.circular(8.0),
                                         ),
-                                        // child: Padding(
-                                        //   padding: EdgeInsets.all(8.h),
-                                        //   child: Text(
-                                        //     quizData[currentIndex]['choices']
-                                        //         [index],
-                                        //     style: TextStyle(fontSize: 18,color: Colors.black),
-                                        //   ),
-                                        // ),
-                                        
-                                        child: Padding(
-                                          padding: EdgeInsets.all(8.h),
-                                          child: Row(
-                                            children: [
-                                              // CustomImageView(
-                                              //   imagePath:
-                                              //       ImageConstant.imgImage167,
-                                              //   height: 30.v,
-                                              //   width: 27.h,
-                                              //   alignment: Alignment.topLeft, 
-                                              //   // margin: EdgeInsets.only(left: 0),
-                                              // ),
-                                              
-                                              
-                                              SizedBox(  width: 1   .h), //بين الكلام والصورة
-                                              Text(
-                                                quizData[currentIndex]
-                                                    ['choices'][index],
-                                                style: TextStyle(
-                                                  fontSize: 13,
-                                                  color: Colors
-                                                      .black, 
-                                                   fontWeight: FontWeight.bold, 
-
-                                                ),
+                                      ),
+                                      child: Padding(
+                                        padding: EdgeInsets.all(8),
+                                        child: Row(
+                                          children: [
+                                            SizedBox( width: 1), // Space between image and text
+                                            Text( '                           ليس خطئي',
+                                              style: TextStyle(
+                                                fontSize: 16,
+                                                color: Colors.black,
+                                                fontWeight: FontWeight.bold,
                                               ),
-                                            ],
-                                          ),
+                                            ),
+                                            ElevatedButton(
+                                                onPressed: () {
+                                                  var player1 = AudioPlayer();
+
+                                                  /// new
+                                                  player1.play(AssetSource(
+                                                      'notMyfault.mp3'));
+
+                                                  /// new
+                                                },
+                                                style: ElevatedButton.styleFrom(
+                                                  backgroundColor:
+                                                      Colors.transparent,
+                                                  foregroundColor: Colors.black,
+                                                  elevation: 0,
+                                                ),
+                                                child: Image.asset(
+                                                    ImageConstant.imgImage164,height: 28.v,
+                                                width: 27.h,))
+                                          ],
                                         ),
                                       ),
                                     ),
                                   ),
+                                  Padding(
+                                    padding: EdgeInsets.symmetric(vertical: 8),
+                                    child: ElevatedButton(
+                                      onPressed: () {
+                                        checkAnswer(1); // Index of the second choice
+                                      },
+                                      style: ElevatedButton.styleFrom(
+                                        backgroundColor: Colors.white,
+                                        padding: EdgeInsets.only(left: 1),
+                                        shape: RoundedRectangleBorder(
+                                          borderRadius:
+                                              BorderRadius.circular(8.0),
+                                        ),
+                                      ),
+                                      child: Padding(
+                                        padding: EdgeInsets.all(8),
+                                        child: Row(
+                                          children: [
+                                            SizedBox( width: 1), // Space between image and text
+                                            Text( '                       أنا اسف يا جدي',
+                                              style: TextStyle(
+                                                fontSize: 16,
+                                                color: Colors.black,
+                                                fontWeight: FontWeight.bold,
+                                              ),
+                                            ),
+                                             ElevatedButton(
+                                                onPressed: () {
+                                                  var player2 = AudioPlayer();
+
+                                                  /// new
+                                                  player2.play(AssetSource('Im_Sorry.mp3'));
+
+                                                  /// new
+                                                },
+                                                style: ElevatedButton.styleFrom(
+                                                  backgroundColor:
+                                                      Colors.transparent,
+                                                  foregroundColor: Colors.black,
+                                                  elevation: 0,
+                                                ),
+                                                child: Image.asset(
+                                                    ImageConstant.imgImage164,height: 28.v,
+                                                width: 27.h,))
+                                          ],
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                  
                                 ],
                               ),
-                              
-
-
-
-
-
 
                               // Column(
                               //   mainAxisSize: MainAxisSize.min,
@@ -278,9 +343,9 @@ if (user != null) {
                               //     ),
                               //     SizedBox(height: 27.v),
                               //     _buildDoctorReviews(
-                              //       context,  
+                              //       context,
                               //       widget: "                    لا أريد هذه الهدية لم تعجبني",
-                              //     ),   
+                              //     ),
                               //   ],
                               // ),
                             ),
@@ -290,8 +355,9 @@ if (user != null) {
                             child: Container(
                               height: 58.v,
                               width: 301.h,
-                              margin: EdgeInsets.only(top: 63.v,left: 15),
-                              decoration: BoxDecoration( //ورا السؤال
+                              margin: EdgeInsets.only(top: 63.v, left: 15),
+                              decoration: BoxDecoration(
+                                //ورا السؤال
                                 color: appTheme.yellow100,
                                 borderRadius: BorderRadius.circular(
                                   29.h,
@@ -299,12 +365,12 @@ if (user != null) {
                               ),
                             ),
                           ),
-                        
+
                           Align(
                             alignment: Alignment.topCenter,
                             child: Container(
                               width: 256.h,
-                              margin: EdgeInsets.only(top: 79.v,left: 3),
+                              margin: EdgeInsets.only(top: 79.v, left: 3),
                               // decoration: AppDecoration.outlinePrimary1, //ينحذف
                               child: Text(
                                 "           ما الكلمة المناسبة لهذا الموقف؟  ",
@@ -321,29 +387,36 @@ if (user != null) {
                           //   alignment: Alignment.topLeft,
                           //   margin: EdgeInsets.only(left: 18.h,top: 53),
                           // ),
-                          Container(///new
-                            height: 28.v,
-                            width: 27.h,
-                            alignment: Alignment.topLeft,
-                            margin: EdgeInsets.only(right:240.h, bottom:690, top: 30),
-                            child: ElevatedButton(
-                                onPressed: () {
-                                final player = AudioPlayer();/// new
-                                player.play(AssetSource('whatWord.mp3'));/// new
-                                },
-                                style: ElevatedButton.styleFrom(
-                              backgroundColor: Colors.transparent,
-                              foregroundColor: Colors.black,
-                              elevation: 0,
-                                ),
-                            
-                          child: Image.asset(ImageConstant.imgImage164))),//end new
+                          Container(
+
+                              ///new
+                              height: 28.v,
+                              width: 27.h,
+                              alignment: Alignment.topLeft,
+                              margin: EdgeInsets.only(
+                                  right: 240.h, bottom: 690, top: 30),
+                              child: ElevatedButton(
+                                  onPressed: () {
+                                    final player = AudioPlayer();
+
+                                    /// new
+                                    player.play(AssetSource('whatWord.mp3'));
+
+                                    /// new
+                                  },
+                                  style: ElevatedButton.styleFrom(
+                                    backgroundColor: Colors.transparent,
+                                    foregroundColor: Colors.black,
+                                    elevation: 0,
+                                  ),
+                                  child: Image.asset(
+                                      ImageConstant.imgImage164))), //end new
                         ],
                       ),
                     ),
                   ),
                   CustomImageView(
-                    imagePath: ImageConstant.imgImage23114x111,//النجمة
+                    imagePath: ImageConstant.imgImage23114x111, //النجمة
                     height: 114.v,
                     width: 111.h,
                     alignment: Alignment.topRight,
@@ -364,6 +437,7 @@ if (user != null) {
       ),
     );
   }
+
 
 }
 
@@ -611,5 +685,7 @@ class Sad extends StatelessWidget {
     );
   }
 }
+
+
 
 

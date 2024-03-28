@@ -15,7 +15,7 @@ dependencies:
   firebase_core: ^2.25.4
   firebase_auth: ^4.17.4
 
-  cloud_firestore: ^4.15.9
+  cloud_firestore: ^4.15.5
 
 
   email_validator: ^2.0.1
@@ -27,6 +27,7 @@ dependencies:
   arcore_flutter_plugin: ^0.1.0
   video_player: ^2.8.3
   flick_video_player: ^0.7.0
+  
 
 dev_dependencies: 
 
@@ -51,7 +52,8 @@ flutter:
     - assets/How_Quite.mp3
     - assets/How_Safe.mp3
     - assets/How_Talk.mp3
-    - assets/im_Sorry.mp3
+    - assets/Im_Sorry.mp3
+    - assets/Im_Sorry.mp3
     - assets/mazeQuizQuestion.mp3
     - assets/Newspaper.mp3
     - assets/noGift.mp3
