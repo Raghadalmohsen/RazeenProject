@@ -105,68 +105,13 @@ class _MemoryGameState extends State<MemoryGame> {
 
     if (_flipped.every((flipped) => flipped)) {
 
-      showDialog(
-
-        context: context,
-
-      builder: (BuildContext context) {
-
-        return AlertDialog(
-
-          title: Text('أحسنت',textAlign: TextAlign.right,
-
-            style: TextStyle(
-
-              fontSize: 22,
-
-            ),),
-
-          content: Text('رائع لقد فزت وطابقت جميع الصور بنجاح  ',   textAlign: TextAlign.right,
-
-            style: TextStyle(
-
-              fontSize: 18,
-
-             
-
-             
-
-            ),),
-
-          actions: [
-
-            Center(
-
-              child: TextButton(
-
-                onPressed: () {
-
-                  Navigator.pop(context); // Close the dialog
-
-                  Navigator.push(
+       Navigator.push(
                 context,
                 MaterialPageRoute(
                     builder: (context) =>
                         GameFeedback()), //next page 
               ); // Navigate back to the previous screen
 
-                },
-
-                child: Text('موافق', style: TextStyle(fontSize: 18, color: Colors.blue)),
-
-              ),
-
-            ),
-
-          ],
-
- 
-
-          );
-
-        },
-
-      );
 
     }
 

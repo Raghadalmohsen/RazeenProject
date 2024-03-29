@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:raghad_s_razeen/core/app_export.dart';
 import 'package:raghad_s_razeen/presentation/firstpage.dart';
 import 'package:raghad_s_razeen/presentation/initialscreen.dart';
+import 'package:raghad_s_razeen/presentation/razeenmap.dart';
 import 'package:raghad_s_razeen/presentation/respectDiffQuiz.dart';
 import 'package:raghad_s_razeen/presentation/safeplacestory.dart';
 import 'package:raghad_s_razeen/widgets/app_bar/appbar_leading_image.dart';
@@ -208,7 +209,7 @@ void updateProgress() {
                                             onPressed: isQuizCompleted?() {
                                                Navigator.push(
                                           context,
-                                          MaterialPageRoute(builder: (context) =>  Initialscreen()),
+                                          MaterialPageRoute(builder: (context) =>  Razeenmap()),
                                         );
                                         markGameCompleted();
                                         }:null,
