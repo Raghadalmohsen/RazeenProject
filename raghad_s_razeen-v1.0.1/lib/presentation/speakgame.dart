@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:raghad_s_razeen/core/utils/image_constant.dart';
 import 'package:raghad_s_razeen/core/utils/size_utils.dart';
 import 'package:raghad_s_razeen/presentation/gameFeedback.dart';
@@ -21,14 +22,14 @@ class Speakgame extends StatefulWidget {
 GlobalKey<ScaffoldState> scaffoldKey = new GlobalKey();
 
 class _SpeakgameState extends State<Speakgame> {
-  bool _isBlueDropped = false;
-  bool _isRedDropped = false;
-  bool _isYelloDropped = false;
-  bool _isGreenDropped = false;
-  String _blue = 'blue';
-  String _red = 'red';
-  String _yellow = 'yellow';
-  String _green = 'green';
+  bool _puzzle1 = false;
+   bool _puzzle2 = false;
+  bool _puzzle3 = false;
+  bool _puzzle4 = false;
+  String _puzzle11 = 'puzzle11';
+  String _puzzle22 = 'puzzle22';
+  String _puzzle33 = 'puzzle33';
+  String _puzzle44 = 'puzzle44';
 
 // late int score=0;
 
@@ -56,7 +57,7 @@ class _SpeakgameState extends State<Speakgame> {
   }
 
   void navigateToFeedbackScreen() {
-    if (_isBlueDropped && _isRedDropped && _isYelloDropped && _isGreenDropped) {
+    if (_puzzle1 && _puzzle3 && _puzzle2 && _puzzle4) {
       Future.delayed(Duration(seconds: 0), () {
         Navigator.push(
           context,
@@ -80,7 +81,7 @@ class _SpeakgameState extends State<Speakgame> {
               alignment: Alignment.topRight,
               children: [
                 CustomImageView(
-                  imagePath: ImageConstant.BackgroundHouse,
+                  imagePath: ImageConstant.BackgroundHouse2,
                   height: 858.v,
                   width: 393.h,
                   border: Border.all(),
@@ -106,7 +107,7 @@ class _SpeakgameState extends State<Speakgame> {
                               children: [
                                 SizedBox(height: 75.v),
                                 Container(
-                                  margin: EdgeInsets.only(left: 6.h, top: 50),
+                                  margin: EdgeInsets.only(left: 6.h, top: 30),
                                   padding: EdgeInsets.symmetric(
                                     horizontal: 22.h,
                                     vertical: 90.v,
@@ -134,18 +135,18 @@ class _SpeakgameState extends State<Speakgame> {
                                                 return Container(
                                                   height: 165,
                                                   width: 165,
-                                                  child: Image.asset(_isBlueDropped
+                                                  child: Image.asset(_puzzle1
                                                       ? 'assets/images/puzzle11.png'
                                                       : 'assets/images/puzzle1.png'),
                                                 );
                                               },
                                               onWillAccept: (data) {
-                                                return data == _blue;
+                                                return data == _puzzle11;
                                               },
                                               //////////////////////
                                               onAccept: (data) {
                                                 setState(() {
-                                                  _isBlueDropped = true;
+                                                  _puzzle1 = true;
                                                   // score++;
                                                 });
                                                 navigateToFeedbackScreen();
@@ -165,18 +166,18 @@ class _SpeakgameState extends State<Speakgame> {
                                                 return Container(
                                                   height: 165,
                                                   width: 165,
-                                                  child: Image.asset(_isRedDropped
+                                                  child: Image.asset(_puzzle3
                                                       ? 'assets/images/puzzle33.png'
                                                       : 'assets/images/puzzle3.png'),
                                                 );
                                               },
                                               onWillAccept: (data) {
-                                                return data == _red;
+                                                return data == _puzzle33;
                                               },
                                               ///////////////
                                               onAccept: (data) {
                                                 setState(() {
-                                                  _isRedDropped = true;
+                                                  _puzzle3 = true;
                                                   // score++;
                                                 });
                                                 navigateToFeedbackScreen();
@@ -196,18 +197,18 @@ class _SpeakgameState extends State<Speakgame> {
                                                 return Container(
                                                   height: 165,
                                                   width: 165,
-                                                  child: Image.asset(_isYelloDropped
+                                                  child: Image.asset(_puzzle2
                                                       ? 'assets/images/puzzle22.png'
                                                       : 'assets/images/puzzle2.png'),
                                                 );
                                               },
                                               onWillAccept: (data) {
-                                                return data == _yellow;
+                                                return data == _puzzle22;
                                               },
                                               //////////////
                                               onAccept: (data) {
                                                 setState(() {
-                                                  _isYelloDropped = true;
+                                                  _puzzle2 = true;
                                                   // score++;
                                                 });
                                                 navigateToFeedbackScreen();
@@ -227,18 +228,18 @@ class _SpeakgameState extends State<Speakgame> {
                                                 return Container(
                                                   height: 165,
                                                   width: 165,
-                                                  child: Image.asset(_isGreenDropped
+                                                  child: Image.asset(_puzzle4
                                                       ? 'assets/images/puzzle44.png'
                                                       : 'assets/images/puzzle4.png'),
                                                 );
                                               },
                                               onWillAccept: (data) {
-                                                return data == _green;
+                                                return data == _puzzle44;
                                               },
                                               /////////////////
                                               onAccept: (data) {
                                                 setState(() {
-                                                  _isGreenDropped = true;
+                                                  _puzzle4 = true;
                                                   // score++;
                                                 });
                                                 navigateToFeedbackScreen();
@@ -251,38 +252,27 @@ class _SpeakgameState extends State<Speakgame> {
                                     ),
                                   ),
                                 ),
+                               
                                 Container(
-                                  //  margin: EdgeInsets.only(
-                                  //                           top: 80.v,
-                                  //                           right: 1.h,
-                                  //                           bottom: 120.v,
-                                  //                         ),
-                                  // padding: EdgeInsets.symmetric(
-                                  //   horizontal: 4.h,
-                                  //   vertical: 30.v,
-                                  // ),
-                                  // decoration: AppDecoration.outlinePrimary1.copyWith(
-                                  //   borderRadius: BorderRadiusStyle.roundedBorder33,
-                                  // ),
-                                  width:
-                                      MediaQuery.of(context).size.width * 0.15,
-                                ),
-                                // Divider(
-                                //   thickness: 100,
-                                //   color: Colors.white,
-                                // ),
-                                Expanded(
+                                  height: 100,
+                                  width: 1200,
+                                  margin: EdgeInsets.only(top: 10),
+                                 
+                                      decoration: AppDecoration.outlinePrimary1.copyWith(
+                                    borderRadius: BorderRadiusStyle.roundedBorder1,color: Colors.white,
+                                  ),
                                   child: SingleChildScrollView(
-                                    child: Column(
-                                      children: [
+                                    child: Row(
+                                      children: [  
                                         Visibility(
-                                          visible: !_isRedDropped,
+                                          visible: !_puzzle3,
                                           child: Draggable<String>(
                                             // Data is the value this Draggable stores.
-                                            data: _red,
+                                            data: _puzzle33,
                                             child: Container(
-                                              height: 130.0,
-                                              width: 130.0,
+
+                                              height: 90.0,
+                                              width: 90.0,
                                               child: Center(
                                                 child: Image.asset(
                                                     'assets/images/puzzle33.png'),
@@ -300,13 +290,13 @@ class _SpeakgameState extends State<Speakgame> {
                                           ),
                                         ),
                                         Visibility(
-                                          visible: !_isGreenDropped,
+                                          visible: !_puzzle4,
                                           child: Draggable<String>(
                                             // Data is the value this Draggable stores.
-                                            data: _green,
+                                            data: _puzzle44,
                                             child: Container(
-                                              height: 130.0,
-                                              width: 130.0,
+                                              height: 90.0,
+                                              width: 90.0,
                                               child: Center(
                                                 child: Image.asset(
                                                     'assets/images/puzzle44.png'),
@@ -324,13 +314,13 @@ class _SpeakgameState extends State<Speakgame> {
                                           ),
                                         ),
                                         Visibility(
-                                          visible: !_isBlueDropped,
+                                          visible: !_puzzle1,
                                           child: Draggable<String>(
                                             // Data is the value this Draggable stores.
-                                            data: _blue,
+                                            data: _puzzle11,
                                             child: Container(
-                                              height: 130.0,
-                                              width: 130.0,
+                                              height: 90.0,
+                                              width: 90.0,
                                               child: Center(
                                                 child: Image.asset(
                                                     'assets/images/puzzle11.png'),
@@ -348,13 +338,13 @@ class _SpeakgameState extends State<Speakgame> {
                                           ),
                                         ),
                                         Visibility(
-                                          visible: !_isYelloDropped,
+                                          visible: !_puzzle2,
                                           child: Draggable<String>(
                                             // Data is the value this Draggable stores.
-                                            data: _yellow,
+                                            data: _puzzle22,
                                             child: Container(
-                                              height: 130.0,
-                                              width: 130.0,
+                                              height: 90.0,
+                                              width: 90.0,
                                               child: Center(
                                                 child: Image.asset(
                                                     'assets/images/puzzle22.png'),
@@ -384,7 +374,7 @@ class _SpeakgameState extends State<Speakgame> {
                           child: Container(
                             height: 58.v,
                             width: 340.h,
-                            margin: EdgeInsets.only(top: 120.v),
+                            margin: EdgeInsets.only(top: 90.v),
                             decoration: BoxDecoration(
                               color: appTheme.yellow100, ///////////////
                               borderRadius: BorderRadius.circular(
@@ -397,7 +387,7 @@ class _SpeakgameState extends State<Speakgame> {
                           alignment: Alignment.topCenter,
                           child: Container(
                             width: 256.h,
-                            margin: EdgeInsets.only(top: 133.v),
+                            margin: EdgeInsets.only(top: 100.v),
                             // decoration: AppDecoration.outlinePrimary1,////////////////
                             child: Text(
                               "                  قم بترتيب الصوره",
@@ -423,7 +413,7 @@ class _SpeakgameState extends State<Speakgame> {
                             width: 27.h,
                             alignment: Alignment.topLeft,
                             margin: EdgeInsets.only(
-                                right: 300.h, bottom: 580, top: 110),
+                                right: 330.h, bottom: 580, top: 80),
                             child: ElevatedButton(
                                 onPressed: () {
                                   final player = AudioPlayer();
@@ -449,7 +439,7 @@ class _SpeakgameState extends State<Speakgame> {
                   height: 114.v,
                   width: 94.h,
                   alignment: Alignment.topRight,
-                  margin: EdgeInsets.only(top: 90.v),
+                  margin: EdgeInsets.only(top: 86.v),
                 ),
                 // CustomImageView(
                 //   imagePath: ImageConstant.imgScreenshot2023, //رزين
