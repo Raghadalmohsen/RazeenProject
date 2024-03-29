@@ -87,15 +87,16 @@ class GameFeedback extends StatelessWidget {
         alignment: Alignment.bottomCenter,
         children: [
           CustomImageView(
-            imagePath: ImageConstant.cloudnine,
+            imagePath: ImageConstant.cloud, //
             width: 374.h,
             alignment: Alignment.center,
+            margin: EdgeInsets.only(bottom: 100),
           ),
           CustomElevatedButton(
             width: 92.h,
             text: "موافق",
 
-            margin: EdgeInsets.only(bottom: 235.v),
+            margin: EdgeInsets.only(bottom: 265.v),
             alignment: Alignment.bottomCenter,
             onPressed: () {
                                           //بداية كود تنقل الزر

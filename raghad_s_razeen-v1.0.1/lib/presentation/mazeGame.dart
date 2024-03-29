@@ -16,48 +16,16 @@ class MazeGame extends StatefulWidget {
 class _MazePageState extends State<MazeGame> {
   bool gameFinished = false;
 
-  void _showSuccessDialog(BuildContext context) {
-    showDialog(
-      context: context,
-      builder: (BuildContext context) {
-        return AlertDialog(
-          title: Text(
-            'رائع',
-            textAlign: TextAlign.right,
-            style: TextStyle(
-              fontSize: 22,
-            ),
-          ),
-          content: Text(
-            'أحسنت لقد فزت باللعبة ولبيت طلب الجد',
-            textAlign: TextAlign.right,
-            style: TextStyle(
-              fontSize: 18,
-              
-              
-            ),
-            
-          ),
+  void _NavigatorToFeedback(BuildContext context) {
         
-          actions: [
-            Center(
-              child: TextButton(
-                onPressed: () {
-                  Navigator.pop(context); // Close the dialog
                   Navigator.push(
                 context,
                 MaterialPageRoute(
                     builder: (context) =>
                         GameFeedback()), //next page 
-              );// Navigate back to the previous screen
-                },
-                child: Text('موافق', style: TextStyle(fontSize: 18, color: Colors.blue)),
-              ),
-            ),
-          ],
-        );
-      },
-    );
+              );
+              
+                 
   }
 
   @override
@@ -109,18 +77,6 @@ class _MazePageState extends State<MazeGame> {
     ),
   ),
 ),
-
-
-
-
-              //  CustomImageView(
-              //           imagePath: ImageConstant.imgImage167, ////// الصوت
-              //           height: 28.v,
-              //           width: 27.h,
-              //           alignment: Alignment.topLeft,
-              //           margin: EdgeInsets.only(left: 32.h, top: 0),
-              //         ),
-              
                 
               ],
             ),
@@ -162,7 +118,7 @@ class _MazePageState extends State<MazeGame> {
                 
                 onFinish: () {
                   if (!gameFinished) {
-                    _showSuccessDialog(context); // Pass the context to _showSuccessDialog
+                    _NavigatorToFeedback(context); // Pass the context to _showSuccessDialog
                     setState(() {
                       gameFinished = true;
                     });

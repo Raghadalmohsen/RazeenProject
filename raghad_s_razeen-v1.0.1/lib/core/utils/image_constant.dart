@@ -431,7 +431,7 @@ class ImageConstant {
 
   static String WelcomeScreen = '$imagePath/WelcomeScreen.png';
 
-  static String medalP = '$imagePath/medalP.png';
+  static String medall = '$imagePath/medall.png';
 
   static String BGMedal = '$imagePath/BGMedal.png';
 
@@ -511,4 +511,6 @@ static String pinkhome = '$imagePath/pinkhome.png';
   static String imageNotFound = 'assets/images/image_not_found.png';
   static String bg2 = 'assets/images/bg2.png';
   static String cloudnine = 'assets/images/cloudnine.png';
+    static String cloud = 'assets/images/cloud.png';
+
 }
