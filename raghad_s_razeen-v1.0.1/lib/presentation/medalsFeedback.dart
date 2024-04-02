@@ -3,7 +3,6 @@ import 'package:raghad_s_razeen/core/app_export.dart';
 import 'package:raghad_s_razeen/presentation/razeenmap.dart';
 import 'package:raghad_s_razeen/widgets/custom_bottom_bar.dart';
 import 'package:raghad_s_razeen/widgets/custom_elevated_button.dart';
-import 'package:raghad_s_razeen/widgets/custom_floating_button.dart';
 
 
 class MedalsFeedback extends StatelessWidget { //medelsFeedback

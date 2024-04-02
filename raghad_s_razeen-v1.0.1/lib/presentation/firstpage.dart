@@ -121,58 +121,6 @@ class Firstpage extends StatelessWidget {
                       width: 119.h,
                       alignment: Alignment.topRight,
                     ),
-                    // CustomImageView(
-                    //   imagePath: ImageConstant.imgImage164, //صوت
-                    //   height: 28.v,
-                    //   width: 27.h,
-                    //   alignment: Alignment.topLeft,
-                    //   margin: EdgeInsets.only(
-                    //     left: 6.h,
-                    //     top: 62.v,
-                    //   ),
-                    // ),
-                    // Align(
-                    //   alignment: Alignment.bottomLeft,
-                    //   child: Container(
-                    //     height: 84.v,
-                    //     width: 309.h,
-                    //     decoration: BoxDecoration(
-                    //       color: appTheme.orangeA100,
-                    //       borderRadius: BorderRadius.circular(
-                    //         20.h,
-                    //       ),
-                    //       boxShadow: [
-                    //         BoxShadow( //box
-                    //           color: theme.colorScheme.primary,
-                    //           spreadRadius: 2.h,
-                    //           blurRadius: 2.h,
-                    //           offset: Offset(
-                    //             0,
-                    //             4,
-                    //           ),
-                    //         ),
-                    //       ],
-                    //     ),
-                    //   ),
-                    // ),
-                    // Align(
-                    //   alignment: Alignment.bottomLeft,
-                    //   child: Container(
-                    //     width: 245.h,
-                    //     margin: EdgeInsets.only(
-                    //       left: 31.h,
-                    //       bottom: 7.v,
-                    //     ),
-                    //     child: Text(
-                    //       "رزين تطبيق تعليمي يهدف إلى تعليم الأطفال أهمية احترام كبار السن بطريقة ممتعة ومفيدة",
-                    //       maxLines: 3,
-                    //       overflow: TextOverflow.ellipsis,
-                    //       textAlign: TextAlign.center,
-                    //       style: CustomTextStyles.titleMediumBluegray700,
-                    //     ),
-                        
-                    //   ),
-                    // ),
                   ],
                 ),
               ),
@@ -182,41 +130,6 @@ class Firstpage extends StatelessWidget {
       ),
     );
   }
-
-  /// Section Widget
-  // Widget _buildScreenshot1(BuildContext context) {
-  //   return Padding(
-  //     padding: EdgeInsets.only(right: 10.h),
-  //     child: Row(
-  //       mainAxisAlignment: MainAxisAlignment.center,
-  //       children: [
-  //         CustomImageView(
-  //           imagePath: ImageConstant.imgScreenshot2023173x129, //الجد
-  //           height: 206.v,
-  //           width: 150.h,
-  //         ),
-          
-  //         Container(
-  //           width: 76.h,
-  //           margin: EdgeInsets.only(
-  //             left: 157.h,
-  //             top: 163.v,
-  //             bottom: 9.v,
-  //           ),
-  //           decoration: AppDecoration.outlinePrimary3,
-  //           child: Text(
-  //             "تخطي",
-  //             maxLines: null,
-  //             overflow: TextOverflow.ellipsis,
-  //             style: CustomTextStyles.titleSmallOnPrimary.copyWith(
-  //               decoration: TextDecoration.underline,
-  //             ),
-  //           ),
-  //         ),
-  //       ],
-  //     ),
-  //   );
-  // }
   Widget _buildScreenshot1(BuildContext context) {
   return Padding(
     padding: EdgeInsets.only(right: 10.h),
@@ -257,16 +170,4 @@ class Firstpage extends StatelessWidget {
     ),
   );
 }
-
-// class Page2 extends StatelessWidget {
-//   @override
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-//       appBar: AppBar(
-//         title: Text('Page 2'),
-//       ),
-//       // Rest of your page 2 layout
-//     );
-//   }
-// }
 }

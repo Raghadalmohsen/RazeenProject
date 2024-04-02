@@ -1,54 +1,29 @@
 import 'package:flutter/material.dart';
-
 import 'package:raghad_s_razeen/core/utils/image_constant.dart';
-
 import 'package:raghad_s_razeen/core/utils/size_utils.dart';
 import 'package:raghad_s_razeen/presentation/gameFeedback.dart';
-
 import 'package:raghad_s_razeen/theme/app_decoration.dart';
-
 import 'package:raghad_s_razeen/widgets/custom_image_view.dart';
-
 import 'dart:math';
 
  
 
 class MemoryGame extends StatefulWidget {
-
   const MemoryGame({Key? key}) : super(key: key);
-
- 
-
   @override
-
   _MemoryGameState createState() => _MemoryGameState();
-
 }
-
- 
-
 GlobalKey<ScaffoldState> scaffoldKey = new GlobalKey();
-
- 
-
 class _MemoryGameState extends State<MemoryGame> {
 
   List<String> _imagePaths = [
-
     'assets/images/mem1.png',
-
     'assets/images/mem2.png',
-
     'assets/images/mem3.png',
-
     'assets/images/mem4.png',
-
     'assets/images/mem1.png',
-
     'assets/images/mem2.png',
-
     'assets/images/mem3.png',
-
     'assets/images/mem4.png',
 
   ];
@@ -56,29 +31,20 @@ class _MemoryGameState extends State<MemoryGame> {
  
 
   List<bool> _flipped = [];
-
   int _prevIndex = -1;
-
   bool _lock = false;
 
  
-
   @override
-
   void initState() {
-
     super.initState();
-
     _initData();
-
   }
 
  
 
   void _initData() {
-
     var rng = Random();
-
     List<String> imagePaths =
 
         List.generate(8, (index) => _imagePaths[index % 4]);

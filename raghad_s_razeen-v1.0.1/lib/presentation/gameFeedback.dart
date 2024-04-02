@@ -1,14 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:raghad_s_razeen/presentation/medalsFeedback.dart';
-import 'package:raghad_s_razeen/presentation/razeenmap.dart';
-import 'package:raghad_s_razeen/widgets/custom_bottom_bar.dart';
 import 'package:raghad_s_razeen/widgets/custom_elevated_button.dart';
-import 'package:raghad_s_razeen/widgets/custom_icon_button.dart';
 import 'package:raghad_s_razeen/core/app_export.dart';
-import 'package:audioplayers/audioplayers.dart';
-import 'package:raghad_s_razeen/presentation/gameFeedback.dart';
 
-// ignore_for_file: must_be_immutable
 class GameFeedback extends StatelessWidget {
   GameFeedback({Key? key}) : super(key: key);
 
@@ -62,10 +56,6 @@ class GameFeedback extends StatelessWidget {
               children: [
                 Opacity(
                   opacity: 0.6,
-                  // child: CustomImageView(
-                  //   imagePath: ImageConstant.imgScreenshot2024,
-                  //   height: 98.v,
-                  // ),
                 ),
                 SizedBox(height: 94.v),
                 _buildFour(context),
@@ -78,7 +68,6 @@ class GameFeedback extends StatelessWidget {
     );
   }
 
-  /// Section Widget
   Widget _buildFour(BuildContext context) {
     return SizedBox(
       height: 681.v,
@@ -99,15 +88,13 @@ class GameFeedback extends StatelessWidget {
             margin: EdgeInsets.only(bottom: 265.v),
             alignment: Alignment.bottomCenter,
             onPressed: () {
-                                          //بداية كود تنقل الزر
+                                       
               Navigator.push(
                 context,
                 MaterialPageRoute(
                     builder: (context) =>
                         MedalsFeedback()), //next page 
               );
-
-              // Navigator.pop(context); // Navigate back to the previous screen
             },
           ),
         ],

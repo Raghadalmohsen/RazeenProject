@@ -61,7 +61,6 @@ void _changeName(BuildContext context) {
           );
           await user.reauthenticateWithCredential(credential);
           await user.updatePassword(newPasswordController.text.trim());
-          // Show a success dialog or navigate to another screen
           showDialog(
             context: context,
             builder: (BuildContext context) {
@@ -136,7 +135,7 @@ void _changeName(BuildContext context) {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-            extendBodyBehindAppBar: true, // مايشتغل بس نقدر نستغني عنه \ زر الرجوع
+            extendBodyBehindAppBar: true, 
         appBar: AppBar(
           // 1. Back Arrow Icon
           actions:<Widget>[
@@ -326,9 +325,9 @@ Widget _buildEmail(BuildContext context) {
       right: 0.h,
     ),
     child: Text(
-      userEmail ?? '', // Display the email if available, otherwise an empty string
+      userEmail ?? '', 
       style: theme.textTheme.titleLarge!.copyWith(
-        color: Colors.blue, // Set the text color to blue
+        color: Colors.blue, 
       ),
     ),
   );

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:raghad_s_razeen/core/app_export.dart';
-import 'package:raghad_s_razeen/presentation/signin.dart';
 import 'package:raghad_s_razeen/widgets/custom_elevated_button.dart';
 import 'package:raghad_s_razeen/widgets/custom_text_form_field.dart';
 
@@ -18,7 +17,7 @@ class Forgetpass extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-             extendBodyBehindAppBar: true, // مايشتغل بس نقدر نستغني عنه \ زر الرجوع
+             extendBodyBehindAppBar: true, 
         appBar: AppBar(
           // 1. Back Arrow Icon
           actions:<Widget>[
@@ -181,8 +180,8 @@ class Forgetpass extends StatelessWidget {
       child: Text(
         'حسنا',
         style: TextStyle(
-          fontSize: 16, // Set the desired font size
-          color: Colors.blue, // Set the desired text color
+          fontSize: 16, 
+          color: Colors.blue, 
         ),
       ),
     ),
@@ -192,7 +191,6 @@ class Forgetpass extends StatelessWidget {
                             },
                           );
                         }).catchError((error) {
-                          // Show error message
                           showDialog(
                             context: context,
                             builder: (BuildContext context) {

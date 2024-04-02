@@ -1,15 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:raghad_s_razeen/core/utils/image_constant.dart';
 import 'package:raghad_s_razeen/core/utils/size_utils.dart';
 import 'package:raghad_s_razeen/presentation/gameFeedback.dart';
-import 'package:raghad_s_razeen/presentation/razeenmap.dart';
-import 'package:raghad_s_razeen/presentation/speakskill.dart';
 import 'package:raghad_s_razeen/theme/app_decoration.dart';
-import 'package:raghad_s_razeen/theme/custom_text_style.dart';
 import 'package:raghad_s_razeen/theme/theme_helper.dart';
 import 'package:raghad_s_razeen/widgets/custom_image_view.dart';
-import 'package:flutter/material.dart';
 import 'package:audioplayers/audioplayers.dart';
 
 class Speakgame extends StatefulWidget {
@@ -31,25 +26,7 @@ class _SpeakgameState extends State<Speakgame> {
   String _puzzle33 = 'puzzle33';
   String _puzzle44 = 'puzzle44';
 
-// late int score=0;
 
-//  void initState() {
-//     super.initState();
-//     navigateToFeedbackScreen(); /////////////////////////////
-//   }
-
-//   void navigateToFeedbackScreen() {
-//   if (score == 4) {// delete
-//     Future.delayed(Duration(seconds: 0), () {// 3
-//       Navigator.push(
-//         context,
-//         MaterialPageRoute(builder: (context) => Razeenmap()),// new class
-//       );
-//     });
-//   }
-
-//
-//////////////////////////////
 
   void initState() {
     super.initState();
@@ -61,7 +38,7 @@ class _SpeakgameState extends State<Speakgame> {
       Future.delayed(Duration(seconds: 0), () {
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => GameFeedback()), //بعدين نغيرها لفيدباك اللعبة*
+          MaterialPageRoute(builder: (context) => GameFeedback()), 
         );
       });
     }
@@ -388,24 +365,15 @@ class _SpeakgameState extends State<Speakgame> {
                           child: Container(
                             width: 256.h,
                             margin: EdgeInsets.only(top: 100.v),
-                            // decoration: AppDecoration.outlinePrimary1,////////////////
                             child: Text(
                               "                  قم بترتيب الصوره",
                               maxLines: null,
                               overflow: TextOverflow.ellipsis,
-                              // style: theme.textTheme.titleMedium,
                               style:
                                   TextStyle(fontSize: 20, color: Colors.black),
                             ),
                           ),
                         ),
-                        // CustomImageView(
-                        //   imagePath: ImageConstant.imgImage167, ////// الصوت
-                        //   height: 28.v,
-                        //   width: 27.h,
-                        //   alignment: Alignment.topLeft,
-                        //   margin: EdgeInsets.only(left: 30.h, top: 110),
-                        // ),
                         Container(
 
                             ///new
@@ -441,15 +409,6 @@ class _SpeakgameState extends State<Speakgame> {
                   alignment: Alignment.topRight,
                   margin: EdgeInsets.only(top: 86.v),
                 ),
-                // CustomImageView(
-                //   imagePath: ImageConstant.imgScreenshot2023, //رزين
-                //   height: 180.v,
-                //   width: 133.h,
-                //   alignment: Alignment.bottomLeft,
-                //   margin: EdgeInsets.only(
-                //     bottom: 20.v,
-                //   ),
-                // ),
               ],
             ),
           ),

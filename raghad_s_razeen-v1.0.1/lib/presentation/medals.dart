@@ -1,16 +1,10 @@
-import 'package:raghad_s_razeen/widgets/custom_icon_button.dart';
 import 'package:flutter/material.dart';
 import 'package:raghad_s_razeen/core/app_export.dart';
-import 'package:raghad_s_razeen/widgets/app_bar/appbar_leading_image.dart';
-import 'package:raghad_s_razeen/widgets/app_bar/custom_app_bar.dart';
 import 'package:raghad_s_razeen/widgets/custom_bottom_bar.dart';
-import 'package:raghad_s_razeen/widgets/custom_floating_button.dart';
-//
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-//
 
-//
+
 class Medals extends StatefulWidget {
   Medals({Key? key}) : super(key: key);
 
@@ -18,7 +12,7 @@ class Medals extends StatefulWidget {
   _MedalsState createState() => _MedalsState();
 }
 
-//
+
 class _MedalsState extends State<Medals> {
   Map<String, bool> gameCompletionStatus = {
     'skill1': false,
@@ -27,7 +21,7 @@ class _MedalsState extends State<Medals> {
     'skill4': false,
     'skill5': false,
   };
-//
+
   @override
   void initState() {
     super.initState();
@@ -81,7 +75,6 @@ class _MedalsState extends State<Medals> {
           decoration: AppDecoration.outlinePrimary,
           // child: SingleChildScrollView(
           child: SizedBox(
-            // height: SizeUtils.height,
             height: 795,
             width: 394.h,
             child: Stack(
@@ -119,9 +112,6 @@ class _MedalsState extends State<Medals> {
                               horizontal: 17.h,
                               vertical: 98.v,
                             ),
-                            // decoration: AppDecoration.outlineBlack9001.copyWith(
-                            //   borderRadius: BorderRadiusStyle.roundedBorder35,
-                            // ),
                             child: Column(
                               mainAxisSize: MainAxisSize.min,
                               mainAxisAlignment: MainAxisAlignment.center,
@@ -132,13 +122,6 @@ class _MedalsState extends State<Medals> {
                                       MainAxisAlignment.spaceBetween,
                                   children: [
                                     ////////////////////////////////1 medal
-                                    // CustomImageView(
-                                    //   imagePath: ImageConstant.medall,
-                                    //   height: 94.adaptSize,
-                                    //   width: 94.adaptSize,
-                                    //   radius: BorderRadius.circular(
-                                    //     47.h,
-                                    //   ),),
                                      Container(
                                           height: 94.v,
                                           width: 94.h,
@@ -165,95 +148,6 @@ class _MedalsState extends State<Medals> {
                                               width: 94.adaptSize,
                                             ),
                                           ),),
-
-                                    // ),
-                                    //         ElevatedButton(
-                                    //           onPressed: gameCompletionStatus[ 'skill1'] != null && gameCompletionStatus['skill1']! ? () {
-                                    //                   // Handle the button press
-                                    //                 }
-                                    //               : null,
-                                    //            style: ElevatedButton.styleFrom(
-                                    //                     backgroundColor: Colors.transparent,
-                                    //                     foregroundColor: const Color.fromARGB(0, 0, 0, 0),
-                                    //                     elevation: 0,
-                                    //                     side: const BorderSide(
-                                    //                       width: 0,
-                                    //                 color:
-                                    //                     Color.fromARGB(0, 244, 67, 54),
-                                    //               )),
-                                    //           // child: Image.asset(
-                                    //           //   ImageConstant.medalP,
-                                    //           //   fit: BoxFit.cover,
-                                    //           //      height: 94.adaptSize,
-                                    //           // width: 94.adaptSize,
-
-                                    //           // ),
-                                    //           child: ColorFiltered( colorFilter: gameCompletionStatus[ 'skill1'] !=  null && gameCompletionStatus['skill1']! ? null
-                                    // : ColorFilter.mode( Colors.grey, BlendMode .saturation),
-                                    //             child: Image.asset(
-                                    //               ImageConstant.medalP,
-                                    //               fit: BoxFit.cover,
-                                    //               height: 94.adaptSize,
-                                    //               width: 94.adaptSize,
-                                    //             ),
-                                    //           ),
-                                    //         ),
-                                    // ElevatedButton(
-                                    //   onPressed: gameCompletionStatus[
-                                    //                   'skill2'] !=
-                                    //               null &&
-                                    //           gameCompletionStatus['skill2']!
-                                    //       ? () {
-                                    //           // Handle the button press
-                                    //         }
-                                    //       : null,
-                                    //   style: ElevatedButton.styleFrom(
-                                    //     backgroundColor: Colors.transparent,
-                                    //     foregroundColor:
-                                    //         const Color.fromARGB(0, 0, 0, 0),
-                                    //     elevation: 0,
-                                    //     shape: RoundedRectangleBorder(borderRadius: BorderRadiusStyle.circleBorder30),
-                                    //   ),
-                                    // Container(
-                                    //   width: 94,
-                                    //   height: 94,
-                                    //   clipBehavior: Clip.antiAlias,
-                                    //   decoration: const BoxDecoration(
-                                    //     shape: BoxShape.circle,
-                                    //   ),
-                                      // gameCompletionStatus['skill1'] !=
-                                      //             null &&
-                                      //         gameCompletionStatus['skill1']!
-                                      //     ? Image.asset(
-                                      //         ImageConstant.medall,
-                                      //         fit: BoxFit.cover,
-                                      //         height: 94.adaptSize,
-                                      //         width: 94.adaptSize,
-                                      //       )
-                                      //     : ColorFiltered(
-                                      //         colorFilter: ColorFilter.mode(
-                                      //             Color.fromARGB(
-                                      //                 205, 205, 205, 205),
-                                      //             BlendMode.saturation),
-                                      //         child: Image.asset(
-                                      //           ImageConstant.medall,
-                                      //           fit: BoxFit.cover,
-                                      //           height: 94.adaptSize,
-                                      //           width: 94.adaptSize,
-                                      //         ),
-                                      //       ),
-                                    
-
-                                    //
-
-                                    // CustomImageView(
-                                    //   imagePath: ImageConstant.medall, //2 madel
-                                    //   height: 94.adaptSize,
-                                    //   width: 94.adaptSize,
-                                    //   radius: BorderRadius.circular(
-                                    //     47.h,
-                                    //   ),
-                                    // ),
                                     ////////////////////////////////////MEDAL2
                                     Container(
                                           height: 94.v,
@@ -281,16 +175,6 @@ class _MedalsState extends State<Medals> {
                                               width: 94.adaptSize,
                                             ),
                                           ),),
-                                    //
-                                    ////////////////////////////////////MEDAL3
-                                    // CustomImageView(
-                                    //   imagePath: ImageConstant.medall, //3 medal
-                                    //   height: 94.adaptSize,
-                                    //   width: 94.adaptSize,
-                                    //   radius: BorderRadius.circular(
-                                    //     47.h,
-                                    //   ),
-                                    // ),
                                      Container(
                                           height: 94.v,
                                           width: 94.h,
@@ -323,16 +207,6 @@ class _MedalsState extends State<Medals> {
                                 Row(
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
-                                    // CustomIconButton(
-                                    //   height: 94.adaptSize,
-                                    //   width: 94.adaptSize,
-                                    //     ////////////////////////////////////MEDAL4
-
-                                    //   child: CustomImageView(
-                                    //     imagePath:
-                                    //         ImageConstant.medall, //medal4
-                                    //   ),
-                                    // ),
                                      Container(
                                           height: 94.v,
                                           width: 94.h,
@@ -362,16 +236,6 @@ class _MedalsState extends State<Medals> {
                                           ////////////////////////////////////MEDAL5
                                     Padding(
                                       padding: EdgeInsets.only(left: 20.h),
-                                      // child: CustomIconButton(
-                                      //   height: 94.adaptSize,
-                                      //   width: 94.adaptSize,
-                                      //     ////////////////////////////////////MEDAL5
-
-                                      //   child: CustomImageView(
-                                      //     imagePath:
-                                      //         ImageConstant.medall, //medal5
-                                      //   ),
-                                      // ),
                                       child:  Container(
                                           height: 94.v,
                                           width: 94.h,

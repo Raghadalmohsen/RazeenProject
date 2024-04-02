@@ -4,7 +4,6 @@ import 'package:raghad_s_razeen/core/app_export.dart';
 import 'package:raghad_s_razeen/presentation/razeenmap.dart';
 import 'package:raghad_s_razeen/widgets/custom_bottom_bar.dart';
 import 'package:raghad_s_razeen/widgets/custom_elevated_button.dart';
-import 'package:raghad_s_razeen/widgets/custom_floating_button.dart';
 
 class Explainmap extends StatelessWidget {
   //welcomescreen
@@ -38,8 +37,8 @@ class Explainmap extends StatelessWidget {
                   margin: EdgeInsets.only(right: 260.h, bottom: 350),
                   child: ElevatedButton(
                       onPressed: () {
-                       final player = AudioPlayer();/// new
-                       player.play(AssetSource('firstaudio1.mp3'));/// new
+                       final player = AudioPlayer();
+                       player.play(AssetSource('firstaudio1.mp3'));
                       },
                        style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.transparent,
@@ -59,7 +58,6 @@ class Explainmap extends StatelessWidget {
                       width: 92.h,
                       text: "موافق",
                       onPressed: () {
-                        //بداية كود تنقل الزر
                         Navigator.push(
                           context,
                           MaterialPageRoute(

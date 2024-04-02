@@ -4,7 +4,6 @@ import 'package:raghad_s_razeen/core/app_export.dart';
 import 'package:maze/src/models/item.dart' as maze_item;
 import 'package:audioplayers/audioplayers.dart';
 import 'package:raghad_s_razeen/presentation/gameFeedback.dart';
-import 'package:raghad_s_razeen/presentation/medalsFeedback.dart';
 
 class MazeGame extends StatefulWidget {
   MazeGame({Key? key}) : super(key: key);
@@ -53,18 +52,10 @@ class _MazePageState extends State<MazeGame> {
         Row(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            // CustomImageView(
-            //   imagePath: ImageConstant.imgImage167,
-            //   height: 28.v,
-            //   width: 27.h,
-            //   alignment: Alignment.topLeft,
-            //   margin: EdgeInsets.only(left: 0.h), // Adjust as needed
-            // ),
             Expanded(
               child: Text(
                 "                         احضر الماء لجدك",
                   overflow: TextOverflow.ellipsis,
-                      // style: theme.textTheme.titleMedium,
                       style:TextStyle(fontSize: 18,color: Colors.black),
               ),
             ),
@@ -84,7 +75,7 @@ class _MazePageState extends State<MazeGame> {
               top: 3.v,
               right: 0,
               child: CustomImageView(
-                imagePath: ImageConstant.imgImage23,//star
+                imagePath: ImageConstant.imgImage23,
                 height: 100.v,
                 width: 94.h,
                 alignment: Alignment.topRight,
@@ -118,7 +109,7 @@ class _MazePageState extends State<MazeGame> {
                 
                 onFinish: () {
                   if (!gameFinished) {
-                    _NavigatorToFeedback(context); // Pass the context to _showSuccessDialog
+                    _NavigatorToFeedback(context); 
                     setState(() {
                       gameFinished = true;
                     });
@@ -133,8 +124,8 @@ class _MazePageState extends State<MazeGame> {
                             margin: EdgeInsets.only(left:70.h, bottom:350, top: 20),
                             child: ElevatedButton(
                                 onPressed: () {
-                                final player = AudioPlayer();/// new
-                                player.play(AssetSource('maze_water.mp3'));/// new
+                                final player = AudioPlayer();
+                                player.play(AssetSource('maze_water.mp3'));
                                 },
                                 style: ElevatedButton.styleFrom(
                               backgroundColor: Colors.transparent,
@@ -142,7 +133,7 @@ class _MazePageState extends State<MazeGame> {
                               elevation: 0,
                                 ),
                             
-                          child: Image.asset(ImageConstant.imgImage164))),//end new
+                          child: Image.asset(ImageConstant.imgImage164))),
           ],
           
         ),

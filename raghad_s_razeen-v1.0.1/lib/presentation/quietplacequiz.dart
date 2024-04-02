@@ -100,31 +100,6 @@ if (user != null) {
     items2.shuffle();// لو نبي حجم البوكسات يثبت نشيله 
   }
 
-////////
-  // void checkGameOver() {
-  //   if (items.length == 0) {
-  //     setState(() {
-  //       // Navigate to the appropriate feedback screen based on the score
-  //       if (score >= 2) {
-  //         Future.delayed(Duration.zero, () {
-  //           Navigator.push(
-  //             context,
-  //             MaterialPageRoute(builder: (context) => Happyfeedback()),
-  //           );
-  //         });
-  //       } else {
-  //         Future.delayed(Duration.zero, () {
-  //           Navigator.push(
-  //             context,
-  //             MaterialPageRoute(builder: (context) => Sadfeedback()),
-  //           );
-  //         });
-  //       }
-  //     });
-  //   }
-    
-  // }
-
   //////////////////////////////
   void navigateToFeedbackScreen() {
      if (items.length == 0) {
@@ -222,14 +197,12 @@ if (user != null) {
                                     Column(// الجهه الثانيه 
                                         children: items2.map((item) {
                                       return DragTarget<ItemModel>(
-                                        onAccept: (receivedItem) { // لما يوصل المكان الصح وش يصير 
+                                        onAccept: (receivedItem) { 
                                           if (item.value ==
                                               receivedItem.value) {
                                             setState(() {
                                               items.remove(receivedItem);
                                               items2.remove(receivedItem);
-                                              // item.accepting = false;
-                                              // score++; // /////// ما عندنا 
                                             });
 
                                             item.accepting = false;
@@ -262,12 +235,6 @@ if (user != null) {
                                             item.accepting = false;
                                           });
                                         },
-                                        // onWillAccept: (receivedItem) {
-                                        //   setState(() {
-                                        //     item.accepting = true;
-                                        //   });
-                                        //   return true;
-                                        // },
                                         builder: (context, acceptedItems,
                                                 rejectedItem) =>
                                             Container(
@@ -295,69 +262,6 @@ if (user != null) {
                                     }).toList()),
                                   ],
                                 ),
-
-                              //                               if (gameOver) {  checkGameOver();
-                              // },
-                              //   if (items.length == 0) {
-                              //     setState(() {
-                              //       if (score >= 2) {
-                              //         Future.delayed(Duration.zero, () {
-                              //           Navigator.push(
-                              //             context,
-                              //             MaterialPageRoute(builder: (context) => Happyfeedback()),
-                              //           );
-                              //         });
-                              //       } else {
-                              //         Future.delayed(Duration.zero, () {
-                              //           Navigator.push(
-                              //             context,
-                              //             MaterialPageRoute(builder: (context) => Sadfeedback()),
-                              //           );
-                              //         });
-                              //       }
-                              //     });
-                              //   }
-                              // }
-                              // if (gameOver) ////////////////////////////////////////
-                              //     setState(() {
-                              //         if (items.length == 0) { //new
-                              //         if (score >= 2) {
-                              //           Future.delayed(Duration.zero, () {
-                              //             Navigator.push(
-                              //               context,
-                              //               MaterialPageRoute(builder: (context) => Happyfeedback()),
-                              //             );
-                              //           });
-                              //         } else {
-                              //           Future.delayed(Duration.zero, () {
-                              //             Navigator.push(
-                              //               context,
-                              //               MaterialPageRoute(builder: (context) => Sadfeedback()),
-                              //             );
-                              //           });
-                              //         }
-                              //       }
-                              //     });                                // ElevatedButton(
-                              //   onPressed: () {
-                              //     if (score >= 2) {
-                              //       Navigator.push(
-                              //         context,
-                              //         MaterialPageRoute(
-                              //             builder: (context) =>
-                              //                 Happyfeedback()),
-                              //       );
-                              //     } else {
-                              //       Navigator.push(
-                              //         context,
-                              //         MaterialPageRoute(
-                              //             builder: (context) =>
-                              //                 Sadfeedback()),
-                              //       );
-                              //     }
-                              //   },
-                              //   child: Text('Submit'),
-                              // ),
-                              // if (gameOver) Center()
                             ],
                           ),
                         ),
@@ -381,7 +285,6 @@ if (user != null) {
                         child: Container(
                           width: 256.h,
                           margin: EdgeInsets.only(top: 80.v,left: 30),
-                          // decoration: AppDecoration.outlinePrimary1,////////////////
                           child: Text(
                             "             ضع الشكل بالمكان المناسب  ",////
                             maxLines: null,
@@ -390,13 +293,6 @@ if (user != null) {
                           ),
                         ),
                       ),
-                      // CustomImageView(
-                      //   imagePath: ImageConstant.imgImage167, ////// الصوت
-                      //   height: 28.v,
-                      //   width: 27.h,
-                      //   alignment: Alignment.topLeft,
-                      //   margin: EdgeInsets.only(left: 32.h, top: 55),
-                      // ),
                       Container(///new
                             height: 28.v,
                             width: 27.h,
@@ -544,11 +440,11 @@ class Happy extends StatelessWidget {
                                             context,
                                             MaterialPageRoute(
                                                 builder: (context) =>
-                                                    Quietplaceskill(quiet:'quiet')), //next page فيه حركه غبيه هنا هل بنقعد نكرر لكل مهارة الفيدباك ؟؟؟؟
+                                                    Quietplaceskill(quiet:'quiet')), //next page 
                                           );
 
-                                          // Navigator.pop(context); // Navigate back to the previous screen
-                                        }, //نهاية التنقل
+                                  
+                                        }, 
                                       ),
                                   
                                     ],

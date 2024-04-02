@@ -1,16 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:raghad_s_razeen/core/app_export.dart';
-import 'package:raghad_s_razeen/presentation/initialscreen.dart';
-import 'package:raghad_s_razeen/presentation/medalsFeedback.dart';
 import 'package:raghad_s_razeen/presentation/memoryGame.dart';
 import 'package:raghad_s_razeen/presentation/quietplacequiz.dart';
 import 'package:raghad_s_razeen/presentation/safeplacestory.dart';
 import 'package:raghad_s_razeen/widgets/app_bar/appbar_leading_image.dart';
 import 'package:raghad_s_razeen/widgets/app_bar/custom_app_bar.dart';
 import 'package:raghad_s_razeen/widgets/custom_bottom_bar.dart';
-import 'package:raghad_s_razeen/widgets/custom_floating_button.dart';
 import 'package:audioplayers/audioplayers.dart';
-
 import 'package:cloud_firestore/cloud_firestore.dart'; //new
 import 'package:firebase_auth/firebase_auth.dart';
 

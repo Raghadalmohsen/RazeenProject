@@ -45,13 +45,7 @@ class Initialscreen extends StatelessWidget {//الصفحه الرئيسيه
                         alignment: Alignment.topLeft,
                        margin: EdgeInsets.only(left: 72.h),
                       ),
-                       /*   GestureDetector(
-          onTap: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => Frame104Screen()), // TO NEXT PAGE
-            );
-          },),*/
+        
                       SizedBox(height: 35.v),
                   
                       CustomElevatedButton(
@@ -70,13 +64,7 @@ class Initialscreen extends StatelessWidget {//الصفحه الرئيسيه
                      
 
                       SizedBox(height: 13.v),
-            /*                           GestureDetector(
-           onTap: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => Frame105Screen()), // TO NEXT PAGE
-            );
-          },),*/
+      
                       CustomElevatedButton(
                         height: 43.v,
                         text: "تسجيل جديد",
