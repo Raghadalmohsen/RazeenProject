@@ -4,11 +4,8 @@ import 'package:raghad_s_razeen/core/app_export.dart';
 import 'package:raghad_s_razeen/presentation/requestskill.dart';
 import 'package:raghad_s_razeen/widgets/custom_bottom_bar.dart';
 import 'package:raghad_s_razeen/widgets/custom_elevated_button.dart';
-import 'package:raghad_s_razeen/presentation/happyfeedback.dart';
-import 'package:raghad_s_razeen/presentation/sadfeedback.dart';
-
-import 'package:cloud_firestore/cloud_firestore.dart'; ///////////level
-import 'package:firebase_auth/firebase_auth.dart'; /////////level
+import 'package:cloud_firestore/cloud_firestore.dart'; 
+import 'package:firebase_auth/firebase_auth.dart'; 
 
 
 class RequestQuiz3 extends StatefulWidget {
@@ -58,7 +55,6 @@ if (user != null) {
     }
   }
 }
-////////////////////
 
   @override
   void initState() {
@@ -81,32 +77,7 @@ if (user != null) {
     items2.shuffle();
   }
 
-////////
-  // void checkGameOver() {
-  //   if (items.length == 0) {
-  //     setState(() {
-  //       // Navigate to the appropriate feedback screen based on the score
-  //       if (score >= 2) {
-  //         Future.delayed(Duration.zero, () {
-  //           Navigator.push(
-  //             context,
-  //             MaterialPageRoute(builder: (context) => Happyfeedback()),
-  //           );
-  //         });
-  //       } else {
-  //         Future.delayed(Duration.zero, () {
-  //           Navigator.push(
-  //             context,
-  //             MaterialPageRoute(builder: (context) => Sadfeedback()),
-  //           );
-  //         });
-  //       }
-  //     });
-  //   }
 
-  // }
-
-  //////////////////////////////
   void navigateToFeedbackScreen() {
     if (items.length == 2) {
         updateUserQuizCompletionStatus(); ///////////////////////////level
@@ -290,14 +261,7 @@ if (user != null) {
                                 ),
                             
                           child: Image.asset(ImageConstant.imgImage164))),//end new
-                      //        CustomImageView(
-                      //   imagePath: ImageConstant.imgImage167, ////// الصوت
-                      //   height: 28.v,
-                      //   width: 27.h,
-                      //   alignment: Alignment.topRight,
-                      //   margin: EdgeInsets.only(top: 250,right: 15),
-                       
-                      // ),
+                
                       Align(
                         alignment: Alignment.topCenter,
                         child: Container(

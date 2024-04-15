@@ -16,8 +16,6 @@ import 'package:raghad_s_razeen/presentation/respectdiffskill.dart';//
 import 'package:raghad_s_razeen/presentation/safeplaceskill.dart';//
 import 'package:raghad_s_razeen/presentation/medals.dart';//
 import 'package:raghad_s_razeen/presentation/explainmap.dart';//
-import 'package:raghad_s_razeen/presentation/sadfeedback.dart';//
-import 'package:raghad_s_razeen/presentation/happyfeedback.dart';//
 import 'package:raghad_s_razeen/presentation/safePlaceQuiz.dart';//2
 import 'package:raghad_s_razeen/presentation/speakQuiz.dart';//3
 import 'package:raghad_s_razeen/presentation/quietplacequiz.dart';//2
@@ -28,12 +26,13 @@ import 'package:raghad_s_razeen/presentation/requestQuiz3.dart';//4
 import 'package:raghad_s_razeen/presentation/medalsFeedback.dart';//4
 import 'package:raghad_s_razeen/presentation/mazeGame.dart';//4
 import 'package:raghad_s_razeen/presentation/speakgame.dart';//4
-import 'package:raghad_s_razeen/presentation/safeplaceAR.dart';//4
+import 'package:raghad_s_razeen/presentation/safeplaceAR.dart';//4 ////////////////////////////////////
 import 'package:raghad_s_razeen/presentation/safeplacestory.dart';//4
 import 'package:raghad_s_razeen/presentation/memoryGame.dart';
 import 'package:raghad_s_razeen/presentation/gameFeedback.dart';
 import 'package:raghad_s_razeen/presentation/speakQuizq1.dart';
 import 'package:raghad_s_razeen/presentation/speakQuizq2.dart';
+import 'package:raghad_s_razeen/presentation/quietplaceStory.dart';
 
 class AppRoutes {
    static const String firstpage = '/firstpage';//
@@ -70,6 +69,8 @@ class AppRoutes {
    static const String gameFeedback = '/gameFeedback';
    static const String speakQuizq1 = '/speakQuizq1';
    static const String speakQuizq2 = '/speakQuizq2';
+    static const String quietplaceStory = '/quietplaceStory';
+
   
 
   static Map<String, WidgetBuilder> routes = {
@@ -88,8 +89,6 @@ class AppRoutes {
     safeplaceskill:(context) => Safeplaceskill( safeplace: 'safeplace',), ///////////////////////////////////new
     medals:(context) => Medals(),
     explainmap:(context) => Explainmap(),
-    sadfeedback:(context) => Sadfeedback(),
-    happyfeedback:(context) => Happyfeedback(),
     safePlaceQuiz:(context) => SafePlaceQuiz(),//2
     speakQuiz:(context) => SpeakQuiz(correctAnswersCount: correctAnswersCount,),//3
     quietplacequiz:(context) => Quietplacequiz(),
@@ -107,6 +106,7 @@ class AppRoutes {
     gameFeedback: (context) => GameFeedback(),
     speakQuizq1: (context) => SpeakQuizq1(),
     speakQuizq2: (context) => SpeakQuizq2(correctAnswersCount: correctAnswersCount,),
+    quietplaceStory: (context) => QuietplaceStory(),
     
   };
   

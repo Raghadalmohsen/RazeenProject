@@ -1,11 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:raghad_s_razeen/core/utils/image_constant.dart';
 import 'package:raghad_s_razeen/core/utils/size_utils.dart';
-import 'package:raghad_s_razeen/presentation/gameFeedback.dart';
+
+import 'package:raghad_s_razeen/presentation/medalsFeedback.dart';
+import 'package:raghad_s_razeen/presentation/razeenmap.dart';
 import 'package:raghad_s_razeen/theme/app_decoration.dart';
 import 'package:raghad_s_razeen/theme/theme_helper.dart';
 import 'package:raghad_s_razeen/widgets/custom_image_view.dart';
 import 'package:audioplayers/audioplayers.dart';
+
+import 'package:raghad_s_razeen/widgets/custom_elevated_button.dart';
+
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 class Speakgame extends StatefulWidget {
   const Speakgame({Key? key}) : super(key: key);
@@ -38,7 +45,7 @@ class _SpeakgameState extends State<Speakgame> {
       Future.delayed(Duration(seconds: 0), () {
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => GameFeedback()), 
+          MaterialPageRoute(builder: (context) => speakFeedback()), 
         );
       });
     }
@@ -427,4 +434,171 @@ class _SpeakgameState extends State<Speakgame> {
   }
 
   
+}
+
+//feedback
+
+class speakFeedback extends StatefulWidget {
+  speakFeedback({Key? key}) : super(key: key);
+
+  @override
+  _speakFeedbackState createState() => _speakFeedbackState();
+}
+
+class _speakFeedbackState extends State<speakFeedback> {
+  late String userId;
+
+  void _getUserUid() async {
+    ///////////
+    User? user = FirebaseAuth.instance.currentUser;
+    if (user != null) {
+      setState(() {
+        userId = user.uid;
+      });
+    }
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    _getUserUid();
+  }
+
+////////////////////////
+  @override
+  Widget build(BuildContext context) {
+    return SafeArea(
+      child: Scaffold(
+        extendBody: true,
+        extendBodyBehindAppBar: true,
+        body: Container(
+          width: SizeUtils.width,
+          height: SizeUtils.height,
+          decoration: BoxDecoration(
+            color: appTheme.blue50B2,
+            border: Border.all(
+              color: appTheme.blue5066,
+              width: 1.h,
+            ),
+            boxShadow: [
+              BoxShadow(
+                color: appTheme.blue5066.withOpacity(0.25),
+                spreadRadius: 2.h,
+                blurRadius: 2.h,
+                offset: Offset(
+                  0,
+                  4,
+                ),
+              ),
+            ],
+            image: DecorationImage(
+              image: AssetImage(
+                ImageConstant.BackgroundHouse2,
+              ),
+              fit: BoxFit.cover,
+            ),
+          ),
+          child: Container(
+            width: double.maxFinite,
+            decoration: AppDecoration.outlinePrimary.copyWith(
+              image: DecorationImage(
+                image: AssetImage(
+                  ImageConstant.BackgroundHouse2,
+                ),
+                fit: BoxFit.cover,
+              ),
+            ),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Opacity(
+                  opacity: 0.6,
+                ),
+                SizedBox(height: 94.v),
+                _buildFour(context),
+                SizedBox(height: 5.v),
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget _buildFour(BuildContext context) {
+    return SizedBox(
+      height: 681.v,
+      width: 374.h,
+      child: Stack(
+        alignment: Alignment.bottomCenter,
+        children: [
+          CustomImageView(
+            imagePath: ImageConstant.cloud,
+            width: 374.h,
+            alignment: Alignment.center,
+            margin: EdgeInsets.only(bottom: 100),
+          ),
+          CustomElevatedButton(
+            width: 92.h,
+            text: "موافق",
+            margin: EdgeInsets.only(bottom: 265.v),
+            alignment: Alignment.bottomCenter,
+            onPressed: () async {
+              var visitCount = 0;
+
+              DocumentSnapshot snapshot = await FirebaseFirestore.instance
+                  .collection('users')
+                  .doc(userId)
+                  .get();
+
+              var data = snapshot.data();
+              if (data != null) {
+                DocumentSnapshot userSnapshot = await FirebaseFirestore.instance
+                    .collection('users')
+                    .doc(userId)
+                    .get();
+
+                if (userSnapshot.exists) {
+                  print('User progress data: ${userSnapshot.data()}');
+
+                  Map<String, dynamic> userData =
+                      userSnapshot.data() as Map<String, dynamic>;
+                  Map<String, dynamic> skillsData =
+                      userData['skills'] as Map<String, dynamic>;
+                  Map<String, dynamic> skill4Data =
+                      skillsData['skill4'] as Map<String, dynamic>;
+
+                  setState(() {
+                                     visitCount = skill4Data['visit'] ?? 0;
+                  });
+                }
+              }
+
+              visitCount++; 
+
+              await FirebaseFirestore.instance
+                  .collection('users')
+                  .doc(userId)
+                  .update({
+                'skills.skill4.visit': visitCount,
+              });
+
+              if (visitCount == 1) {
+//اول مره
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => MedalsFeedback()),
+                );
+              } else {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => Razeenmap()),
+                );
+              }
+            },
+          ),
+        ],
+      ),
+    );
+  }
 }

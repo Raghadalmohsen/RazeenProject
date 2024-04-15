@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:raghad_s_razeen/core/app_export.dart';
 import 'package:raghad_s_razeen/presentation/memoryGame.dart';
+import 'package:raghad_s_razeen/presentation/quietplaceStory.dart';
 import 'package:raghad_s_razeen/presentation/quietplacequiz.dart';
 import 'package:raghad_s_razeen/presentation/safeplacestory.dart';
 import 'package:raghad_s_razeen/widgets/app_bar/appbar_leading_image.dart';
 import 'package:raghad_s_razeen/widgets/app_bar/custom_app_bar.dart';
 import 'package:raghad_s_razeen/widgets/custom_bottom_bar.dart';
 import 'package:audioplayers/audioplayers.dart';
-import 'package:cloud_firestore/cloud_firestore.dart'; //new
+import 'package:cloud_firestore/cloud_firestore.dart'; 
 import 'package:firebase_auth/firebase_auth.dart';
 
 //المحافظة على الهدوء
@@ -15,16 +16,16 @@ import 'package:firebase_auth/firebase_auth.dart';
 
 class Quietplaceskill extends StatefulWidget {
 
-  final String quiet; //new
+  final String quiet; 
 
-  Quietplaceskill({required this.quiet}); //new
+  Quietplaceskill({required this.quiet}); 
 
   @override
   _QuietplaceskillState createState() => _QuietplaceskillState();
 }
 
 class _QuietplaceskillState extends State<Quietplaceskill> {
-  late bool isStoryCompleted = false; //new
+  late bool isStoryCompleted = false; 
   late bool isQuizCompleted = false;
   late bool isGameCompleted = false;
 
@@ -80,7 +81,6 @@ void updateProgress() {
   });
 }
 
-//new
   void markStoryCompleted() {
     setState(() {
       isStoryCompleted = true;
@@ -102,7 +102,7 @@ void updateProgress() {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-             extendBodyBehindAppBar: true, // مايشتغل بس نقدر نستغني عنه \ زر الرجوع
+             extendBodyBehindAppBar: true, // زر الرجوع
         appBar: AppBar(
           // 1. Back Arrow Icon
           actions:<Widget>[
@@ -149,7 +149,7 @@ void updateProgress() {
                    physics: NeverScrollableScrollPhysics(),
                   child: Container(
                     margin: EdgeInsets.only(
-                      left: 2.h, //بعد التعديل صارت بالنص
+                      left: 2.h, 
                       top: 125.v, //مكان الاشياء
                      
                     ),
@@ -176,11 +176,6 @@ void updateProgress() {
                                         horizontal: 1.h,
                                         vertical: 14.v,
                                       ),
-                                      // decoration: AppDecoration.outlinePrimary2
-                                      //     .copyWith(
-                                      //   borderRadius:
-                                      //       BorderRadiusStyle.roundedBorder33,
-                                      // ),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.min,
                                         children: [
@@ -198,7 +193,7 @@ void updateProgress() {
                                             onPressed:isQuizCompleted
                                                         ? () { Navigator.push(
                                           context,
-                                          MaterialPageRoute(builder: (context) =>  MemoryGame()),// بتتغير بعدين 
+                                          MaterialPageRoute(builder: (context) =>  MemoryGame()),
                                         );
                                         markGameCompleted();
                                         }:null,
@@ -322,7 +317,7 @@ void updateProgress() {
                                           //////////////////////////////////////////////////////story
                                             onPressed: () { Navigator.push(
                                           context,
-                                          MaterialPageRoute(builder: (context) =>  Safeplacestory()),/////////////////////////تتغير للقصة حقتها***
+                                          MaterialPageRoute(builder: (context) =>  QuietplaceStory()),
                                         );
                                          markStoryCompleted(); ////////
                                         },
@@ -390,7 +385,6 @@ void updateProgress() {
                       "كيف أحافظ على الهدوء بوجود جدي؟",
                       maxLines: 1,
                        overflow: TextOverflow.ellipsis,
-                      // style: theme.textTheme.titleMedium,
                       style:TextStyle(fontSize: 17,color: Colors.black),
                       
 
@@ -405,8 +399,8 @@ void updateProgress() {
                                       margin: EdgeInsets.only(right:300.h, bottom:590, top: 130),
                                       child: ElevatedButton(
                                 onPressed: () {
-                                final player = AudioPlayer();/// new
-                                player.play(AssetSource('How_Quite.mp3'));/// new
+                                final player = AudioPlayer();
+                                player.play(AssetSource('How_Quite.mp3'));
                                 },
                                 style: ElevatedButton.styleFrom(
                               backgroundColor: Colors.transparent,
@@ -414,7 +408,7 @@ void updateProgress() {
                               elevation: 0,
                                 ),
                             
-                          child: Image.asset(ImageConstant.imgImage164))),//end new
+                          child: Image.asset(ImageConstant.imgImage164))),
               ],
               // ),
             ),
@@ -424,18 +418,7 @@ void updateProgress() {
     );
   }
 
-  /// Section Widget
-  PreferredSizeWidget _buildAppBar(BuildContext context) {
-    return CustomAppBar(
-      leadingWidth: double.maxFinite,
-      leading: AppbarLeadingImage(
-        imagePath: ImageConstant.imageNotFound,
-        margin: EdgeInsets.fromLTRB(24.h, 26.v, 339.h, 26.v),
-      ),
-    );
-  }
 
-  /// Section Widget
   Widget _buildStackView(BuildContext context) {
     return SizedBox(
       height: 71.v,
@@ -470,20 +453,12 @@ void updateProgress() {
               ),
             ),
           ),
-          // CustomImageView(
-          //   imagePath: ImageConstant.imgImage164,
-          //   height: 28.v,
-          //   width: 27.h,
-          //   alignment: Alignment.topLeft,
-          //   margin: EdgeInsets.only(left: 12.h),
-          // ),
           
         ],
       ),
     );
   }
 
-  /// Section Widget
   Widget _buildBottomAppBar(BuildContext context) {
     return CustomBottomBar(
       onChanged: (BottomBarEnum type) {},

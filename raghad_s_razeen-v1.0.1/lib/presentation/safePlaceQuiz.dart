@@ -1,15 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:raghad_s_razeen/presentation/happyfeedback.dart';
-import 'package:raghad_s_razeen/presentation/sadfeedback.dart';
 import 'package:raghad_s_razeen/presentation/safeplaceskill.dart';
 import 'package:raghad_s_razeen/widgets/custom_bottom_bar.dart';
 import 'package:raghad_s_razeen/widgets/custom_elevated_button.dart';
-import 'package:raghad_s_razeen/widgets/custom_icon_button.dart';
 import 'package:raghad_s_razeen/core/app_export.dart';
 import 'package:audioplayers/audioplayers.dart';
 
-import 'package:cloud_firestore/cloud_firestore.dart'; ///////////level
-import 'package:firebase_auth/firebase_auth.dart'; /////////level
+import 'package:cloud_firestore/cloud_firestore.dart'; 
+import 'package:firebase_auth/firebase_auth.dart'; 
 
 
 class SafePlaceQuiz extends StatefulWidget {

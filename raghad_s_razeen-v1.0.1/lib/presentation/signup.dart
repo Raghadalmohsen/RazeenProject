@@ -123,26 +123,33 @@ class _SignupState extends State<Signup> {
             'isStoryCompleted': false,
             'isQuizCompleted': false,
             'isGameCompleted': false,
+            'visit':0,
           },
           'skill2': {   //request 
             'isStoryCompleted': false,
             'isQuizCompleted': false,
             'isGameCompleted': false,
+            'visit':0,
+
           },
           'skill3': {   //quiet
             'isStoryCompleted': false,
             'isQuizCompleted': false,
             'isGameCompleted': false,
+            'visit':0,
+
           },
           'skill4': {   //speak
             'isStoryCompleted': false,
             'isQuizCompleted': false,
             'isGameCompleted': false,
+            'visit':0,
           },
           'skill5': { //respectDiff
             'isStoryCompleted': false,
             'isQuizCompleted': false,
             'isGameCompleted': false,
+            'visit':0,
           },
         },
       });

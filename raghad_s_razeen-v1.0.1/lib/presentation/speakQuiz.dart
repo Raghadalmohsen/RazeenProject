@@ -3,12 +3,10 @@ import 'package:raghad_s_razeen/core/app_export.dart';
 import 'package:raghad_s_razeen/presentation/speakskill.dart';
 import 'package:raghad_s_razeen/widgets/custom_bottom_bar.dart';
 import 'package:raghad_s_razeen/widgets/custom_elevated_button.dart';
-import 'package:raghad_s_razeen/presentation/happyfeedback.dart';
-import 'package:raghad_s_razeen/presentation/sadfeedback.dart';
 import 'package:audioplayers/audioplayers.dart';
 
-import 'package:cloud_firestore/cloud_firestore.dart'; ///////////level
-import 'package:firebase_auth/firebase_auth.dart'; /////////level
+import 'package:cloud_firestore/cloud_firestore.dart'; 
+import 'package:firebase_auth/firebase_auth.dart';
 
 class SpeakQuiz extends StatefulWidget {
    final int correctAnswersCount;
@@ -62,63 +60,9 @@ if (user != null) {
     }
   }
 }
-////////////////////
-
-
-  // int currentIndex = 0;
-  
-
-  // void checkAnswer(int selectedAnswerIndex) {
-  //   int correctAnswerIndex = quizData[currentIndex]['correctAnswerIndex'];
-  //   bool isCorrect = selectedAnswerIndex == correctAnswerIndex;
-
-  //   showDialog(
-  //     context: context,
-  //     builder: (BuildContext context) {
-  //       return AlertDialog(
-  //         title: Text(isCorrect? 'إجابة صحيحة' : 'إجابة خاطئة',textAlign: TextAlign.center,),
-  //         actions: [
-  //           Center(
-  //             child: TextButton(
-  //               onPressed: () {
-  //                 Navigator.pop(context);
-  //                 handleAnswer(isCorrect);
-  //               },
-  //             child: Text('موافق',style: TextStyle(fontSize: 18)),
-  //           ),),
-  //         ],
-  //       );
-  //     },
-  //   );
-  // }
-
-  // void handleAnswer(bool isCorrect) {
-  //   if (isCorrect) {
-  //     correctAnswersCount++;
-  //   }
-
-  //   setState(() {
-  //     if (currentIndex < quizData.length - 1) {
-  //       currentIndex++;
-  //     } else {
-  //       if (correctAnswersCount >= 2) {
-  //             updateUserQuizCompletionStatus(); ///////////////////////////level
-  //         Navigator.push(
-  //           context,
-  //           MaterialPageRoute(builder: (context) => Happy()),// new class 
-  //         );
-  //       } else {
-  //         Navigator.push(
-  //           context,
-  //           MaterialPageRoute(builder: (context) => Sad()),//new class 
-  //         );
-  //       }
-  //     }
-  //   });
-  // }
 
   void checkAnswer(int selectedAnswerIndex) {
-  int correctAnswerIndex = quizData[0]['correctAnswerIndex']; // Replace with your quiz data
+  int correctAnswerIndex = quizData[0]['correctAnswerIndex']; 
   bool isCorrect = selectedAnswerIndex == correctAnswerIndex;
 
   showDialog(
@@ -136,7 +80,7 @@ if (user != null) {
               }
 
               if (correctAnswersCount >= 2) {
-                updateUserQuizCompletionStatus();///// level
+                updateUserQuizCompletionStatus();
                 Navigator.push(
                   context,
                   MaterialPageRoute(builder: (context) => Happy()),

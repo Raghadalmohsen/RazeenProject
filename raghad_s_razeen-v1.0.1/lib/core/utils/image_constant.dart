@@ -417,12 +417,6 @@ class ImageConstant {
 
   static String MapRoad = '$imagePath/MapRoad.png';
 
-  //  static String story = '$imagePath/story.png';
-
-  //  static String quiz = '$imagePath/quiz.png';
-
-  //  static String play = '$imagePath/play.png';
-
   static String story2 = '$imagePath/story2.png';
 
   static String quiz2 = '$imagePath/quiz2.png';
@@ -491,14 +485,6 @@ static String puzzle33 = '$imagePath/puzzle33.png';
 static String puzzle4 = '$imagePath/puzzle4.png';
 static String puzzle44 = '$imagePath/puzzle44.png';
 
-//ar images
-static String toysbox = '$imagePath/toysbox.png';
-static String backpack = '$imagePath/backpack.png';
-static String clothesbasket = '$imagePath/clothesbasket.png';
-static String socks = '$imagePath/socks.png';
-static String rocket = '$imagePath/rocket.png';
-static String pencil = '$imagePath/pencil.png';
-
 static String redhome = '$imagePath/redhome.png';
 static String bluehome = '$imagePath/bluehome.png';
 static String pinkhome = '$imagePath/pinkhome.png';
@@ -508,9 +494,10 @@ static String pinkhome = '$imagePath/pinkhome.png';
  static String mem2 = '$imagePath/mem2.png';
   static String mem3 = '$imagePath/mem3.png';
    static String mem4 = '$imagePath/mem4.png';
-  static String imageNotFound = 'assets/images/image_not_found.png';
   static String bg2 = 'assets/images/bg2.png';
   static String cloudnine = 'assets/images/cloudnine.png';
-    static String cloud = 'assets/images/cloud.png';
+  static String cloud = 'assets/images/cloud.png';
+
+  static String readC = '$imagePath/readC.jpeg';
 
 }

@@ -1,16 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:raghad_s_razeen/core/app_export.dart';
-import 'package:audioplayers/audioplayers.dart';//1
+import 'package:audioplayers/audioplayers.dart';
 import 'package:raghad_s_razeen/presentation/respectdiffskill.dart';
 import 'package:raghad_s_razeen/widgets/custom_bottom_bar.dart';
 import 'package:raghad_s_razeen/widgets/custom_elevated_button.dart';
-//import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:raghad_s_razeen/presentation/happyfeedback.dart';
-import 'package:raghad_s_razeen/presentation/sadfeedback.dart';
 import 'package:audioplayers/audioplayers.dart';
 
-import 'package:cloud_firestore/cloud_firestore.dart'; ///////////level
-import 'package:firebase_auth/firebase_auth.dart'; /////////level
+import 'package:cloud_firestore/cloud_firestore.dart'; 
+import 'package:firebase_auth/firebase_auth.dart'; 
 
 
 class RespectDiffQuiz extends StatefulWidget {
@@ -34,13 +31,11 @@ class _RespectDiffQuizState extends State<RespectDiffQuiz> {
   
 ////////////////////////////////////////////leval
   void updateUserQuizCompletionStatus() async {
-  // Get the currently authenticated user
   User? user = FirebaseAuth.instance.currentUser;
 
   if (user != null) {
     String userId = user.uid;
 
-    // Update the Firestore document with the new value
     try {
 User? user = FirebaseAuth.instance.currentUser;
 
@@ -74,7 +69,7 @@ if (user != null) {
     gameOver = false;
     score = 0;
     items = [
-      ItemModel( name: 'clock',value: 'grandfather',img: 'assets/images/clock.png'), //غيرت الفاليو عشان يتحركون كلهم
+      ItemModel( name: 'clock',value: 'grandfather',img: 'assets/images/clock.png'), 
       ItemModel(name: 'phone', img: 'assets/images/phone.png', value: 'Razaan'),
       ItemModel( name: 'oldtelephone', img: 'assets/images/oldtelephone.png', value: 'grandfather'),
       ItemModel(name: 'smartWatch', img: 'assets/images/smartWatch.png', value: 'Razaan'),

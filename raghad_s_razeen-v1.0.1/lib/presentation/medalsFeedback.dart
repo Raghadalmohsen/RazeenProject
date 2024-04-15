@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:raghad_s_razeen/core/app_export.dart';
+import 'package:raghad_s_razeen/presentation/medals.dart';
 import 'package:raghad_s_razeen/presentation/razeenmap.dart';
 import 'package:raghad_s_razeen/widgets/custom_bottom_bar.dart';
 import 'package:raghad_s_razeen/widgets/custom_elevated_button.dart';
@@ -47,7 +48,7 @@ MedalsFeedback({Key? key})
                       onPressed: () {//بداية كود تنقل الزر
                           Navigator.push(
                             context,
-                            MaterialPageRoute(builder: (context) => Razeenmap()),//map
+                            MaterialPageRoute(builder: (context) => Medals()),
                           );},
                     ),
                     Spacer(

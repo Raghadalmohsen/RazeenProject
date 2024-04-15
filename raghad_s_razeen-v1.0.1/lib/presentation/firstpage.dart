@@ -48,7 +48,6 @@ class Firstpage extends StatelessWidget {
     );
   }
 
-  /// Section Widget
   Widget _buildScreenshot(BuildContext context) {
     return Align(
       alignment: Alignment.centerRight,
@@ -84,7 +83,7 @@ class Firstpage extends StatelessWidget {
                             20.h,
                           ),
                           boxShadow: [
-                            BoxShadow( //box
+                            BoxShadow( 
                               color: theme.colorScheme.primary,
                               spreadRadius: 2.h,
                               blurRadius: 2.h,
@@ -110,7 +109,7 @@ class Firstpage extends StatelessWidget {
                           maxLines: 3,
                           overflow: TextOverflow.ellipsis,
                           textAlign: TextAlign.center,
-                          style: CustomTextStyles.titleMediumBlack,//titleSmallOnPrimary,titleSmallBold(good) FOMT
+                          style: CustomTextStyles.titleMediumBlack,
                         ),
                         
                       ),
@@ -145,7 +144,7 @@ class Firstpage extends StatelessWidget {
           onTap: () {
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => Initialscreen()), // TO NEXT PAGE
+              MaterialPageRoute(builder: (context) => Initialscreen()), 
             );
           },
           child: Container(

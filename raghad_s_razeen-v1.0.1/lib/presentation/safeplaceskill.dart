@@ -1,35 +1,32 @@
 import 'package:flutter/material.dart';
 import 'package:raghad_s_razeen/core/app_export.dart';
-import 'package:raghad_s_razeen/presentation/initialscreen.dart';
 import 'package:raghad_s_razeen/presentation/safePlaceQuiz.dart';
 import 'package:raghad_s_razeen/presentation/safeplaceAR.dart';
 import 'package:raghad_s_razeen/presentation/safeplacestory.dart';
-import 'package:raghad_s_razeen/widgets/app_bar/appbar_leading_image.dart';
-import 'package:raghad_s_razeen/widgets/app_bar/custom_app_bar.dart';
 import 'package:raghad_s_razeen/widgets/custom_bottom_bar.dart';
 import 'package:audioplayers/audioplayers.dart';
 
-import 'package:cloud_firestore/cloud_firestore.dart'; //new
+import 'package:cloud_firestore/cloud_firestore.dart'; 
 import 'package:firebase_auth/firebase_auth.dart';
 
 //مهارة سلامة المكان
 
 class Safeplaceskill extends StatefulWidget {
 
-  final String safeplace; //new
+  final String safeplace; 
 
-  Safeplaceskill({required this.safeplace}); //new
+  Safeplaceskill({required this.safeplace}); 
 
   @override
   _SafeplaceskillState createState() => _SafeplaceskillState();
 }
 
 class _SafeplaceskillState extends State<Safeplaceskill> {
-  late bool isStoryCompleted = false; //new
+  late bool isStoryCompleted = false; 
   late bool isQuizCompleted = false;
   late bool isGameCompleted = false;
 
-  @override //new
+  @override 
   void initState() {
     super.initState();
     fetchUserProgress();
@@ -81,7 +78,6 @@ void updateProgress() {
   });
 }
 
-//new
   void markStoryCompleted() {
     setState(() {
       isStoryCompleted = true;
@@ -95,15 +91,13 @@ void updateProgress() {
     });
     updateProgress();
   }
-//
 
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-              extendBodyBehindAppBar: true, // مايشتغل بس نقدر نستغني عنه \ زر الرجوع
+              extendBodyBehindAppBar: true, //  زر الرجوع
         appBar: AppBar(
-          // 1. Back Arrow Icon
           actions:<Widget>[
         IconButton(
             iconSize: 40,
@@ -146,7 +140,7 @@ void updateProgress() {
                       physics: NeverScrollableScrollPhysics(),
                       child: Container(
                         margin: EdgeInsets.only(
-                          left: 2.h, //بعد التعديل صارت بالنص
+                          left: 2.h, 
                           top: 125.v, //مكان الاشياء
                         ),
 
@@ -173,11 +167,6 @@ void updateProgress() {
                                             horizontal: 1.h,
                                             vertical: 14.v,
                                           ),
-                                          // decoration: AppDecoration.outlinePrimary2
-                                          //     .copyWith(
-                                          //   borderRadius:
-                                          //       BorderRadiusStyle.roundedBorder33,
-                                          // ),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.min,
                                             children: [
@@ -423,7 +412,6 @@ void updateProgress() {
                 ),
                 Container(
 
-                    ///new
                     height: 28.v,
                     width: 27.h,
                     alignment: Alignment.topLeft,
@@ -433,10 +421,8 @@ void updateProgress() {
                         onPressed: () {
                           final player = AudioPlayer();
 
-                          /// new
                           player.play(AssetSource('How_Safe.mp3'));
 
-                          /// new
                         },
                         style: ElevatedButton.styleFrom(
                           backgroundColor: Colors.transparent,
@@ -444,7 +430,7 @@ void updateProgress() {
                           elevation: 0,
                         ),
                         child:
-                            Image.asset(ImageConstant.imgImage164))), //end new
+                            Image.asset(ImageConstant.imgImage164))),
               ],
               // ),
             ),
@@ -454,18 +440,6 @@ void updateProgress() {
     );
   }
 
-  /// Section Widget
-  PreferredSizeWidget _buildAppBar(BuildContext context) {
-    return CustomAppBar(
-      leadingWidth: double.maxFinite,
-      leading: AppbarLeadingImage(
-        imagePath: ImageConstant.imageNotFound,
-        margin: EdgeInsets.fromLTRB(24.h, 26.v, 339.h, 26.v),
-      ),
-    );
-  }
-
-  /// Section Widget
   Widget _buildStackView(BuildContext context) {
     return SizedBox(
       height: 71.v,
@@ -500,19 +474,11 @@ void updateProgress() {
               ),
             ),
           ),
-          // CustomImageView(
-          //   imagePath: ImageConstant.imgImage164,
-          //   height: 28.v,
-          //   width: 27.h,
-          //   alignment: Alignment.topLeft,
-          //   margin: EdgeInsets.only(left: 12.h),
-          // ),
         ],
       ),
     );
   }
 
-  /// Section Widget
   Widget _buildBottomAppBar(BuildContext context) {
     return CustomBottomBar(
       onChanged: (BottomBarEnum type) {},

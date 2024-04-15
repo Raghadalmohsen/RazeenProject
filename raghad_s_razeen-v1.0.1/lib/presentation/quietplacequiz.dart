@@ -4,9 +4,6 @@ import 'package:raghad_s_razeen/core/app_export.dart';
 import 'package:raghad_s_razeen/presentation/quietplaceskill.dart';
 import 'package:raghad_s_razeen/widgets/custom_bottom_bar.dart';
 import 'package:raghad_s_razeen/widgets/custom_elevated_button.dart';
-//import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:raghad_s_razeen/presentation/happyfeedback.dart';
-import 'package:raghad_s_razeen/presentation/sadfeedback.dart';
 import 'package:audioplayers/audioplayers.dart';
 
 import 'package:cloud_firestore/cloud_firestore.dart'; ///////////level

@@ -2,20 +2,22 @@ import 'package:flutter/material.dart';
 import 'package:flick_video_player/flick_video_player.dart';
 import 'package:video_player/video_player.dart';
 
-class Safeplacestory extends StatefulWidget {
-  const Safeplacestory({Key? key}) : super(key: key);
+class QuietplaceStory extends StatefulWidget {
+  const QuietplaceStory({Key? key}) : super(key: key);
 
   @override
-  _SafeplacestoryState createState() => _SafeplacestoryState();
+  _QuietplaceStoryState createState() => _QuietplaceStoryState();
 }
 
-class _SafeplacestoryState extends State<Safeplacestory> {
+class _QuietplaceStoryState extends State<QuietplaceStory> {
   late FlickManager flickManager;
    void initState() {
     super.initState();
     flickManager = FlickManager(
       videoPlayerController:
-          VideoPlayerController.asset('assets/safeplaceStory.mp4'),
+          // VideoPlayerController.asset('assets/quietplaceStory.mp4'), //القصة //////////////
+          VideoPlayerController.asset('assets/safeplaceStory.mp4'), //بيتغير
+ 
     );
   }
    void dispose() {

@@ -19,7 +19,6 @@ class Forgetpass extends StatelessWidget {
       child: Scaffold(
              extendBodyBehindAppBar: true, 
         appBar: AppBar(
-          // 1. Back Arrow Icon
           actions:<Widget>[
         IconButton(
             iconSize: 40,
@@ -32,7 +31,9 @@ class Forgetpass extends StatelessWidget {
            backgroundColor: Color.fromARGB(0, 213, 204, 243),
           elevation: 0,
        
-          leading: IconButton(   color: Color.fromARGB(0, 5, 0, 36),onPressed: (){},            icon: Icon(Icons.arrow_forward),)
+          leading: IconButton(  
+             color: Color.fromARGB(0, 5, 0, 36),onPressed: (){},     
+              icon: Icon(Icons.arrow_forward),)
           ),
         extendBody: true,
         resizeToAvoidBottomInset: false,
@@ -59,9 +60,8 @@ class Forgetpass extends StatelessWidget {
               mainAxisSize: MainAxisSize.min,
               children: [
                 SizedBox(height: 31.v),
-                ///////////
                 SizedBox(
-                  height: 743.v, // كان 794 شال الاصفر
+                  height: 743.v, 
                   width: double.maxFinite,
                   child: Stack(
                     alignment: Alignment.center,
@@ -90,7 +90,7 @@ class Forgetpass extends StatelessWidget {
                         height: 206.v,
                         width: 150.h,
                         alignment: Alignment.bottomLeft,
-                        margin: EdgeInsets.only(bottom: 1.v), //كان 45
+                        margin: EdgeInsets.only(bottom: 1.v), 
                       ),
                     ],
                   ),
@@ -103,7 +103,6 @@ class Forgetpass extends StatelessWidget {
     );
   }
 
-  /// Section Widget
   Widget _buildEmailSection(BuildContext context) {
     return Align(
       alignment: Alignment.topCenter,
@@ -165,12 +164,11 @@ class Forgetpass extends StatelessWidget {
                         FirebaseAuth.instance
                             .sendPasswordResetEmail(email: email)
                             .then((value) {
-                          // Show success message or navigate to a success screen
                           showDialog(
                             context: context,
                             builder: (BuildContext context) {
                               return AlertDialog(
-                                content: Text('تم ارسال رابط اعادة تعيين كلمة المرور بنجاح'),
+                                content: Text('تم ارسال رابط اعادة تعيين كلمة المرور '),
                                 actions: <Widget>[
   Center(
     child: TextButton(
@@ -195,15 +193,15 @@ class Forgetpass extends StatelessWidget {
                             context: context,
                             builder: (BuildContext context) {
                               return AlertDialog(
-                                title: Text('Error'),
+                                title: Text('خطأ'),
                                 content: Text(
-                                    'Failed to send reset email. Please check your email address.'),
+                                    'فشل إرسال البريد الإلكتروني لإعادة التعيين، من فضلك تحقق من عنوان بريدك الإلكتروني'),
                                 actions: <Widget>[
                                   TextButton(
                                     onPressed: () {
                                       Navigator.pop(context);
                                     },
-                                    child: Text('OK'),
+                                    child: Text('موافق'),
                                   ),
                                 ],
                               );

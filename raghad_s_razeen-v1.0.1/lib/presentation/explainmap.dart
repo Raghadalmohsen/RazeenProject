@@ -11,7 +11,7 @@ class Explainmap extends StatelessWidget {
       : super(
           key: key,
         );
- var player = AudioCache();//1
+ var player = AudioCache();
   GlobalKey<NavigatorState> navigatorKey = GlobalKey();
 
   @override

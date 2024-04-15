@@ -1,15 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:raghad_s_razeen/core/app_export.dart';
 import 'package:raghad_s_razeen/presentation/speakQuiz.dart';
-import 'package:raghad_s_razeen/presentation/speakskill.dart';
-import 'package:raghad_s_razeen/widgets/custom_bottom_bar.dart';
-import 'package:raghad_s_razeen/widgets/custom_elevated_button.dart';
-import 'package:raghad_s_razeen/presentation/happyfeedback.dart';
-import 'package:raghad_s_razeen/presentation/sadfeedback.dart';
 import 'package:audioplayers/audioplayers.dart';
-
-import 'package:cloud_firestore/cloud_firestore.dart'; ///////////level
-import 'package:firebase_auth/firebase_auth.dart'; /////////level
 
 class SpeakQuizq2 extends StatefulWidget {
  
