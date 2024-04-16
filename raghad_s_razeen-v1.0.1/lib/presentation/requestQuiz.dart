@@ -13,11 +13,23 @@ class RequestQuiz extends StatefulWidget {
 }
 
 class _RequestQuizState extends State<RequestQuiz> {
+        @override
+void dispose() {
+  player1.dispose();
+  player2.dispose();
+  player3.dispose();
+  player4.dispose();
+  super.dispose();
+}
   // var player = AudioPlayer();
   late List<ItemModel> items;
   late List<ItemModel> items2;
 
   var player = AudioCache();//1
+  var player1 = AudioPlayer();
+  var player2 = AudioPlayer();
+  var player3 = AudioPlayer();
+  var player4 = AudioPlayer();
 
   late int score;
   late bool gameOver;
@@ -169,7 +181,11 @@ class _RequestQuizState extends State<RequestQuiz> {
                                         onAccept: (receivedItem) {
                                           if (item.value ==
                                               receivedItem.value) {
-                                            setState(() {
+                                            setState(() {  
+                                            player1.stop();
+                                            player2.stop();
+                                            player3.stop();
+                                            player4.stop();
                                               items.remove(receivedItem);
                                               items2.remove(receivedItem);
 
@@ -179,15 +195,22 @@ class _RequestQuizState extends State<RequestQuiz> {
 
                                             item.accepting = false;
                                             // score++;
-                                            final player = AudioPlayer();/// new
-                                            player.play(AssetSource('true.wav'));/// new
+                                            // final player = AudioPlayer();/// new
+                                            // player.play(AssetSource('true.wav'));/// new
+                                            player1.stop();
+                                            player2.stop();
+                                            player4.stop();
+                                            player3.play(AssetSource('true.wav'));/// new
 
 
                                           } else {
                                             setState(() {
                                               item.accepting = false;
-                                              final player = AudioPlayer();// new 1
-                                              player.play(AssetSource('false.wav'));// new 2
+                                              // final player = AudioPlayer();// new 1
+                                              player1.stop();
+                                              player2.stop();
+                                              player3.stop();
+                                              player4.play(AssetSource('false.wav'));// new 2
 
                                             });
                                           }
@@ -256,8 +279,12 @@ class _RequestQuizState extends State<RequestQuiz> {
                                       margin: EdgeInsets.only(left:120.h, bottom:155, top: 250),
                                       child: ElevatedButton(
                                 onPressed: () {
-                                final player = AudioPlayer();/// new
-                                player.play(AssetSource('Newspaper.mp3'));/// new
+                                // final player = AudioPlayer();/// new
+                                // player.play(AssetSource('Newspaper.mp3'));/// new
+                                player2.stop();
+                                player3.stop();
+                                player4.stop();
+                                player1.play(AssetSource('Newspaper.mp3'));/// new
                                 },
                                 style: ElevatedButton.styleFrom(
                               backgroundColor: Colors.transparent,
@@ -308,8 +335,12 @@ class _RequestQuizState extends State<RequestQuiz> {
                                       margin: EdgeInsets.only(right:240.h, bottom:590, top: 55),
                                       child: ElevatedButton(
                                 onPressed: () {
-                                final player = AudioPlayer();/// new
-                                player.play(AssetSource('Q_Order.mp3'));/// new
+                                // final player = AudioPlayer();/// new
+                                // player.play(AssetSource('Q_Order.mp3'));/// new
+                                player1.stop();
+                                player3.stop();
+                                player4.stop();
+                                player2.play(AssetSource('Q_Order.mp3'));/// new
                                 },
                                 style: ElevatedButton.styleFrom(
                               backgroundColor: Colors.transparent,

@@ -14,7 +14,17 @@ class SpeakQuizq2 extends StatefulWidget {
 }
 
 class _SpeakQuizq2State extends State<SpeakQuizq2> {
+              @override
+void dispose() {
+  player1.dispose();
+  player2.dispose();
+  player3.dispose();
+  super.dispose();
+}
    int correctAnswersCount;
+  var player1 = AudioPlayer();
+  var player2 = AudioPlayer();
+  var player3 = AudioPlayer();
 
   _SpeakQuizq2State ({required this.correctAnswersCount});
 
@@ -32,6 +42,9 @@ List<Map<String, dynamic>> quizData = [
   // int correctAnswersCount ;
 
   void checkAnswer(int selectedAnswerIndex) {
+  player1.stop();
+  player2.stop();
+  player3.stop();
     int correctAnswersCount = widget.correctAnswersCount;///////////////////////
     int correctAnswerIndex =
         quizData[0]['correctAnswerIndex']; // Replace with your quiz data
@@ -159,10 +172,13 @@ List<Map<String, dynamic>> quizData = [
                                             ),
                                             ElevatedButton(
                                                 onPressed: () {
-                                                  var player1 = AudioPlayer();
+                                                  // var player1 = AudioPlayer();
+                                                    player1.stop();
+                                                    player3.stop();
+  
 
                                                   /// new
-                                                  player1.play(AssetSource(
+                                                  player2.play(AssetSource(
                                                       'pleaseHelp.mp3'));
 
                                                   /// new
@@ -209,10 +225,13 @@ List<Map<String, dynamic>> quizData = [
                                             ),
                                              ElevatedButton(
                                                 onPressed: () {
-                                                  var player2 = AudioPlayer();
+                                                  // var player2 = AudioPlayer();
+                                                    player1.stop();
+                                                    player2.stop();
+ 
 
                                                   /// new
-                                                  player2.play(AssetSource(
+                                                  player3.play(AssetSource(
                                                       'badHelp.mp3'));
 
                                                   /// new
@@ -311,10 +330,12 @@ List<Map<String, dynamic>> quizData = [
                                   right: 240.h, bottom: 690, top: 30),
                               child: ElevatedButton(
                                   onPressed: () {
-                                    final player = AudioPlayer();
+                                    // final player = AudioPlayer();
+                                    player2.stop();
+                                    player3.stop();
 
                                     /// new
-                                    player.play(AssetSource('whatWord.mp3'));
+                                    player1.play(AssetSource('whatWord.mp3'));
 
                                     /// new
                                   },

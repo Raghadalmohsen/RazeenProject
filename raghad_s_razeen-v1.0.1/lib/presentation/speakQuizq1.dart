@@ -12,7 +12,18 @@ class SpeakQuizq1 extends StatefulWidget {
 }
 
 class _SpeakQuizq1State extends State<SpeakQuizq1> {
+            @override
+void dispose() {
+  player1.dispose();
+  player2.dispose();
+  player3.dispose();
+  super.dispose();
+}
+
   int correctAnswersCount = 0;
+  var player1 = AudioPlayer();
+  var player2 = AudioPlayer();
+  var player3 = AudioPlayer();
 
   List<Map<String, dynamic>> quizData = [
     {
@@ -28,6 +39,9 @@ class _SpeakQuizq1State extends State<SpeakQuizq1> {
   // int correctAnswersCount = 0;
 
   void checkAnswer(int selectedAnswerIndex) {
+  player1.stop();
+  player2.stop();
+  player3.stop();
     int correctAnswerIndex =
         quizData[0]['correctAnswerIndex']; // Replace with your quiz data
     bool isCorrect = selectedAnswerIndex == correctAnswerIndex;
@@ -152,10 +166,11 @@ class _SpeakQuizq1State extends State<SpeakQuizq1> {
                                             ),
                                             ElevatedButton(
                                                 onPressed: () {
-                                                  final player = AudioPlayer();
-
+                                                  // final player = AudioPlayer();
+                                                    player1.stop();
+                                                    player3.stop();
                                                   /// new
-                                                  player.play(AssetSource(
+                                                  player2.play(AssetSource(
                                                       'thankyouGift.mp3'));
 
                                                   /// new
@@ -260,10 +275,11 @@ class _SpeakQuizq1State extends State<SpeakQuizq1> {
                                             ),
                                              ElevatedButton(
                                                 onPressed: () {
-                                                  final player = AudioPlayer();
-
+                                                  // final player = AudioPlayer();
+                                                    player1.stop();
+                                                    player2.stop();
                                                   /// new
-                                                  player.play(AssetSource(
+                                                  player3.play(AssetSource(
                                                       'noGift.mp3'));
 
                                                   /// new
@@ -419,10 +435,12 @@ class _SpeakQuizq1State extends State<SpeakQuizq1> {
                                   right: 240.h, bottom: 690, top: 30),
                               child: ElevatedButton(
                                   onPressed: () {
-                                    final player = AudioPlayer();
+                                    // final player = AudioPlayer();
+                                      player2.stop();
+                                      player3.stop();
 
                                     /// new
-                                    player.play(AssetSource('whatWord.mp3'));
+                                    player1.play(AssetSource('whatWord.mp3'));
 
                                     /// new
                                   },

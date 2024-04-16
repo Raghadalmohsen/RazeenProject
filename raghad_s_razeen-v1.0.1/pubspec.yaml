@@ -21,7 +21,8 @@ dependencies:
   email_validator: ^2.0.1
   font_awesome_flutter: ^10.7.0
   maze: ^3.0.0
-  audioplayers: ^5.2.1
+  audioplayers: ^6.0.0
+  just_audio: ^0.9.37
   image: ^4.1.7
   ar_flutter_plugin: ^0.7.3 
   arcore_flutter_plugin: ^0.1.0
@@ -33,6 +34,13 @@ dev_dependencies:
 
   flutter_test: 
     sdk: flutter
+  flutter_launcher_icons: "^0.13.1"
+
+flutter_launcher_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "assets/images/icon.png"
+
 flutter: 
   uses-material-design: true
   assets: 

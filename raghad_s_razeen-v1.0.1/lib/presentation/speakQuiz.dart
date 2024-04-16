@@ -19,7 +19,18 @@ class SpeakQuiz extends StatefulWidget {
 }
 
 class _SpeakQuizState extends State<SpeakQuiz> {
+          @override
+void dispose() {
+  player1.dispose();
+  player2.dispose();
+  player3.dispose();
+  super.dispose();
+}
      int correctAnswersCount;
+  var player1 = AudioPlayer();
+  var player2 = AudioPlayer();
+  var player3 = AudioPlayer();
+  
 
   _SpeakQuizState ({required this.correctAnswersCount});
   List<Map<String, dynamic>> quizData = [
@@ -62,6 +73,9 @@ if (user != null) {
 }
 
   void checkAnswer(int selectedAnswerIndex) {
+  player1.stop();
+  player2.stop();
+  player3.stop();
   int correctAnswerIndex = quizData[0]['correctAnswerIndex']; 
   bool isCorrect = selectedAnswerIndex == correctAnswerIndex;
 
@@ -190,10 +204,12 @@ Widget build(BuildContext context) {
                                             ),
                                             ElevatedButton(
                                                 onPressed: () {
-                                                  var player1 = AudioPlayer();
-
+                                                  // var player1 = AudioPlayer();
+                                                  player1.stop();
+                                                  player3.stop();
+                                                  
                                                   /// new
-                                                  player1.play(AssetSource(
+                                                  player2.play(AssetSource(
                                                       'notMyfault.mp3'));
 
                                                   /// new
@@ -240,10 +256,12 @@ Widget build(BuildContext context) {
                                             ),
                                              ElevatedButton(
                                                 onPressed: () {
-                                                  var player2 = AudioPlayer();
+                                                  // var player2 = AudioPlayer();
+                                                  player1.stop();
+                                                  player2.stop();
 
                                                   /// new
-                                                  player2.play(AssetSource('Im_Sorry.mp3'));
+                                                  player3.play(AssetSource('Im_Sorry.mp3'));
 
                                                   /// new
                                                 },
@@ -341,10 +359,11 @@ Widget build(BuildContext context) {
                                   right: 240.h, bottom: 690, top: 30),
                               child: ElevatedButton(
                                   onPressed: () {
-                                    final player = AudioPlayer();
-
+                                    // final player = AudioPlayer();
+                                    player2.stop();
+                                    player3.stop();
                                     /// new
-                                    player.play(AssetSource('whatWord.mp3'));
+                                    player1.play(AssetSource('whatWord.mp3'));
 
                                     /// new
                                   },

@@ -18,10 +18,22 @@ class RequestQuiz3 extends StatefulWidget {
 }
 
 class _RequestQuiz3State extends State<RequestQuiz3> {
+        @override
+void dispose() {
+  player1.dispose();
+  player2.dispose();
+  player3.dispose();
+  player4.dispose();
+  super.dispose();
+}
   late List<ItemModel> items;
   late List<ItemModel> items2;
 
   var player = AudioCache(); 
+  var player1 = AudioPlayer();
+  var player2 = AudioPlayer();
+  var player3 = AudioPlayer();
+  var player4 = AudioPlayer();
 
   
   late bool gameOver;
@@ -183,14 +195,22 @@ if (user != null) {
 
                                             item.accepting = false;
                                             // score++;
-                                            final player = AudioPlayer();/// new
-                                            player.play(AssetSource('true.wav'));/// new
+                                            // final player = AudioPlayer();/// new
+                                            // player.play(AssetSource('true.wav'));/// new
+                                            player1.stop();
+                                            player2.stop();
+                                            player4.stop();
+                                            player3.play(AssetSource('true.wav'));
 
                                           } else {
                                             setState(() {
                                               item.accepting = false;
-                                              final player = AudioPlayer();// new 1
-                                              player.play(AssetSource('false.wav'));// new 2
+                                              // final player = AudioPlayer();// new 1
+                                              // player.play(AssetSource('false.wav'));// new 2
+                                              player1.stop();
+                                              player2.stop();
+                                              player3.stop();
+                                              player4.play(AssetSource('false.wav'));
                                             });
                                           }
                                           navigateToFeedbackScreen(); ////////////
@@ -251,8 +271,12 @@ if (user != null) {
                                       margin: EdgeInsets.only(left:120.h, bottom:155, top: 250),
                                       child: ElevatedButton(
                                 onPressed: () {
-                                final player = AudioPlayer();/// new
-                                player.play(AssetSource('bring_water.mp3'));/// new
+                                // final player = AudioPlayer();/// new
+                                // player.play(AssetSource('bring_water.mp3'));/// new
+                                player2.stop();
+                                player3.stop();
+                                player4.stop();
+                                player1.play(AssetSource('bring_water.mp3'));/// new
                                 },
                                 style: ElevatedButton.styleFrom(
                               backgroundColor: Colors.transparent,
@@ -304,8 +328,12 @@ if (user != null) {
                                       margin: EdgeInsets.only(right:240.h, bottom:590, top: 55),
                                       child: ElevatedButton(
                                 onPressed: () {
-                                final player = AudioPlayer();/// new
-                                player.play(AssetSource('Q_Order.mp3'));/// new
+                                // final player = AudioPlayer();/// new
+                                // player.play(AssetSource('Q_Order.mp3'));/// new
+                                player1.stop();
+                                player3.stop();
+                                player4.stop();
+                                player2.play(AssetSource('Q_Order.mp3'));/// new
                                 },
                                 style: ElevatedButton.styleFrom(
                               backgroundColor: Colors.transparent,
